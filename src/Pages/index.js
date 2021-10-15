@@ -1,13 +1,12 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 //import all the pages
-import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./Pages/Home";
 import Events from "./Pages/Events";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Profile from "./Pages/Profile";
 import LoginRegister from "./Pages/LoginRegister";
-let App = () => {
+function App() {
   //create routing for pages home, events, about, contact, profile
   return (
     <Router>
@@ -21,6 +20,6 @@ let App = () => {
       </Switch>
     </Router>
   );
-};
+}
 
 export default App;
