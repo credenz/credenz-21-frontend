@@ -1,0 +1,41 @@
+.hover-effect-1 {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  z-index: 1;
+}
+.hover-effect-1:hover {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  border: 5px solid orange;
+  transition: border-width 0.1s ease-in-out;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.hover-card-text {
+  position: absolute;
+  top: 70%;
+  left: 65%;
+  opacity: 0;
+  color: #fff;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 3;
+  font-size: 40px;
+  font-weight: bold;
+}
+.hovered {
+  opacity: 1;
+  color: #fff;
+  transition: opacity 0.2s ease-in-out;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
