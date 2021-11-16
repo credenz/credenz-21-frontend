@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani&display=swap");
+.header-header {
+  font-size: 30px !important;
+  font-weight: 700;
+  font-family: "Rajdhani", sans-serif;
+  letter-spacing: 0.1em;
+}
+.header-title {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 15px;
+  size: 24px;
+  font-weight: 700;
+  font-family: "Rajdhani", sans-serif;
+  letter-spacing: 0.12em;
+}
+.header-title:active {
+  transition: 0.2s ease-in-out;
+}
+
+.header-title:hover {
+  color: #ec4e00;
+  text-decoration: none;
+  padding: 0 15px;
+  size: 24px;
+  font-weight: 700;
+  transition: 0.2s ease-in-out;
+}

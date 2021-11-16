@@ -1,16 +1,20 @@
 import React from "react";
-import CyberPunkButton from "../Components/CyberPunkButton";
 import EventCard1 from "../Components/EventCard1";
+import "../CSS/events.css";
 const Events = () => {
   return (
-    <div>
-      <h3>Events</h3>
-      <div className="container">
-        <CyberPunkButton />
+    <div className="container bg-dark height-full">
+      <div className="row justify-content-around d-flex mb-3">
+        <EventCard1 width="180px" height="220px" title="Clash" />
+        <EventCard1 width="180px" height="220px" title="RC" />
+        <EventCard1 width="180px" height="220px" title="NTH" />
+        <EventCard1 width="180px" height="220px" title="WallStreet" />
       </div>
-      <hr />
-      <div className="container bg-light">
-        <EventCard1 />
+      <div className="row justify-content-around d-flex mb-3">
+        <EventCard1 width="180px" height="220px" title="Datawiz" />
+        <EventCard1 width="180px" height="220px" title="Quiz" />
+        <EventCard1 width="180px" height="220px" title="Presentation" />
+        <EventCard1 width="180px" height="220px" title="Cretronix" />
       </div>
     </div>
   );
