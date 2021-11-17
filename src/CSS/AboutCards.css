@@ -1,0 +1,53 @@
+.aboutCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 2px solid black;
+  border-radius: 25px;
+  box-shadow: -22px 22px 13px #bcb0a638;
+  width: 65%;
+  padding: 30px;
+  position: relative;
+  margin: 25px auto;
+}
+
+.aboutCard > h2 {
+  font-size: 35px;
+}
+
+.aboutCard > img {
+  width: 150px;
+  height: 150px;
+}
+
+.aboutCard-massege {
+  font-size: 20px;
+}
+
+/* Media queries for ipad */
+@media screen and (max-width: 768px) {
+  .aboutCard {
+    width: 90%;
+  }
+}
+
+/* Media queries for mobile */
+@media screen and (max-width: 415px) {
+  .aboutCard {
+    width: 90%;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .aboutCard > h2 {
+    font-size: 32px;
+  }
+
+  .aboutCard-massege {
+    font-size: 17px;
+  }
+}
+
+@keyframes easeIn {
+}

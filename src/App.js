@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./Pages/Home";
 import Events from "./Pages/Events";
-import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Profile from "./Pages/Profile";
 import LoginRegister from "./Pages/LoginRegister";
+import AboutUs from "./Pages/AboutUs";
 let App = () => {
   //create routing for pages home, events, about, contact, profile
   return (
@@ -14,7 +14,7 @@ let App = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/events" component={Events} />
-        <Route path="/about" component={About} />
+        <Route path="/about" component={AboutUs} />
         <Route path="/contact" component={Contact} />
         <Route path="/profile" component={Profile} />
         <Router path="/login" component={LoginRegister} />

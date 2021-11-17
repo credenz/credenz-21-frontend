@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navBar {
+  height: 70px;
+  border: 1px solid black;
+}
+
+/* Header */
+.aboutHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.aboutHeader > h1 {
+  font-size: 50px;
+  margin: 10px;
+}
+
+.aboutHeader > p {
+  font-size: 25px;
+  margin: 10px;
+}
+
+/* Card */
+.aboutCards {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  align-content: center;
+}
+
+.card:nth-child(even) h2 {
+  order: 3;
+}
+
+.card:nth-child(even) div {
+  order: -1;
+}
+
+/* Sponsors */
+.aboutSponsors {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px;
+}
+
+.aboutSponsors > h1 {
+  font-size: 50px;
+  margin: 10px;
+}
+
+.aboutSpons {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  justify-content: space-between;
+  grid-column-gap: 150px;
+}
+
+.spons1 {
+  grid-column: 1 / span 3;
+  align-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spons5 {
+  grid-column: 1 / span 2;
+  display: flex;
+  justify-content: left;
+}
+
+/* Media query for ipad */
+@media screen and (max-width: 768px) {
+  .aboutSpons {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    justify-content: space-between;
+    grid-column-gap: 100px;
+  }
+
+  .spons1 {
+    grid-column: 1 / span 2;
+    align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .spons4 {
+    grid-column: 1 / span 2;
+  }
+
+  .spons4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .spons5 {
+    grid-column: 1 / 1;
+  }
+
+  .spons9 {
+    grid-column: 1 / span 2;
+  }
+
+  .spons9 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Media quey for mobile */
+@media screen and (max-width: 415px) {
+  .aboutSpons {
+    display: block;
+  }
+
+  .aboutHeader > h1 {
+    font-size: 47px;
+  }
+
+  .aboutHeader > p {
+    font-size: 20px;
+  }
+
+  .card:nth-child(even) h2 {
+    order: -1;
+  }
+
+  .card:nth-child(even) div {
+    order: 3;
+  }
+}
+
+/* Footer */
+.footer {
+  height: 70px;
+  border: 1px solid black;
+}
