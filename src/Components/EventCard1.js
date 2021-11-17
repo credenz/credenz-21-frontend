@@ -1,10 +1,9 @@
 import React from "react";
-import { Card } from "react-bootstrap";
 import "../CSS/eventcard1.css";
-const EventCard1 = () => {
+const EventCard1 = (props) => {
   const [hovered, setHovered] = React.useState(false);
   return (
-    <div style={{ width: "270px" }}>
+    <div style={{ width: props.width || "270px" }}>
       <div className="wrapper">
         <div
           onMouseEnter={() => {
@@ -16,15 +15,15 @@ const EventCard1 = () => {
           className="hover-effect-1"
           style={{
             backgroundColor: "#000",
-            height: "350px",
-            width: "270px",
+            height: props.height || "350px",
+            width: props.width || "270px",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
         ></div>
         <div className={`hover-card-text ${hovered ? "hovered" : ""}`}>
-          <span>REVERSE</span>
+          <span>{props.title}</span>
         </div>
       </div>
     </div>

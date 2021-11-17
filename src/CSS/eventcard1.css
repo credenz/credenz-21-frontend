@@ -14,7 +14,7 @@
   opacity: 1;
   -webkit-transform: translateY(0);
   transform: translateY(0);
-  border: 5px solid orange;
+  border: 5px solid #ec4e00;
   transition: border-width 0.1s ease-in-out;
 }
 
