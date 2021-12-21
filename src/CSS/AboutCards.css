@@ -1,12 +1,8 @@
 .aboutCard {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  border: 2px solid black;
-  border-radius: 25px;
-  box-shadow: -22px 22px 13px #bcb0a638;
-  width: 65%;
   padding: 30px;
   position: relative;
   margin: 25px auto;
@@ -16,13 +12,36 @@
   font-size: 35px;
 }
 
+.aboutCard > h2:hover {
+  color: orangered;
+  cursor: pointer;
+}
+
 .aboutCard > img {
   width: 150px;
   height: 150px;
+  /* filter: invert(93%); */
+  /* filter: sepia(10%); */
+  filter: saturate(10%);
+  /* filter: hue-rotate(); */
+  /* filter: brightness(); */
+  /* filter: contrast(); */
+  /* filter: grayscale(1); */
+}
+
+.aboutCard > img:hover {
+  color: orangered;
+  cursor: pointer;
 }
 
 .aboutCard-massege {
   font-size: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.aboutCard-massege:hover {
+  cursor: pointer;
 }
 
 /* Media queries for ipad */
