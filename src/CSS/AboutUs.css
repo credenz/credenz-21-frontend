@@ -4,11 +4,12 @@
   box-sizing: border-box;
 }
 
-/* Navbar */
-.navBar {
-  height: 70px;
-  border: 1px solid black;
+.aboutUs {
+  background-color: #111;
+  color: white;
 }
+
+/* Navbar */
 
 /* Header */
 .aboutHeader {
@@ -16,34 +17,46 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 20px 0;
+  /* position: relative;
+  display: inline-block;
+  width: 100%; */
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  z-index: 101;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 645px;
+  background-color: rgb(24, 24, 24);
+  background-image: url("https://tetsuo.qodeinteractive.com/wp-content/uploads/2018/07/About-us-title-img-T.jpg");
+  background-position: center 0px;
 }
 
 .aboutHeader > h1 {
-  font-size: 50px;
-  margin: 10px;
+  font-size: 90px;
+}
+
+.aboutHeader > h1:hover {
+  color: orangered;
+  cursor: pointer;
+}
+
+.aboutHeader > p:hover {
+  color: orangered;
+  cursor: pointer;
 }
 
 .aboutHeader > p {
-  font-size: 25px;
+  font-size: 35px;
   margin: 10px;
 }
 
 /* Card */
 .aboutCards {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto;
-  align-content: center;
-}
-
-.card:nth-child(even) h2 {
-  order: 3;
-}
-
-.card:nth-child(even) div {
-  order: -1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 /* Sponsors */
@@ -51,12 +64,24 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 40px;
+  /* width: 65%; */
 }
 
 .aboutSponsors > h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 50px;
-  margin: 10px;
+  width: 100%;
+  height: 200px;
+
+  background-repeat: no-repeat;
+  z-index: 101;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #111;
+  background-image: url("https://tetsuo.qodeinteractive.com/wp-content/uploads/2018/08/Clients-page-title-img.jpg");
+  background-position: center 0px;
 }
 
 .aboutSpons {
@@ -64,25 +89,21 @@
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto auto;
   justify-content: space-between;
-  grid-column-gap: 150px;
+  grid-column-gap: 200px;
+  margin: 50px;
+  /* width: 100%; */
 }
 
-.spons1 {
-  grid-column: 1 / span 3;
-  align-content: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.spons5 {
-  grid-column: 1 / span 2;
-  display: flex;
-  justify-content: left;
+.spons {
+  margin: 50px 0;
 }
 
 /* Media query for ipad */
 @media screen and (max-width: 768px) {
+  .aboutCards {
+    flex-direction: column;
+  }
+
   .aboutSpons {
     display: grid;
     grid-template-columns: auto auto;
@@ -91,41 +112,20 @@
     grid-column-gap: 100px;
   }
 
-  .spons1 {
-    grid-column: 1 / span 2;
-    align-content: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .spons4 {
-    grid-column: 1 / span 2;
-  }
-
-  .spons4 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .spons5 {
-    grid-column: 1 / 1;
-  }
-
   .spons9 {
+    /* width: 100%; */
     grid-column: 1 / span 2;
-  }
-
-  .spons9 {
     display: flex;
-    align-items: center;
     justify-content: center;
   }
 }
 
 /* Media quey for mobile */
 @media screen and (max-width: 415px) {
+  .aboutCards {
+    flex-direction: column;
+  }
+
   .aboutSpons {
     display: block;
   }
@@ -137,18 +137,20 @@
   .aboutHeader > p {
     font-size: 20px;
   }
-
-  .card:nth-child(even) h2 {
-    order: -1;
-  }
-
-  .card:nth-child(even) div {
-    order: 3;
-  }
 }
 
 /* Footer */
 .footer {
   height: 70px;
   border: 1px solid black;
+}
+
+.hover-effect-1 {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  transition: all 0.2s ease-in-out;
+  z-index: 1;
 }
