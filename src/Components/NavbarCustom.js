@@ -13,7 +13,10 @@ const NavbarCustom = () => {
             CREDENZ
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse
+            className="justify-content-end"
+            id="basic-navbar-nav"
+          >
             <Nav className="s-auto">
               <NavLink
                 to={`/home`}

@@ -22,7 +22,17 @@ const EventCard1 = (props) => {
           // backgroundPosition: "center",
           // backgroundRepeat: "no-repeat",
         }}
-      ></div>
+      >
+        {props.icon && (
+          <img
+            src={props.icon}
+            alt="Icon"
+            height="100px"
+            width="100px"
+            style={{ color: "white" }}
+          />
+        )}
+      </div>
       <div className={`hover-card-text ${hovered ? "hovered" : ""}`}>
         <span>{props.title}</span>
       </div>
