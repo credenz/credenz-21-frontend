@@ -1,26 +1,38 @@
 import React from "react";
 import EventCard1 from "../Components/EventCard1";
+import EventCard2 from "../Components/EventCard2";
 import "../CSS/events.css";
 import RC from "../images/rc.png";
 const Events = () => {
-  const height = "350px";
-  const width = "270px";
+  const height = "250px";
+  const width = "190px";
   return (
     <div className="bg-dark section-events height-full o-x-hide">
       <div className="container">
+        <EventCard2 icon={RC} />
         <div className="row justify-content-start d-flex mb-3 gx-5">
-          <div className="col-md-4 justify-content-center m-mb">
-            <EventCard1 width={width} height={height} title="RC" icon={RC} />
+          <div className="col-md-3 justify-content-center m-mb">
+            <EventCard1
+              width={width}
+              height={height}
+              title="Reverse Coding"
+              text="Hone your problem-solving skills by decrypting complex questions"
+            />
           </div>
-          <div className="col-md-4 justify-content-center m-mb">
-            <EventCard1 width={width} height={height} title="Clash" />
+          <div className="col-md-3 justify-content-center m-mb">
+            <EventCard1
+              width={width}
+              height={height}
+              title="Clash"
+              text="Hone your problem-solving skills by decrypting complex questions"
+            />
           </div>
-          <div className="col-md-4 justify-content-center m-mb">
+          <div className="col-md-3 justify-content-center m-mb">
             <EventCard1 width={width} height={height} title="NTH" />
           </div>
-          {/* <div className="col-md-3 justify-content-center m-mb">
+          <div className="col-md-3 justify-content-center m-mb">
             <EventCard1 width={width} height={height} title="WallStreet" />
-          </div> */}
+          </div>
         </div>
         <div className="row justify-content-start d-flex mb-3 gx-5">
           <div className="col-md-3 justify-content-center m-mb">

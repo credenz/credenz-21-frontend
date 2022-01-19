@@ -1,0 +1,195 @@
+.wrapper-new {
+  width: 200px;
+  /* height: 500px; */
+  height: fit-content;
+  background: rgba(0, 0, 0, 0.6);
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0;
+  transform: scale(0.95);
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+.wrapper-new:hover {
+  transform: scale(1);
+  box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
+}
+.wrapper-new .container-new {
+  width: 100%;
+  height: 120%;
+}
+.wrapper-new .container-new .top {
+  height: 150px;
+  width: 150px;
+  /* background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
+    no-repeat center center;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%; */
+  margin-left: auto;
+  margin-right: auto;
+}
+.wrapper-new .container-new .bottom {
+  width: 200%;
+  height: 20%;
+  transition: transform 0.5s;
+}
+.wrapper-new .container-new .bottom.clicked {
+  transform: translateX(-50%);
+}
+.wrapper-new .container-new .bottom h1 {
+  color: white;
+  text-align: center;
+}
+.wrapper-new .container-new .bottom p {
+  margin: 0;
+  padding: 0;
+}
+.wrapper-new .container-new .bottom .left {
+  height: 100%;
+  width: 50%;
+  /* background-color: rgba(0, 0, 0, 0.8) !important; */
+  position: relative;
+  float: left;
+}
+.wrapper-new .container-new .bottom .left .details {
+  padding: 20px;
+  /* float: left; */
+  /* width: calc(70% - 40px); */
+  /* background-color: rgba(0, 0, 0, 0.8) !important; */
+  margin-left: auto;
+  margin-right: auto;
+}
+.wrapper-new .container-new .bottom .left .buy {
+  float: right;
+  width: calc(30% - 2px);
+  height: 100%;
+  background: #f1f1f1;
+  transition: background 0.5s;
+  border-left: solid thin rgba(0, 0, 0, 0.1);
+}
+.wrapper-new .container-new .bottom .left .buy i {
+  font-size: 30px;
+  padding: 30px;
+  color: #254053;
+  transition: transform 0.5s;
+}
+.wrapper-new .container-new .bottom .left .buy:hover {
+  background: #a6cdde;
+}
+.wrapper-new .container-new .bottom .left .buy:hover i {
+  transform: translateY(5px);
+  color: #00394b;
+}
+.wrapper-new .container-new .bottom .right {
+  width: 50%;
+  background: #a6cdde;
+  color: white;
+  float: right;
+  height: 200%;
+  overflow: hidden;
+}
+.wrapper-new .container-new .bottom .right .details {
+  padding: 20px;
+  float: right;
+  width: calc(70% - 40px);
+}
+.wrapper-new .container-new .bottom .right .done {
+  width: calc(30% - 2px);
+  float: left;
+  transition: transform 0.5s;
+  border-right: solid thin rgba(255, 255, 255, 0.3);
+  height: 50%;
+}
+.wrapper-new .container-new .bottom .right .done i {
+  font-size: 30px;
+  padding: 30px;
+  color: white;
+}
+.wrapper-new .container-new .bottom .right .remove {
+  width: calc(30% - 1px);
+  clear: both;
+  border-right: solid thin rgba(255, 255, 255, 0.3);
+  height: 50%;
+  background: #bc3b59;
+  transition: transform 0.5s, background 0.5s;
+}
+.wrapper-new .container-new .bottom .right .remove:hover {
+  background: #9b2847;
+}
+.wrapper-new .container-new .bottom .right .remove:hover i {
+  transform: translateY(5px);
+}
+.wrapper-new .container-new .bottom .right .remove i {
+  transition: transform 0.5s;
+  font-size: 30px;
+  padding: 30px;
+  color: white;
+}
+.wrapper-new .container-new .bottom .right:hover .remove,
+.wrapper-new .container-new .bottom .right:hover .done {
+  transform: translateY(-100%);
+}
+.wrapper-new .inside {
+  z-index: 9;
+  background: #ec4e00;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  border-radius: 0px 0px 200px 200px;
+  transition: all 0.5s, border-radius 2s, top 1s;
+  overflow: hidden;
+}
+.wrapper-new .inside .icon {
+  position: absolute;
+  right: 85px;
+  top: 85px;
+  color: white;
+  opacity: 1;
+}
+.wrapper-new .inside:hover {
+  width: 100%;
+  right: 0;
+  top: 0;
+  border-radius: 0;
+  height: 80%;
+}
+.wrapper-new .inside:hover .icon {
+  opacity: 0;
+  right: 15px;
+  top: 15px;
+}
+.wrapper-new .inside:hover .contents {
+  opacity: 1;
+  transform: scale(1);
+  transform: translateY(0);
+  text-align: center;
+  color: white;
+  margin-top: 20%;
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 20px;
+}
+.wrapper-new .inside .contents {
+  padding: 5%;
+  opacity: 0;
+  transform: scale(0.5);
+  transform: translateY(-200%);
+  transition: opacity 0.2s, transform 0.8s;
+}
+.wrapper-new .inside .contents table {
+  text-align: left;
+  width: 100%;
+}
+.wrapper-new .inside .contents h1,
+.wrapper-new .inside .contents p,
+.wrapper-new .inside .contents table {
+  color: white;
+}
+.wrapper-new .inside .contents p {
+  font-size: 13px;
+}

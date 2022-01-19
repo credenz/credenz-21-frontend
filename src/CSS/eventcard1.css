@@ -37,8 +37,24 @@
   font-weight: bold;
 }
 .hovered {
-  opacity: 1;
+  opacity: 1 !important;
   color: #fff;
   transition: opacity 0.2s ease-in-out;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.card-text {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  opacity: 0;
+  text-align: center;
+}
+
+.card-header {
+  font-size: 2em;
+  text-align: center;
+  color: #fff;
+  word-wrap: break-word;
+  line-height: 1.2;
 }

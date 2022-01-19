@@ -1,6 +1,7 @@
 import React from "react";
 import "../CSS/eventcard1.css";
 import { Container } from "react-bootstrap";
+import Typewriter from "typewriter-effect";
 const EventCard1 = (props) => {
   const [hovered, setHovered] = React.useState(false);
   return (
@@ -23,6 +24,18 @@ const EventCard1 = (props) => {
           // backgroundRepeat: "no-repeat",
         }}
       >
+        {props.title && <div className="card-header">{props.title}</div>}
+        {props.text && (
+          <div className={`card-text ${hovered ? "hovered" : ""}`}>
+            {hovered && (
+              <Typewriter
+                onInit={(typewriter) => {
+                  typewriter.changeDelay(30).typeString(props.text).start();
+                }}
+              />
+            )}
+          </div>
+        )}
         {props.icon && (
           <img
             src={props.icon}
@@ -33,9 +46,9 @@ const EventCard1 = (props) => {
           />
         )}
       </div>
-      <div className={`hover-card-text ${hovered ? "hovered" : ""}`}>
+      {/* <div className={`hover-card-text ${hovered ? "hovered" : ""}`}>
         <span>{props.title}</span>
-      </div>
+      </div> */}
     </div>
     // </Container>
   );
