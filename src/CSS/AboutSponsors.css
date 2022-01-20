@@ -1,0 +1,25 @@
+.aboutSponsor > h3 {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.aboutSponsor {
+  border-radius: 20px;
+  /* box-shadow: -22px 22px 12px rgb(77 50 50 / 6%); */
+  /* margin: 20px; */
+}
+
+.aboutSponsor > img {
+  width: 150px;
+  height: 150px;
+  border-radius: 45px;
+  margin: 5px;
+  filter: invert(100%);
+}
+
+.aboutSponsor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

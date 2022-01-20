@@ -1,0 +1,72 @@
+.aboutCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 30px;
+  position: relative;
+  margin: 25px auto;
+}
+
+.aboutCard > h2 {
+  font-size: 35px;
+}
+
+.aboutCard > h2:hover {
+  color: orangered;
+  cursor: pointer;
+}
+
+.aboutCard > img {
+  width: 150px;
+  height: 150px;
+  /* filter: invert(93%); */
+  /* filter: sepia(10%); */
+  filter: saturate(10%);
+  /* filter: hue-rotate(); */
+  /* filter: brightness(); */
+  /* filter: contrast(); */
+  /* filter: grayscale(1); */
+}
+
+.aboutCard > img:hover {
+  color: orangered;
+  cursor: pointer;
+}
+
+.aboutCard-massege {
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.aboutCard-massege:hover {
+  cursor: pointer;
+}
+
+/* Media queries for ipad */
+@media screen and (max-width: 768px) {
+  .aboutCard {
+    width: 90%;
+  }
+}
+
+/* Media queries for mobile */
+@media screen and (max-width: 415px) {
+  .aboutCard {
+    width: 90%;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .aboutCard > h2 {
+    font-size: 32px;
+  }
+
+  .aboutCard-massege {
+    font-size: 17px;
+  }
+}
+
+@keyframes easeIn {
+}
