@@ -42,6 +42,7 @@
 .wrapper-new .container-new .bottom h1 {
   color: white;
   text-align: center;
+  font-size: 25px;
 }
 .wrapper-new .container-new .bottom p {
   margin: 0;
@@ -140,14 +141,15 @@
   position: absolute;
   top: -70px;
   right: -70px;
+  color: white;
   border-radius: 0px 0px 200px 200px;
   transition: all 0.5s, border-radius 2s, top 1s;
   overflow: hidden;
 }
 .wrapper-new .inside .icon {
   position: absolute;
-  right: 85px;
-  top: 85px;
+  right: 80px;
+  top: 75px;
   color: white;
   opacity: 1;
 }
@@ -169,7 +171,7 @@
   transform: translateY(0);
   text-align: center;
   color: white;
-  margin-top: 20%;
+  margin-top: 20px;
   margin-right: 5px;
   margin-left: 5px;
   font-size: 20px;
@@ -192,4 +194,9 @@
 }
 .wrapper-new .inside .contents p {
   font-size: 13px;
+}
+
+.event-icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(25deg) brightness(102%)
+    contrast(105%);
 }
