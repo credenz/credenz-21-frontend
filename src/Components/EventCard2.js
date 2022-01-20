@@ -3,7 +3,7 @@ import "../CSS/eventcard2.css";
 
 const EventCard2 = (props) => {
   return (
-    <div className="wrapper-new">
+    <div className={props.active ? `wrapper-new focused` : `wrapper-new`}>
       <div className="container-new">
         <div className="top">
           {props.icon && (

@@ -1,7 +1,7 @@
 .wrapper-new {
-  width: 200px;
-  /* height: 500px; */
-  height: fit-content;
+  width: 350px;
+  height: 500px;
+  /* height: fit-content; */
   background: rgba(0, 0, 0, 0.6);
   margin: auto;
   position: relative;
@@ -199,4 +199,13 @@
 .event-icon {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(25deg) brightness(102%)
     contrast(105%);
+}
+
+.focused {
+  transform: scale(1.1);
+  transition: all 0.2s linear !important;
+}
+
+.wrapper-new {
+  transition: all 0.2 linear;
 }

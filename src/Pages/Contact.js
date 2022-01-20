@@ -1,9 +1,10 @@
 import React from "react";
+import VerticalCarousel1 from "../Components/VerticalCarousel1";
 
 const Contact = () => {
   return (
-    <div>
-      <h3>Contact</h3>
+    <div className="container bg-dark mb-5">
+      <VerticalCarousel1 />
     </div>
   );
 };

@@ -3,6 +3,9 @@
 }
 .section-events {
   padding-top: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
 }
 .o-x-hide {
   overflow-x: hidden;
@@ -10,6 +13,28 @@
 .m-mb {
   margin-bottom: 20px;
 }
+
+.focused {
+  transition: all ease-in-out 2s;
+  scroll-behavior: smooth;
+  /* transform: translateY(-100px); */
+}
+
+.not-focused {
+  opacity: 0.5;
+  transform: scale(0.9);
+  margin-top: -10px;
+  margin-bottom: -10px;
+  transition: ease-in-out 1s;
+  scroll-behavior: smooth;
+  /* transform: translateY(100%); */
+}
+.not-displayed {
+  display: none;
+  transition: ease-in-out 1s;
+  scroll-behavior: smooth;
+}
+
 @media (max-width: 768px) {
   .height-full {
     height: fit-content;
