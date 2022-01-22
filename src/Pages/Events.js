@@ -28,6 +28,7 @@ const Events = () => {
 
   useEffect(() => {
     console.log("slider ref", sliderRef.current);
+    setActive(0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const settings = {
@@ -43,6 +44,42 @@ const Events = () => {
       console.log("Active is:", e);
       setActive(e);
     },
+    responsive: [
+      {
+        breakpoint: 2560,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+    ],
   };
 
   return (
@@ -51,116 +88,94 @@ const Events = () => {
         {/* EXPERIMENT 2 */}
         <div className="centered">
           <Slider {...settings} ref={sliderRef}>
-            <div>
-              <EventCard2
-                icon={RC}
-                width={width}
-                height={height}
-                title="Reverse Coding"
-                text="Hone your problem-solving skills by decrypting complex questions"
-                active={0 === active ? true : false}
-              />
-            </div>
-            <div>
-              <EventCard2
-                icon={Clash}
-                width={width}
-                height={height}
-                title="Clash"
-                text="Clash is based on Competitive Programming!"
-                active={1 === active ? true : false}
-              />
-            </div>
-            <div>
-              <EventCard2
-                icon={NTH}
-                width={width}
-                height={height}
-                title="NTH"
-                text="Decrypt the clues to solve complex puzzles and race your way to finish at top!"
-                active={2 === active ? true : false}
-              />
-            </div>
-            <div>
-              <EventCard2
-                icon={Wallstreet}
-                width={width}
-                height={height}
-                title="WallStreet"
-                text="Get an insight on stock markets by Investing and trading virtual money!"
-                active={3 === active ? true : false}
-              />
-            </div>
-            <div>
-              <EventCard2
-                icon={BPlan}
-                width={width}
-                height={height}
-                title="B-Plan"
-                text="Showcase your entrepreneurial skills by presenting innovative business plans to the world!"
-                active={4 === active ? true : false}
-              />
-            </div>
-            <div>
-              <EventCard2
-                icon={Enigma}
-                width={width}
-                height={height}
-                title="Enigma"
-                text="Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions!"
-                active={5 === active ? true : false}
-              />
-            </div>
-            <div>
-              <EventCard2
-                icon={Datawiz}
-                width={width}
-                height={height}
-                title="Datawiz"
-                text="Test your Machine learning and data analytics skills before stepping into the world of Data Science!"
-                active={6 === active ? true : false}
-              />
-            </div>
-            <div className="">
-              <EventCard2
-                icon={Quiz}
-                width={width}
-                height={height}
-                title="Quiz"
-                text="Test your knowledge across wide range of topics and get a chance to win some exciting prizes!"
-                active={7 === active ? true : false}
-              />
-            </div>
-            <div className="">
-              <EventCard2
-                icon={Paper}
-                width={width}
-                height={height}
-                title="Paper Presentation"
-                text="Present technical research papers with advanced perspectives while honing your skills of research!"
-                active={8 === active ? true : false}
-              />
-            </div>
-            <div className="">
-              <EventCard2
-                icon={Cretronix}
-                width={width}
-                height={height}
-                title="Cretronix"
-                text="Build and exhibit your own circuits by solving tech problems!"
-                active={9 === active ? true : false}
-              />
-            </div>
-            <div className="">
-              <EventCard2
-                icon={Pixelate}
-                width={width}
-                height={height}
-                title="Pixelate"
-                text="Let your creativity fuse with thoughtful designs and artistic originality!"
-                active={10 === active ? true : false}
-              />
-            </div>
+            <EventCard2
+              icon={RC}
+              width={width}
+              height={height}
+              title="Reverse Coding"
+              text="Hone your problem-solving skills by decrypting complex questions"
+              active={0 === active ? true : false}
+            />
+            <EventCard2
+              icon={Clash}
+              width={width}
+              height={height}
+              title="Clash"
+              text="Clash is based on Competitive Programming!"
+              active={1 === active ? true : false}
+            />
+            <EventCard2
+              icon={NTH}
+              width={width}
+              height={height}
+              title="NTH"
+              text="Decrypt the clues to solve complex puzzles and race your way to finish at top!"
+              active={2 === active ? true : false}
+            />
+            <EventCard2
+              icon={Wallstreet}
+              width={width}
+              height={height}
+              title="WallStreet"
+              text="Get an insight on stock markets by Investing and trading virtual money!"
+              active={3 === active ? true : false}
+            />
+            <EventCard2
+              icon={BPlan}
+              width={width}
+              height={height}
+              title="B-Plan"
+              text="Showcase your entrepreneurial skills by presenting innovative business plans to the world!"
+              active={4 === active ? true : false}
+            />
+            <EventCard2
+              icon={Enigma}
+              width={width}
+              height={height}
+              title="Enigma"
+              text="Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions!"
+              active={5 === active ? true : false}
+            />
+            <EventCard2
+              icon={Datawiz}
+              width={width}
+              height={height}
+              title="Datawiz"
+              text="Test your Machine learning and data analytics skills before stepping into the world of Data Science!"
+              active={6 === active ? true : false}
+            />
+            <EventCard2
+              icon={Quiz}
+              width={width}
+              height={height}
+              title="Quiz"
+              text="Test your knowledge across wide range of topics and get a chance to win some exciting prizes!"
+              active={7 === active ? true : false}
+            />
+            <EventCard2
+              icon={Paper}
+              width={width}
+              height={height}
+              title="Paper Presentation"
+              text="Present technical research papers with advanced perspectives while honing your skills of research!"
+              active={8 === active ? true : false}
+            />
+            <EventCard2
+              icon={Cretronix}
+              width={width}
+              height={height}
+              title="Cretronix"
+              text="Build and exhibit your own circuits by solving tech problems!"
+              active={9 === active ? true : false}
+            />
+            <EventCard2
+              icon={Pixelate}
+              width={width}
+              height={height}
+              title="Pixelate"
+              text="Let your creativity fuse with thoughtful designs and artistic originality!"
+              active={10 === active ? true : false}
+            />
           </Slider>
         </div>
         {/* //EXPERIMENT */}

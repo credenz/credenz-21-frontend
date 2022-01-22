@@ -3,28 +3,31 @@ import "../CSS/eventcard2.css";
 
 const EventCard2 = (props) => {
   return (
-    <div className={props.active ? `wrapper-new focused` : `wrapper-new`}>
+    <div
+      className={
+        props.active ? `wrapper-new focused` : `wrapper-new not-focused`
+      }
+    >
       <div className="container-new">
         <div className="top">
-          {props.icon && (
-            <img
-              src={props.icon}
-              alt="Icon"
-              height="120px"
-              width="120px"
-              className="event-icon"
-              style={{
-                color: "white",
-                marginLeft: "20px",
-                marginTop: "30px",
-              }}
-            />
-          )}
+          <div className="row d-flex justify-content-center">
+            {props.icon && (
+              <img
+                src={props.icon}
+                alt="Icon"
+                className="event-icon"
+                style={{
+                  color: "white",
+                  width: "180px",
+                }}
+              />
+            )}
+          </div>
         </div>
         <div className="bottom">
           <div className="left">
             <div className="details">
-              <h1>{props.title}</h1>
+              <h1 className="title">{props.title}</h1>
             </div>
           </div>
         </div>
