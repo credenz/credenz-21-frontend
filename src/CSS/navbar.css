@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani&display=swap");
+.navbar-wrapper {
+  width: 100%;
+  height: 8vh;
+}
 .header-header {
   font-size: 30px !important;
   font-weight: 700;
@@ -25,4 +29,10 @@
   size: 24px;
   font-weight: 700;
   transition: 0.2s ease-in-out;
+}
+
+@media (max-width: 767px) {
+  .navbar-wrapper {
+    width: 100%;
+  }
 }
