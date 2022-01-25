@@ -37,6 +37,7 @@ const Events = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    arrows: false,
     className: "text-white",
     centerMode: true,
     focusOnSelect: true,
@@ -51,7 +52,6 @@ const Events = () => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -60,6 +60,7 @@ const Events = () => {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
+          centerMode: true,
           dots: true,
         },
       },
