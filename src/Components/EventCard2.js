@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../CSS/eventcard2.css";
 
 const EventCard2 = (props) => {
