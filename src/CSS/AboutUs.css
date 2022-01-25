@@ -30,7 +30,7 @@
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(255, 255, 255, 0.1)
     ),
     url("https://tetsuo.qodeinteractive.com/wp-content/uploads/2018/07/About-us-title-img-T.jpg");
   background-position: center 0px;
