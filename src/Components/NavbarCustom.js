@@ -7,7 +7,6 @@ import IEEELOGO from "../images/ieeelogo.png";
 import "../CSS/navbar.css";
 const NavbarCustom = () => {
   const page = useParams().page || "home";
-  console.log("inside nav:", page);
   return (
     <>
       <Navbar bg="dark" variant="dark" className="navbar-wrapper" expand="lg">
