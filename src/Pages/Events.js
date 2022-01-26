@@ -173,7 +173,8 @@ const Events = () => {
             <div onClick={() => 3 === active && setShow(true)}>
               <EventCard2
                 icon={Wallstreet}
-                width={width}
+                width={"150px"}
+                marginTopIcon={"30%"}
                 height={height}
                 title="WallStreet"
                 text="Get an insight on stock markets by Investing and trading virtual money!"
@@ -183,7 +184,7 @@ const Events = () => {
             <div onClick={() => 4 === active && setShow(true)}>
               <EventCard2
                 icon={BPlan}
-                width={width}
+                width={"210px"}
                 height={height}
                 title="B-Plan"
                 text="Showcase your entrepreneurial skills by presenting innovative business plans to the world!"
@@ -193,7 +194,7 @@ const Events = () => {
             <div onClick={() => 5 === active && setShow(true)}>
               <EventCard2
                 icon={Enigma}
-                width={width}
+                width={"170px"}
                 height={height}
                 title="Enigma"
                 text="Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions!"
@@ -203,7 +204,7 @@ const Events = () => {
             <div onClick={() => 6 === active && setShow(true)}>
               <EventCard2
                 icon={Datawiz}
-                width={width}
+                width={"150px"}
                 height={height}
                 title="Datawiz"
                 text="Test your Machine learning and data analytics skills before stepping into the world of Data Science!"

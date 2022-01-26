@@ -1,3 +1,12 @@
+:root {
+  --primary: #231f20;
+  --secondary: #646368;
+  --tertiary: #b3aea0;
+  --light: #efefef;
+  --orange: #ff5001;
+  --border: #dd005a;
+}
+
 .height-full {
   height: 92vh;
 }
@@ -8,12 +17,13 @@
 }
 .o-x-hide {
   overflow-x: hidden;
-  background: rgb(0, 0, 0);
+  /* background: rgb(0, 0, 0);
   background: radial-gradient(
     circle,
     rgba(0, 0, 0, 1) 0%,
     rgba(21, 32, 52, 1) 85%
-  );
+  ); */
+  background-color: var(--primary);
 }
 .m-mb {
   margin-bottom: 20px;

@@ -6,6 +6,7 @@
 }
 .o-x-hide {
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .m-mb {
   margin-bottom: 20px;

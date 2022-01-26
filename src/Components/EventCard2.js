@@ -6,7 +6,10 @@ const EventCard2 = (props) => {
     <div className={props.active ? `outer focused` : `outer not-focused`}>
       <div className={props.active ? `wrapper-new` : `wrapper-new`}>
         <div className="container-new">
-          <div className="top">
+          <div
+            className="top"
+            style={{ marginTop: props.marginTopIcon || "20%" }}
+          >
             <div className="row d-flex justify-content-center">
               {props.icon && (
                 <img
@@ -15,7 +18,7 @@ const EventCard2 = (props) => {
                   className="event-icon"
                   style={{
                     color: "white",
-                    width: "180px",
+                    width: props.width || "180px",
                   }}
                 />
               )}
