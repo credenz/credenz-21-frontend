@@ -1,9 +1,29 @@
+.contactpage {
+    background-color: #191919;
+    color: #AAA;
+}
+
 .pict-map {
-    height: calc(100vh - 71px);
+    min-height: calc(100vh - 71px);
     padding: 0px;
+    filter: invert(90%);
 }
 
 .getintouch {
-    padding: 5%;
+    padding-top: 2%;
+    font-size: xx-large;
+    font-weight: 800;
+}
 
+.maillink {
+    font-size: x-small;
+}
+
+.contactppl {
+    text-align: center;
+}
+
+.fdbkfrm {
+    background-color: #050505 !important;
+    color: #AAA !important;
 }
