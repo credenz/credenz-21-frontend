@@ -16,11 +16,21 @@
 }
 
 .maillink {
-    font-size: x-small;
+    font-size: 0.6rem;
 }
 
 .contactppl {
     text-align: center;
+}
+
+@media screen and (min-width: 1330px ) {
+    .contactppl {
+        font-size: 1.5rem;
+    }
+
+    .maillink {
+        font-size: 1rem;
+    }
 }
 
 .fdbkfrm {

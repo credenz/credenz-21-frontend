@@ -15,17 +15,20 @@ const Contact = () => {
             </Row>
             <Row className="contactppl">
               <Col sm="4" className="mt-2">
+                <Image src="../onkar.jpg" fluid roundedCircle />
                 <div> Omkar Litke </div>
                 <div className="maillink"> <a href="mailto:jr.onkarlitake@gmail.com">jr.onkarlitake@gmail.com</a><br />
                   +91 988114969</div>
 
               </Col>
               <Col sm="4" className="mt-2">
+                <Image src="../durvesh.jpg" fluid roundedCircle />
                 <div> Durvesh Malpure </div>
                 <div className="maillink"> <a href="mailto:durveshmalpurecoc@gmail.com">durveshmalpurecoc@gmail.com</a><br />
                   +91 9172952268</div>
               </Col>
               <Col sm="4" className="mt-2">
+                <Image src="../rohan.jpeg" fluid roundedCircle />
                 <div> Rohan Pawar </div>
                 <div className="maillink"> <a href="mailto:rohanpawar1999@gmail.com">rohanpawar1999@gmail.com</a><br />
                   +91 9834570868</div>
