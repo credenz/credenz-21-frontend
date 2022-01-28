@@ -43,7 +43,8 @@
   max-width: max-content;
 }
 
-.aboutCard-messege:hover {
+.readbutton {
+  color: orangered;
   cursor: pointer;
 }
 
