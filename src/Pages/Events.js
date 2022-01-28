@@ -22,7 +22,7 @@ import { Button, Modal, Tab, Tabs } from "react-bootstrap";
 
 const Events = () => {
   const height = "250px";
-  const width = "190px";
+  const width = "120px";
   const [active, setActive] = useState("3");
   const sliderRef = useRef(null);
   const [show, setShow] = useState(false);
@@ -130,17 +130,25 @@ const Events = () => {
   };
 
   useEffect(() => {
-    setActive(0);
+    setActive(-1);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="bg-dark section-events height-full o-x-hide">
-      <div className="container-fluid">
-        {/* EXPERIMENT 2 */}
-        <div className="centered">
-          <Slider {...settings} ref={sliderRef}>
-            <div onClick={() => 0 === active && setShow(true)}>
+      {/* NEW GRID */}
+      <div className="row">
+        <div className="col-md-3">
+          <div className="row">
+            <div
+              className="col-md-6"
+              onMouseEnter={() => {
+                setActive(0);
+              }}
+              onMouseLeave={() => {
+                setActive(-1);
+              }}
+            >
               <EventCard2
                 icon={RC}
                 width={width}
@@ -150,7 +158,15 @@ const Events = () => {
                 active={0 === active ? true : false}
               />
             </div>
-            <div onClick={() => 1 === active && setShow(true)}>
+            <div
+              className="col-md-6"
+              onMouseEnter={() => {
+                setActive(1);
+              }}
+              onMouseLeave={() => {
+                setActive(-1);
+              }}
+            >
               <EventCard2
                 icon={Clash}
                 width={width}
@@ -160,7 +176,17 @@ const Events = () => {
                 active={1 === active ? true : false}
               />
             </div>
-            <div onClick={() => 2 === active && setShow(true)}>
+          </div>
+          <div className="row">
+            <div
+              className="col-md-6"
+              onMouseEnter={() => {
+                setActive(2);
+              }}
+              onMouseLeave={() => {
+                setActive(-1);
+              }}
+            >
               <EventCard2
                 icon={NTH}
                 width={width}
@@ -170,10 +196,18 @@ const Events = () => {
                 active={2 === active ? true : false}
               />
             </div>
-            <div onClick={() => 3 === active && setShow(true)}>
+            <div
+              className="col-md-6"
+              onMouseEnter={() => {
+                setActive(3);
+              }}
+              onMouseLeave={() => {
+                setActive(-1);
+              }}
+            >
               <EventCard2
                 icon={Wallstreet}
-                width={"150px"}
+                width={"100px"}
                 marginTopIcon={"30%"}
                 height={height}
                 title="WallStreet"
@@ -181,7 +215,17 @@ const Events = () => {
                 active={3 === active ? true : false}
               />
             </div>
-            <div onClick={() => 4 === active && setShow(true)}>
+          </div>
+          <div className="row">
+            <div
+              className="col-md-6"
+              onMouseEnter={() => {
+                setActive(4);
+              }}
+              onMouseLeave={() => {
+                setActive(-1);
+              }}
+            >
               <EventCard2
                 icon={BPlan}
                 width={"210px"}
@@ -191,7 +235,15 @@ const Events = () => {
                 active={4 === active ? true : false}
               />
             </div>
-            <div onClick={() => 5 === active && setShow(true)}>
+            <div
+              className="col-md-6"
+              onMouseEnter={() => {
+                setActive(5);
+              }}
+              onMouseLeave={() => {
+                setActive(-1);
+              }}
+            >
               <EventCard2
                 icon={Enigma}
                 width={"170px"}
@@ -201,17 +253,75 @@ const Events = () => {
                 active={5 === active ? true : false}
               />
             </div>
-            <div onClick={() => 6 === active && setShow(true)}>
+          </div>
+        </div>
+        <div className="col-md-6 mt-3">
+          <div className="row" style={{ height: "50%" }}>
+            <div className="main-wrapper"></div>
+          </div>
+          <div
+            className="row justify-content-center"
+            style={{ height: "50%", paddingTop: "50px" }}
+          >
+            <div
+              className="row justify-content-center"
+              style={{ height: "40%" }}
+            >
+              <div className="col-md-4">
+                <div className="tab-up"></div>
+              </div>
+              <div className="col-md-4">
+                <div className="tab-down"></div>
+              </div>
+              <div className="col-md-4">
+                <div className="tab-up"></div>
+              </div>
+              <div className="col-md-4">
+                <div className="tab-up"></div>
+              </div>
+              <div className="col-md-4">
+                <div className="tab-down"></div>
+              </div>
+            </div>
+            <div
+              className="row justify-content-center"
+              style={{ height: "40%" }}
+            >
+              <div className="col-md-12 d-flex justify-content-center">
+                <div className="rectangle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3">
+          <div className="row">
+            <div
+              className="col-md-6"
+              onMouseEnter={() => {
+                setActive(6);
+              }}
+              onMouseLeave={() => {
+                setActive(-1);
+              }}
+            >
               <EventCard2
                 icon={Datawiz}
-                width={"150px"}
+                width={"100px"}
                 height={height}
                 title="Datawiz"
                 text="Test your Machine learning and data analytics skills before stepping into the world of Data Science!"
                 active={6 === active ? true : false}
               />
             </div>
-            <div onClick={() => 7 === active && setShow(true)}>
+            <div
+              className="col-md-6"
+              onMouseEnter={() => {
+                setActive(7);
+              }}
+              onMouseLeave={() => {
+                setActive(-1);
+              }}
+            >
               <EventCard2
                 icon={Quiz}
                 width={width}
@@ -221,7 +331,17 @@ const Events = () => {
                 active={7 === active ? true : false}
               />
             </div>
-            <div onClick={() => 8 === active && setShow(true)}>
+          </div>
+          <div className="row">
+            <div
+              className="col-md-6"
+              onMouseEnter={() => {
+                setActive(8);
+              }}
+              onMouseLeave={() => {
+                setActive(-1);
+              }}
+            >
               <EventCard2
                 icon={Paper}
                 width={width}
@@ -231,7 +351,15 @@ const Events = () => {
                 active={8 === active ? true : false}
               />
             </div>
-            <div onClick={() => 9 === active && setShow(true)}>
+            <div
+              className="col-md-6"
+              onMouseEnter={() => {
+                setActive(9);
+              }}
+              onMouseLeave={() => {
+                setActive(-1);
+              }}
+            >
               <EventCard2
                 icon={Cretronix}
                 width={width}
@@ -241,7 +369,17 @@ const Events = () => {
                 active={9 === active ? true : false}
               />
             </div>
-            <div onClick={() => 10 === active && setShow(true)}>
+          </div>
+          <div className="row">
+            <div
+              className="col-md-6"
+              onMouseEnter={() => {
+                setActive(10);
+              }}
+              onMouseLeave={() => {
+                setActive(-1);
+              }}
+            >
               <EventCard2
                 icon={Pixelate}
                 width={width}
@@ -251,7 +389,15 @@ const Events = () => {
                 active={10 === active ? true : false}
               />
             </div>
-            <div onClick={() => 11 === active && setShow(true)}>
+            <div
+              className="col-md-6"
+              onMouseEnter={() => {
+                setActive(11);
+              }}
+              onMouseLeave={() => {
+                setActive(-1);
+              }}
+            >
               <EventCard2
                 icon={Webweaver}
                 width={width}
@@ -261,7 +407,7 @@ const Events = () => {
                 active={11 === active ? true : false}
               />
             </div>
-          </Slider>
+          </div>
         </div>
       </div>
       <Modal
