@@ -12,9 +12,9 @@ function AboutCards({ m2, m3, imgurl, eventname, readm, readl }) {
             <img src={imgurl} alt='Branchlogo'></img>
             <h2>{eventname}</h2>
             {flag ? (
-                <div className='aboutCard-messege' onClick={() => { setMassege(m3); setFlag(false); setRead(readl) }} >{massege}<br></br><strong>{read}</strong></div>
+                <div className='aboutCard-messege' onClick={() => { setMassege(m3); setFlag(false); setRead(readl) }} >{massege}<br></br><strong className='readbutton'>{read}</strong></div>
             ) : (
-                <div className='aboutCard-messege' onClick={() => { setMassege(m2); setFlag(true); setRead(readm); }} >{massege}<br></br><strong>{read}</strong></div>
+                <div className='aboutCard-messege' onClick={() => { setMassege(m2); setFlag(true); setRead(readm); }} >{massege}<br></br><strong className='readbutton'>{read}</strong></div>
             )}
 
         </div>
