@@ -43,24 +43,48 @@
   background-repeat: no-repeat;
   object-fit: cover;
   height: 100%;
+  width: 90%;
+  transition: box-shadow 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+.main-wrapper:hover {
+  box-shadow: 0 0 10px rgba(255, 60, 60, 0.918);
 }
 
 .tab-up {
-  background-image: url("../images/middle .png");
+  /* background-image: url("../images/middle .png"); */
   background-size: contain;
   background-repeat: no-repeat;
   object-fit: cover;
   height: 100%;
-  width: 100%;
+  width: 70%;
+  transition: box-shadow 0.3s;
+  clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, 10% 110%, -10% 40%);
+  background-color: var(--orange);
+  cursor: pointer;
+}
+
+.tab-up:hover {
+  box-shadow: 0 0 10px rgba(255, 60, 60, 0.918);
 }
 .tab-down {
-  background-image: url("../images/right and left.png");
+  /* background-image: url("../images/right and left.png"); */
   background-size: contain;
   background-repeat: no-repeat;
   object-fit: cover;
   height: 100%;
-  width: 100%;
+  width: 70%;
+  transition: box-shadow 0.3s;
+  clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, 10% 110%, -10% 40%);
+  cursor: pointer;
 }
+
+.tab-down:hover {
+  box-shadow: 0 0 10px rgba(255, 60, 60, 0.918);
+}
+
 .rectangle {
   background-image: url("../images/rectangle_1.png");
   background-size: contain;
@@ -70,6 +94,11 @@
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  transition: box-shadow 0.3s;
+}
+
+.rectangle:hover {
+  box-shadow: 0 0 10px rgba(255, 60, 60, 0.918);
 }
 
 .slick-prev {

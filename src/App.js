@@ -8,16 +8,20 @@ import Profile from "./Pages/Profile";
 import LoginRegister from "./Pages/LoginRegister";
 import AboutUs from "./Pages/AboutUs";
 import NavbarCustom from "./Components/NavbarCustom";
+import ComingSoonHome from "./Pages/ComingSoonHome";
 import "./CSS/styles.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 let App = () => {
+  AOS.init();
   //create routing for pages home, events, about, contact, profile
   return (
     <Router>
       <Route path="/:page" component={NavbarCustom} />
-      <Route exact path="/" component={NavbarCustom} />
+      {/* <Route exact path="/" component={NavbarCustom} /> */}
 
-      <Route exact path="/" component={Home} />
-      <Route exact path="/home" component={Home} />
+      <Route exact path="/" component={ComingSoonHome} />
+      {/* <Route exact path="/home" component={Home} /> */}
       <Route exact path="/events" component={Events} />
       <Route exact path="/about" component={AboutUs} />
       <Route exact path="/contact" component={Contact} />

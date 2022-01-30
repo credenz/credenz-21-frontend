@@ -2,6 +2,13 @@
 .navbar-wrapper {
   width: 100%;
   height: 8vh;
+  box-shadow: rgb(2 1 1 / 10%) 0px 5px 20px -5px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: saturate(180%) blur(10 px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 .header-header {
   font-size: 30px !important;
@@ -31,8 +38,16 @@
   transition: 0.2s ease-in-out;
 }
 
+.nav-logo {
+  height: 2rem;
+  width: 6rem;
+}
+
 @media (max-width: 767px) {
   .navbar-wrapper {
     width: 100%;
+  }
+  .nav-logo {
+    display: none;
   }
 }

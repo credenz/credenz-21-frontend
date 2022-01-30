@@ -256,7 +256,7 @@ const Events = () => {
           </div>
         </div>
         <div className="col-md-6 mt-3">
-          <div className="row" style={{ height: "50%" }}>
+          <div className="row justify-content-center" style={{ height: "50%" }}>
             <div className="main-wrapper"></div>
           </div>
           <div
@@ -267,19 +267,21 @@ const Events = () => {
               className="row justify-content-center"
               style={{ height: "40%" }}
             >
-              <div className="col-md-4">
-                <div className="tab-up"></div>
+              <div className="col-md-4 mb-2">
+                <div className="tab-up">
+                  <div className="inner"></div>
+                </div>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4 mb-2">
                 <div className="tab-down"></div>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4 mb-2">
                 <div className="tab-up"></div>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4 mb-2">
                 <div className="tab-up"></div>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4 mb-2">
                 <div className="tab-down"></div>
               </div>
             </div>
