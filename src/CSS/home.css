@@ -322,4 +322,13 @@
     height: fit-content;
     width: 100%;
   }
+  .video-container .credenz-logo {
+    top: 15%;
+  }
+  .logo-img {
+    height: 200px;
+  }
+  .coming-soon {
+    font-size: 30px;
+  }
 }

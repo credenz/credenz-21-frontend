@@ -70,7 +70,7 @@ const NavbarCustom = ({ comingSoon }) => {
               src={IEEELOGO}
               alt="iEEElogo"
               srcset=""
-              className="nav-logo me-3 ms-5"
+              className="nav-logo logo-ieee me-3 ms-5"
             />
           </a>
         </Navbar.Collapse>
