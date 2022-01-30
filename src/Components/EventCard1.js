@@ -1,7 +1,6 @@
 import React from "react";
-import "../CSS/eventcard1.css";
-import { Container } from "react-bootstrap";
 import Typewriter from "typewriter-effect";
+import "../CSS/eventcard1.css";
 const EventCard1 = (props) => {
   const [hovered, setHovered] = React.useState(false);
   return (

@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
-import { useParams, NavLink, Link } from "react-router-dom";
-import TextSliced from "./TextSliced";
-import PISBLOGO from "../images/pisb.png";
-import IEEELOGO from "../images/ieeelogo.png";
+import React from "react";
+import { Nav, Navbar } from "react-bootstrap";
+import { NavLink, useParams } from "react-router-dom";
 import "../CSS/navbar.css";
+import IEEELOGO from "../images/ieeelogo.png";
+import PISBLOGO from "../images/pisb.png";
+import TextSliced from "./TextSliced";
 const NavbarCustom = ({ comingSoon }) => {
-  const [active, setActive] = useState(false);
   const page = useParams().page || "";
   return (
     <>

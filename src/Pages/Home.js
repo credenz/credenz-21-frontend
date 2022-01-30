@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import HomeBg from "../vid/home-bg.webm";
-import CyberBg from "../vid/cyberBg.webm";
+// import HomeBg from "../vid/home-bg.webm";
+// import CyberBg from "../vid/cyberBg.webm";
 import RoadBg from "../vid/roadBgSlow.webm";
 import "../CSS/home.css";
 import NavbarCustom from "../Components/NavbarCustom";
