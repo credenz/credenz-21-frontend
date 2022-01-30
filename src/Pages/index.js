@@ -6,12 +6,13 @@ import Contact from "./Pages/Contact";
 import Profile from "./Pages/Profile";
 import LoginRegister from "./Pages/LoginRegister";
 import AboutUs from "./AboutUs";
+import ComingSoonHome from "./ComingSoonHome";
 function App() {
   //create routing for pages home, events, about, contact, profile
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={ComingSoonHome} />
         <Route path="/events" component={Events} />
         <Route path="/about" component={AboutUs} />
         <Route path="/contact" component={Contact} />

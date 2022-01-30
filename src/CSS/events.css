@@ -1,3 +1,133 @@
+:root {
+  --primary: #231f20;
+  --secondary: #646368;
+  --tertiary: #b3aea0;
+  --light: #efefef;
+  --orange: #ff5001;
+  --border: #dd005a;
+}
+
 .height-full {
-  height: 90vh;
+  height: 92vh;
+}
+.section-events {
+  padding-top: 20px;
+  align-items: center;
+}
+.o-x-hide {
+  overflow-x: hidden;
+  background-color: var(--primary);
+}
+.container {
+  height: 100%;
+}
+.m-mb {
+  margin-bottom: 20px;
+}
+
+.not-displayed {
+  display: none;
+  transition: ease-in-out 1s;
+  scroll-behavior: smooth;
+}
+
+.main-content-card,
+.side-content-card {
+  height: 50vh;
+  margin-top: 10vh;
+}
+
+.main-wrapper {
+  background-image: url("../images/main.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 100%;
+  width: 90%;
+  transition: box-shadow 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+.main-wrapper:hover {
+  box-shadow: 0 0 10px rgba(255, 60, 60, 0.918);
+}
+
+.tab-up {
+  /* background-image: url("../images/middle .png"); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 100%;
+  width: 70%;
+  transition: box-shadow 0.3s;
+  clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, 10% 110%, -10% 40%);
+  background-color: var(--orange);
+  cursor: pointer;
+}
+
+.tab-up:hover {
+  box-shadow: 0 0 10px rgba(255, 60, 60, 0.918);
+}
+.tab-down {
+  /* background-image: url("../images/right and left.png"); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 100%;
+  width: 70%;
+  transition: box-shadow 0.3s;
+  clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, 10% 110%, -10% 40%);
+  cursor: pointer;
+}
+
+.tab-down:hover {
+  box-shadow: 0 0 10px rgba(255, 60, 60, 0.918);
+}
+
+.rectangle {
+  background-image: url("../images/rectangle_1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 100%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: box-shadow 0.3s;
+}
+
+.rectangle:hover {
+  box-shadow: 0 0 10px rgba(255, 60, 60, 0.918);
+}
+
+.slick-prev {
+  left: 10px;
+  z-index: 10000;
+}
+.slick-next {
+  right: 10px;
+}
+
+.slick-dots li button:before {
+  color: var(--light);
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--light);
+  transform: scale(2);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: var(--light);
+}
+
+@media (max-width: 768px) {
+  .height-full {
+    height: fit-content;
+    width: 100%;
+  }
 }
