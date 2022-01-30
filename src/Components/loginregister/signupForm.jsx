@@ -9,6 +9,7 @@ import {
 } from "./common";
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
+import "../../CSS/Login.css"
 
 export function SignupForm(props) {
   const { switchToSignin } = useContext(AccountContext);
@@ -36,10 +37,12 @@ export function SignupForm(props) {
             <Input type="password" placeholder="Confirm Password" />
           </div>
         </div>
-       
       </FormContainer>
       <Marginer direction="vertical" margin={30} />
-      <SubmitButton type="submit">Signup</SubmitButton>
+      <button class="btn btn--secondary" type="submit">
+        <span class="btn__content">Sign Up</span>
+        <span class="btn__glitch"></span>
+      </button>
       <Marginer direction="vertical" margin="1em" />
       <MutedLink href="#">
         Already have an account?

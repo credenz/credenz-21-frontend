@@ -4,9 +4,12 @@ import { LoginForm } from "./loginForm";
 import { motion } from "framer-motion";
 import { AccountContext } from "./accountContext";
 import { SignupForm } from "./signupForm";
+import "../../CSS/Login.css"
+import { Image } from "react-bootstrap";
 
 const BoxContainer = styled.div`
   margin-top:46px;
+  ${'' /* margin-left:1000px; */}
   width: 480px;
   min-height: 550px;
   display: flex;
@@ -38,11 +41,12 @@ const BackDrop = styled(motion.div)`
   transform: rotate(60deg);
   top: -285px;
   left: -70px;
-  background:  rgba(280, 0, 90, 1);
+  z-index:10;
+  background: rgba(255, 0, 60, 1);
 
   background: linear-gradient(
     58deg,
-    rgba(280, 0, 90, 1) 20%,
+    rgba(255, 0, 60, 1) 20%,
     rgba(210, 0, 90, 1) 100%
   );
 `;
@@ -70,6 +74,7 @@ const SmallText = styled.h5`
   margin: 0;
   margin-top: 7px;
 `;
+
 
 const InnerContainer = styled.div`
   width: 100%;
@@ -128,34 +133,47 @@ export function AccountBox(props) {
 
   return (
     <AccountContext.Provider value={contextValue}>
-      <BoxContainer>
-        <TopContainer>
-          <BackDrop
-            initial={false}
-            animate={isExpanded ? "expanded" : "collapsed"}
-            variants={backdropVariants}
-            transition={expandingTransition}
+      <div class="container-fluid row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <Image
+            src="gif/Gaming.gif"
+            class="image-fluid"
+            style={{ marginTop: "80px" }}
           />
-          {active === "signin" && (
-            <HeaderContainer>
-              <HeaderText>Welcome</HeaderText>
-              <HeaderText>Back</HeaderText>
-              <SmallText>Please sign-in to continue!</SmallText>
-            </HeaderContainer>
-          )}
-          {active === "signup" && (
-            <HeaderContainer>
-              <HeaderText>Create</HeaderText>
-              <HeaderText>Account</HeaderText>
-              <SmallText>Please sign-up to continue!</SmallText>
-            </HeaderContainer>
-          )}
-        </TopContainer>
-        <InnerContainer>
-          {active === "signin" && <LoginForm />}
-          {active === "signup" && <SignupForm />}
-        </InnerContainer>
-      </BoxContainer>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5">
+          <BoxContainer>
+            <TopContainer>
+              <BackDrop
+                initial={false}
+                animate={isExpanded ? "expanded" : "collapsed"}
+                variants={backdropVariants}
+                transition={expandingTransition}
+              />
+              {active === "signin" && (
+                <HeaderContainer>
+                  <HeaderText>Welcome</HeaderText>
+                  <HeaderText>Back</HeaderText>
+                  <SmallText>Please sign-in to continue!</SmallText>
+                </HeaderContainer>
+              )}
+              {active === "signup" && (
+                <HeaderContainer>
+                  <HeaderText>Create</HeaderText>
+                  <HeaderText>Account</HeaderText>
+                  <SmallText>Please sign-up to continue!</SmallText>
+                </HeaderContainer>
+              )}
+            </TopContainer>
+            <InnerContainer>
+              {active === "signin" && <LoginForm />}
+              {active === "signup" && <SignupForm />}
+            </InnerContainer>
+          </BoxContainer>
+        </div>
+      </div>
     </AccountContext.Provider>
   );
 }
