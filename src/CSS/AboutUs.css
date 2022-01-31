@@ -141,8 +141,14 @@
 
 /* Footer */
 .footer {
-  height: 70px;
-  border: 1px solid black;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light);
+  font-weight: 700;
+  z-index: 999;
+  letter-spacing: 0.12em;
 }
 
 .hover-effect-1 {
