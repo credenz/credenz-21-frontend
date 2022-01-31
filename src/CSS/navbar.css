@@ -47,7 +47,10 @@
   .navbar-wrapper {
     width: 100%;
   }
-  .nav-logo {
+  .logo-ieee {
     display: none;
+  }
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }

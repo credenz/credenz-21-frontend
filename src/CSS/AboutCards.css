@@ -1,17 +1,48 @@
 .aboutCard {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-around;
   padding: 15px;
   position: relative;
   margin: 20px auto;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.c {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 10px;
+  width: 88%;
+}
+
+.c img {
+  width: 13vw;
+  margin: 10px;
+}
+
+.c1 img {
+  /* filter: invert(100%); */
+}
+
+.c2 {
+  flex-direction: row-reverse;
+}
+
+.c2 img {
+}
+
+.aboutCard-nam-messe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 25px;
 }
 
 .aboutCard > h2 {
   font-size: 35px;
-  margin-left: 30px;
-  color: #ffc400;
 }
 
 .aboutCard > h2:hover {
@@ -19,17 +50,10 @@
   cursor: pointer;
 }
 
-.aboutCard > img {
-  width: 13vw;
-}
-
 .aboutCard-messege {
   font-style: normal;
   text-align: justify;
   font-size: 20px;
-  padding: 10px;
-  padding-left: 30px;
-  text-align: center;
   transition: color 0.1s 0.3s ease-in-out;
   max-width: max-content;
 }
@@ -44,6 +68,10 @@
   .aboutCard {
     width: 90%;
   }
+
+  .aboutCard-nam-messe {
+    margin: 0 15px;
+  }
 }
 
 /* Media queries for mobile */
@@ -52,6 +80,18 @@
     width: 90%;
     flex-direction: column;
     padding: 10px;
+  }
+
+  .aboutCard-nam-messe {
+    margin: 0 15px;
+  }
+
+  .c {
+    flex-direction: column;
+  }
+
+  .c img {
+    width: 20px;
   }
 
   .aboutCard > h2 {
