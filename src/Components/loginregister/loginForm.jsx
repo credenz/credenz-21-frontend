@@ -5,7 +5,6 @@ import {
   FormContainer,
   Input,
   MutedLink,
-  SubmitButton,
 } from "./common";
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
@@ -22,7 +21,15 @@ export function LoginForm(props) {
       <Marginer direction="vertical" margin={10} />
       <MutedLink href="#">Forget your password?</MutedLink>
       <Marginer direction="vertical" margin="1.6em" />
-      <SubmitButton type="submit">Signin</SubmitButton>
+      <button class="btn btn--secondary" type="submit">
+        Sign In
+        <span class="btn__content">Sign In</span>
+        <span class="btn__glitch"></span>
+      </button>
+      <button class="btn btn--secondary" type="submit">
+        <span class="btn__content">Pay Now</span>
+        <span class="btn__glitch"></span>
+      </button>
       <Marginer direction="vertical" margin="1em" />
       <MutedLink href="#">
         Don't have an account?{" "}

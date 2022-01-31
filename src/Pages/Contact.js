@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Card,
-  Col,
-  Container,
-  Form,
-  Image,
-  Row,
-} from "react-bootstrap";
+import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
 import "../CSS/ContactUs.css";
 
 const Contact = () => {

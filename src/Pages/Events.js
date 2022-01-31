@@ -1,30 +1,26 @@
-import React, { useState, useEffect, useRef } from "react";
-import EventCard1 from "../Components/EventCard1";
-import EventCard2 from "../Components/EventCard2";
-import VerticalCarousel1 from "../Components/VerticalCarousel1";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
+import React, { useEffect, useState } from "react";
+import { Modal, Tab, Tabs } from "react-bootstrap";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import EventCard2 from "../Components/EventCard2";
 import "../CSS/events.css";
-import RC from "../images/rc.png";
-import Clash from "../images/clash.png";
 import BPlan from "../images/bplan.png";
+import Clash from "../images/clash.png";
 import Cretronix from "../images/cretronix.png";
 import Datawiz from "../images/datawiz.png";
 import Enigma from "../images/enigma.png";
+import NTH from "../images/nth.png";
 import Paper from "../images/paper.png";
 import Pixelate from "../images/pixelate.png";
 import Quiz from "../images/quiz.png";
+import RC from "../images/rc.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
-import NTH from "../images/nth.png";
-import { Button, Modal, Tab, Tabs } from "react-bootstrap";
 
 const Events = () => {
   const height = "250px";
   const width = "120px";
   const [active, setActive] = useState("3");
-  const sliderRef = useRef(null);
   const [show, setShow] = useState(false);
   const events = {
     0: "RC",
@@ -41,57 +37,57 @@ const Events = () => {
     11: "Webweaver",
   };
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: true,
-    className: "text-white",
-    centerMode: true,
-    focusOnSelect: true,
-    afterChange: (e) => {
-      console.log("Active is:", e);
-      setActive(e);
-    },
-    responsive: [
-      {
-        breakpoint: 2560,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          centerMode: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-    ],
-  };
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 3,
+  //   slidesToScroll: 1,
+  //   arrows: true,
+  //   className: "text-white",
+  //   centerMode: true,
+  //   focusOnSelect: true,
+  //   afterChange: (e) => {
+  //     console.log("Active is:", e);
+  //     setActive(e);
+  //   },
+  //   responsive: [
+  //     {
+  //       breakpoint: 2560,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 1,
+  //         infinite: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 1,
+  //         infinite: true,
+  //         centerMode: true,
+  //         dots: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 600,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //         infinite: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 480,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //         infinite: true,
+  //       },
+  //     },
+  //   ],
+  // };
 
   const titleHelpr = (e) => {
     if (e === "RC") {

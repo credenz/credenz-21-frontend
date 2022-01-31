@@ -2,24 +2,37 @@ import React, { useState, useEffect } from "react";
 import HomeBg from "../vid/home-bg.webm";
 import CyberBg from "../vid/cyberBg.webm";
 import RoadBg from "../vid/roadBgSlow.webm";
+import CircleFuture from "../vid/circle_future.mp4";
 import "../CSS/home.css";
 import NavbarCustom from "../Components/NavbarCustom";
 import HomeImage from "../images/credenzlive2.0.png";
+import { Footer } from "../Components/Footer";
 
 const Home = () => {
   const [logoVisible, setLogoVisible] = useState(false);
   const [bgVisible, setBgVisible] = useState(false);
+  const [preVideoEnd, setPreVideoEnd] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
       setLogoVisible(true);
-    }, 500);
-    setTimeout(() => setBgVisible(true), 200);
+    }, 6000);
+    setTimeout(() => setBgVisible(true), 5000);
+    setTimeout(() => {
+      setPreVideoEnd(true);
+    }, 4500);
   }, []);
   return (
     <div className="section-home height-full-home o-x-hide">
       <div className="video-container">
         <NavbarCustom comingSoon={true} />
+        <video
+          muted
+          autoPlay
+          className={preVideoEnd ? "fade-out" : "pre-video"}
+        >
+          <source src={CircleFuture} type="video/mp4" />
+        </video>
         <video
           className={bgVisible ? "videoTag fade-in-image" : "no-video"}
           autoPlay
@@ -34,6 +47,7 @@ const Home = () => {
           <img src={HomeImage} alt="credenzLive" className="logo-img" />
           <div className="coming-soon display-2">Coming Soon...</div>
         </div>
+        <Footer />
       </div>
     </div>
   );

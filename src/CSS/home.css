@@ -63,11 +63,11 @@
 }
 
 .fade-in-image {
-  animation: fadeIn 5s;
-  -webkit-animation: fadeIn 5s;
-  -moz-animation: fadeIn 5s;
-  -o-animation: fadeIn 5s;
-  -ms-animation: fadeIn 5s;
+  animation: fadeIn 3.5s;
+  -webkit-animation: fadeIn 3.5s;
+  -moz-animation: fadeIn 3.5s;
+  -o-animation: fadeIn 3.5s;
+  -ms-animation: fadeIn 3.5s;
 }
 
 .fade-in-delayed {
@@ -321,5 +321,14 @@
   .height-full {
     height: fit-content;
     width: 100%;
+  }
+  .video-container .credenz-logo {
+    top: 15%;
+  }
+  .logo-img {
+    height: 200px;
+  }
+  .coming-soon {
+    font-size: 30px;
   }
 }
