@@ -26,7 +26,7 @@
   z-index: 101;
   background-attachment: fixed;
   background-size: cover;
-  height: 645px;
+  height: 100vh;
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.8),
@@ -46,23 +46,6 @@
 }
 
 /* Card */
-.aboutCards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.card1 {
-  background-color: black;
-  margin: 48px;
-  border: 7px solid #111;
-  transition: border 0.2s ease-in-out;
-}
-
-.card1:hover {
-  border-color: orangered;
-}
 
 /* Sponsors */
 .aboutSponsors {
