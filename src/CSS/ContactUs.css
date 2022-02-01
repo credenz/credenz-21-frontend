@@ -16,11 +16,23 @@
 }
 
 .maillink {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
 }
 
 .contactppl {
     text-align: center;
+    font-size: 1.2rem;
+}
+
+.pplimages {
+    padding: 0.5vw;
+    margin: 1vw;
+    border: 2px solid #FF5001;
+}
+
+.subbutton {
+    background-color: #FF5001;
+    border-color: #FF5001;
 }
 
 @media screen and (min-width: 1330px ) {
