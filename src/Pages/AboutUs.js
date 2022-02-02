@@ -22,7 +22,6 @@ function AboutUs() {
         data-aos-anchor-placement="top-center"
       >
         <h1>About Us</h1>
-        <p>We are PISB and this is our story</p>
       </div>
 
       <div className="aboutCards">
