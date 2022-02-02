@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <Container fluid className="contactpage">
       <Row>
-        <Col md="6">
+        <Col md="7">
           <Container>
             <Row>
               <Col xs="12" className="getintouch">
@@ -15,7 +15,12 @@ const Contact = () => {
             </Row>
             <Row className="contactppl">
               <Col sm="4" className="mt-2">
-                <Image src="../onkar.jpg" fluid roundedCircle />
+                <Image
+                  src="../onkar.jpg"
+                  className="pplimages"
+                  fluid
+                  roundedCircle
+                />
                 <div> Omkar Litke </div>
                 <div className="maillink">
                   {" "}
@@ -27,7 +32,12 @@ const Contact = () => {
                 </div>
               </Col>
               <Col sm="4" className="mt-2">
-                <Image src="../durvesh.jpg" fluid roundedCircle />
+                <Image
+                  src="../durvesh.jpg"
+                  className="pplimages"
+                  fluid
+                  roundedCircle
+                />
                 <div> Durvesh Malpure </div>
                 <div className="maillink">
                   {" "}
@@ -39,7 +49,12 @@ const Contact = () => {
                 </div>
               </Col>
               <Col sm="4" className="mt-2">
-                <Image src="../rohan.jpeg" fluid roundedCircle />
+                <Image
+                  src="../rohan.jpeg"
+                  className="pplimages"
+                  fluid
+                  roundedCircle
+                />
                 <div> Rohan Pawar </div>
                 <div className="maillink">
                   {" "}
@@ -76,7 +91,11 @@ const Contact = () => {
                       className="fdbkfrm"
                     />
                   </Form.Group>
-                  <Button className="mb-3" variant="primary" type="submit">
+                  <Button
+                    className="mb-3 subbutton"
+                    color="#FF5001"
+                    type="submit"
+                  >
                     Submit
                   </Button>
                 </Form>
@@ -84,14 +103,14 @@ const Contact = () => {
             </Row>
           </Container>
         </Col>
-        <Col md="6" className="pict-map">
+        <Col md="5" className="pict-map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.5761897254197!2d73.84864491506187!3d18.457542087445784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eac85230ba47%3A0x871eddd0a8a0a108!2sSCTR'S%20Pune%20Institute%20of%20Computer%20Technology!5e0!3m2!1sen!2sin!4v1603520633684!5m2!1sen!2sin"
             width="100%"
             height="100%"
-            frameBorder="0"
+            frameborder="0"
             aria-hidden="false"
-            tabIndex="0"
+            tabindex="0"
             title="iframe"
           ></iframe>
         </Col>
