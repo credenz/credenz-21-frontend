@@ -1,8 +1,11 @@
+::-webkit-scrollbar {
+  display: none;
+}
 .aboutCard {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 15px;
+  padding: 20px;
   position: relative;
   margin: 20px auto;
   text-align: justify;
@@ -15,16 +18,17 @@
   align-items: center;
   justify-content: center;
   margin: 50px 10px;
-  width: 88%;
+  width: 100%;
 }
 
 .c img {
-  width: 13vw;
+  width: 20vw;
   margin: 10px;
 }
 
-.c1 img {
-  /* filter: invert(100%); */
+.c3 img {
+  width: 15vw;
+  margin: 10px;
 }
 
 .c2 {

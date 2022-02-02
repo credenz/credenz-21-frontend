@@ -80,7 +80,7 @@ function AboutCards() {
       >
         <img src={PISBLogo} alt="Branchlogo"></img>
         <div className="aboutCard-nam-messe">
-          <h2>PISB</h2>
+          <h2>PICT IEEE Student Branch</h2>
           {flag2 ? (
             <div
               className="aboutCard-messege"
@@ -129,7 +129,7 @@ function AboutCards() {
       >
         <img src={PING} alt="PING LOGO"></img>
         <div className="aboutCard-nam-messe">
-          <h2>P.I.N.G</h2>
+          <h2>P.I.N.G.</h2>
           {flag3 ? (
             <div
               className="aboutCard-messege"
@@ -147,7 +147,7 @@ function AboutCards() {
               updated on recent developments in technology and helps them
               extrapolate their perceptions to contemporary ideas of
               modernisation. With the imminent Issue 16.1, be ready to get
-              P.I.N.G.'d!<br></br>
+              P.I.N.G.!<br></br>
               <div className="text-center">
                 <strong className="readbutton">CLICK TO READ LESS</strong>
               </div>
