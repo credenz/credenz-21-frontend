@@ -26,7 +26,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <div className="mt-2"> Atharva Nephade </div>
+                <div className="mt-2"> Atharva Naphade </div>
                 <div className="maillink mt-2">
                   <Container fluid className="socialicons" >
                     <Row>
@@ -36,7 +36,7 @@ const Contact = () => {
                         </a>
                       </Col>
                       <Col>
-                        <a href="https://www.linkedin.com/in/atharva-naphade/">
+                        <a href="https://www.atharvanaphade.me/">
                           <Linkedinicon />
                         </a>
                       </Col>
