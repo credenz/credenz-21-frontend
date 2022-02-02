@@ -10,6 +10,9 @@
   left: 0;
   z-index: 999;
 }
+.position-relative {
+  position: relative !important;
+}
 .header-header {
   font-size: 30px !important;
   font-weight: 700;

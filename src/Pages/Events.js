@@ -16,6 +16,8 @@ import Quiz from "../images/quiz.png";
 import RC from "../images/rc.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
+import { Button } from "@nextui-org/react";
+import NavbarCustom from "../Components/NavbarCustom";
 
 const Events = () => {
   const height = "250px";
@@ -36,58 +38,6 @@ const Events = () => {
     10: "Pixelate",
     11: "Webweaver",
   };
-
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 3,
-  //   slidesToScroll: 1,
-  //   arrows: true,
-  //   className: "text-white",
-  //   centerMode: true,
-  //   focusOnSelect: true,
-  //   afterChange: (e) => {
-  //     console.log("Active is:", e);
-  //     setActive(e);
-  //   },
-  //   responsive: [
-  //     {
-  //       breakpoint: 2560,
-  //       settings: {
-  //         slidesToShow: 3,
-  //         slidesToScroll: 1,
-  //         infinite: true,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 1024,
-  //       settings: {
-  //         slidesToShow: 2,
-  //         slidesToScroll: 1,
-  //         infinite: true,
-  //         centerMode: true,
-  //         dots: true,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 600,
-  //       settings: {
-  //         slidesToShow: 1,
-  //         slidesToScroll: 1,
-  //         infinite: true,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 480,
-  //       settings: {
-  //         slidesToShow: 1,
-  //         slidesToScroll: 1,
-  //         infinite: true,
-  //       },
-  //     },
-  //   ],
-  // };
 
   const titleHelpr = (e) => {
     if (e === "RC") {
@@ -132,6 +82,7 @@ const Events = () => {
 
   return (
     <div className="bg-dark section-events height-full o-x-hide">
+      <NavbarCustom relative />
       {/* NEW GRID */}
       <div className="row">
         <div className="col-md-3">
@@ -252,33 +203,63 @@ const Events = () => {
           </div>
         </div>
         <div className="col-md-6 mt-3">
-          <div className="row justify-content-center" style={{ height: "50%" }}>
-            <div className="main-wrapper"></div>
-          </div>
           <div
             className="row justify-content-center"
+            style={{ height: "fit-content" }}
+          >
+            <div className="main-wrapper">
+              <div className="container container-inside ">
+                <div className="main-text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. At
+                  dolores magni natus unde reiciendis nihil, optio quae rem
+                  similique neque autem animi nisi dolor ea qui corporis rerum.
+                  Voluptatem molestiae est inventore earum fugiat?
+                  Necessitatibus assumenda laudantium eius voluptatibus repellat
+                  est, corporis iure. Quis facere inventore fuga molestiae
+                  facilis. Voluptatum corrupti repellat ea nisi aut doloribus
+                  pariatur maiores. Repudiandae, consequuntur facilis. Placeat
+                  non excepturi ducimus mollitia! Pariatur quod et autem!
+                  Temporibus laborum mollitia magnam! Expedita, molestias
+                  mollitia, unde ratione sapiente beatae quaerat blanditiis cum
+                  vitae modi distinctio incidunt rerum officiis placeat
+                  reiciendis dolorum nihil! Placeat unde harum tenetur sapiente
+                  minima.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="d-flex justify-content-center row"
             style={{ height: "50%", paddingTop: "50px" }}
           >
             <div
-              className="row justify-content-center"
+              className="d-flex row justify-content-center"
               style={{ height: "40%" }}
             >
-              <div className="col-md-4 mb-2">
-                <div className="tab-up">
-                  <div className="inner"></div>
-                </div>
+              <div className="col-md-4 mb-2 d-flex justify-content-center">
+                <Button class="tabButton" auto color="warning" rounded>
+                  Rules
+                </Button>
               </div>
-              <div className="col-md-4 mb-2">
-                <div className="tab-down"></div>
+              <div className="col-md-4 mb-2 d-flex justify-content-center">
+                <Button class="tabButton" auto color="warning" rounded>
+                  Test
+                </Button>
               </div>
-              <div className="col-md-4 mb-2">
-                <div className="tab-up"></div>
+              <div className="col-md-4 mb-2 d-flex justify-content-center">
+                <Button class="tabButton" auto color="warning" rounded>
+                  Test
+                </Button>
               </div>
-              <div className="col-md-4 mb-2">
-                <div className="tab-up"></div>
+              <div className="mt-3 col-md-4 mb-2 d-flex justify-content-center">
+                <Button class="tabButton" auto color="warning" rounded>
+                  Test
+                </Button>
               </div>
-              <div className="col-md-4 mb-2">
-                <div className="tab-down"></div>
+              <div className="mt-3 col-md-4 mb-2 d-flex justify-content-center">
+                <Button class="tabButton" auto color="warning" rounded>
+                  Test
+                </Button>
               </div>
             </div>
             <div
@@ -286,7 +267,7 @@ const Events = () => {
               style={{ height: "40%" }}
             >
               <div className="col-md-12 d-flex justify-content-center">
-                <div className="rectangle"></div>
+                <div className="rectangle d-none"></div>
               </div>
             </div>
           </div>

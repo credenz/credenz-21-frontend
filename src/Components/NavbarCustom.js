@@ -5,11 +5,17 @@ import "../CSS/navbar.css";
 import IEEELOGO from "../images/ieeelogo.png";
 import PISBLOGO from "../images/pisb.png";
 import TextSliced from "./TextSliced";
-const NavbarCustom = ({ comingSoon }) => {
+const NavbarCustom = ({ comingSoon, relative }) => {
   const page = useParams().page || "";
   return (
     <>
-      <Navbar variant="dark" className="navbar-wrapper" expand="lg">
+      <Navbar
+        variant="dark"
+        className={
+          relative ? "navbar-wrapper position-relative" : "navbar-wrapper"
+        }
+        expand="lg"
+      >
         <Navbar.Brand
           href="https://pictieee.in"
           target="_blank"
@@ -28,12 +34,12 @@ const NavbarCustom = ({ comingSoon }) => {
               <TextSliced title="Home" />
             </NavLink>
             <NavLink
-              hidden={comingSoon || true}
+              // hidden={comingSoon || true}
               to={`/events`}
               isActive={() => page === "events"}
               className="header-title"
             >
-              <TextSliced title="EVENTS" />
+              <TextSliced title="Events" />
             </NavLink>
             <NavLink
               to={`/about`}

@@ -17,7 +17,7 @@ let App = () => {
   //create routing for pages home, events, about, contact, profile
   return (
     <Router>
-      <Route path="/:page" component={NavbarCustom} />
+      {/* <Route path="/:page" component={NavbarCustom} /> */}
       {/* <Route exact path="/" component={NavbarCustom} /> */}
 
       <Route exact path="/" component={Home} />
