@@ -1,7 +1,9 @@
 import React from "react";
 import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
 import "../CSS/ContactUs.css";
-
+import { ReactComponent as Linkedinicon } from "../images/linkedin.svg";
+import { ReactComponent as Mailicon } from "../images/mail.svg";
+import { ReactComponent as Phoneicon } from "../images/phone.svg";
 const Contact = () => {
   return (
     <Container fluid className="contactpage">
@@ -14,60 +16,106 @@ const Contact = () => {
               </Col>
             </Row>
             <Row className="contactppl">
-              <Col sm="4" className="mt-2">
-                <Image
-                  src="../onkar.jpg"
-                  className="pplimages"
-                  fluid
-                  roundedCircle
-                />
-                <div> Omkar Litke </div>
-                <div className="maillink">
-                  {" "}
-                  <a href="mailto:jr.onkarlitake@gmail.com">
-                    jr.onkarlitake@gmail.com
-                  </a>
-                  <br />
-                  +91 988114969
+              <Col md="4" sm="6" className="mt-2">
+                <div className="pplcont">
+                  <Image
+                    src="../Atharva.jpeg"
+                    className="pplimages"
+                    fluid
+                    roundedCircle
+                  />
+                </div>
+
+                <div className="mt-2"> Atharva Nephade </div>
+                <div className="maillink mt-2">
+                  <Container fluid className="socialicons" >
+                    <Row>
+                      <Col>
+                        <a href="mailto:naphade21@gmail.com">
+                          <Mailicon />
+                        </a>
+                      </Col>
+                      <Col>
+                        <a href="https://www.linkedin.com/in/atharva-naphade/">
+                          <Linkedinicon />
+                        </a>
+                      </Col>
+                      <Col>
+                        <a href="tel:+91 94237 54562">
+                          <Phoneicon />
+                        </a>
+                      </Col>
+                    </Row>
+                  </Container>
                 </div>
               </Col>
-              <Col sm="4" className="mt-2">
-                <Image
-                  src="../durvesh.jpg"
-                  className="pplimages"
-                  fluid
-                  roundedCircle
-                />
-                <div> Durvesh Malpure </div>
-                <div className="maillink">
-                  {" "}
-                  <a href="mailto:durveshmalpurecoc@gmail.com">
-                    durveshmalpurecoc@gmail.com
-                  </a>
-                  <br />
-                  +91 9172952268
+              <Col md="4" sm="6" className="mt-2">
+                <div className="pplcont">
+                  <Image
+                    src="../Nandini.jpeg"
+                    className="pplimages"
+                    fluid
+                    roundedCircle
+                  />
+                </div>
+                <div className="mt-2"> Nandini Patil </div>
+                <div className="maillink mt-2">
+                  <Container fluid className="socialicons" >
+                    <Row>
+                      <Col>
+                        <a href="mailto:nspatil5601@gmail.com">
+                          <Mailicon />
+                        </a>
+                      </Col>
+                      <Col>
+                        <a href="https://www.linkedin.com/in/nandini-patil-5601">
+                          <Linkedinicon />
+                        </a>
+                      </Col>
+                      <Col>
+                        <a href="tel:+91 93079 48342">
+                          <Phoneicon />
+                        </a>
+                      </Col>
+                    </Row>
+                  </Container>
                 </div>
               </Col>
-              <Col sm="4" className="mt-2">
-                <Image
-                  src="../rohan.jpeg"
-                  className="pplimages"
-                  fluid
-                  roundedCircle
-                />
-                <div> Rohan Pawar </div>
-                <div className="maillink">
-                  {" "}
-                  <a href="mailto:rohanpawar1999@gmail.com">
-                    rohanpawar1999@gmail.com
-                  </a>
-                  <br />
-                  +91 9834570868
+              <Col md="4" sm="6" className="mt-2">
+                <div className="pplcont">
+                  <Image
+                    src="../Tanvi.jpeg"
+                    className="pplimages"
+                    fluid
+                    roundedCircle
+                  />
+                </div>
+                <div className="mt-2"> Tanvi Mane </div>
+                <div className="maillink mt-2">
+                  <Container fluid className="socialicons" >
+                    <Row>
+                      <Col>
+                        <a href="mailto:tanvi21501@gmail.com">
+                          <Mailicon />
+                        </a>
+                      </Col>
+                      <Col>
+                        <a href="https://www.linkedin.com/in/tanvimane-">
+                          <Linkedinicon />
+                        </a>
+                      </Col>
+                      <Col>
+                        <a href="tel:+91 70208 36169">
+                          <Phoneicon />
+                        </a>
+                      </Col>
+                    </Row>
+                  </Container>
                 </div>
               </Col>
             </Row>
             <Row>
-              <Col xs="12" className="getintouch">
+              <Col xs="12" className="feedbkfrm">
                 FeedBack
               </Col>
             </Row>
