@@ -14,8 +14,7 @@ const NavbarCustom = ({ comingSoon }) => {
         <Navbar.Brand
           href="https://pictieee.in"
           target="_blank"
-          className="header-header"
-        >
+          className="header-header">
           <img src={PISBLOGO} alt="pisblogo" className="nav-logo ms-4" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -24,30 +23,26 @@ const NavbarCustom = ({ comingSoon }) => {
             <NavLink
               to={`/`}
               isActive={() => page === ""}
-              className="header-title"
-            >
+              className="header-title">
               <TextSliced title="Home" />
             </NavLink>
             <NavLink
-              hidden={comingSoon || true}
+              // hidden={comingSoon || true}
               to={`/events`}
               isActive={() => page === "events"}
-              className="header-title"
-            >
+              className="header-title">
               <TextSliced title="EVENTS" />
             </NavLink>
             <NavLink
               to={`/about`}
               isActive={() => page === "about"}
-              className="header-title"
-            >
+              className="header-title">
               <TextSliced title="About" />
             </NavLink>
             <NavLink
               to={`/contact`}
               isActive={() => page === "contact"}
-              className="header-title"
-            >
+              className="header-title">
               <TextSliced title="Contact" />
             </NavLink>
             {/* <NavLink
@@ -61,8 +56,7 @@ const NavbarCustom = ({ comingSoon }) => {
               hidden={comingSoon || true}
               to={`/login`}
               isActive={() => page === "login"}
-              className="header-title"
-            >
+              className="header-title">
               <TextSliced title="LOGIN" />
             </NavLink>
           </Nav>

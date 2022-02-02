@@ -114,6 +114,13 @@
   opacity: 0.5;
 }
 
+.tabButton {
+  width: 80%;
+  clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, 10% 110%, -10% 40%);
+  background-color: var(--orange);
+  color: #fff;
+}
+
 .slick-dots li.slick-active button:before {
   color: var(--light);
   transform: scale(2);

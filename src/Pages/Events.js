@@ -18,7 +18,8 @@ import Quiz from "../images/quiz.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import NTH from "../images/nth.png";
-import { Button, Modal, Tab, Tabs } from "react-bootstrap";
+import { Modal, Tab, Tabs } from "react-bootstrap";
+import { Button } from "@nextui-org/react";
 
 const Events = () => {
   const height = "250px";
@@ -147,8 +148,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={RC}
                 width={width}
@@ -165,8 +165,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Clash}
                 width={width}
@@ -185,8 +184,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={NTH}
                 width={width}
@@ -203,8 +201,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Wallstreet}
                 width={"100px"}
@@ -224,8 +221,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={BPlan}
                 width={"210px"}
@@ -242,8 +238,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Enigma}
                 width={"170px"}
@@ -260,35 +255,40 @@ const Events = () => {
             <div className="main-wrapper"></div>
           </div>
           <div
-            className="row justify-content-center"
-            style={{ height: "50%", paddingTop: "50px" }}
-          >
+            className="d-flex justify-content-center row"
+            style={{ height: "50%", paddingTop: "50px" }}>
             <div
-              className="row justify-content-center"
-              style={{ height: "40%" }}
-            >
-              <div className="col-md-4 mb-2">
-                <div className="tab-up">
-                  <div className="inner"></div>
-                </div>
+              className="d-flex row justify-content-center"
+              style={{ height: "40%" }}>
+              <div className="col-md-4 mb-2 d-flex justify-content-center">
+                <Button class="tabButton" auto color="warning" rounded>
+                  Rules
+                </Button>
               </div>
-              <div className="col-md-4 mb-2">
-                <div className="tab-down"></div>
+              <div className="col-md-4 mb-2 d-flex justify-content-center">
+                <Button class="tabButton" auto color="warning" rounded>
+                  Test
+                </Button>
               </div>
-              <div className="col-md-4 mb-2">
-                <div className="tab-up"></div>
+              <div className="col-md-4 mb-2 d-flex justify-content-center">
+                <Button class="tabButton" auto color="warning" rounded>
+                  Test
+                </Button>
               </div>
-              <div className="col-md-4 mb-2">
-                <div className="tab-up"></div>
+              <div className="mt-3 col-md-4 mb-2 d-flex justify-content-center">
+                <Button class="tabButton" auto color="warning" rounded>
+                  Test
+                </Button>
               </div>
-              <div className="col-md-4 mb-2">
-                <div className="tab-down"></div>
+              <div className="mt-3 col-md-4 mb-2 d-flex justify-content-center">
+                <Button class="tabButton" auto color="warning" rounded>
+                  Test
+                </Button>
               </div>
             </div>
             <div
               className="row justify-content-center"
-              style={{ height: "40%" }}
-            >
+              style={{ height: "40%" }}>
               <div className="col-md-12 d-flex justify-content-center">
                 <div className="rectangle"></div>
               </div>
@@ -304,8 +304,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Datawiz}
                 width={"100px"}
@@ -322,8 +321,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Quiz}
                 width={width}
@@ -342,8 +340,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Paper}
                 width={width}
@@ -360,8 +357,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Cretronix}
                 width={width}
@@ -380,8 +376,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Pixelate}
                 width={width}
@@ -398,8 +393,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Webweaver}
                 width={width}
@@ -419,8 +413,7 @@ const Events = () => {
         onHide={() => {
           setShow(false);
         }}
-        size="lg"
-      >
+        size="lg">
         <Modal.Header closeButton closeLabel="">
           <Modal.Title>
             <img
@@ -438,8 +431,7 @@ const Events = () => {
           <Tabs
             defaultActiveKey="info"
             id="uncontrolled-tab-example"
-            className="mb-3"
-          >
+            className="mb-3">
             <Tab eventKey="info" title="Info">
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
