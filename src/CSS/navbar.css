@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani&display=swap");
 :root {
-  --purple: #841d8a;
+  --purple: #c344e7;
 }
 .navbar-wrapper {
   width: 100%;
@@ -43,6 +43,7 @@
 }
 
 .nav-logo {
+  cursor: pointer;
   height: 2rem;
   width: 6rem;
 }

@@ -31,7 +31,7 @@ const ComingSoonHome = () => {
           className={logoVisible ? "fade-in-delayed credenz-logo" : "d-none"}
         >
           <img src={HomeImage} alt="credenzLive" className="logo-img" />
-          <div className="coming-soon display-3">Coming Soon...</div>
+          <div className="coming-soon display-3">Coming Soon</div>
         </div>
         <Footer />
       </div>

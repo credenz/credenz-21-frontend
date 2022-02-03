@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../CSS/AboutCards.css";
-import CredenzLogo from "../images/credenzlive2.0.png";
+import CredenzLogo from "../images/credenzlive2.0_1.png";
 import PISBLogo from "../images/logopisb.png";
 import PING from "../images/ping.png";
 import AOS from "aos";
@@ -147,7 +147,7 @@ function AboutCards() {
               updated on recent developments in technology and helps them
               extrapolate their perceptions to contemporary ideas of
               modernisation. With the imminent Issue 16.1, be ready to get
-              P.I.N.G.!<br></br>
+              P.I.N.G.'d!<br></br>
               <div className="text-center">
                 <strong className="readbutton">CLICK TO READ LESS</strong>
               </div>
