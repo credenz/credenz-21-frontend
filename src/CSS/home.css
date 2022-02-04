@@ -47,11 +47,11 @@
   position: relative;
   text-align: center;
   transition: all 0.5s ease-in;
-  top: 7%;
+  top: 15%;
 }
 
 .logo-img {
-  height: 390px;
+  height: 420px;
 }
 .coming-soon {
   z-index: 4;
@@ -323,7 +323,7 @@
     width: 100%;
   }
   .video-container .credenz-logo {
-    top: 15%;
+    top: 25%;
   }
   .logo-img {
     height: 200px;

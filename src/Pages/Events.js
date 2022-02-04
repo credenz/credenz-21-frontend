@@ -72,7 +72,7 @@ const Events = () => {
 
   return (
     <div className="bg-dark section-events height-full o-x-hide">
-      <NavbarCustom relative />
+      {/* <NavbarCustom relative /> */}
       {/* NEW GRID */}
       <div className="row">
         <div className="col-md-3">

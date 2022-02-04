@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import RoadBg from "../vid/roadBgSlow.webm";
 import "../CSS/home.css";
 import NavbarCustom from "../Components/NavbarCustom";
-import HomeImage from "../images/credenzlive2.0.png";
+import HomeImage from "../images/credenzlive2.0_1.png";
 import { Footer } from "../Components/Footer";
 
 const ComingSoonHome = () => {
@@ -31,7 +31,7 @@ const ComingSoonHome = () => {
           className={logoVisible ? "fade-in-delayed credenz-logo" : "d-none"}
         >
           <img src={HomeImage} alt="credenzLive" className="logo-img" />
-          <div className="coming-soon display-2">Coming Soon...</div>
+          <div className="coming-soon display-3">Coming Soon</div>
         </div>
         <Footer />
       </div>

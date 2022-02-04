@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani&display=swap");
+:root {
+  --purple: #c344e7;
+}
 .navbar-wrapper {
   width: 100%;
   height: 8vh;
@@ -33,7 +36,8 @@
 }
 
 .header-title:hover {
-  color: #ec4e00;
+  /* color: #ec4e00; */
+  color: var(--purple);
   text-decoration: none;
   padding: 0 15px;
   size: 24px;
@@ -42,6 +46,7 @@
 }
 
 .nav-logo {
+  cursor: pointer;
   height: 2rem;
   width: 6rem;
 }

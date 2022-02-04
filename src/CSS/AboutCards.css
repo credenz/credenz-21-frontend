@@ -1,11 +1,50 @@
+::-webkit-scrollbar {
+  display: none;
+}
 .aboutCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+  position: relative;
+  margin: 20px auto;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.c {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 15px;
-  position: relative;
-  margin: 20px auto;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.c img {
+  width: 20vw;
+  margin: 10px;
+}
+
+.c3 img {
+  width: 14vw;
+  margin: 10px;
+  margin-left: 20px;
+}
+
+.c2 {
+  flex-direction: row-reverse;
+}
+
+.c2 img {
+}
+
+.aboutCard-nam-messe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 25px;
 }
 
 .aboutCard > h2 {
@@ -17,34 +56,16 @@
   cursor: pointer;
 }
 
-.aboutCard > img {
-  width: 150px;
-  height: 150px;
-  filter: invert(100%);
-  /* filter: sepia(10%); */
-  /* filter: saturate(10%); */
-  /* filter: hue-rotate(); */
-  /* filter: brightness(); */
-  /* filter: contrast(); */
-  /* filter: grayscale(100%); */
-}
-
-.aboutCard > img:hover {
-  cursor: pointer;
-}
-
 .aboutCard-messege {
   font-style: normal;
+  text-align: justify;
   font-size: 20px;
-  padding: 10px;
-  padding-left: 30px;
-  text-align: center;
   transition: color 0.1s 0.3s ease-in-out;
   max-width: max-content;
 }
 
 .readbutton {
-  color: orangered;
+  color: var(--purple);
   cursor: pointer;
 }
 
@@ -52,6 +73,10 @@
 @media screen and (max-width: 768px) {
   .aboutCard {
     width: 90%;
+  }
+
+  .aboutCard-nam-messe {
+    margin: 0 15px;
   }
 }
 
@@ -63,14 +88,29 @@
     padding: 10px;
   }
 
+  .aboutCard-nam-messe {
+    margin: 0 15px;
+  }
+
+  .c {
+    flex-direction: column;
+  }
+
+  .c img {
+    width: 20px;
+  }
+
   .aboutCard > h2 {
     font-size: 32px;
+    margin-left: 0px;
+  }
+
+  .aboutCard img {
+    width: 25vw;
+    margin-bottom: 10px;
   }
 
   .aboutCard-massege {
     font-size: 17px;
   }
-}
-
-@keyframes easeIn {
 }
