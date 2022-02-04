@@ -4,7 +4,7 @@
   --tertiary: #b3aea0;
   --light: #efefef;
   --orange: #ff5001;
-  --border: #dd005a;
+  --border: rgb(85, 52, 65);
   /* --text: #26262a; */
   --text: #efefef;
 }

@@ -31,7 +31,7 @@ export function LoginForm(props) {
         <span class="btn__glitch"></span>
       </button>
       <Marginer direction="vertical" margin="1em" />
-      <MutedLink href="#">
+      <MutedLink className="mb-3" href="#">
         Don't have an account?{" "}
         <BoldLink href="#" onClick={switchToSignup}>
           Signup
