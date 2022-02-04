@@ -77,7 +77,7 @@ const Events = () => {
     <div className="bg-dark section-events height-full o-x-hide">
       {/* <NavbarCustom relative /> */}
       {/* NEW GRID */}
-      <div className="row">
+      <div className="row mt-3 ms-3 me-3">
         <div className="col-md-3">
           <div className="row">
             <div
