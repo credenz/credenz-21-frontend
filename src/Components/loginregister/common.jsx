@@ -26,6 +26,7 @@ export const MutedLink = styled.a`
   }
   &:hover {
     text-decoration: none;
+    color: rgba(255, 0, 60, 1);
   }
   &:active {
     text-decoration: none;
@@ -38,6 +39,10 @@ export const BoldLink = styled.a`
   font-weight: 500;
   text-decoration: none;
   margin: 0 4px;
+  &:hover {
+    text-decoration: none;
+    color: rgba(255, 0, 60, 1);
+  }
 `;
 
 export const Input = styled.input`
@@ -47,7 +52,7 @@ export const Input = styled.input`
   background-color: #231f20;
   border: 1px solid rgba(200, 200, 200, 0.3);
   padding: 0px 10px;
-  // border-bottom: 1.4px solid transparent;
+   ${'' /* border-bottom: 1.4px solid transparent; */}
   transition: all 200ms ease-in-out;
   font-size: 12px;
   color: #fff;
