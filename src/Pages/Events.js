@@ -90,8 +90,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={RC}
                 width={width}
@@ -114,8 +113,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Clash}
                 width={width}
@@ -139,8 +137,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={NTH}
                 width={width}
@@ -162,8 +159,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Wallstreet}
                 width={"100px"}
@@ -188,8 +184,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={BPlan}
                 width={"210px"}
@@ -211,8 +206,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Enigma}
                 width={"170px"}
@@ -227,8 +221,7 @@ const Events = () => {
         <div className="col-md-6 mt-3">
           <div
             className="row justify-content-center"
-            style={{ height: "fit-content" }}
-          >
+            style={{ height: "fit-content" }}>
             <div className="main-wrapper">
               <div className="container container-inside ">
                 <div className="main-text">{mainText}</div>
@@ -238,82 +231,74 @@ const Events = () => {
           </div>
           <div
             className="d-flex justify-content-center row"
-            style={{ height: "50%", paddingTop: "50px" }}
-          >
+            style={{ height: "50%", paddingTop: "50px" }}>
             <div
               className="d-flex row justify-content-center"
-              style={{ height: "40%" }}
-            >
+              style={{ height: "40%" }}>
               <div className="col-md-4 mb-2 d-flex justify-content-center">
                 <div
-                  className="tabButton"
+                  className="tabButton d-flex justify-content-center align-items-center"
                   auto
                   color="warning"
                   rounded
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].info);
-                  }}
-                >
+                  }}>
                   Info
                 </div>
               </div>
               <div className="col-md-4 mb-2 d-flex justify-content-center">
-                <Button
-                  className="tabButton"
+                <div
+                  className="tabButton d-flex justify-content-center align-items-center"
                   auto
                   color="warning"
                   rounded
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].rules);
-                  }}
-                >
+                  }}>
                   Rules
-                </Button>
+                </div>
               </div>
               <div className="col-md-4 mb-2 d-flex justify-content-center">
-                <Button
-                  className="tabButton"
+                <div
+                  className="tabButton d-flex justify-content-center align-items-center"
                   auto
                   color="warning"
                   rounded
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].structure);
-                  }}
-                >
+                  }}>
                   Structure
-                </Button>
+                </div>
               </div>
-              <div className="mt-3 col-md-4 mb-2 d-flex justify-content-center">
-                <Button
-                  className="tabButton"
+              <div className="mt-4 col-md-4 mb-2 d-flex justify-content-center">
+                <div
+                  className="tabButton d-flex justify-content-center align-items-center"
                   auto
                   color="warning"
                   rounded
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].judging);
-                  }}
-                >
+                  }}>
                   Judging Criteria
-                </Button>
+                </div>
               </div>
-              <div className="mt-3 col-md-4 mb-2 d-flex justify-content-center">
-                <Button
-                  className="tabButton"
+              <div className="mt-4 col-md-4 mb-2 d-flex justify-content-center">
+                <div
+                  className="tabButton d-flex justify-content-center align-items-center"
                   auto
                   color="warning"
                   rounded
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].contact);
-                  }}
-                >
+                  }}>
                   Contact
-                </Button>
+                </div>
               </div>
             </div>
             <div
               className="row justify-content-center"
-              style={{ height: "40%" }}
-            >
+              style={{ height: "40%" }}>
               <div className="col-md-12 d-flex justify-content-center">
                 <div className="rectangle d-none"></div>
               </div>
@@ -334,8 +319,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Datawiz}
                 width={"100px"}
@@ -357,8 +341,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Quiz}
                 width={width}
@@ -382,8 +365,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Paper}
                 width={width}
@@ -405,8 +387,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Cretronix}
                 width={width}
@@ -430,8 +411,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Pixelate}
                 width={width}
@@ -453,8 +433,7 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Webweaver}
                 width={width}
@@ -474,8 +453,7 @@ const Events = () => {
         onHide={() => {
           setShow(false);
         }}
-        size="lg"
-      >
+        size="lg">
         <Modal.Header closeButton closeLabel="">
           <Modal.Title>
             <img
@@ -493,8 +471,7 @@ const Events = () => {
           <Tabs
             defaultActiveKey="info"
             id="uncontrolled-tab-example"
-            className="mb-3"
-          >
+            className="mb-3">
             <Tab eventKey="info" title="Info">
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
