@@ -29,20 +29,26 @@
   z-index: 10000;
 }
 .outer {
-  background-image: url("../images/square.png");
+  background-image: url("../images/square_red.png");
   background-size: contain;
   background-repeat: no-repeat;
   object-fit: cover;
-  height: 150px;
-  min-height: 150px;
+  width: 130px;
+  height: 130px;
   margin-top: 10%;
   margin-bottom: 10%;
   margin-left: auto;
   margin-right: auto;
   position: relative;
 }
+
+.card-title {
+  color: var(--light);
+  text-align: center;
+  font-size: 0.8rem;
+}
 .focused {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: all 0.2s linear !important;
   box-shadow: 0 0 10px var(--border);
 }
@@ -57,11 +63,15 @@
 .wrapper-new .container-new {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .wrapper-new .container-new .top {
   height: 50%;
   width: auto;
-  margin-top: 20%;
+  /* margin-top: 20%; */
 }
 .wrapper-new .container-new .bottom {
   width: 200%;
@@ -230,6 +240,8 @@
 .event-icon {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(25deg) brightness(102%)
     contrast(105%);
+  height: 100px;
+  width: 100px;
   /* filter: invert(15%) sepia(53%) saturate(5354%) hue-rotate(322deg)
     brightness(103%) contrast(117%); */
 }

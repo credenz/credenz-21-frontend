@@ -5,6 +5,7 @@
   --light: #efefef;
   --orange: #ff5001;
   --border: #dd005a;
+  --red: #ee1f20;
 }
 
 .height-full {
@@ -70,6 +71,7 @@
 .main-heading {
   color: var(--light);
   position: absolute;
+  font-weight: 700;
   bottom: 0;
   left: 50%;
   text-align: center;
@@ -143,11 +145,20 @@
 .tabButton {
   width: 80%;
   height: 120%;
-  clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, 10% 110%, -10% 40%);
-  background-color: var(--border);
+  /* clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, 10% 110%, -10% 40%); */
+  background-color: transparent;
   color: #fff;
   cursor: pointer;
-  outline: 2px solid #ff5001;
+  outline: 2px solid var(--red);
+  transition: all 0.2s ease-in-out;
+}
+.tabButton:hover,
+.tabButton:focus {
+  background-color: var(--red);
+}
+
+.activeTab {
+  background-color: var(--red) !important;
 }
 
 .tabButton:hover {
@@ -172,7 +183,7 @@
   }
   .container-inside {
     padding: 45px;
-    padding-bottom: 80px;
+    padding-bottom: 87px;
   }
   .main-heading {
     bottom: 0;

@@ -29,20 +29,22 @@ const Home = () => {
         <video
           muted
           autoPlay
-          className={preVideoEnd ? "fade-out" : "pre-video"}>
+          className={preVideoEnd ? "fade-out" : "pre-video"}
+        >
           <source src={CircleFuture} type="video/mp4" />
         </video>
         <video
           className={bgVisible ? "videoTag fade-in-image" : "no-video"}
           autoPlay
           loop
-          muted>
+          muted
+        >
           <source src={RoadBg} type="video/webm" />
         </video>
         <div
-          className={logoVisible ? "fade-in-delayed credenz-logo" : "d-none"}>
+          className={logoVisible ? "fade-in-delayed credenz-logo" : "d-none"}
+        >
           <img src={HomeImage} alt="credenzLive" className="logo-img" />
-          <div className="coming-soon display-2">Coming Soon</div>
         </div>
         <Footer />
       </div>

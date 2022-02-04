@@ -13,6 +13,14 @@ export const events = {
   11: "Webweaver",
 };
 
+export const tabs = {
+  0: "info",
+  1: "rules",
+  2: "structure",
+  3: "judging",
+  4: "contact",
+};
+
 export const eventDetails = {
   0: {
     info: `A coding competition to test your compilation of the combinations of algorithms and conceptual understanding of the programming languages C/C++. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.

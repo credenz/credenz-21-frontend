@@ -17,14 +17,16 @@ import RC from "../images/rc.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import { Button } from "@nextui-org/react";
-import { events, eventDetails } from "../staticInfo.js";
+import { events, eventDetails, tabs } from "../staticInfo.js";
 import NavbarCustom from "../Components/NavbarCustom";
+import { Footer } from "../Components/Footer";
 
 const Events = () => {
-  const height = "250px";
-  const width = "120px";
+  const height = "65px";
+  const width = "65px";
   const [active, setActive] = useState(-1);
   const [show, setShow] = useState(false);
+  const [activeTab, setActiveTab] = useState(0);
 
   const titleHelpr = (e) => {
     if (e === "RC") {
@@ -91,14 +93,15 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={RC}
                 width={width}
                 height={height}
                 title="Reverse Coding"
                 text="Hone your problem-solving skills by decrypting complex questions"
-                active={0 === active ? true : false}
+                active={0 === active || 0 === eventSelected ? true : false}
               />
             </div>
             <div
@@ -114,14 +117,15 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Clash}
                 width={width}
                 height={height}
                 title="Clash"
                 text="Clash is based on Competitive Programming!"
-                active={1 === active ? true : false}
+                active={1 === active || 1 === eventSelected ? true : false}
               />
             </div>
           </div>
@@ -139,14 +143,15 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={NTH}
                 width={width}
                 height={height}
                 title="NTH"
                 text="Decrypt the clues to solve complex puzzles and race your way to finish at top!"
-                active={2 === active ? true : false}
+                active={2 === active || 2 === eventSelected ? true : false}
               />
             </div>
             <div
@@ -162,15 +167,16 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Wallstreet}
-                width={"100px"}
-                marginTopIcon={"30%"}
-                height={height}
+                width={"50px"}
+                height={"50px"}
                 title="WallStreet"
+                marginBottomImg="10%"
                 text="Get an insight on stock markets by Investing and trading virtual money!"
-                active={3 === active ? true : false}
+                active={3 === active || 3 === eventSelected ? true : false}
               />
             </div>
           </div>
@@ -188,14 +194,15 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={BPlan}
-                width={"210px"}
-                height={height}
+                width={"90px"}
+                height={"90px"}
                 title="B-Plan"
                 text="Showcase your entrepreneurial skills by presenting innovative business plans to the world!"
-                active={4 === active ? true : false}
+                active={4 === active || 4 === eventSelected ? true : false}
               />
             </div>
             <div
@@ -211,14 +218,15 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Enigma}
-                width={"170px"}
+                width={width}
                 height={height}
                 title="Enigma"
                 text="Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions!"
-                active={5 === active ? true : false}
+                active={5 === active || 5 === eventSelected ? true : false}
               />
             </div>
           </div>
@@ -226,7 +234,8 @@ const Events = () => {
         <div className="col-md-6 mt-3">
           <div
             className="row justify-content-center"
-            style={{ height: "fit-content" }}>
+            style={{ height: "fit-content" }}
+          >
             <div className="main-wrapper">
               <div className="container container-inside ">
                 <div className="main-text">{mainText}</div>
@@ -236,74 +245,97 @@ const Events = () => {
           </div>
           <div
             className="d-flex justify-content-center row"
-            style={{ height: "50%", paddingTop: "50px" }}>
+            style={{ height: "50%", paddingTop: "50px" }}
+          >
             <div
               className="d-flex row justify-content-center"
-              style={{ height: "40%" }}>
+              style={{ height: "40%" }}
+            >
               <div className="col-md-4 mb-2 d-flex justify-content-center">
                 <div
-                  className="tabButton d-flex justify-content-center align-items-center"
+                  className={`tabButton d-flex justify-content-center align-items-center ${
+                    activeTab === 0 ? "activeTab" : ""
+                  } `}
                   auto
                   color="warning"
                   rounded
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].info);
-                  }}>
+                    setActiveTab(0);
+                  }}
+                >
                   Info
                 </div>
               </div>
               <div className="col-md-4 mb-2 d-flex justify-content-center">
                 <div
-                  className="tabButton d-flex justify-content-center align-items-center"
+                  className={`tabButton d-flex justify-content-center align-items-center ${
+                    activeTab === 1 ? "activeTab" : ""
+                  } `}
                   auto
                   color="warning"
                   rounded
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].rules);
-                  }}>
+                    setActiveTab(1);
+                  }}
+                >
                   Rules
                 </div>
               </div>
               <div className="col-md-4 mb-2 d-flex justify-content-center">
                 <div
-                  className="tabButton d-flex justify-content-center align-items-center"
+                  className={`tabButton d-flex justify-content-center align-items-center ${
+                    activeTab === 2 ? "activeTab" : ""
+                  } `}
                   auto
                   color="warning"
                   rounded
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].structure);
-                  }}>
+                    setActiveTab(2);
+                  }}
+                >
                   Structure
                 </div>
               </div>
               <div className="mt-4 col-md-4 mb-2 d-flex justify-content-center">
                 <div
-                  className="tabButton d-flex justify-content-center align-items-center"
+                  className={`tabButton d-flex justify-content-center align-items-center ${
+                    activeTab === 3 ? "activeTab" : ""
+                  } `}
                   auto
                   color="warning"
                   rounded
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].judging);
-                  }}>
+                    setActiveTab(3);
+                  }}
+                >
                   Judging Criteria
                 </div>
               </div>
               <div className="mt-4 col-md-4 mb-2 d-flex justify-content-center">
                 <div
-                  className="tabButton d-flex justify-content-center align-items-center"
+                  className={`tabButton d-flex justify-content-center align-items-center ${
+                    activeTab === 4 ? "activeTab" : ""
+                  } `}
                   auto
                   color="warning"
                   rounded
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].contact);
-                  }}>
+                    setActiveTab(4);
+                  }}
+                >
                   Contact
                 </div>
               </div>
             </div>
             <div
               className="row justify-content-center"
-              style={{ height: "40%" }}>
+              style={{ height: "40%" }}
+            >
               <div className="col-md-12 d-flex justify-content-center">
                 <div className="rectangle d-none"></div>
               </div>
@@ -325,14 +357,15 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Datawiz}
-                width={"100px"}
-                height={height}
+                width={"50px"}
+                height={"50px"}
                 title="Datawiz"
                 text="Test your Machine learning and data analytics skills before stepping into the world of Data Science!"
-                active={6 === active ? true : false}
+                active={6 === active || 6 === eventSelected ? true : false}
               />
             </div>
             <div
@@ -348,14 +381,15 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Quiz}
                 width={width}
                 height={height}
                 title="Quiz"
                 text="Test your knowledge across wide range of topics and get a chance to win some exciting prizes!"
-                active={7 === active ? true : false}
+                active={7 === active || 7 === eventSelected ? true : false}
               />
             </div>
           </div>
@@ -373,14 +407,15 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Paper}
                 width={width}
                 height={height}
                 title="Paper Presentation"
                 text="Present technical research papers with advanced perspectives while honing your skills of research!"
-                active={8 === active ? true : false}
+                active={8 === active || 8 === eventSelected ? true : false}
               />
             </div>
             <div
@@ -396,14 +431,15 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Cretronix}
                 width={width}
                 height={height}
                 title="Cretronix"
                 text="Build and exhibit your own circuits by solving tech problems!"
-                active={9 === active ? true : false}
+                active={9 === active || 9 === eventSelected ? true : false}
               />
             </div>
           </div>
@@ -421,14 +457,15 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Pixelate}
                 width={width}
                 height={height}
                 title="Pixelate"
                 text="Let your creativity fuse with thoughtful designs and artistic originality!"
-                active={10 === active ? true : false}
+                active={10 === active || 10 === eventSelected ? true : false}
               />
             </div>
             <div
@@ -444,14 +481,15 @@ const Events = () => {
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Webweaver}
                 width={width}
                 height={height}
                 title="Webweaver"
                 text="Build an aesthetic website to showcase your web development skills!"
-                active={11 === active ? true : false}
+                active={11 === active || 11 === eventSelected ? true : false}
               />
             </div>
           </div>
@@ -464,7 +502,8 @@ const Events = () => {
         onHide={() => {
           setShow(false);
         }}
-        size="lg">
+        size="lg"
+      >
         <Modal.Header closeButton closeLabel="">
           <Modal.Title>
             <img
@@ -482,7 +521,8 @@ const Events = () => {
           <Tabs
             defaultActiveKey="info"
             id="uncontrolled-tab-example"
-            className="mb-3">
+            className="mb-3"
+          >
             <Tab eventKey="info" title="Info">
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -526,6 +566,7 @@ const Events = () => {
           </Tabs>
         </Modal.Body>
       </Modal>
+      <Footer />
     </div>
   );
 };
