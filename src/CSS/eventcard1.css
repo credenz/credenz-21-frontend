@@ -2,7 +2,9 @@
   position: relative;
   overflow: hidden;
   padding: 0;
-  margin: 0;
+  /* margin: 0; */
+  margin-left: auto;
+  margin-right: auto;
   background: #fff;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s ease-in-out;
@@ -16,6 +18,7 @@
   transform: translateY(0);
   border: 5px solid #ec4e00;
   transition: border-width 0.1s ease-in-out;
+  cursor: pointer;
 }
 
 .wrapper {
@@ -24,8 +27,8 @@
 
 .hover-card-text {
   position: absolute;
-  top: 70%;
-  left: 65%;
+  top: 60%;
+  left: 180px;
   opacity: 0;
   color: #fff;
   transition: opacity 0.2s ease-in-out;
@@ -34,8 +37,24 @@
   font-weight: bold;
 }
 .hovered {
-  opacity: 1;
+  opacity: 1 !important;
   color: #fff;
   transition: opacity 0.2s ease-in-out;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.card-text {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  opacity: 0;
+  text-align: center;
+}
+
+.card-header {
+  font-size: 2em;
+  text-align: center;
+  color: #fff;
+  word-wrap: break-word;
+  line-height: 1.2;
 }
