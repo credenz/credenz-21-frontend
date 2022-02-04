@@ -147,7 +147,7 @@ const Contact = () => {
                   </Form.Group>
                   <Button
                     className="mb-3 subbutton"
-                    color="#FF5001"
+                    color="#C344E7"
                     type="submit"
                   >
                     Submit
