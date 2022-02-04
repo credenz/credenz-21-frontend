@@ -9,6 +9,9 @@ import "../CSS/profile.css";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import CopyPassword from '../Components/CopyPassword';
 
+// event logo
+import logo from '../logo.png'
+
 const Profile = () => {
   const user = {
     name: "Karan Lakhwani",
@@ -44,7 +47,7 @@ const Profile = () => {
                   <Col lg={4} md={6} sm={12}>
                     <div className="registered-event-card">
                       <div>
-                        
+                        <img className='event-logo' src={logo} width="200px" />
                       </div>
                       <h1>{event.eventName}</h1>
                       <div className="event-password">
