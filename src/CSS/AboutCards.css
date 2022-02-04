@@ -106,11 +106,14 @@
   }
 
   .aboutCard img {
-    width: 25vw;
-    margin-bottom: 10px;
+    width: 150px;
+    margin-bottom: 30px;
   }
 
   .aboutCard-massege {
     font-size: 17px;
+  }
+  .c3 img {
+    width: 200px;
   }
 }

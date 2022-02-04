@@ -51,6 +51,7 @@
 @media (max-width: 767px) {
   .navbar-wrapper {
     width: 100%;
+    height: auto;
   }
   .logo-ieee {
     display: none;
