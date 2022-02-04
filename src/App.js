@@ -20,7 +20,7 @@ let App = () => {
       <Router>
         <NavbarCustom />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={LoginRegister} />
           {/* <Route exact path="/home" component={Home} /> */}
           <Route exact path="/events" component={Events} />
           <Route exact path="/about" component={AboutUs} />

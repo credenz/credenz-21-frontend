@@ -43,7 +43,7 @@ export function SignupForm(props) {
         <span class="btn__glitch"></span>
       </button>
       <Marginer direction="vertical" margin="1em" />
-      <MutedLink href="#">
+      <MutedLink className="mb-3" href="#">
         Already have an account?
         <BoldLink href="#" onClick={switchToSignin}>
           Signin
