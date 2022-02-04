@@ -16,105 +16,111 @@ const Contact = () => {
               </Col>
             </Row>
             <Row className="contactppl">
-              <Col md="4" sm="6" className="mt-2">
-                <div className="pplcont">
-                  <Image
-                    src="../Atharva.jpeg"
-                    className="pplimages"
-                    fluid
-                    roundedCircle
-                  />
-                </div>
+              <Col lg="4" sm="6" className="mt-2">
+                <div className="pplcard">
+                  <div className="pplcont">
+                    <Image
+                      src="../Atharva.jpeg"
+                      className="pplimages"
+                      fluid
+                      roundedCircle
+                    />
+                  </div>
 
-                <div className="mt-2"> Atharva Naphade </div>
-                <div className="maillink mt-2">
-                  <Container fluid className="socialicons" >
-                    <Row>
-                      <Col>
-                        <a href="mailto:naphade21@gmail.com">
-                          <Mailicon />
-                        </a>
-                      </Col>
-                      <Col>
-                        <a href="https://www.atharvanaphade.me/">
-                          <Linkedinicon />
-                        </a>
-                      </Col>
-                      <Col>
-                        <a href="tel:+91 94237 54562">
-                          <Phoneicon />
-                        </a>
-                      </Col>
-                    </Row>
-                  </Container>
+                  <div className="mt-2"> Atharva Naphade </div>
+                  <div className="maillink mt-2 mb-2">
+                    <Container fluid className="socialicons" >
+                      <Row>
+                        <Col>
+                          <a href="mailto:naphade21@gmail.com">
+                            <Mailicon />
+                          </a>
+                        </Col>
+                        <Col>
+                          <a href="https://www.atharvanaphade.me/">
+                            <Linkedinicon />
+                          </a>
+                        </Col>
+                        <Col>
+                          <a href="tel:+91 94237 54562">
+                            <Phoneicon />
+                          </a>
+                        </Col>
+                      </Row>
+                    </Container>
+                  </div>
                 </div>
               </Col>
-              <Col md="4" sm="6" className="mt-2">
-                <div className="pplcont">
-                  <Image
-                    src="../Nandini.jpeg"
-                    className="pplimages"
-                    fluid
-                    roundedCircle
-                  />
-                </div>
-                <div className="mt-2"> Nandini Patil </div>
-                <div className="maillink mt-2">
-                  <Container fluid className="socialicons" >
-                    <Row>
-                      <Col>
-                        <a href="mailto:nspatil5601@gmail.com">
-                          <Mailicon />
-                        </a>
-                      </Col>
-                      <Col>
-                        <a href="https://www.linkedin.com/in/nandini-patil-5601">
-                          <Linkedinicon />
-                        </a>
-                      </Col>
-                      <Col>
-                        <a href="tel:+91 93079 48342">
-                          <Phoneicon />
-                        </a>
-                      </Col>
-                    </Row>
-                  </Container>
+              <Col lg="4" sm="6" className="mt-2">
+                <div className="pplcard">
+                  <div className="pplcont">
+                    <Image
+                      src="../Nandini.jpeg"
+                      className="pplimages"
+                      fluid
+                      roundedCircle
+                    />
+                  </div>
+                  <div className="mt-2"> Nandini Patil </div>
+                  <div className="maillink mt-2 mb-2">
+                    <Container fluid className="socialicons" >
+                      <Row>
+                        <Col>
+                          <a href="mailto:nspatil5601@gmail.com">
+                            <Mailicon />
+                          </a>
+                        </Col>
+                        <Col>
+                          <a href="https://www.linkedin.com/in/nandini-patil-5601">
+                            <Linkedinicon />
+                          </a>
+                        </Col>
+                        <Col>
+                          <a href="tel:+91 93079 48342">
+                            <Phoneicon />
+                          </a>
+                        </Col>
+                      </Row>
+                    </Container>
+                  </div>
                 </div>
               </Col>
-              <Col md="4" sm="6" className="mt-2">
-                <div className="pplcont">
-                  <Image
-                    src="../Tanvi.jpeg"
-                    className="pplimages"
-                    fluid
-                    roundedCircle
-                  />
-                </div>
-                <div className="mt-2"> Tanvi Mane </div>
-                <div className="maillink mt-2">
-                  <Container fluid className="socialicons" >
-                    <Row>
-                      <Col>
-                        <a href="mailto:tanvi21501@gmail.com">
-                          <Mailicon />
-                        </a>
-                      </Col>
-                      <Col>
-                        <a href="https://www.linkedin.com/in/tanvimane-">
-                          <Linkedinicon />
-                        </a>
-                      </Col>
-                      <Col>
-                        <a href="tel:+91 70208 36169">
-                          <Phoneicon />
-                        </a>
-                      </Col>
-                    </Row>
-                  </Container>
+              <Col lg="4" sm="6" className="mt-2">
+                <div className="pplcard">
+                  <div className="pplcont">
+                    <Image
+                      src="../Tanvi.jpeg"
+                      className="pplimages"
+                      fluid
+                      roundedCircle
+                    />
+                  </div>
+                  <div className="mt-2"> Tanvi Mane </div>
+                  <div className="maillink mt-2 mb-2">
+                    <Container fluid className="socialicons" >
+                      <Row>
+                        <Col>
+                          <a href="mailto:tanvi21501@gmail.com">
+                            <Mailicon />
+                          </a>
+                        </Col>
+                        <Col>
+                          <a href="https://www.linkedin.com/in/tanvimane-">
+                            <Linkedinicon />
+                          </a>
+                        </Col>
+                        <Col>
+                          <a href="tel:+91 70208 36169">
+                            <Phoneicon />
+                          </a>
+                        </Col>
+                      </Row>
+                    </Container>
+                  </div>
                 </div>
               </Col>
             </Row>
-            <Row>
+            {/* <Row>
               <Col xs="12" className="feedbkfrm">
                 FeedBack
               </Col>
@@ -148,7 +154,7 @@ const Contact = () => {
                   </Button>
                 </Form>
               </Col>
-            </Row>
+            </Row> */}
           </Container>
         </Col>
         <Col md="5" className="pict-map">
