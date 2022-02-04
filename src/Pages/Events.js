@@ -134,7 +134,8 @@ const Events = () => {
               onClick={() => {
                 setActive(2);
                 setMainHeading(titleHelpr(events[2]));
-                setEventSelected(true);
+                setMainText(eventDetails[2].info);
+                setEventSelected(2);
               }}
               onMouseLeave={() => {
                 setActive(-1);
@@ -156,7 +157,8 @@ const Events = () => {
               onClick={() => {
                 setActive(3);
                 setMainHeading(titleHelpr(events[3]));
-                setEventSelected(true);
+                setMainText(eventDetails[3].info);
+                setEventSelected(3);
               }}
               onMouseLeave={() => {
                 setActive(-1);
@@ -181,7 +183,8 @@ const Events = () => {
               onClick={() => {
                 setActive(4);
                 setMainHeading(titleHelpr(events[4]));
-                setEventSelected(true);
+                setMainText(eventDetails[4].info);
+                setEventSelected(4);
               }}
               onMouseLeave={() => {
                 setActive(-1);
@@ -203,7 +206,8 @@ const Events = () => {
               onClick={() => {
                 setActive(5);
                 setMainHeading(titleHelpr(events[5]));
-                setEventSelected(true);
+                setMainText(eventDetails[5].info);
+                setEventSelected(5);
               }}
               onMouseLeave={() => {
                 setActive(-1);
@@ -316,7 +320,8 @@ const Events = () => {
               onClick={() => {
                 setActive(6);
                 setMainHeading(titleHelpr(events[6]));
-                setEventSelected(true);
+                setMainText(eventDetails[6].info);
+                setEventSelected(6);
               }}
               onMouseLeave={() => {
                 setActive(-1);
@@ -338,7 +343,8 @@ const Events = () => {
               onClick={() => {
                 setActive(7);
                 setMainHeading(titleHelpr(events[7]));
-                setEventSelected(true);
+                setMainText(eventDetails[7].info);
+                setEventSelected(7);
               }}
               onMouseLeave={() => {
                 setActive(-1);
@@ -362,7 +368,8 @@ const Events = () => {
               onClick={() => {
                 setActive(8);
                 setMainHeading(titleHelpr(events[8]));
-                setEventSelected(true);
+                setMainText(eventDetails[8].info);
+                setEventSelected(8);
               }}
               onMouseLeave={() => {
                 setActive(-1);
@@ -384,7 +391,8 @@ const Events = () => {
               onClick={() => {
                 setActive(9);
                 setMainHeading(titleHelpr(events[9]));
-                setEventSelected(true);
+                setMainText(eventDetails[9].info);
+                setEventSelected(9);
               }}
               onMouseLeave={() => {
                 setActive(-1);
@@ -408,7 +416,8 @@ const Events = () => {
               onClick={() => {
                 setActive(10);
                 setMainHeading(titleHelpr(events[10]));
-                setEventSelected(true);
+                setMainText(eventDetails[10].info);
+                setEventSelected(10);
               }}
               onMouseLeave={() => {
                 setActive(-1);
@@ -430,7 +439,8 @@ const Events = () => {
               onClick={() => {
                 setActive(11);
                 setMainHeading(titleHelpr(events[11]));
-                setEventSelected(true);
+                setMainText(eventDetails[11].info);
+                setEventSelected(11);
               }}
               onMouseLeave={() => {
                 setActive(-1);
