@@ -17,27 +17,17 @@ import RC from "../images/rc.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import { Button } from "@nextui-org/react";
+import { events, eventDetails } from "../staticInfo.js";
 import NavbarCustom from "../Components/NavbarCustom";
 
 const Events = () => {
   const height = "250px";
   const width = "120px";
-  const [active, setActive] = useState("3");
+  const [active, setActive] = useState(-1);
   const [show, setShow] = useState(false);
-  const events = {
-    0: "RC",
-    1: "Clash",
-    2: "NTH",
-    3: "Wallstreet",
-    4: "BPlan",
-    5: "Enigma",
-    6: "Dataviz",
-    7: "Quiz",
-    8: "Paper",
-    9: "Cretronix",
-    10: "Pixelate",
-    11: "Webweaver",
-  };
+  const [eventSelected, setEventSelected] = useState(0);
+  const [mainText, setMainText] = useState("");
+  const [mainHeading, setMainHeading] = useState("");
 
   const titleHelpr = (e) => {
     if (e === "RC") {
@@ -92,6 +82,12 @@ const Events = () => {
               onMouseEnter={() => {
                 setActive(0);
               }}
+              onClick={() => {
+                setActive(0);
+                setMainHeading(titleHelpr(events[0]));
+                setMainText(eventDetails[0].info);
+                setEventSelected(0);
+              }}
               onMouseLeave={() => {
                 setActive(-1);
               }}
@@ -109,6 +105,12 @@ const Events = () => {
               className="col-md-6"
               onMouseEnter={() => {
                 setActive(1);
+              }}
+              onClick={() => {
+                setActive(1);
+                setMainHeading(titleHelpr(events[1]));
+                setMainText(eventDetails[1].info);
+                setEventSelected(1);
               }}
               onMouseLeave={() => {
                 setActive(-1);
@@ -130,6 +132,11 @@ const Events = () => {
               onMouseEnter={() => {
                 setActive(2);
               }}
+              onClick={() => {
+                setActive(2);
+                setMainHeading(titleHelpr(events[2]));
+                setEventSelected(true);
+              }}
               onMouseLeave={() => {
                 setActive(-1);
               }}
@@ -147,6 +154,11 @@ const Events = () => {
               className="col-md-6"
               onMouseEnter={() => {
                 setActive(3);
+              }}
+              onClick={() => {
+                setActive(3);
+                setMainHeading(titleHelpr(events[3]));
+                setEventSelected(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
@@ -169,6 +181,11 @@ const Events = () => {
               onMouseEnter={() => {
                 setActive(4);
               }}
+              onClick={() => {
+                setActive(4);
+                setMainHeading(titleHelpr(events[4]));
+                setEventSelected(true);
+              }}
               onMouseLeave={() => {
                 setActive(-1);
               }}
@@ -186,6 +203,11 @@ const Events = () => {
               className="col-md-6"
               onMouseEnter={() => {
                 setActive(5);
+              }}
+              onClick={() => {
+                setActive(5);
+                setMainHeading(titleHelpr(events[5]));
+                setEventSelected(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
@@ -209,22 +231,8 @@ const Events = () => {
           >
             <div className="main-wrapper">
               <div className="container container-inside ">
-                <div className="main-text">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. At
-                  dolores magni natus unde reiciendis nihil, optio quae rem
-                  similique neque autem animi nisi dolor ea qui corporis rerum.
-                  Voluptatem molestiae est inventore earum fugiat?
-                  Necessitatibus assumenda laudantium eius voluptatibus repellat
-                  est, corporis iure. Quis facere inventore fuga molestiae
-                  facilis. Voluptatum corrupti repellat ea nisi aut doloribus
-                  pariatur maiores. Repudiandae, consequuntur facilis. Placeat
-                  non excepturi ducimus mollitia! Pariatur quod et autem!
-                  Temporibus laborum mollitia magnam! Expedita, molestias
-                  mollitia, unde ratione sapiente beatae quaerat blanditiis cum
-                  vitae modi distinctio incidunt rerum officiis placeat
-                  reiciendis dolorum nihil! Placeat unde harum tenetur sapiente
-                  minima.
-                </div>
+                <div className="main-text">{mainText}</div>
+                <div className="main-heading">{mainHeading}</div>
               </div>
             </div>
           </div>
@@ -237,28 +245,68 @@ const Events = () => {
               style={{ height: "40%" }}
             >
               <div className="col-md-4 mb-2 d-flex justify-content-center">
-                <Button class="tabButton" auto color="warning" rounded>
+                <div
+                  className="tabButton"
+                  auto
+                  color="warning"
+                  rounded
+                  onClick={() => {
+                    setMainText(eventDetails[eventSelected].info);
+                  }}
+                >
+                  Info
+                </div>
+              </div>
+              <div className="col-md-4 mb-2 d-flex justify-content-center">
+                <Button
+                  className="tabButton"
+                  auto
+                  color="warning"
+                  rounded
+                  onClick={() => {
+                    setMainText(eventDetails[eventSelected].rules);
+                  }}
+                >
                   Rules
                 </Button>
               </div>
               <div className="col-md-4 mb-2 d-flex justify-content-center">
-                <Button class="tabButton" auto color="warning" rounded>
-                  Test
-                </Button>
-              </div>
-              <div className="col-md-4 mb-2 d-flex justify-content-center">
-                <Button class="tabButton" auto color="warning" rounded>
-                  Test
+                <Button
+                  className="tabButton"
+                  auto
+                  color="warning"
+                  rounded
+                  onClick={() => {
+                    setMainText(eventDetails[eventSelected].structure);
+                  }}
+                >
+                  Structure
                 </Button>
               </div>
               <div className="mt-3 col-md-4 mb-2 d-flex justify-content-center">
-                <Button class="tabButton" auto color="warning" rounded>
-                  Test
+                <Button
+                  className="tabButton"
+                  auto
+                  color="warning"
+                  rounded
+                  onClick={() => {
+                    setMainText(eventDetails[eventSelected].judging);
+                  }}
+                >
+                  Judging Criteria
                 </Button>
               </div>
               <div className="mt-3 col-md-4 mb-2 d-flex justify-content-center">
-                <Button class="tabButton" auto color="warning" rounded>
-                  Test
+                <Button
+                  className="tabButton"
+                  auto
+                  color="warning"
+                  rounded
+                  onClick={() => {
+                    setMainText(eventDetails[eventSelected].contact);
+                  }}
+                >
+                  Contact
                 </Button>
               </div>
             </div>
@@ -279,6 +327,11 @@ const Events = () => {
               onMouseEnter={() => {
                 setActive(6);
               }}
+              onClick={() => {
+                setActive(6);
+                setMainHeading(titleHelpr(events[6]));
+                setEventSelected(true);
+              }}
               onMouseLeave={() => {
                 setActive(-1);
               }}
@@ -296,6 +349,11 @@ const Events = () => {
               className="col-md-6"
               onMouseEnter={() => {
                 setActive(7);
+              }}
+              onClick={() => {
+                setActive(7);
+                setMainHeading(titleHelpr(events[7]));
+                setEventSelected(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
@@ -317,6 +375,11 @@ const Events = () => {
               onMouseEnter={() => {
                 setActive(8);
               }}
+              onClick={() => {
+                setActive(8);
+                setMainHeading(titleHelpr(events[8]));
+                setEventSelected(true);
+              }}
               onMouseLeave={() => {
                 setActive(-1);
               }}
@@ -334,6 +397,11 @@ const Events = () => {
               className="col-md-6"
               onMouseEnter={() => {
                 setActive(9);
+              }}
+              onClick={() => {
+                setActive(9);
+                setMainHeading(titleHelpr(events[9]));
+                setEventSelected(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
@@ -355,6 +423,11 @@ const Events = () => {
               onMouseEnter={() => {
                 setActive(10);
               }}
+              onClick={() => {
+                setActive(10);
+                setMainHeading(titleHelpr(events[10]));
+                setEventSelected(true);
+              }}
               onMouseLeave={() => {
                 setActive(-1);
               }}
@@ -372,6 +445,11 @@ const Events = () => {
               className="col-md-6"
               onMouseEnter={() => {
                 setActive(11);
+              }}
+              onClick={() => {
+                setActive(11);
+                setMainHeading(titleHelpr(events[11]));
+                setEventSelected(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);

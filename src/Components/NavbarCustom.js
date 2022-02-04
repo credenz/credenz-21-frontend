@@ -75,7 +75,6 @@ const NavbarCustom = ({ comingSoon, relative }) => {
             <img
               src={IEEELOGO}
               alt="iEEElogo"
-              srcset=""
               className="nav-logo logo-ieee me-3 ms-5"
             />
           </a>
