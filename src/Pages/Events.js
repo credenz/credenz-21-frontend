@@ -25,9 +25,6 @@ const Events = () => {
   const width = "120px";
   const [active, setActive] = useState(-1);
   const [show, setShow] = useState(false);
-  const [eventSelected, setEventSelected] = useState(0);
-  const [mainText, setMainText] = useState("");
-  const [mainHeading, setMainHeading] = useState("");
 
   const titleHelpr = (e) => {
     if (e === "RC") {
@@ -36,6 +33,10 @@ const Events = () => {
       return "Paper Presentation";
     } else return e;
   };
+
+  const [eventSelected, setEventSelected] = useState(0);
+  const [mainText, setMainText] = useState(eventDetails[0].info);
+  const [mainHeading, setMainHeading] = useState(titleHelpr(events[0]));
 
   const iconHelpr = (e) => {
     if (e === "RC") {
