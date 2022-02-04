@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import NavbarCustom from "../Components/NavbarCustom";
 import "../CSS/home.css";
 import HomeImage from "../images/credenzlive2.0.png";
-// import HomeBg from "../vid/home-bg.webm";
-// import CyberBg from "../vid/cyberBg.webm";
 import RoadBg from "../vid/roadBgSlow.webm";
 
 const Home = () => {

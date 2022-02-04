@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
+import { Col, Container, Image, Row } from "react-bootstrap";
 import "../CSS/ContactUs.css";
 import { ReactComponent as Linkedinicon } from "../images/linkedin.svg";
 import { ReactComponent as Mailicon } from "../images/mail.svg";
@@ -29,7 +29,7 @@ const Contact = () => {
 
                   <div className="mt-2"> Atharva Naphade </div>
                   <div className="maillink mt-2 mb-2">
-                    <Container fluid className="socialicons" >
+                    <Container fluid className="socialicons">
                       <Row>
                         <Col>
                           <a href="mailto:naphade21@gmail.com">
@@ -63,7 +63,7 @@ const Contact = () => {
                   </div>
                   <div className="mt-2"> Nandini Patil </div>
                   <div className="maillink mt-2 mb-2">
-                    <Container fluid className="socialicons" >
+                    <Container fluid className="socialicons">
                       <Row>
                         <Col>
                           <a href="mailto:nspatil5601@gmail.com">
@@ -97,7 +97,7 @@ const Contact = () => {
                   </div>
                   <div className="mt-2"> Tanvi Mane </div>
                   <div className="maillink mt-2 mb-2">
-                    <Container fluid className="socialicons" >
+                    <Container fluid className="socialicons">
                       <Row>
                         <Col>
                           <a href="mailto:tanvi21501@gmail.com">
