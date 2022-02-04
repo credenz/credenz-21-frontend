@@ -5,6 +5,7 @@
   --light: #efefef;
   --orange: rgba(255, 60, 60, 0.918);
   --border: #dd005a;
+  --purple: #c344e7;
 }
 
 .item_outer {
@@ -15,7 +16,7 @@
 }
 
 .item_outer:hover {
-  color: var(--orange);
+  color: var(--purple);
 }
 .item_text {
   display: inline-block;

@@ -4,36 +4,81 @@
 }
 
 .pict-map {
-    min-height: calc(100vh - 71px);
+    margin-top: 8vh;
+    min-height: 92vh;
     padding: 0px;
     filter: invert(90%);
 }
 
 .getintouch {
-    padding-top: 2%;
+    padding-top: 16vh;
+    padding-bottom: 4vh;
     font-size: xx-large;
     font-weight: 800;
 }
 
+.feedbkfrm {
+    padding-top: 10px;
+    font-size: xx-large;
+    font-weight: 800;
+}
 .maillink {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
 }
 
 .contactppl {
     text-align: center;
+    font-size: 1.2rem;
+    justify-content: center;
+}
+
+.pplimages {
+    padding: 5px;
+    border: 2px solid #C344E7;
+}
+
+.subbutton {
+    background-color: #C344E7 !important;
+    border-color: #C344E7 !important;
 }
 
 @media screen and (min-width: 1330px ) {
-    .contactppl {
-        font-size: 1.5rem;
-    }
 
     .maillink {
         font-size: 1rem;
     }
 }
 
+@media screen and (max-width: 575px ) {
+    .pplimages {
+        max-width: 200px;
+    }
+}
+
 .fdbkfrm {
     background-color: #050505 !important;
     color: #AAA !important;
+}
+
+.socialicons {
+    max-width: 170px;
+    padding-bottom: 15px;
+}
+
+.socialicons svg {
+    color: #C344E7;
+    width: 100%;
+}
+
+.socialicons .col {
+    padding: 0 5%;
+}
+
+.pplcont {
+    padding:6%;
+}
+
+.pplcard {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.5)!important;
+    border-radius: 10px
 }
