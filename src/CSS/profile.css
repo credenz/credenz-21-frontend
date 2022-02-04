@@ -1,0 +1,77 @@
+.profile-page{
+    background: #231f20;
+    min-height: 95vh;
+    color: white;
+}
+.profile-page h2{
+    margin: 0;
+    padding-top : 5%;
+    text-align: center;
+    color: #ff5001;
+}
+.profile-page .registered-events{
+    text-align: center;
+}
+.profile-page .registered-events .registered-event-card{
+    margin: 5% auto;
+    width: 65%;
+    min-width: 300px;
+    background: #231f20;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #000000;
+}
+.profile-page .registered-events .registered-event-card .event-password{
+    margin: 5% auto;
+    width: 65%;
+    min-width: 300px;
+    background: #666364;
+    text-align: left;
+    color: white;
+    padding: 15px 15px 7px;
+    border-radius: 5px;
+}   
+.profile-page .registered-events .registered-event-card .event-password button{
+    padding: 10px 15px;
+	background: #5784f5;
+	color: #fff;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+    transform: translateY(-5px);
+}
+.profile-page .registered-events .heading{
+	color:#ff5001;
+}
+
+.copy-text button:active {
+	background: #809ce2;
+}
+.copy-text button:before {
+	content: "Copied";
+	position: absolute;
+	top: -45px;
+	right: 0px;
+	background: #5c81dc;
+	padding: 8px 10px;
+	border-radius: 20px;
+	font-size: 15px;
+	display: none;
+}
+.copy-text button:after {
+	content: "";
+	position: absolute;
+	top: -20px;
+	right: 25px;
+	width: 10px;
+	height: 10px;
+	background: #5c81dc;
+	transform: rotate(45deg);
+	display: none;
+}
+.copy-text.active button:before,
+.copy-text.active button:after {
+	display: block;
+}
