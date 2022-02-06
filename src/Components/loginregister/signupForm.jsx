@@ -12,6 +12,7 @@ import { AccountContext } from "./accountContext";
 import "../../CSS/Login.css";
 import Step1 from "./Step1"
 import Step2 from "./Step2";
+import { API } from "../../axios/API";
 
 export function SignupForm(props) {
   const { switchToSignin } = useContext(AccountContext);
@@ -38,17 +39,46 @@ export function SignupForm(props) {
     setIppoState({ ippopayOpen: true });
   };
 
+  const [fname, setFname] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [ccode, setCcode] = useState("91");
+  const [phone, setPhone] = useState("");
+  const [passwd1, setPasswd1] = useState("");
+  const [passwd2, setPasswd2] = useState("");
+  const [isIeeeMember, setIsIeeeMember] = useState(false);
+  const [ieeeId, setIeeeId] = useState("");
+  const [isPictian, setIsPictian] = useState(false);
+  const [college, setCollege] = useState("");
+
+  const handleSignUp = () => {
+    API.registerUser({
+      firstname: fname,
+      username: username,
+      email: email,
+      country_code: ccode,
+      phone: phone,
+      password: passwd1,
+      isIeeeMember: isIeeeMember,
+      ieeeId: ieeeId,
+      isPictian: isPictian,
+      college: college,
+    }).then(r => {
+
+    })
+  }
+
   return (
     <BoxContainer>
       <FormContainer>
-        {step === 0 && <Step1 />}
-        {step === 1 && <Step2 />}
+        {step === 0 && <Step1 fname={fname} username={username} email={email} ccode={ccode} phone={phone} passwd1={passwd1} passwd2={passwd2} setFname={setFname} setUsername={setUsername} setEmail={setEmail} setCcode={setCcode} setPhone={setPhone} setPasswd1={setPasswd1} setPasswd2={setPasswd2} />}
+        {step === 1 && <Step2 isIeeeMember={isIeeeMember} ieeeId={ieeeId} isPictian={isPictian} college={college} setIsIeeeMember={setIsIeeeMember} setIeeeId={setIeeeId} setIsPictian={setIsPictian} setCollege={setCollege} />}
       </FormContainer>
       <Marginer direction="vertical" margin={30} />
 
       {step === 1 && (
         <>
-          <button class="btn btn--secondary" type="submit">
+          <button class="btn btn--secondary" type="submit" onClick={handleSignUp}>
             <span class="btn__content">Sign Up</span>
             <span class="btn__glitch"></span>
           </button>
@@ -65,7 +95,7 @@ export function SignupForm(props) {
 
       {step === 0 && (
         <button class="btn btn--secondary" type="submit">
-          <span class="btn__content" onClick={(e) => setStep(1)}>
+          <span class="btn__content" onClick={(e) => { passwd1 === passwd2 ? setStep(1) : alert("Passwords don't match!") }}>
             Next
           </span>
           <span class="btn__glitch"></span>

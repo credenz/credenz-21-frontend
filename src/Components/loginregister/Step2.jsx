@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { Input } from "./common";
 
-const FormContainer = () => {
-
-  const[Flag,setFlag]=useState(false);
-  const [Flag1, setFlag1] = useState(false);
+const FormContainer = (props) => {
 
   return (
     <>
@@ -14,7 +11,7 @@ const FormContainer = () => {
             <input
               type="checkbox"
               name="checkbox"
-              onClick={() => setFlag(!Flag)}
+              onClick={() => props.setIsIeeeMember(!props.isIeeeMember)}
             />
             IEEE Member
           </label>
@@ -24,7 +21,7 @@ const FormContainer = () => {
             <input
               type="checkbox"
               name="checkbox"
-              onClick={() => setFlag1(!Flag1)}
+              onClick={() => props.isPictian(!props.setIsPictian)}
             />
             PICT College
           </label>
@@ -32,14 +29,10 @@ const FormContainer = () => {
       </div>
 
 
-          {Flag === true && <Input type="text" placeholder="IEEE Member ID" />}
-       
+      {props.isIeeeMember === true && <Input type="text" placeholder="IEEE Member ID" value={props.ieeeId} onChange={e => props.setIeeeId(e.target.value)} />}
 
-        
-       
-          {Flag1 === false && (
-            <Input type="text" placeholder="Institute" />)}
-      
+      {props.isPictian === false && (
+        <Input type="text" placeholder="Institute" value={props.college} onChange={e => props.setCollege(e.target.value)} />)}
     </>
   );
 };

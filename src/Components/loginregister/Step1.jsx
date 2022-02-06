@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Input } from './common';
 
-const formContainer = () => {
+const FormContainer = (props) => {
+
   return (
     <>
       <div class="row">
         <div class="col-md-6">
-          <Input type="text" placeholder="Full Name" />
+          <Input type="text" placeholder="Full Name" value={props.fname} onChange={e => props.setFname(e.target.value)} />
         </div>
         <div class="col-md-6">
-          <Input type="text" placeholder="Username" />
+          <Input type="text" placeholder="Username" value={props.username} onChange={e => props.setUsername(e.target.value)} />
         </div>
       </div>
 
-      <Input type="email" placeholder="Email" />
+      <Input type="email" placeholder="Email" value={props.email} onChange={e => props.setEmail(e.target.value)} />
 
-      <select name="countryCode" id="">
+      <select name="countryCode" id="" value={props.ccode} onChange={e => props.setCcode(e.target.value)}>
         <option data-countryCode="IN" value="91">
           India (+91)
         </option>
@@ -665,18 +666,18 @@ const formContainer = () => {
         </optgroup>
       </select>
 
-      <Input type="number" placeholder="Phone" />
+      <Input type="number" placeholder="Phone" value={props.phone} onChange={e => props.setPhone(e.target.value)} />
 
       <div class="row">
         <div class="col-md-6">
-          <Input type="password" placeholder="Password" />
+          <Input type="password" placeholder="Password" value={props.passwd1} onChange={e => props.setPasswd1(e.target.value)} />
         </div>
         <div class="col-md-6">
-          <Input type="password" placeholder="Confirm Password" />
+          <Input type="password" placeholder="Confirm Password" value={props.passwd2} onChange={e => props.setPasswd2(e.target.value)} />
         </div>
       </div>
     </>
   );
 };
 
-export default formContainer;
+export default FormContainer;
