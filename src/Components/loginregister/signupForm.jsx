@@ -10,9 +10,13 @@ import {
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
 import "../../CSS/Login.css";
+import Step1 from "./Step1";
+import Step2 from "./Step2";
 
 export function SignupForm(props) {
   const { switchToSignin } = useContext(AccountContext);
+
+  const [step, setStep] = useState(0);
 
   const [ippoState, setIppoState] = useState({
     ippopayOpen: false,
@@ -37,40 +41,43 @@ export function SignupForm(props) {
   return (
     <BoxContainer>
       <FormContainer>
-        <div class="row">
-          <div class="col-md-6">
-            <Input type="text" placeholder="Full Name" />
-          </div>
-          <div class="col-md-6">
-            <Input type="text" placeholder="Username" />
-          </div>
-        </div>
-
-        <Input type="email" placeholder="Email" />
-        <Input type="number" placeholder="Phone" />
-
-        <div class="row">
-          <div class="col-md-6">
-            <Input type="password" placeholder="Password" />
-          </div>
-          <div class="col-md-6">
-            <Input type="password" placeholder="Confirm Password" />
-          </div>
-        </div>
+        {step === 0 && <Step1 />}
+        {step === 1 && <Step2 />}
       </FormContainer>
       <Marginer direction="vertical" margin={30} />
-      <button class="btn btn--secondary" type="submit">
-        <span class="btn__content">Sign Up</span>
-        <span class="btn__glitch"></span>
-      </button>
-      <button
-        class="btn btn--secondary"
-        type="submit"
-        onClick={(e) => ippopayOpen(e)}
-      >
-        <span class="btn__content">Pay Now</span>
-        <span class="btn__glitch"></span>
-      </button>
+
+      {step === 1 && (
+        <>
+          <button class="btn btn--secondary" type="submit">
+            <span class="btn__content">Sign Up</span>
+            <span class="btn__glitch"></span>
+          </button>
+          <button
+            class="btn btn--secondary"
+            type="submit"
+            onClick={(e) => ippopayOpen(e)}
+          >
+            <form>
+              <script
+                src="https://checkout.razorpay.com/v1/payment-button.js"
+                data-payment_button_id="pl_IsFwEEgzy2Slt0"
+                async
+              ></script>
+            </form>
+            <span class="btn__content">Pay Now</span>
+            <span class="btn__glitch"></span>
+          </button>
+        </>
+      )}
+
+      {step === 0 && (
+        <button class="btn btn--secondary" type="submit">
+          <span class="btn__content" onClick={(e) => setStep(1)}>
+            Next
+          </span>
+          <span class="btn__glitch"></span>
+        </button>
+      )}
       <Ippopay
         ippopayOpen={ippoState.ippopayOpen}
         ippopayClose={true}

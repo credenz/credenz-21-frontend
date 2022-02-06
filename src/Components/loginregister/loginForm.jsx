@@ -26,10 +26,6 @@ export function LoginForm(props) {
         <span class="btn__content">Sign In</span>
         <span class="btn__glitch"></span>
       </button>
-      <button class="btn btn--secondary" type="submit">
-        <span class="btn__content">Pay Now</span>
-        <span class="btn__glitch"></span>
-      </button>
       <Marginer direction="vertical" margin="1em" />
       <MutedLink className="mb-3" href="#">
         Don't have an account?{" "}
