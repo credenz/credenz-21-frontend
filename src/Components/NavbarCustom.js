@@ -11,17 +11,16 @@ const NavbarCustom = ({ comingSoon, relative }) => {
     <>
       <Navbar
         variant="dark"
-        style={{ backgroundColor: "transparent", position: "absolute", top: 0 }}
         className={
-          relative ? "navbar-wrapper position-relative" : "navbar-wrapper"
+          relative
+            ? "navbar-wrapper position-relative bg-color-custom"
+            : "navbar-wrapper bg-color-custom"
         }
-        expand="lg"
-      >
+        expand="xl">
         <Navbar.Brand
           href="https://pictieee.in"
           target="_blank"
-          className="header-header"
-        >
+          className="header-header">
           <img src={PISBLOGO} alt="pisblogo" className="nav-logo ms-4" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -30,30 +29,26 @@ const NavbarCustom = ({ comingSoon, relative }) => {
             <NavLink
               to={`/`}
               isActive={() => page === ""}
-              className="header-title"
-            >
+              className="header-title">
               <TextSliced title="Home" />
             </NavLink>
             <NavLink
               // hidden={comingSoon || true}
               to={`/events`}
               isActive={() => page === "events"}
-              className="header-title"
-            >
+              className="header-title">
               <TextSliced title="Events" />
             </NavLink>
             <NavLink
               to={`/about`}
               isActive={() => page === "about"}
-              className="header-title"
-            >
+              className="header-title">
               <TextSliced title="About" />
             </NavLink>
             <NavLink
               to={`/contact`}
               isActive={() => page === "contact"}
-              className="header-title"
-            >
+              className="header-title">
               <TextSliced title="Contact" />
             </NavLink>
             {/* <NavLink
@@ -66,8 +61,7 @@ const NavbarCustom = ({ comingSoon, relative }) => {
             <NavLink
               to={`/login`}
               isActive={() => page === "login"}
-              className="header-title"
-            >
+              className="header-title">
               <TextSliced title="Login" />
             </NavLink>
           </Nav>

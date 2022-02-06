@@ -82,18 +82,12 @@ const Events = () => {
           <div className="row">
             <div
               className="col-6"
-              onMouseEnter={() => {
-                setActive(0);
-              }}
               onClick={() => {
                 setActive(0);
                 setMainHeading(titleHelpr(events[0]));
                 setMainText(eventDetails[0].info);
                 setEventSelected(0);
                 setShow(true);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
               }}>
               <EventCard2
                 icon={RC}
@@ -106,18 +100,12 @@ const Events = () => {
             </div>
             <div
               className="col-6"
-              onMouseEnter={() => {
-                setActive(1);
-              }}
               onClick={() => {
                 setActive(1);
                 setMainHeading(titleHelpr(events[1]));
                 setMainText(eventDetails[1].info);
                 setEventSelected(1);
                 setShow(true);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
               }}>
               <EventCard2
                 icon={Clash}
@@ -132,18 +120,12 @@ const Events = () => {
           <div className="row">
             <div
               className="col-6"
-              onMouseEnter={() => {
-                setActive(2);
-              }}
               onClick={() => {
                 setActive(2);
                 setMainHeading(titleHelpr(events[2]));
                 setMainText(eventDetails[2].info);
                 setEventSelected(2);
                 setShow(true);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
               }}>
               <EventCard2
                 icon={NTH}
@@ -156,18 +138,12 @@ const Events = () => {
             </div>
             <div
               className="col-6"
-              onMouseEnter={() => {
-                setActive(3);
-              }}
               onClick={() => {
                 setActive(3);
                 setMainHeading(titleHelpr(events[3]));
                 setMainText(eventDetails[3].info);
                 setEventSelected(3);
                 setShow(true);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
               }}>
               <EventCard2
                 icon={Wallstreet}
@@ -183,18 +159,12 @@ const Events = () => {
           <div className="row">
             <div
               className="col-6"
-              onMouseEnter={() => {
-                setActive(4);
-              }}
               onClick={() => {
                 setActive(4);
                 setMainHeading(titleHelpr(events[4]));
                 setMainText(eventDetails[4].info);
                 setEventSelected(4);
                 setShow(true);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
               }}>
               <EventCard2
                 icon={BPlan}
@@ -207,18 +177,12 @@ const Events = () => {
             </div>
             <div
               className="col-6"
-              onMouseEnter={() => {
-                setActive(5);
-              }}
               onClick={() => {
                 setActive(5);
                 setMainHeading(titleHelpr(events[5]));
                 setMainText(eventDetails[5].info);
                 setEventSelected(5);
                 setShow(true);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
               }}>
               <EventCard2
                 icon={Enigma}
@@ -337,18 +301,12 @@ const Events = () => {
           <div className="row">
             <div
               className="col-6"
-              onMouseEnter={() => {
-                setActive(6);
-              }}
               onClick={() => {
                 setActive(6);
                 setMainHeading(titleHelpr(events[6]));
                 setMainText(eventDetails[6].info);
                 setEventSelected(6);
                 setShow(true);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
               }}>
               <EventCard2
                 icon={Datawiz}
@@ -361,18 +319,12 @@ const Events = () => {
             </div>
             <div
               className="col-6"
-              onMouseEnter={() => {
-                setActive(7);
-              }}
               onClick={() => {
                 setActive(7);
                 setMainHeading(titleHelpr(events[7]));
                 setMainText(eventDetails[7].info);
                 setEventSelected(7);
                 setShow(true);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
               }}>
               <EventCard2
                 icon={Quiz}
@@ -387,18 +339,12 @@ const Events = () => {
           <div className="row">
             <div
               className="col-6"
-              onMouseEnter={() => {
-                setActive(8);
-              }}
               onClick={() => {
                 setActive(8);
                 setMainHeading(titleHelpr(events[8]));
                 setMainText(eventDetails[8].info);
                 setEventSelected(8);
                 setShow(true);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
               }}>
               <EventCard2
                 icon={Paper}
@@ -411,18 +357,12 @@ const Events = () => {
             </div>
             <div
               className="col-6"
-              onMouseEnter={() => {
-                setActive(9);
-              }}
               onClick={() => {
                 setActive(9);
                 setMainHeading(titleHelpr(events[9]));
                 setMainText(eventDetails[9].info);
                 setEventSelected(9);
                 setShow(true);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
               }}>
               <EventCard2
                 icon={Cretronix}
@@ -437,18 +377,12 @@ const Events = () => {
           <div className="row">
             <div
               className="col-6"
-              onMouseEnter={() => {
-                setActive(10);
-              }}
               onClick={() => {
                 setActive(10);
                 setMainHeading(titleHelpr(events[10]));
                 setMainText(eventDetails[10].info);
                 setEventSelected(10);
                 setShow(true);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
               }}>
               <EventCard2
                 icon={Pixelate}
@@ -461,18 +395,12 @@ const Events = () => {
             </div>
             <div
               className="col-6"
-              onMouseEnter={() => {
-                setActive(11);
-              }}
               onClick={() => {
                 setActive(11);
                 setMainHeading(titleHelpr(events[11]));
                 setMainText(eventDetails[11].info);
                 setEventSelected(11);
                 setShow(true);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
               }}>
               <EventCard2
                 icon={Webweaver}
@@ -496,24 +424,29 @@ const Events = () => {
           setShow(false);
         }}
         size="lg">
-        <Modal.Header closeButton closeLabel="">
-          <Modal.Title>
-            <img
-              src={iconHelpr(events[active])}
-              alt="Event Icon"
-              style={{
-                color: "white",
-                width: "100px",
-              }}
-            />
-            {titleHelpr(events[active])}
+        <Modal.Header style={{ width: "100%" }}>
+          <Modal.Title
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+            }}>
+            <div>
+              <img
+                src={iconHelpr(events[active])}
+                alt="Event Icon"
+                style={{
+                  color: "white",
+                  width: "100px",
+                }}
+              />
+              {titleHelpr(events[active])}
+            </div>
+            <div onClick={() => setShow(false)}>x</div>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Tabs
-            defaultActiveKey="info"
-            id="uncontrolled-tab-example"
-            className="mb-3">
+          <Tabs defaultActiveKey="info" className="mb-3">
             <Tab eventKey="info" title="Info">
               <p>{eventDetails[eventSelected].info}</p>
             </Tab>
