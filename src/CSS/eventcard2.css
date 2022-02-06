@@ -257,8 +257,4 @@
 @media (max-width: 768px) {
 }
 @media (max-width: 425px) {
-  .wrapper-new {
-    width: 200px !important;
-    height: 250px;
-  }
 }

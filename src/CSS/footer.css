@@ -19,3 +19,11 @@
   z-index: 999;
   letter-spacing: 0.12em;
 }
+
+@media (max-width: 768px) {
+  .footer-main {
+    position: sticky;
+    bottom: auto;
+    left: auto;
+  }
+}

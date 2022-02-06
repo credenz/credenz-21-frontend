@@ -18,13 +18,18 @@
 }
 .o-x-hide {
   overflow-x: hidden;
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
+  background: linear-gradient(120deg, #000000, #36454f);
 }
 .container {
   height: 100%;
 }
 .m-mb {
   margin-bottom: 20px;
+}
+
+.cards-wrapper {
+  overflow-y: scroll;
 }
 
 .not-displayed {
@@ -233,5 +238,14 @@
   }
   .main-wrapper {
     width: 20vw;
+  }
+  .section-events {
+    overflow-y: scroll;
+  }
+  .main-wrapper {
+    display: none;
+  }
+  .tab-group {
+    display: none !important;
   }
 }

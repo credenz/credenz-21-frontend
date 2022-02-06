@@ -77,11 +77,11 @@ const Events = () => {
     <div className="bg-dark section-events height-full o-x-hide">
       {/* <NavbarCustom relative /> */}
       {/* NEW GRID */}
-      <div className="row mt-3 ms-3 me-3">
+      <div className="row mt-3 ms-3 me-3 cards-wrapper">
         <div className="col-md-3">
           <div className="row">
             <div
-              className="col-md-6"
+              className="col-6"
               onMouseEnter={() => {
                 setActive(0);
               }}
@@ -105,7 +105,7 @@ const Events = () => {
               />
             </div>
             <div
-              className="col-md-6"
+              className="col-6"
               onMouseEnter={() => {
                 setActive(1);
               }}
@@ -131,7 +131,7 @@ const Events = () => {
           </div>
           <div className="row">
             <div
-              className="col-md-6"
+              className="col-6"
               onMouseEnter={() => {
                 setActive(2);
               }}
@@ -155,7 +155,7 @@ const Events = () => {
               />
             </div>
             <div
-              className="col-md-6"
+              className="col-6"
               onMouseEnter={() => {
                 setActive(3);
               }}
@@ -182,7 +182,7 @@ const Events = () => {
           </div>
           <div className="row">
             <div
-              className="col-md-6"
+              className="col-6"
               onMouseEnter={() => {
                 setActive(4);
               }}
@@ -206,7 +206,7 @@ const Events = () => {
               />
             </div>
             <div
-              className="col-md-6"
+              className="col-6"
               onMouseEnter={() => {
                 setActive(5);
               }}
@@ -244,7 +244,7 @@ const Events = () => {
             </div>
           </div>
           <div
-            className="d-flex justify-content-center row"
+            className="d-flex justify-content-center row tab-group"
             style={{ height: "50%", paddingTop: "50px" }}
           >
             <div
@@ -345,7 +345,7 @@ const Events = () => {
         <div className="col-md-3">
           <div className="row">
             <div
-              className="col-md-6"
+              className="col-6"
               onMouseEnter={() => {
                 setActive(6);
               }}
@@ -369,7 +369,7 @@ const Events = () => {
               />
             </div>
             <div
-              className="col-md-6"
+              className="col-6"
               onMouseEnter={() => {
                 setActive(7);
               }}
@@ -395,7 +395,7 @@ const Events = () => {
           </div>
           <div className="row">
             <div
-              className="col-md-6"
+              className="col-6"
               onMouseEnter={() => {
                 setActive(8);
               }}
@@ -419,7 +419,7 @@ const Events = () => {
               />
             </div>
             <div
-              className="col-md-6"
+              className="col-6"
               onMouseEnter={() => {
                 setActive(9);
               }}
@@ -445,7 +445,7 @@ const Events = () => {
           </div>
           <div className="row">
             <div
-              className="col-md-6"
+              className="col-6"
               onMouseEnter={() => {
                 setActive(10);
               }}
@@ -469,7 +469,7 @@ const Events = () => {
               />
             </div>
             <div
-              className="col-md-6"
+              className="col-6"
               onMouseEnter={() => {
                 setActive(11);
               }}
