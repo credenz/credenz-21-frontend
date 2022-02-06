@@ -13,6 +13,13 @@
   position: relative;
   padding-top: 10vh;
 }
+
+.modal-backdrop {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
 .section-events {
   align-items: center;
 }
@@ -247,5 +254,9 @@
   }
   .tab-group {
     display: none !important;
+  }
+  .modal-backdrop {
+    width: fit-content !important;
+    height: fit-content !important;
   }
 }

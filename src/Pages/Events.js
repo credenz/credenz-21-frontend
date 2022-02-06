@@ -90,11 +90,11 @@ const Events = () => {
                 setMainHeading(titleHelpr(events[0]));
                 setMainText(eventDetails[0].info);
                 setEventSelected(0);
+                setShow(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={RC}
                 width={width}
@@ -114,11 +114,11 @@ const Events = () => {
                 setMainHeading(titleHelpr(events[1]));
                 setMainText(eventDetails[1].info);
                 setEventSelected(1);
+                setShow(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Clash}
                 width={width}
@@ -140,11 +140,11 @@ const Events = () => {
                 setMainHeading(titleHelpr(events[2]));
                 setMainText(eventDetails[2].info);
                 setEventSelected(2);
+                setShow(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={NTH}
                 width={width}
@@ -164,11 +164,11 @@ const Events = () => {
                 setMainHeading(titleHelpr(events[3]));
                 setMainText(eventDetails[3].info);
                 setEventSelected(3);
+                setShow(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Wallstreet}
                 width={"50px"}
@@ -191,11 +191,11 @@ const Events = () => {
                 setMainHeading(titleHelpr(events[4]));
                 setMainText(eventDetails[4].info);
                 setEventSelected(4);
+                setShow(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={BPlan}
                 width={"90px"}
@@ -215,11 +215,11 @@ const Events = () => {
                 setMainHeading(titleHelpr(events[5]));
                 setMainText(eventDetails[5].info);
                 setEventSelected(5);
+                setShow(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Enigma}
                 width={width}
@@ -234,8 +234,7 @@ const Events = () => {
         <div className="col-md-6 mt-3">
           <div
             className="row justify-content-center"
-            style={{ height: "fit-content" }}
-          >
+            style={{ height: "fit-content" }}>
             <div className="main-wrapper">
               <div className="container container-inside ">
                 <div className="main-text">{mainText}</div>
@@ -245,12 +244,10 @@ const Events = () => {
           </div>
           <div
             className="d-flex justify-content-center row tab-group"
-            style={{ height: "50%", paddingTop: "50px" }}
-          >
+            style={{ height: "50%", paddingTop: "50px" }}>
             <div
               className="d-flex row justify-content-center"
-              style={{ height: "40%" }}
-            >
+              style={{ height: "40%" }}>
               <div className="col-md-4 mb-2 d-flex justify-content-center">
                 <div
                   className={`tabButton d-flex justify-content-center align-items-center ${
@@ -262,8 +259,7 @@ const Events = () => {
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].info);
                     setActiveTab(0);
-                  }}
-                >
+                  }}>
                   Info
                 </div>
               </div>
@@ -278,8 +274,7 @@ const Events = () => {
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].rules);
                     setActiveTab(1);
-                  }}
-                >
+                  }}>
                   Rules
                 </div>
               </div>
@@ -294,8 +289,7 @@ const Events = () => {
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].structure);
                     setActiveTab(2);
-                  }}
-                >
+                  }}>
                   Structure
                 </div>
               </div>
@@ -310,8 +304,7 @@ const Events = () => {
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].judging);
                     setActiveTab(3);
-                  }}
-                >
+                  }}>
                   Judging Criteria
                 </div>
               </div>
@@ -326,16 +319,14 @@ const Events = () => {
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].contact);
                     setActiveTab(4);
-                  }}
-                >
+                  }}>
                   Contact
                 </div>
               </div>
             </div>
             <div
               className="row justify-content-center"
-              style={{ height: "40%" }}
-            >
+              style={{ height: "40%" }}>
               <div className="col-md-12 d-flex justify-content-center">
                 <div className="rectangle d-none"></div>
               </div>
@@ -354,11 +345,11 @@ const Events = () => {
                 setMainHeading(titleHelpr(events[6]));
                 setMainText(eventDetails[6].info);
                 setEventSelected(6);
+                setShow(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Datawiz}
                 width={"50px"}
@@ -378,11 +369,11 @@ const Events = () => {
                 setMainHeading(titleHelpr(events[7]));
                 setMainText(eventDetails[7].info);
                 setEventSelected(7);
+                setShow(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Quiz}
                 width={width}
@@ -404,11 +395,11 @@ const Events = () => {
                 setMainHeading(titleHelpr(events[8]));
                 setMainText(eventDetails[8].info);
                 setEventSelected(8);
+                setShow(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Paper}
                 width={width}
@@ -428,11 +419,11 @@ const Events = () => {
                 setMainHeading(titleHelpr(events[9]));
                 setMainText(eventDetails[9].info);
                 setEventSelected(9);
+                setShow(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Cretronix}
                 width={width}
@@ -454,11 +445,11 @@ const Events = () => {
                 setMainHeading(titleHelpr(events[10]));
                 setMainText(eventDetails[10].info);
                 setEventSelected(10);
+                setShow(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Pixelate}
                 width={width}
@@ -478,11 +469,11 @@ const Events = () => {
                 setMainHeading(titleHelpr(events[11]));
                 setMainText(eventDetails[11].info);
                 setEventSelected(11);
+                setShow(true);
               }}
               onMouseLeave={() => {
                 setActive(-1);
-              }}
-            >
+              }}>
               <EventCard2
                 icon={Webweaver}
                 width={width}
@@ -496,14 +487,15 @@ const Events = () => {
         </div>
       </div>
       <Modal
+        style={{ zIndex: 9999999 }}
         centered
+        className="d-lg-none"
         backdrop="static"
         show={show}
         onHide={() => {
           setShow(false);
         }}
-        size="lg"
-      >
+        size="lg">
         <Modal.Header closeButton closeLabel="">
           <Modal.Title>
             <img
@@ -521,47 +513,21 @@ const Events = () => {
           <Tabs
             defaultActiveKey="info"
             id="uncontrolled-tab-example"
-            className="mb-3"
-          >
+            className="mb-3">
             <Tab eventKey="info" title="Info">
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Explicabo nostrum maxime neque animi provident molestiae fuga
-                unde ut accusamus aspernatur quo, velit quae, soluta atque
-                libero est. Facere, vitae dolor!
-              </p>
+              <p>{eventDetails[eventSelected].info}</p>
             </Tab>
             <Tab eventKey="rules" title="Rules">
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Explicabo nostrum maxime neque animi provident molestiae fuga
-                unde ut accusamus aspernatur quo, velit quae, soluta atque
-                libero est. Facere, vitae dolor!
-              </p>
+              <p>{eventDetails[eventSelected].rules}</p>
             </Tab>
             <Tab eventKey="structure" title="Structure">
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Explicabo nostrum maxime neque animi provident molestiae fuga
-                unde ut accusamus aspernatur quo, velit quae, soluta atque
-                libero est. Facere, vitae dolor!
-              </p>
+              <p>{eventDetails[eventSelected].structure}</p>
             </Tab>
             <Tab eventKey="judge" title="Judging Criteria">
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Explicabo nostrum maxime neque animi provident molestiae fuga
-                unde ut accusamus aspernatur quo, velit quae, soluta atque
-                libero est. Facere, vitae dolor!
-              </p>
+              <p>{eventDetails[eventSelected].judging}</p>
             </Tab>
             <Tab eventKey="contact" title="Contact">
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Explicabo nostrum maxime neque animi provident molestiae fuga
-                unde ut accusamus aspernatur quo, velit quae, soluta atque
-                libero est. Facere, vitae dolor!
-              </p>
+              <p>{eventDetails[eventSelected].contact}</p>
             </Tab>
           </Tabs>
         </Modal.Body>
