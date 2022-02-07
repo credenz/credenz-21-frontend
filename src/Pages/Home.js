@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HomeBg from "../vid/home-bg.webm";
-import CyberBg from "../vid/cyberBg.webm";
+import CyberBg from "../vid/cyberBg_2.mp4";
 import RoadBg from "../vid/roadBgSlow.webm";
 import CircleFuture from "../vid/circle_future.mp4";
 import "../CSS/home.css";
@@ -16,8 +16,8 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setLogoVisible(true);
-    }, 6000);
-    setTimeout(() => setBgVisible(true), 5000);
+    }, 1300);
+    setTimeout(() => setBgVisible(true), 600);
     setTimeout(() => {
       setPreVideoEnd(true);
     }, 4500);
@@ -26,20 +26,20 @@ const Home = () => {
     <div className="section-home height-full-home o-x-hide">
       <div className="video-container">
         {/* <NavbarCustom comingSoon={true} /> */}
-        <video
+        {/* <video
           muted
           autoPlay
           className={preVideoEnd ? "fade-out" : "pre-video"}
         >
           <source src={CircleFuture} type="video/mp4" />
-        </video>
+        </video> */}
         <video
           className={bgVisible ? "videoTag fade-in-image" : "no-video"}
           autoPlay
           loop
           muted
         >
-          <source src={RoadBg} type="video/webm" />
+          <source src={CyberBg} type="video/mp4" />
         </video>
         <div
           className={logoVisible ? "fade-in-delayed credenz-logo" : "d-none"}

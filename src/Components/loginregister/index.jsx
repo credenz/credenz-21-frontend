@@ -6,6 +6,7 @@ import { AccountContext } from "./accountContext";
 import { SignupForm } from "./signupForm";
 import "../../CSS/Login.css";
 import { Image } from "react-bootstrap";
+import CredenzLive from "../../images/credenzlive2.0_1.png";
 
 const BoxContainer = styled.div`
   margin-top: 46px;
@@ -42,13 +43,7 @@ const BackDrop = styled(motion.div)`
   top: -285px;
   left: -70px;
   z-index: 10;
-  background: rgba(255, 0, 60, 1);
-
-  background: linear-gradient(
-    58deg,
-    rgba(255, 0, 60, 1) 20%,
-    rgba(210, 0, 90, 1) 100%
-  );
+  background: var(--red);
 `;
 
 const HeaderContainer = styled.div`
@@ -133,16 +128,17 @@ export function AccountBox(props) {
   return (
     <AccountContext.Provider value={contextValue}>
       <div class="mt-4 container-fluid row">
-        <div class="col-md-1"></div>
-        <div class="col-md-4">
-          {/* <Image
-            src="gif/output-onlinegiftools.gif"
+        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+          <Image
+            src={CredenzLive}
             class="image-fluid"
-            style={{ marginTop: "80px" }}
-          /> */}
+            style={{ height: "350px", width: "350px" }}
+          />
+          <div className="color-light" style={{ fontSize: "1.5rem" }}>
+            Sponsored By Proton
+          </div>
         </div>
-        <div class="col-md-2"></div>
-        <div class="col-md-5">
+        <div class="col-md-6  d-flex justify-content-center align-items-center">
           <BoxContainer>
             <TopContainer>
               <BackDrop

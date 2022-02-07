@@ -3,9 +3,11 @@
   --secondary: #646368;
   --tertiary: #b3aea0;
   --light: #efefef;
-  --orange: #ff5001;
-  --border: #dd005a;
+  --orange: #ee1f20;
   --red: #ee1f20;
+  /* --red: #9c1415; */
+  --border: #dd005a;
+  --purple: #c344e7;
 }
 
 .height-full {
@@ -25,8 +27,19 @@
 }
 .o-x-hide {
   overflow-x: hidden;
-  /* background-color: var(--primary); */
-  background: linear-gradient(120deg, #000000, #36454f);
+  /* background: linear-gradient(120deg, #000000, #36454f); */
+  /* background: rgb(113, 36, 27);
+  background: radial-gradient(
+    circle,
+    rgba(113, 36, 27, 1) 0%,
+    rgba(0, 0, 0, 1) 92%
+  ); */
+  background: rgb(50, 42, 42);
+  background: radial-gradient(
+    circle,
+    rgba(50, 42, 42, 1) 0%,
+    rgba(20, 20, 20, 1) 53%
+  );
 }
 .container {
   height: 100%;
