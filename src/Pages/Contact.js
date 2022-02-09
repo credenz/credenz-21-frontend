@@ -1,10 +1,34 @@
-import React from "react";
-import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Col, Container, Form, Image, Row, Spinner } from "react-bootstrap";
 import "../CSS/ContactUs.css";
 import { ReactComponent as Linkedinicon } from "../images/linkedin.svg";
 import { ReactComponent as Mailicon } from "../images/mail.svg";
 import { ReactComponent as Phoneicon } from "../images/phone.svg";
 const Contact = () => {
+  const [feedname, setFeedname] = useState("");
+  const [feedmsg, setFeedmsg] = useState("");
+  const [sending, setSending] = useState(false);
+  
+  const handleFeedback = (e) => {
+    console.log(e.target.value);
+    e.preventDefault();
+    const data = new FormData();
+    data.append("Name", feedname);
+    data.append("Message", feedmsg);
+    const url = "https://script.google.com/macros/s/AKfycbwCB9OXgvvbC6vVsNNPTFta2686AOtqmaJTk_ySHqAX8D1Ts6ZWyM4LnScsOKq_OSAv/exec";
+    setSending(true);
+    fetch(url, {
+      method: 'POST',
+      body: data,
+    })
+    .then(() => {
+      setFeedname("");
+      setFeedmsg("");
+      setSending(false);
+      alert("Your feedback has been succesfully submitted!");
+    })
+  }
+  
   return (
     <Container fluid className="contactpage">
       <Row>
@@ -120,20 +144,22 @@ const Contact = () => {
                 </div>
               </Col>
             </Row>
-            {/* <Row>
+            <Row>
               <Col xs="12" className="feedbkfrm">
                 FeedBack
               </Col>
             </Row>
             <Row>
               <Col>
-                <Form>
+                <Form onSubmit={handleFeedback} >
                   <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder="Enter Name"
                       className="fdbkfrm"
+                      value={feedname} 
+                      onChange={e => setFeedname(e.target.value)}
                     />
                   </Form.Group>
 
@@ -143,6 +169,8 @@ const Contact = () => {
                       as="textarea"
                       placeholder="Type Message"
                       className="fdbkfrm"
+                      value={feedmsg} 
+                      onChange={e => setFeedmsg(e.target.value)}
                     />
                   </Form.Group>
                   <Button
@@ -150,11 +178,20 @@ const Contact = () => {
                     color="#C344E7"
                     type="submit"
                   >
-                    Submit
+                  {sending ? <>
+                      <Spinner
+                        as="span"
+                        animation="grow"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
+                      />
+                      &nbsp; Sending...
+                    </> : <>Submit</>}
                   </Button>
                 </Form>
               </Col>
-            </Row> */}
+            </Row>
           </Container>
         </Col>
         <Col md="5" className="pict-map">
