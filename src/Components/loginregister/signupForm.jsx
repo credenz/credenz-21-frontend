@@ -53,19 +53,20 @@ export function SignupForm(props) {
 
   const handleSignUp = () => {
     API.registerUser({
-      firstname: fname,
+      fullname: fname,
       username: username,
-      email: email,
-      country_code: ccode,
-      phone: phone,
       password: passwd1,
-      isIeeeMember: isIeeeMember,
-      ieeeId: ieeeId,
-      isPictian: isPictian,
-      college: college,
+      email: email,
+      profile : {
+        phone_no: phone,
+        country_code: ccode,
+        ieee_member: isIeeeMember,
+        ieee_member_id: ieeeId,
+        institute: isPictian ? "PICT" : college,
+      },
     }).then(r => {
-
-    })
+        console.log(r);
+    }).catch(e => alert(e));
   }
 
   return (
@@ -78,27 +79,27 @@ export function SignupForm(props) {
 
       {step === 1 && (
         <>
-          <button class="btn btn--secondary" type="submit" onClick={handleSignUp}>
-            <span class="btn__content">Sign Up</span>
-            <span class="btn__glitch"></span>
+          <button className="btn btn--secondary" type="submit" onClick={handleSignUp}>
+            <span className="btn__content">Sign Up</span>
+            <span className="btn__glitch"></span>
           </button>
           <button
-            class="btn btn--secondary"
+            className="btn btn--secondary"
             type="submit"
             onClick={(e) => ippopayOpen(e)}
           >
-            <span class="btn__content">Pay Now</span>
-            <span class="btn__glitch"></span>
+            <span className="btn__content">Pay Now</span>
+            <span className="btn__glitch"></span>
           </button>
         </>
       )}
 
       {step === 0 && (
-        <button class="btn btn--secondary" type="submit">
-          <span class="btn__content" onClick={(e) => { passwd1 === passwd2 ? setStep(1) : alert("Passwords don't match!") }}>
+        <button className="btn btn--secondary" type="submit">
+          <span className="btn__content" onClick={(e) => { passwd1 === passwd2 ? setStep(1) : alert("Passwords don't match!") }}>
             Next
           </span>
-          <span class="btn__glitch"></span>
+          <span className="btn__glitch"></span>
         </button>
       )}
       <Ippopay

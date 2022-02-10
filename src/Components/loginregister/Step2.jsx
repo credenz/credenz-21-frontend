@@ -5,9 +5,9 @@ const FormContainer = (props) => {
 
   return (
     <>
-      <div class="row temp">
-        <div class="col-md-6">
-          <label class="form-control">
+      <div className="row temp">
+        <div className="col-md-6">
+          <label className="form-control">
             <input
               type="checkbox"
               name="checkbox"
@@ -16,8 +16,8 @@ const FormContainer = (props) => {
             IEEE Member
           </label>
         </div>
-        <div class="col-md-6">
-          <label class="form-control">
+        <div className="col-md-6">
+          <label className="form-control">
             <input
               type="checkbox"
               name="checkbox"

@@ -5,11 +5,11 @@ const FormContainer = (props) => {
 
   return (
     <>
-      <div class="row">
-        <div class="col-md-6">
+      <div className="row">
+        <div className="col-md-6">
           <Input type="text" placeholder="Full Name" value={props.fname} onChange={e => props.setFname(e.target.value)} />
         </div>
-        <div class="col-md-6">
+        <div className="col-md-6">
           <Input type="text" placeholder="Username" value={props.username} onChange={e => props.setUsername(e.target.value)} />
         </div>
       </div>
@@ -668,11 +668,11 @@ const FormContainer = (props) => {
 
       <Input type="number" placeholder="Phone" value={props.phone} onChange={e => props.setPhone(e.target.value)} />
 
-      <div class="row">
-        <div class="col-md-6">
+      <div className="row">
+        <div className="col-md-6">
           <Input type="password" placeholder="Password" value={props.passwd1} onChange={e => props.setPasswd1(e.target.value)} />
         </div>
-        <div class="col-md-6">
+        <div className="col-md-6">
           <Input type="password" placeholder="Confirm Password" value={props.passwd2} onChange={e => props.setPasswd2(e.target.value)} />
         </div>
       </div>

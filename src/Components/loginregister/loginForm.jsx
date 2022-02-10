@@ -20,7 +20,7 @@ export function LoginForm(props) {
       username: username,
       password: passwd,
     }).then(r => {
-
+      
     })
   }
   
@@ -33,14 +33,14 @@ export function LoginForm(props) {
       <Marginer direction="vertical" margin={10} />
       <MutedLink href="#">Forget your password?</MutedLink>
       <Marginer direction="vertical" margin="1.6em" />
-      <button class="btn btn--secondary" type="submit">
+      <button className="btn btn--secondary" type="submit">
         Sign In
-        <span class="btn__content">Sign In</span>
-        <span class="btn__glitch"></span>
+        <span className="btn__content">Sign In</span>
+        <span className="btn__glitch"></span>
       </button>
-      <button class="btn btn--secondary" type="submit" onClick={handleSubmit}>
-        <span class="btn__content">Pay Now</span>
-        <span class="btn__glitch"></span>
+      <button className="btn btn--secondary" type="submit" onClick={handleSubmit}>
+        <span className="btn__content">Pay Now</span>
+        <span className="btn__glitch"></span>
       </button>
       <Marginer direction="vertical" margin="1em" />
       <MutedLink className="mb-3" href="#">

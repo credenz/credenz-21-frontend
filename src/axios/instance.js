@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const AxiosInstance = axios.create({
-  baseURL: "https://api.github.com/users/",
+  baseURL: "http://20.36.41.82/api",
 });
 
 export const setAuthorizationToken = (token) => {

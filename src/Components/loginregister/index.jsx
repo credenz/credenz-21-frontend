@@ -132,17 +132,17 @@ export function AccountBox(props) {
 
   return (
     <AccountContext.Provider value={contextValue}>
-      <div class="mt-4 container-fluid row">
-        <div class="col-md-1"></div>
-        <div class="col-md-4">
+      <div className="mt-4 container-fluid row">
+        <div className="col-md-1"></div>
+        <div className="col-md-4">
           {/* <Image
             src="gif/output-onlinegiftools.gif"
-            class="image-fluid"
+            className="image-fluid"
             style={{ marginTop: "80px" }}
           /> */}
         </div>
-        <div class="col-md-2"></div>
-        <div class="col-md-5">
+        <div className="col-md-2"></div>
+        <div className="col-md-5">
           <BoxContainer>
             <TopContainer>
               <BackDrop

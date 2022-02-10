@@ -54,14 +54,14 @@ const Home = () => {
   //   <div className="section-home height-full-home o-x-hide">
   //     <div className="video-container">
   //       <NavbarCustom />
-  //       <div class={sunPressed ? "sky" : "no-sky"} data-v-cf18eb5c="">
-  //         <div class="clouds fill" data-v-cf18eb5c=""></div>
-  //         <div class="starsCont fill" data-v-cf18eb5c="">
-  //           <div class="stars fill" data-v-cf18eb5c=""></div>
-  //           <div class="twinkling fill" data-v-cf18eb5c=""></div>
+  //       <div className={sunPressed ? "sky" : "no-sky"} data-v-cf18eb5c="">
+  //         <div className="clouds fill" data-v-cf18eb5c=""></div>
+  //         <div className="starsCont fill" data-v-cf18eb5c="">
+  //           <div className="stars fill" data-v-cf18eb5c=""></div>
+  //           <div className="twinkling fill" data-v-cf18eb5c=""></div>
   //         </div>
   //         <div
-  //           class={sunPressed ? "fade-out sun" : "sun"}
+  //           className={sunPressed ? "fade-out sun" : "sun"}
   //           data-v-cf18eb5c=""
   //           onClick={() => {
   //             setSunPressed(true);
@@ -70,9 +70,9 @@ const Home = () => {
   //             }, 4700);
   //           }}
   //         >
-  //           <div class="sunStripes fill" data-v-cf18eb5c=""></div>
+  //           <div className="sunStripes fill" data-v-cf18eb5c=""></div>
   //         </div>
-  //         <div class="city" data-v-cf18eb5c=""></div>
+  //         <div className="city" data-v-cf18eb5c=""></div>
   //       </div>
   //       <video
   //         className={sunPressed ? "videoTag fade-in-image" : "no-video"}
