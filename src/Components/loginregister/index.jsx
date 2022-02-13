@@ -1,22 +1,27 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { LoginForm } from "./loginForm";
 import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { Image, Toast } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+import styled from "styled-components";
+import { API } from "../../axios/API";
+import "../../CSS/Login.css";
+import Cross from "../../images/close-line.png";
+import CredenzLive from "../../images/credenzlive2.0_1.png";
 import { AccountContext } from "./accountContext";
+import { LoginForm } from "./loginForm";
+import { PaymentForm } from "./PaymentForm";
 import { SignupForm } from "./signupForm";
-import "../../CSS/Login.css"
-import { Image } from "react-bootstrap";
 
 const BoxContainer = styled.div`
-  margin-top:46px;
-  ${'' /* margin-left:1000px; */}
+  margin-top: 46px;
+  ${"" /* margin-left:1000px; */}
   width: 480px;
   min-height: 550px;
   display: flex;
   flex-direction: column;
   border-radius: 19px;
-  background-color: #fff;
-  box-shadow: 0 0 4px rgba(15, 15, 15, 0.28);
+  background-color: #231f20;
+  box-shadow: 0px 2px 10px rgba(255, 0, 60, 1);
   position: relative;
   overflow: hidden;
 `;
@@ -41,14 +46,8 @@ const BackDrop = styled(motion.div)`
   transform: rotate(60deg);
   top: -285px;
   left: -70px;
-  z-index:10;
-  background: rgba(255, 0, 60, 1);
-
-  background: linear-gradient(
-    58deg,
-    rgba(255, 0, 60, 1) 20%,
-    rgba(210, 0, 90, 1) 100%
-  );
+  z-index: 10;
+  background: var(--red);
 `;
 
 const HeaderContainer = styled.div`
@@ -74,7 +73,6 @@ const SmallText = styled.h5`
   margin: 0;
   margin-top: 7px;
 `;
-
 
 const InnerContainer = styled.div`
   width: 100%;
@@ -107,6 +105,53 @@ const expandingTransition = {
 export function AccountBox(props) {
   const [isExpanded, setExpanded] = useState(false);
   const [active, setActive] = useState("signin");
+  // eslint-disable-next-line no-unused-vars
+  const [paymentDone, setPaymentDone] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [showPaymentToast, setShowPaymentToast] = useState(false);
+  const [userDetails, setUserDetails] = useState(null);
+  const history = useHistory();
+
+  const checkToken = async () => {
+    setLoading(true);
+    let token = localStorage.getItem("credenz_access_token");
+    let username = localStorage.getItem("credenz_username");
+    if (token) {
+      API.getUserDetails(username)
+        .then((res) => {
+          console.log("RES DATA", res.data);
+          setUserDetails(res.data);
+          if (res.data.payment === "PO") {
+            console.log("Payment Pending");
+            setPaymentDone(false);
+            setShowPaymentToast(true);
+            setActive("payment");
+            setTimeout(() => {
+              setShowPaymentToast(false);
+            }, 3500);
+            // show payment button - Handeled ✔
+          } else if (res.data.payment === "CO") {
+            console.log("Payment Completed");
+            setPaymentDone(true);
+            //redirect to events page
+            // history.push("/events", { userDetails: res.data });
+            history.push({
+              pathname: "/",
+              state: { userDetails: res.data },
+            });
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    checkToken();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const playExpandingAnimation = () => {
     setExpanded(true);
@@ -129,21 +174,46 @@ export function AccountBox(props) {
     }, 400);
   };
 
-  const contextValue = { switchToSignup, switchToSignin };
+  const switchToPayment = () => {
+    playExpandingAnimation();
+    setTimeout(() => {
+      setActive("payment");
+    }, 400);
+  };
+
+  const contextValue = { switchToSignup, switchToSignin, switchToPayment };
 
   return (
     <AccountContext.Provider value={contextValue}>
-      <div class="container-fluid row">
-        <div class="col-md-1"></div>
-        <div class="col-md-4">
+      <div className="toast-container" hidden={!showPaymentToast}>
+        <Toast show={showPaymentToast}>
+          <Toast.Header>
+            <strong className="me-auto">Credenz Live 2.0</strong>
+            <img
+              src={Cross}
+              className="rounded me-2 close toast-close"
+              alt=""
+              data-dismiss="toast"
+              height={"10px"}
+              onClick={() => setShowPaymentToast(false)}
+            />
+          </Toast.Header>
+          <Toast.Body>Please proceed to payment to continue!</Toast.Body>
+        </Toast>
+      </div>
+      <div className="login-preloader" hidden={!loading}></div>
+      <div class="mt-4 container-fluid row">
+        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
           <Image
-            src="gif/Gaming.gif"
+            src={CredenzLive}
             class="image-fluid"
-            style={{ marginTop: "80px" }}
+            style={{ height: "350px", width: "350px" }}
           />
+          <div className="color-light" style={{ fontSize: "1.5rem" }}>
+            Sponsored By Proton
+          </div>
         </div>
-        <div class="col-md-2"></div>
-        <div class="col-md-5">
+        <div class="col-md-6  d-flex justify-content-center align-items-center">
           <BoxContainer>
             <TopContainer>
               <BackDrop
@@ -166,10 +236,20 @@ export function AccountBox(props) {
                   <SmallText>Please sign-up to continue!</SmallText>
                 </HeaderContainer>
               )}
+              {active === "payment" && (
+                <HeaderContainer>
+                  <HeaderText>Welcome</HeaderText>
+                  <HeaderText>Back</HeaderText>
+                  <SmallText>Please proceed to Payment to continue!</SmallText>
+                </HeaderContainer>
+              )}
             </TopContainer>
             <InnerContainer>
               {active === "signin" && <LoginForm />}
               {active === "signup" && <SignupForm />}
+              {active === "payment" && (
+                <PaymentForm userDetails={userDetails} />
+              )}
             </InnerContainer>
           </BoxContainer>
         </div>
@@ -177,6 +257,3 @@ export function AccountBox(props) {
     </AccountContext.Provider>
   );
 }
-
-
-

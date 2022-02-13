@@ -3,7 +3,7 @@
   --secondary: #646368;
   --tertiary: #b3aea0;
   --light: #efefef;
-  --orange: rgba(255, 60, 60, 0.918);
+  --orange: #ee1f20;
   --border: #dd005a;
   --purple: #c344e7;
 }
@@ -16,7 +16,7 @@
 }
 
 .item_outer:hover {
-  color: var(--purple);
+  color: var(--orange);
 }
 .item_text {
   display: inline-block;

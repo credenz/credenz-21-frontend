@@ -3,6 +3,7 @@ import { Modal, Tab, Tabs } from "react-bootstrap";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import EventCard2 from "../Components/EventCard2";
+import { Footer } from "../Components/Footer";
 import "../CSS/events.css";
 import BPlan from "../images/bplan.png";
 import Clash from "../images/clash.png";
@@ -16,78 +17,16 @@ import Quiz from "../images/quiz.png";
 import RC from "../images/rc.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
+import { eventDetails, events } from "../staticInfo.js";
 
 const Events = () => {
-  const height = "250px";
-  const width = "120px";
-  const [active, setActive] = useState("3");
+  const height = "65px";
+  const width = "65px";
+  const [active, setActive] = useState(-1);
   const [show, setShow] = useState(false);
-  const events = {
-    0: "RC",
-    1: "Clash",
-    2: "NTH",
-    3: "Wallstreet",
-    4: "BPlan",
-    5: "Enigma",
-    6: "Dataviz",
-    7: "Quiz",
-    8: "Paper",
-    9: "Cretronix",
-    10: "Pixelate",
-    11: "Webweaver",
-  };
-
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 3,
-  //   slidesToScroll: 1,
-  //   arrows: true,
-  //   className: "text-white",
-  //   centerMode: true,
-  //   focusOnSelect: true,
-  //   afterChange: (e) => {
-  //     console.log("Active is:", e);
-  //     setActive(e);
-  //   },
-  //   responsive: [
-  //     {
-  //       breakpoint: 2560,
-  //       settings: {
-  //         slidesToShow: 3,
-  //         slidesToScroll: 1,
-  //         infinite: true,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 1024,
-  //       settings: {
-  //         slidesToShow: 2,
-  //         slidesToScroll: 1,
-  //         infinite: true,
-  //         centerMode: true,
-  //         dots: true,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 600,
-  //       settings: {
-  //         slidesToShow: 1,
-  //         slidesToScroll: 1,
-  //         infinite: true,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 480,
-  //       settings: {
-  //         slidesToShow: 1,
-  //         slidesToScroll: 1,
-  //         infinite: true,
-  //       },
-  //     },
-  //   ],
-  // };
+  const [activeTab, setActiveTab] = useState(0);
+  // eslint-disable-next-line no-unused-vars
+  const [bgColor, setBgColor] = useState(0);
 
   const titleHelpr = (e) => {
     if (e === "RC") {
@@ -96,6 +35,10 @@ const Events = () => {
       return "Paper Presentation";
     } else return e;
   };
+
+  const [eventSelected, setEventSelected] = useState(0);
+  const [mainText, setMainText] = useState(eventDetails[0].info);
+  const [mainHeading, setMainHeading] = useState(titleHelpr(events[0]));
 
   const iconHelpr = (e) => {
     if (e === "RC") {
@@ -132,17 +75,19 @@ const Events = () => {
 
   return (
     <div className="bg-dark section-events height-full o-x-hide">
+      {/* <NavbarCustom relative /> */}
       {/* NEW GRID */}
-      <div className="row">
+      <div className="row mt-3 ms-3 me-3 cards-wrapper">
         <div className="col-md-3">
           <div className="row">
             <div
-              className="col-md-6"
-              onMouseEnter={() => {
+              className="col-6"
+              onClick={() => {
                 setActive(0);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
+                setMainHeading(titleHelpr(events[0]));
+                setMainText(eventDetails[0].info);
+                setEventSelected(0);
+                setShow(true);
               }}
             >
               <EventCard2
@@ -151,16 +96,18 @@ const Events = () => {
                 height={height}
                 title="Reverse Coding"
                 text="Hone your problem-solving skills by decrypting complex questions"
-                active={0 === active ? true : false}
+                active={0 === active || 0 === eventSelected ? true : false}
+                bgColor={0 === bgColor ? true : false}
               />
             </div>
             <div
-              className="col-md-6"
-              onMouseEnter={() => {
+              className="col-6"
+              onClick={() => {
                 setActive(1);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
+                setMainHeading(titleHelpr(events[1]));
+                setMainText(eventDetails[1].info);
+                setEventSelected(1);
+                setShow(true);
               }}
             >
               <EventCard2
@@ -169,18 +116,20 @@ const Events = () => {
                 height={height}
                 title="Clash"
                 text="Clash is based on Competitive Programming!"
-                active={1 === active ? true : false}
+                active={1 === active || 1 === eventSelected ? true : false}
+                bgColor={1 === bgColor ? true : false}
               />
             </div>
           </div>
           <div className="row">
             <div
-              className="col-md-6"
-              onMouseEnter={() => {
+              className="col-6"
+              onClick={() => {
                 setActive(2);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
+                setMainHeading(titleHelpr(events[2]));
+                setMainText(eventDetails[2].info);
+                setEventSelected(2);
+                setShow(true);
               }}
             >
               <EventCard2
@@ -189,96 +138,171 @@ const Events = () => {
                 height={height}
                 title="NTH"
                 text="Decrypt the clues to solve complex puzzles and race your way to finish at top!"
-                active={2 === active ? true : false}
+                active={2 === active || 2 === eventSelected ? true : false}
+                bgColor={2 === bgColor ? true : false}
               />
             </div>
             <div
-              className="col-md-6"
-              onMouseEnter={() => {
+              className="col-6"
+              onClick={() => {
                 setActive(3);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
+                setMainHeading(titleHelpr(events[3]));
+                setMainText(eventDetails[3].info);
+                setEventSelected(3);
+                setShow(true);
               }}
             >
               <EventCard2
                 icon={Wallstreet}
-                width={"100px"}
-                marginTopIcon={"30%"}
-                height={height}
+                width={"50px"}
+                height={"50px"}
                 title="WallStreet"
+                marginBottomImg="10%"
                 text="Get an insight on stock markets by Investing and trading virtual money!"
-                active={3 === active ? true : false}
+                active={3 === active || 3 === eventSelected ? true : false}
               />
             </div>
           </div>
           <div className="row">
             <div
-              className="col-md-6"
-              onMouseEnter={() => {
+              className="col-6"
+              onClick={() => {
                 setActive(4);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
+                setMainHeading(titleHelpr(events[4]));
+                setMainText(eventDetails[4].info);
+                setEventSelected(4);
+                setShow(true);
               }}
             >
               <EventCard2
                 icon={BPlan}
-                width={"210px"}
-                height={height}
+                width={"90px"}
+                height={"90px"}
                 title="B-Plan"
                 text="Showcase your entrepreneurial skills by presenting innovative business plans to the world!"
-                active={4 === active ? true : false}
+                active={4 === active || 4 === eventSelected ? true : false}
               />
             </div>
             <div
-              className="col-md-6"
-              onMouseEnter={() => {
+              className="col-6"
+              onClick={() => {
                 setActive(5);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
+                setMainHeading(titleHelpr(events[5]));
+                setMainText(eventDetails[5].info);
+                setEventSelected(5);
+                setShow(true);
               }}
             >
               <EventCard2
                 icon={Enigma}
-                width={"170px"}
+                width={width}
                 height={height}
                 title="Enigma"
                 text="Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions!"
-                active={5 === active ? true : false}
+                active={5 === active || 5 === eventSelected ? true : false}
               />
             </div>
           </div>
         </div>
         <div className="col-md-6 mt-3">
-          <div className="row justify-content-center" style={{ height: "50%" }}>
-            <div className="main-wrapper"></div>
-          </div>
           <div
             className="row justify-content-center"
+            style={{ height: "fit-content" }}
+          >
+            <div className="main-wrapper">
+              <div className="container container-inside ">
+                <div className="main-text">{mainText}</div>
+                <div className="main-heading">{mainHeading}</div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="d-flex justify-content-center row tab-group"
             style={{ height: "50%", paddingTop: "50px" }}
           >
             <div
-              className="row justify-content-center"
+              className="d-flex row justify-content-center"
               style={{ height: "40%" }}
             >
-              <div className="col-md-4 mb-2">
-                <div className="tab-up">
-                  <div className="inner"></div>
+              <div className="col-md-4 mb-2 d-flex justify-content-center">
+                <div
+                  className={`tabButton d-flex justify-content-center align-items-center ${
+                    activeTab === 0 ? "activeTab" : ""
+                  } `}
+                  auto
+                  color="warning"
+                  rounded
+                  onClick={() => {
+                    setMainText(eventDetails[eventSelected].info);
+                    setActiveTab(0);
+                  }}
+                >
+                  Info
                 </div>
               </div>
-              <div className="col-md-4 mb-2">
-                <div className="tab-down"></div>
+              <div className="col-md-4 mb-2 d-flex justify-content-center">
+                <div
+                  className={`tabButton d-flex justify-content-center align-items-center ${
+                    activeTab === 1 ? "activeTab" : ""
+                  } `}
+                  auto
+                  color="warning"
+                  rounded
+                  onClick={() => {
+                    setMainText(eventDetails[eventSelected].rules);
+                    setActiveTab(1);
+                  }}
+                >
+                  Rules
+                </div>
               </div>
-              <div className="col-md-4 mb-2">
-                <div className="tab-up"></div>
+              <div className="col-md-4 mb-2 d-flex justify-content-center">
+                <div
+                  className={`tabButton d-flex justify-content-center align-items-center ${
+                    activeTab === 2 ? "activeTab" : ""
+                  } `}
+                  auto
+                  color="warning"
+                  rounded
+                  onClick={() => {
+                    setMainText(eventDetails[eventSelected].structure);
+                    setActiveTab(2);
+                  }}
+                >
+                  Structure
+                </div>
               </div>
-              <div className="col-md-4 mb-2">
-                <div className="tab-up"></div>
+              <div className="mt-4 col-md-4 mb-2 d-flex justify-content-center">
+                <div
+                  className={`tabButton d-flex justify-content-center align-items-center ${
+                    activeTab === 3 ? "activeTab" : ""
+                  } `}
+                  auto
+                  color="warning"
+                  rounded
+                  onClick={() => {
+                    setMainText(eventDetails[eventSelected].judging);
+                    setActiveTab(3);
+                  }}
+                >
+                  Judging Criteria
+                </div>
               </div>
-              <div className="col-md-4 mb-2">
-                <div className="tab-down"></div>
+              <div className="mt-4 col-md-4 mb-2 d-flex justify-content-center">
+                <div
+                  className={`tabButton d-flex justify-content-center align-items-center ${
+                    activeTab === 4 ? "activeTab" : ""
+                  } `}
+                  auto
+                  color="warning"
+                  rounded
+                  onClick={() => {
+                    setMainText(eventDetails[eventSelected].contact);
+                    setActiveTab(4);
+                  }}
+                >
+                  Contact
+                </div>
               </div>
             </div>
             <div
@@ -286,7 +310,7 @@ const Events = () => {
               style={{ height: "40%" }}
             >
               <div className="col-md-12 d-flex justify-content-center">
-                <div className="rectangle"></div>
+                <div className="rectangle d-none"></div>
               </div>
             </div>
           </div>
@@ -294,30 +318,32 @@ const Events = () => {
         <div className="col-md-3">
           <div className="row">
             <div
-              className="col-md-6"
-              onMouseEnter={() => {
+              className="col-6"
+              onClick={() => {
                 setActive(6);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
+                setMainHeading(titleHelpr(events[6]));
+                setMainText(eventDetails[6].info);
+                setEventSelected(6);
+                setShow(true);
               }}
             >
               <EventCard2
                 icon={Datawiz}
-                width={"100px"}
-                height={height}
+                width={"50px"}
+                height={"50px"}
                 title="Datawiz"
                 text="Test your Machine learning and data analytics skills before stepping into the world of Data Science!"
-                active={6 === active ? true : false}
+                active={6 === active || 6 === eventSelected ? true : false}
               />
             </div>
             <div
-              className="col-md-6"
-              onMouseEnter={() => {
+              className="col-6"
+              onClick={() => {
                 setActive(7);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
+                setMainHeading(titleHelpr(events[7]));
+                setMainText(eventDetails[7].info);
+                setEventSelected(7);
+                setShow(true);
               }}
             >
               <EventCard2
@@ -326,18 +352,19 @@ const Events = () => {
                 height={height}
                 title="Quiz"
                 text="Test your knowledge across wide range of topics and get a chance to win some exciting prizes!"
-                active={7 === active ? true : false}
+                active={7 === active || 7 === eventSelected ? true : false}
               />
             </div>
           </div>
           <div className="row">
             <div
-              className="col-md-6"
-              onMouseEnter={() => {
+              className="col-6"
+              onClick={() => {
                 setActive(8);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
+                setMainHeading(titleHelpr(events[8]));
+                setMainText(eventDetails[8].info);
+                setEventSelected(8);
+                setShow(true);
               }}
             >
               <EventCard2
@@ -346,16 +373,17 @@ const Events = () => {
                 height={height}
                 title="Paper Presentation"
                 text="Present technical research papers with advanced perspectives while honing your skills of research!"
-                active={8 === active ? true : false}
+                active={8 === active || 8 === eventSelected ? true : false}
               />
             </div>
             <div
-              className="col-md-6"
-              onMouseEnter={() => {
+              className="col-6"
+              onClick={() => {
                 setActive(9);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
+                setMainHeading(titleHelpr(events[9]));
+                setMainText(eventDetails[9].info);
+                setEventSelected(9);
+                setShow(true);
               }}
             >
               <EventCard2
@@ -364,18 +392,19 @@ const Events = () => {
                 height={height}
                 title="Cretronix"
                 text="Build and exhibit your own circuits by solving tech problems!"
-                active={9 === active ? true : false}
+                active={9 === active || 9 === eventSelected ? true : false}
               />
             </div>
           </div>
           <div className="row">
             <div
-              className="col-md-6"
-              onMouseEnter={() => {
+              className="col-6"
+              onClick={() => {
                 setActive(10);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
+                setMainHeading(titleHelpr(events[10]));
+                setMainText(eventDetails[10].info);
+                setEventSelected(10);
+                setShow(true);
               }}
             >
               <EventCard2
@@ -384,16 +413,17 @@ const Events = () => {
                 height={height}
                 title="Pixelate"
                 text="Let your creativity fuse with thoughtful designs and artistic originality!"
-                active={10 === active ? true : false}
+                active={10 === active || 10 === eventSelected ? true : false}
               />
             </div>
             <div
-              className="col-md-6"
-              onMouseEnter={() => {
+              className="col-6"
+              onClick={() => {
                 setActive(11);
-              }}
-              onMouseLeave={() => {
-                setActive(-1);
+                setMainHeading(titleHelpr(events[11]));
+                setMainText(eventDetails[11].info);
+                setEventSelected(11);
+                setShow(true);
               }}
             >
               <EventCard2
@@ -402,14 +432,16 @@ const Events = () => {
                 height={height}
                 title="Webweaver"
                 text="Build an aesthetic website to showcase your web development skills!"
-                active={11 === active ? true : false}
+                active={11 === active || 11 === eventSelected ? true : false}
               />
             </div>
           </div>
         </div>
       </div>
       <Modal
+        style={{ zIndex: 9999999 }}
         centered
+        className="d-lg-none"
         backdrop="static"
         show={show}
         onHide={() => {
@@ -417,68 +449,49 @@ const Events = () => {
         }}
         size="lg"
       >
-        <Modal.Header closeButton closeLabel="">
-          <Modal.Title>
-            <img
-              src={iconHelpr(events[active])}
-              alt="Event Icon"
-              style={{
-                color: "white",
-                width: "100px",
-              }}
-            />
-            {titleHelpr(events[active])}
+        <Modal.Header style={{ width: "100%" }}>
+          <Modal.Title
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <div>
+              <img
+                src={iconHelpr(events[active])}
+                alt="Event Icon"
+                style={{
+                  color: "white",
+                  width: "100px",
+                }}
+              />
+              {titleHelpr(events[active])}
+            </div>
+            <div onClick={() => setShow(false)}>x</div>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Tabs
-            defaultActiveKey="info"
-            id="uncontrolled-tab-example"
-            className="mb-3"
-          >
+          <Tabs defaultActiveKey="info" className="mb-3">
             <Tab eventKey="info" title="Info">
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Explicabo nostrum maxime neque animi provident molestiae fuga
-                unde ut accusamus aspernatur quo, velit quae, soluta atque
-                libero est. Facere, vitae dolor!
-              </p>
+              <p>{eventDetails[eventSelected].info}</p>
             </Tab>
             <Tab eventKey="rules" title="Rules">
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Explicabo nostrum maxime neque animi provident molestiae fuga
-                unde ut accusamus aspernatur quo, velit quae, soluta atque
-                libero est. Facere, vitae dolor!
-              </p>
+              <p>{eventDetails[eventSelected].rules}</p>
             </Tab>
             <Tab eventKey="structure" title="Structure">
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Explicabo nostrum maxime neque animi provident molestiae fuga
-                unde ut accusamus aspernatur quo, velit quae, soluta atque
-                libero est. Facere, vitae dolor!
-              </p>
+              <p>{eventDetails[eventSelected].structure}</p>
             </Tab>
             <Tab eventKey="judge" title="Judging Criteria">
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Explicabo nostrum maxime neque animi provident molestiae fuga
-                unde ut accusamus aspernatur quo, velit quae, soluta atque
-                libero est. Facere, vitae dolor!
-              </p>
+              <p>{eventDetails[eventSelected].judging}</p>
             </Tab>
             <Tab eventKey="contact" title="Contact">
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Explicabo nostrum maxime neque animi provident molestiae fuga
-                unde ut accusamus aspernatur quo, velit quae, soluta atque
-                libero est. Facere, vitae dolor!
-              </p>
+              <p>{eventDetails[eventSelected].contact}</p>
             </Tab>
           </Tabs>
         </Modal.Body>
       </Modal>
+      <Footer />
     </div>
   );
 };

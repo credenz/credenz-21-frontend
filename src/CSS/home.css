@@ -22,7 +22,7 @@
   bottom: 0;
   left: 0;
   z-index: 3;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .videoTag {
   width: 100%;
@@ -47,11 +47,11 @@
   position: relative;
   text-align: center;
   transition: all 0.5s ease-in;
-  top: 15%;
+  top: 7%;
 }
 
 .logo-img {
-  height: 420px;
+  height: 500px;
 }
 .coming-soon {
   z-index: 4;
@@ -63,11 +63,11 @@
 }
 
 .fade-in-image {
-  animation: fadeIn 5s;
-  -webkit-animation: fadeIn 5s;
-  -moz-animation: fadeIn 5s;
-  -o-animation: fadeIn 5s;
-  -ms-animation: fadeIn 5s;
+  animation: fadeIn 3.5s;
+  -webkit-animation: fadeIn 3.5s;
+  -moz-animation: fadeIn 3.5s;
+  -o-animation: fadeIn 3.5s;
+  -ms-animation: fadeIn 3.5s;
 }
 
 .fade-in-delayed {
@@ -315,6 +315,9 @@
   top: 0;
   width: 100%;
   height: 100%;
+}
+.color-light {
+  color: var(--light);
 }
 
 @media (max-width: 768px) {

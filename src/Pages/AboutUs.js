@@ -19,8 +19,7 @@ function AboutUs() {
         data-aos="zoom-in-up"
         data-aos-duration="100"
         data-aos-easing="ease-in-sine"
-        data-aos-anchor-placement="top-center"
-      >
+        data-aos-anchor-placement="top-center">
         <h1>About Us</h1>
       </div>
 
@@ -29,13 +28,12 @@ function AboutUs() {
         <AboutCards></AboutCards>
       </div>
 
-      <div className="aboutSponsors d-none">
+      <div className="aboutSponsors d-nones">
         {/* About Sponsors */}
         <h1
           data-aos="zoom-in"
           data-aos-duration="100"
-          data-aos-easing="ease-in-sine"
-        >
+          data-aos-easing="ease-in-sine">
           OUR ESTEEMED SPONSORS
         </h1>
         <div className="aboutSpons">
@@ -44,108 +42,90 @@ function AboutUs() {
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-easing="ease-in-sine"
-            data-aos-offset="50"
-          >
+            data-aos-offset="50">
             <AboutSponsors
               slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"
-            ></AboutSponsors>
+              sname="sponsorname"></AboutSponsors>
           </div>
           <div
             className="spons2 spons"
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-easing="ease-in-sine"
-            data-aos-offset="50"
-          >
+            data-aos-offset="50">
             <AboutSponsors
               slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"
-            ></AboutSponsors>
+              sname="sponsorname"></AboutSponsors>
           </div>
           <div
             className="spons3 spons"
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-easing="ease-in-sine"
-            data-aos-offset="50"
-          >
+            data-aos-offset="50">
             <AboutSponsors
               slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"
-            ></AboutSponsors>
+              sname="sponsorname"></AboutSponsors>
           </div>
           <div
             className="spons4 spons"
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-easing="ease-in-sine"
-            data-aos-offset="50"
-          >
+            data-aos-offset="50">
             <AboutSponsors
               slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"
-            ></AboutSponsors>
+              sname="sponsorname"></AboutSponsors>
           </div>
           <div
             className="spons5 spons"
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-easing="ease-in-sine"
-            data-aos-offset="50"
-          >
+            data-aos-offset="50">
             <AboutSponsors
               slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"
-            ></AboutSponsors>
+              sname="sponsorname"></AboutSponsors>
           </div>
           <div
             className="spons6 spons"
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-easing="ease-in-sine"
-            data-aos-offset="50"
-          >
+            data-aos-offset="50">
             <AboutSponsors
               slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"
-            ></AboutSponsors>
+              sname="sponsorname"></AboutSponsors>
           </div>
           <div
             className="spons7 spons"
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-easing="ease-in-sine"
-            data-aos-offset="50"
-          >
+            data-aos-offset="50">
             <AboutSponsors
               slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"
-            ></AboutSponsors>
+              sname="sponsorname"></AboutSponsors>
           </div>
           <div
             className="spons8 spons"
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-easing="ease-in-sine"
-            data-aos-offset="50"
-          >
+            data-aos-offset="50">
             <AboutSponsors
               slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"
-            ></AboutSponsors>
+              sname="sponsorname"></AboutSponsors>
           </div>
           <div
             className="spons9 spons"
             data-aos="zoom-in"
             data-aos-duration="800"
             data-aos-easing="ease-in-sine"
-            data-aos-offset="50"
-          >
+            data-aos-offset="50">
             <AboutSponsors
               slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"
-            ></AboutSponsors>
+              sname="sponsorname"></AboutSponsors>
           </div>
         </div>
       </div>
