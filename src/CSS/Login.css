@@ -30,6 +30,11 @@
   filter: brightness(1.03);
 }
 
+.error-text {
+  color: var(--red-color);
+  font-size: 0.8rem;
+}
+
 .btn__content {
   display: flex;
   align-items: center;

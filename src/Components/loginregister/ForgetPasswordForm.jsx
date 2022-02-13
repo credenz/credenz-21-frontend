@@ -1,15 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState } from "react";
 import { API } from "../../axios/API";
 import "../../CSS/loginForm.css";
 import { Marginer } from "../marginer";
-import {
-  BoldLink,
-  BoxContainer,
-  FormContainer,
-  Input,
-  MutedLink,
-} from "./common";
+import { BoxContainer, FormContainer, Input } from "./common";
 
 export function ForgetPasswordForm(props) {
   // eslint-disable-next-line no-unused-vars

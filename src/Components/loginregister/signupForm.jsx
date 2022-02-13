@@ -97,7 +97,7 @@ export function SignupForm(props) {
 
   const handleSignUp = () => {
     API.registerUser({
-      fullname: fname,
+      fullname: fname + lname,
       username: username,
       password: passwd1,
       email: email,
@@ -114,7 +114,10 @@ export function SignupForm(props) {
         setEnablePayment(true);
         localStorage.setItem("credenz_username", res.data.username);
       })
-      .catch((e) => alert(e));
+      .catch((e) => {
+        console.log("Error", e.response.data);
+        alert(JSON.stringify(e.response.data));
+      });
   };
 
   return (
@@ -131,6 +134,7 @@ export function SignupForm(props) {
             passwd1={passwd1}
             passwd2={passwd2}
             setFname={setFname}
+            setLname={setLname}
             setUsername={setUsername}
             setEmail={setEmail}
             setCcode={setCcode}

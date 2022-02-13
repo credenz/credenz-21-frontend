@@ -1,8 +1,28 @@
-import React from "react";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
 import { Input } from "./common";
+import "../../CSS/Login.css";
 
 const FormContainer = (props) => {
+  const [passwordError, setPasswordError] = useState(false);
+  const validatePassword = (password) => {
+    const reg =
+      "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
+    const re = new RegExp(reg);
+    console.log("password", password);
+    console.log("pass?", re.test(password));
+    if (!re.test(password)) {
+      setPasswordError(true);
+    } else {
+      setPasswordError(false);
+    }
+  };
+
+  useEffect(() => {
+    if (props.passwd1.length > 3) {
+      validatePassword(props.passwd1);
+    }
+  }, [props.passwd1, props.passwd1.length]);
+
   return (
     <>
       <div className="row">
@@ -18,7 +38,7 @@ const FormContainer = (props) => {
           <Input
             type="text"
             placeholder="Last Name"
-            value={props.username}
+            value={props.lname}
             onChange={(e) => props.setLname(e.target.value)}
           />
         </div>
@@ -703,6 +723,12 @@ const FormContainer = (props) => {
         value={props.phone}
         onChange={(e) => props.setPhone(e.target.value)}
       />
+      <span
+        hidden={props.phone.length === 10 || props.phone.length < 1}
+        className="error-text"
+      >
+        The Phone number must be 10 digits
+      </span>
 
       <div className="row">
         <div className="col-md-6 mb-1">
@@ -721,6 +747,10 @@ const FormContainer = (props) => {
             onChange={(e) => props.setPasswd2(e.target.value)}
           />
         </div>
+        <span hidden={!passwordError} className="error-text">
+          The password must contain atleast 1 aplhabet, 1 number and 1 special
+          character
+        </span>
       </div>
     </>
   );

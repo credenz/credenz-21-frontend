@@ -18,15 +18,6 @@ import RC from "../images/rc.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import { eventDetails, events } from "../staticInfo.js";
-import Slider from "react-slick";
-
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 3,
-};
 
 const Events = () => {
   const height = "65px";
