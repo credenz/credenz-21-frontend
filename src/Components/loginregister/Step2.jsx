@@ -1,45 +1,49 @@
 import React, { useState } from "react";
 import { Input } from "./common";
 
-const FormContainer = () => {
-
-  const[Flag,setFlag]=useState(false);
-  const [Flag1, setFlag1] = useState(false);
-
+const FormContainer = (props) => {
   return (
     <>
-      <div class="row temp">
-        <div class="col-md-6">
-          <label class="form-control">
+      <div className="row temp">
+        <div className="col-md-6">
+          <label className="form-control">
             <input
               type="checkbox"
               name="checkbox"
-              onClick={() => setFlag(!Flag)}
+              onClick={() => props.setIsIeeeMember(!props.isIeeeMember)}
             />
             IEEE Member
           </label>
         </div>
-        <div class="col-md-6">
-          <label class="form-control">
+        <div className="col-md-6">
+          <label className="form-control">
             <input
               type="checkbox"
               name="checkbox"
-              onClick={() => setFlag1(!Flag1)}
+              onClick={() => props.setIsPictian(!props.isPictian)}
             />
             PICT College
           </label>
         </div>
       </div>
 
+      {props.isIeeeMember === true && (
+        <Input
+          type="text"
+          placeholder="IEEE Member ID"
+          value={props.ieeeId}
+          onChange={(e) => props.setIeeeId(e.target.value)}
+        />
+      )}
 
-          {Flag === true && <Input type="text" placeholder="IEEE Member ID" />}
-       
-
-        
-       
-          {Flag1 === false && (
-            <Input type="text" placeholder="Institute" />)}
-      
+      {props.isPictian === false && (
+        <Input
+          type="text"
+          placeholder="Institute"
+          value={props.college}
+          onChange={(e) => props.setCollege(e.target.value)}
+        />
+      )}
     </>
   );
 };

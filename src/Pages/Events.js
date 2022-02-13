@@ -27,6 +27,7 @@ const Events = () => {
   const [active, setActive] = useState(-1);
   const [show, setShow] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
+  const [bgColor, setBgColor] = useState(0);
 
   const titleHelpr = (e) => {
     if (e === "RC") {
@@ -88,7 +89,8 @@ const Events = () => {
                 setMainText(eventDetails[0].info);
                 setEventSelected(0);
                 setShow(true);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={RC}
                 width={width}
@@ -96,6 +98,7 @@ const Events = () => {
                 title="Reverse Coding"
                 text="Hone your problem-solving skills by decrypting complex questions"
                 active={0 === active || 0 === eventSelected ? true : false}
+                bgColor={0 === bgColor ? true : false}
               />
             </div>
             <div
@@ -106,7 +109,8 @@ const Events = () => {
                 setMainText(eventDetails[1].info);
                 setEventSelected(1);
                 setShow(true);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Clash}
                 width={width}
@@ -114,6 +118,7 @@ const Events = () => {
                 title="Clash"
                 text="Clash is based on Competitive Programming!"
                 active={1 === active || 1 === eventSelected ? true : false}
+                bgColor={1 === bgColor ? true : false}
               />
             </div>
           </div>
@@ -126,7 +131,8 @@ const Events = () => {
                 setMainText(eventDetails[2].info);
                 setEventSelected(2);
                 setShow(true);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={NTH}
                 width={width}
@@ -134,6 +140,7 @@ const Events = () => {
                 title="NTH"
                 text="Decrypt the clues to solve complex puzzles and race your way to finish at top!"
                 active={2 === active || 2 === eventSelected ? true : false}
+                bgColor={2 === bgColor ? true : false}
               />
             </div>
             <div
@@ -144,7 +151,8 @@ const Events = () => {
                 setMainText(eventDetails[3].info);
                 setEventSelected(3);
                 setShow(true);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Wallstreet}
                 width={"50px"}
@@ -165,7 +173,8 @@ const Events = () => {
                 setMainText(eventDetails[4].info);
                 setEventSelected(4);
                 setShow(true);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={BPlan}
                 width={"90px"}
@@ -183,7 +192,8 @@ const Events = () => {
                 setMainText(eventDetails[5].info);
                 setEventSelected(5);
                 setShow(true);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Enigma}
                 width={width}
@@ -198,7 +208,8 @@ const Events = () => {
         <div className="col-md-6 mt-3">
           <div
             className="row justify-content-center"
-            style={{ height: "fit-content" }}>
+            style={{ height: "fit-content" }}
+          >
             <div className="main-wrapper">
               <div className="container container-inside ">
                 <div className="main-text">{mainText}</div>
@@ -208,10 +219,12 @@ const Events = () => {
           </div>
           <div
             className="d-flex justify-content-center row tab-group"
-            style={{ height: "50%", paddingTop: "50px" }}>
+            style={{ height: "50%", paddingTop: "50px" }}
+          >
             <div
               className="d-flex row justify-content-center"
-              style={{ height: "40%" }}>
+              style={{ height: "40%" }}
+            >
               <div className="col-md-4 mb-2 d-flex justify-content-center">
                 <div
                   className={`tabButton d-flex justify-content-center align-items-center ${
@@ -223,7 +236,8 @@ const Events = () => {
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].info);
                     setActiveTab(0);
-                  }}>
+                  }}
+                >
                   Info
                 </div>
               </div>
@@ -238,7 +252,8 @@ const Events = () => {
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].rules);
                     setActiveTab(1);
-                  }}>
+                  }}
+                >
                   Rules
                 </div>
               </div>
@@ -253,7 +268,8 @@ const Events = () => {
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].structure);
                     setActiveTab(2);
-                  }}>
+                  }}
+                >
                   Structure
                 </div>
               </div>
@@ -268,7 +284,8 @@ const Events = () => {
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].judging);
                     setActiveTab(3);
-                  }}>
+                  }}
+                >
                   Judging Criteria
                 </div>
               </div>
@@ -283,14 +300,16 @@ const Events = () => {
                   onClick={() => {
                     setMainText(eventDetails[eventSelected].contact);
                     setActiveTab(4);
-                  }}>
+                  }}
+                >
                   Contact
                 </div>
               </div>
             </div>
             <div
               className="row justify-content-center"
-              style={{ height: "40%" }}>
+              style={{ height: "40%" }}
+            >
               <div className="col-md-12 d-flex justify-content-center">
                 <div className="rectangle d-none"></div>
               </div>
@@ -307,7 +326,8 @@ const Events = () => {
                 setMainText(eventDetails[6].info);
                 setEventSelected(6);
                 setShow(true);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Datawiz}
                 width={"50px"}
@@ -325,7 +345,8 @@ const Events = () => {
                 setMainText(eventDetails[7].info);
                 setEventSelected(7);
                 setShow(true);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Quiz}
                 width={width}
@@ -345,7 +366,8 @@ const Events = () => {
                 setMainText(eventDetails[8].info);
                 setEventSelected(8);
                 setShow(true);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Paper}
                 width={width}
@@ -363,7 +385,8 @@ const Events = () => {
                 setMainText(eventDetails[9].info);
                 setEventSelected(9);
                 setShow(true);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Cretronix}
                 width={width}
@@ -383,7 +406,8 @@ const Events = () => {
                 setMainText(eventDetails[10].info);
                 setEventSelected(10);
                 setShow(true);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Pixelate}
                 width={width}
@@ -401,7 +425,8 @@ const Events = () => {
                 setMainText(eventDetails[11].info);
                 setEventSelected(11);
                 setShow(true);
-              }}>
+              }}
+            >
               <EventCard2
                 icon={Webweaver}
                 width={width}
@@ -423,14 +448,16 @@ const Events = () => {
         onHide={() => {
           setShow(false);
         }}
-        size="lg">
+        size="lg"
+      >
         <Modal.Header style={{ width: "100%" }}>
           <Modal.Title
             style={{
               width: "100%",
               display: "flex",
               justifyContent: "space-between",
-            }}>
+            }}
+          >
             <div>
               <img
                 src={iconHelpr(events[active])}

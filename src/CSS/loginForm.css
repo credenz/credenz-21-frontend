@@ -1,0 +1,23 @@
+.login-preloader,
+.toast-container {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.toast-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.close {
+  display: none;
+}
+.toast-close {
+  cursor: pointer;
+  display: block !important;
+}

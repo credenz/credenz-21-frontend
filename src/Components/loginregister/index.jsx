@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { LoginForm } from "./loginForm";
 import { motion } from "framer-motion";
 import { AccountContext } from "./accountContext";
 import { SignupForm } from "./signupForm";
+import { PaymentForm } from "./PaymentForm";
 import "../../CSS/Login.css";
 import { Image } from "react-bootstrap";
 import CredenzLive from "../../images/credenzlive2.0_1.png";
+import { Toast } from "react-bootstrap";
+import Cross from "../../images/close-line.png";
+import { API } from "../../axios/API";
+import { useHistory } from "react-router-dom";
 
 const BoxContainer = styled.div`
   margin-top: 46px;
@@ -101,6 +106,53 @@ const expandingTransition = {
 export function AccountBox(props) {
   const [isExpanded, setExpanded] = useState(false);
   const [active, setActive] = useState("signin");
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [paymentDone, setPaymentDone] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [showPaymentToast, setShowPaymentToast] = useState(false);
+  const [userDetails, setUserDetails] = useState(null);
+  const history = useHistory();
+
+  const checkToken = async () => {
+    setLoading(true);
+    let token = localStorage.getItem("credenz_access_token");
+    let username = localStorage.getItem("credenz_username");
+    if (token) {
+      API.getUserDetails(username)
+        .then((res) => {
+          console.log("RES DATA", res.data);
+          setUserDetails(res.data);
+          if (res.data.payment === "PO") {
+            console.log("Payment Pending");
+            setPaymentDone(false);
+            setShowPaymentToast(true);
+            setActive("payment");
+            setTimeout(() => {
+              setShowPaymentToast(false);
+            }, 3500);
+            // show payment button - Handeled ✔
+          } else if (res.data.payment === "CO") {
+            console.log("Payment Completed");
+            setPaymentDone(true);
+            //redirect to events page
+            // history.push("/events", { userDetails: res.data });
+            history.push({
+              pathname: "/",
+              state: { userDetails: res.data },
+            });
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    checkToken();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const playExpandingAnimation = () => {
     setExpanded(true);
@@ -123,10 +175,34 @@ export function AccountBox(props) {
     }, 400);
   };
 
-  const contextValue = { switchToSignup, switchToSignin };
+  const switchToPayment = () => {
+    playExpandingAnimation();
+    setTimeout(() => {
+      setActive("payment");
+    }, 400);
+  };
+
+  const contextValue = { switchToSignup, switchToSignin, switchToPayment };
 
   return (
     <AccountContext.Provider value={contextValue}>
+      <div className="toast-container" hidden={!showPaymentToast}>
+        <Toast show={showPaymentToast}>
+          <Toast.Header>
+            <strong className="me-auto">Credenz Live 2.0</strong>
+            <img
+              src={Cross}
+              className="rounded me-2 close toast-close"
+              alt=""
+              data-dismiss="toast"
+              height={"10px"}
+              onClick={() => setShowPaymentToast(false)}
+            />
+          </Toast.Header>
+          <Toast.Body>Please proceed to payment to continue!</Toast.Body>
+        </Toast>
+      </div>
+      <div className="login-preloader" hidden={!loading}></div>
       <div class="mt-4 container-fluid row">
         <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
           <Image
@@ -161,10 +237,20 @@ export function AccountBox(props) {
                   <SmallText>Please sign-up to continue!</SmallText>
                 </HeaderContainer>
               )}
+              {active === "payment" && (
+                <HeaderContainer>
+                  <HeaderText>Welcome</HeaderText>
+                  <HeaderText>Back</HeaderText>
+                  <SmallText>Please proceed to Payment to continue!</SmallText>
+                </HeaderContainer>
+              )}
             </TopContainer>
             <InnerContainer>
               {active === "signin" && <LoginForm />}
               {active === "signup" && <SignupForm />}
+              {active === "payment" && (
+                <PaymentForm userDetails={userDetails} />
+              )}
             </InnerContainer>
           </BoxContainer>
         </div>

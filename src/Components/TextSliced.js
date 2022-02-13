@@ -11,7 +11,10 @@ const TextSliced = (props) => {
         <span className="edgtf-split-item-prim">{props.title}</span>{" "}
         <span className="edgtf-split-item-sec">{props.title}</span>{" "}
       </span>
-      <i className="edgtf-menu-arrow fa fa-angle-down"></i>
+      <i
+        className="edgtf-menu-arrow fa fa-angle-down ms-2"
+        hidden={props.hidden}
+      ></i>
     </span>
   );
 };

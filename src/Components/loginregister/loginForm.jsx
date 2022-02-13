@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import {
   BoldLink,
   BoxContainer,
@@ -8,23 +8,59 @@ import {
 } from "./common";
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
+import { API } from "../../axios/API";
+import "../../CSS/loginForm.css";
+import { useHistory } from "react-router-dom";
 
 export function LoginForm(props) {
   const { switchToSignup } = useContext(AccountContext);
+  const [username, setUsername] = useState("");
+  const [passwd, setPasswd] = useState("");
+  const history = useHistory();
+
+  const handleSubmit = () => {
+    API.getRefreshToken({
+      username: username,
+      password: passwd,
+    })
+      .then((res) => {
+        console.log("Logged in!", res);
+        localStorage.setItem("credenz_access_token", res.data.access);
+        localStorage.setItem("credenz_username", username);
+        alert(`Welcome Back ${username} !`);
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
+      })
+      .catch((err) => console.error(err));
+  };
 
   return (
     <BoxContainer>
       <FormContainer>
-        <Input type="email" placeholder="Username or Email" />
-        <Input type="password" placeholder="Password" />
+        <Input
+          type="email"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <Input
+          type="password"
+          placeholder="Password"
+          value={passwd}
+          onChange={(e) => setPasswd(e.target.value)}
+        />
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
       <MutedLink href="#">Forget your password?</MutedLink>
       <Marginer direction="vertical" margin="1.6em" />
-      <button class="btn btn--secondary" type="submit">
+      <button
+        className="btn btn--secondary"
+        type="submit"
+        onClick={handleSubmit}
+      >
         Sign In
-        <span class="btn__content">Sign In</span>
-        <span class="btn__glitch"></span>
+        <span className="btn__content">Sign In</span>
+        <span className="btn__glitch"></span>
       </button>
       <Marginer direction="vertical" margin="1em" />
       <MutedLink className="mb-3" href="#">

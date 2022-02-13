@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const AxiosInstance = axios.create({
-  baseURL: "https://api.github.com/users/",
+  baseURL: "https://backend.credenz.in/api/",
 });
 
 export const setAuthorizationToken = (token) => {

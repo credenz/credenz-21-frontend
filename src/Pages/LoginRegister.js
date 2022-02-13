@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { AccountBox } from "../Components/loginregister/index";
+import { API } from "../axios/API";
 
 const AppContainer = styled.div`
   width: 100%;
