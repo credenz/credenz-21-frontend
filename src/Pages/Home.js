@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Footer } from "../Components/Footer";
 import "../CSS/home.css";
 import HomeImage from "../images/credenzlive2.0.png";
-import CyberBg from "../vid/cyberBg_2.mp4";
+import CyberBg from "../vid/Bg_3_slow.webm";
 
 const Home = () => {
   const [logoVisible, setLogoVisible] = useState(false);
@@ -36,15 +36,15 @@ const Home = () => {
           loop
           muted
         >
-          <source src={CyberBg} type="video/mp4" />
+          <source src={CyberBg} type="video/webm" />
         </video>
         <div
           className={logoVisible ? "fade-in-delayed credenz-logo" : "d-none"}
         >
           <img src={HomeImage} alt="credenzLive" className="logo-img" />
         </div>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
   // return (

@@ -27,17 +27,13 @@ API.registerUser = async (data) => {
 };
 
 API.getRefreshToken = async (data) => {
-  return AxiosInstance.post("get_access_token/", data);
+  return AxiosInstance.post(`get_access_token/`, data);
 };
 
 API.passwordReset = async (data) => {
-  return AxiosInstance.post(`password_rest/`, data);
+  return AxiosInstance.post(`password_reset/`, data);
 };
 
 API.passwordResetConfirm = async (data) => {
-  return AxiosInstance.post(`password_rest/confirm/`, data);
-};
-
-API.passwordValidateToken = async (data) => {
-  return AxiosInstance.post(`password_rest/valiate_token/`, data);
+  return AxiosInstance.post(`password_reset/confirm/`, data);
 };

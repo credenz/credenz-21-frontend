@@ -5,7 +5,7 @@ const FormContainer = (props) => {
   return (
     <>
       <div className="row temp">
-        <div className="col-md-6">
+        <div className="col-md-6 mb-2">
           <label className="form-control">
             <input
               type="checkbox"
@@ -15,7 +15,7 @@ const FormContainer = (props) => {
             IEEE Member
           </label>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 mb-2">
           <label className="form-control">
             <input
               type="checkbox"
@@ -38,12 +38,25 @@ const FormContainer = (props) => {
 
       {props.isPictian === false && (
         <Input
+          className="mb-2"
           type="text"
           placeholder="Institute"
           value={props.college}
           onChange={(e) => props.setCollege(e.target.value)}
         />
       )}
+      <div className="row temp">
+        <div className="col-md-12 mb-2">
+          <label className="form-control">
+            <input
+              type="checkbox"
+              name="checkbox"
+              onClick={() => props.setIsSenior(!props.isSenior)}
+            />
+            Senior
+          </label>
+        </div>
+      </div>
     </>
   );
 };

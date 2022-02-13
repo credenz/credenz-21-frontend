@@ -11,6 +11,7 @@ import { AccountContext } from "./accountContext";
 import { LoginForm } from "./loginForm";
 import { PaymentForm } from "./PaymentForm";
 import { SignupForm } from "./signupForm";
+import { ForgetPasswordForm } from "./ForgetPasswordForm";
 
 const BoxContainer = styled.div`
   margin-top: 46px;
@@ -119,10 +120,8 @@ export function AccountBox(props) {
     if (token) {
       API.getUserDetails(username)
         .then((res) => {
-          console.log("RES DATA", res.data);
           setUserDetails(res.data);
           if (res.data.payment === "PO") {
-            console.log("Payment Pending");
             setPaymentDone(false);
             setShowPaymentToast(true);
             setActive("payment");
@@ -131,7 +130,6 @@ export function AccountBox(props) {
             }, 3500);
             // show payment button - Handeled ✔
           } else if (res.data.payment === "CO") {
-            console.log("Payment Completed");
             setPaymentDone(true);
             //redirect to events page
             // history.push("/events", { userDetails: res.data });
@@ -181,7 +179,19 @@ export function AccountBox(props) {
     }, 400);
   };
 
-  const contextValue = { switchToSignup, switchToSignin, switchToPayment };
+  const switchToForgetPassword = () => {
+    playExpandingAnimation();
+    setTimeout(() => {
+      setActive("forgetPassword");
+    }, 400);
+  };
+
+  const contextValue = {
+    switchToSignup,
+    switchToSignin,
+    switchToPayment,
+    switchToForgetPassword,
+  };
 
   return (
     <AccountContext.Provider value={contextValue}>
@@ -243,6 +253,15 @@ export function AccountBox(props) {
                   <SmallText>Please proceed to Payment to continue!</SmallText>
                 </HeaderContainer>
               )}
+              {active === "forgetPassword" && (
+                <HeaderContainer>
+                  <HeaderText>Please Enter your Email</HeaderText>
+                  <HeaderText>To Continue</HeaderText>
+                  <SmallText>
+                    A verification code will be sent on your Email
+                  </SmallText>
+                </HeaderContainer>
+              )}
             </TopContainer>
             <InnerContainer>
               {active === "signin" && <LoginForm />}
@@ -250,6 +269,7 @@ export function AccountBox(props) {
               {active === "payment" && (
                 <PaymentForm userDetails={userDetails} />
               )}
+              {active === "forgetPassword" && <ForgetPasswordForm />}
             </InnerContainer>
           </BoxContainer>
         </div>

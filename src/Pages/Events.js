@@ -18,6 +18,15 @@ import RC from "../images/rc.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import { eventDetails, events } from "../staticInfo.js";
+import Slider from "react-slick";
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+};
 
 const Events = () => {
   const height = "65px";
@@ -457,41 +466,49 @@ const Events = () => {
               justifyContent: "space-between",
             }}
           >
-            <div>
-              <img
-                src={iconHelpr(events[active])}
-                alt="Event Icon"
-                style={{
-                  color: "white",
-                  width: "100px",
-                }}
-              />
-              {titleHelpr(events[active])}
-            </div>
+            <img
+              class="modal-logo-img"
+              src={iconHelpr(events[active])}
+              alt="Event Icon"
+              style={{
+                color: "white",
+                width: "5rem",
+              }}
+            />
+            <div className="modal-icon-text">{titleHelpr(events[active])}</div>
             <div onClick={() => setShow(false)}>x</div>
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body text>
           <Tabs defaultActiveKey="info" className="mb-3">
-            <Tab eventKey="info" title="Info">
-              <p>{eventDetails[eventSelected].info}</p>
+            <Tab
+              eventKey="info"
+              title="Info"
+              className="modal-tab-link"
+              color="#efefef"
+            >
+              <p className="new-line">{eventDetails[eventSelected].info}</p>
             </Tab>
-            <Tab eventKey="rules" title="Rules">
+            <Tab eventKey="rules" title="Rules" className="modal-tab-link">
               <p>{eventDetails[eventSelected].rules}</p>
             </Tab>
-            <Tab eventKey="structure" title="Structure">
+            <Tab
+              eventKey="structure"
+              title="Structure"
+              className="modal-tab-link"
+            >
               <p>{eventDetails[eventSelected].structure}</p>
             </Tab>
-            <Tab eventKey="judge" title="Judging Criteria">
+            <Tab eventKey="judge" title="Judging" className="modal-tab-link">
               <p>{eventDetails[eventSelected].judging}</p>
             </Tab>
-            <Tab eventKey="contact" title="Contact">
+            <Tab eventKey="contact" title="Contact" className="modal-tab-link">
               <p>{eventDetails[eventSelected].contact}</p>
             </Tab>
           </Tabs>
         </Modal.Body>
       </Modal>
-      <Footer />
+      <Footer stickyBottom />
     </div>
   );
 };

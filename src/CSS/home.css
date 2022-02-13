@@ -22,7 +22,7 @@
   bottom: 0;
   left: 0;
   z-index: 3;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .videoTag {
   width: 100%;
@@ -30,7 +30,7 @@
   transition: all 5s ease-in;
 }
 .video-container {
-  height: 100vh;
+  height: 92vh;
   width: 100%;
   position: relative;
   background: linear-gradient(180deg, #00002f 0%, #29004b 100%);
@@ -47,11 +47,14 @@
   position: relative;
   text-align: center;
   transition: all 0.5s ease-in;
-  top: 7%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .logo-img {
   height: 500px;
+  filter: drop-shadow(5px 5px 10px rgba(0, 247, 247, 0.5));
+  /* box-shadow: 10px 10px 50px -5px rgba(0, 0, 0, 0.71); */
 }
 .coming-soon {
   z-index: 4;
@@ -326,7 +329,8 @@
     width: 100%;
   }
   .video-container .credenz-logo {
-    top: 25%;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .logo-img {
     height: 300px;

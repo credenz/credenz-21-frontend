@@ -23,15 +23,14 @@ export const tabs = {
 
 export const eventDetails = {
   0: {
-    info: `A coding competition to test your compilation of the combinations of algorithms and conceptual understanding of the programming languages C/C++. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.
+    info: `A coding competition to test your compilation of the combinations of algorithms and conceptual understanding of the programming languages C/C++. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.\n
+    Timings
 
-      Timings
-
-      12-02-2021 , Friday : 10:00am to 7:00pm
-      13-02-2021 , Saturday : 10:00am to 6:00pm
-      14-02-2021 , Sunday : 12:00pm to 2:00pm
-      Registration Fees:
-      ₹60`,
+    12-02-2021 , Friday : 10:00am to 7:00pm\n
+      13-02-2021 , Saturday : 10:00am to 6:00pm\n
+      14-02-2021 , Sunday : 12:00pm to 2:00pm\n
+      Registration Fees:\n
+      ₹60\n`,
     rules: [
       "A maximum of 1 participant pursuing under-graduate program at their institution is allowed to participate",
       "The participants must keep their college verification in handy as you can be asked to disclose it any point of time. Before the final round, all participants will be asked to verify their identity as an under-graduate student and failure to do so will lead to immediate disqualification.",

@@ -10,6 +10,7 @@ import {
   Row,
   Spinner,
 } from "react-bootstrap";
+import { Footer } from "../Components/Footer";
 import "../CSS/AboutUs.css";
 import "../CSS/ContactUs.css";
 import { ReactComponent as Linkedinicon } from "../images/linkedin.svg";
@@ -273,6 +274,7 @@ const Contact = () => {
               title="iframe"
             ></iframe>
           </Col>
+          <Footer />
         </Row>
       </Container>
     </>

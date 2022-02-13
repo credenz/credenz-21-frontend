@@ -12,7 +12,7 @@ import {
 } from "./common";
 
 export function LoginForm(props) {
-  const { switchToSignup } = useContext(AccountContext);
+  const { switchToSignup, switchToForgetPassword } = useContext(AccountContext);
   const [username, setUsername] = useState("");
   const [passwd, setPasswd] = useState("");
 
@@ -22,7 +22,6 @@ export function LoginForm(props) {
       password: passwd,
     })
       .then((res) => {
-        console.log("Logged in!", res);
         localStorage.setItem("credenz_access_token", res.data.access);
         localStorage.setItem("credenz_username", username);
         alert(`Welcome Back ${username} !`);
@@ -34,8 +33,9 @@ export function LoginForm(props) {
 
   return (
     <BoxContainer>
-      <FormContainer>
+      <FormContainer className="p-4">
         <Input
+          className="mb-2"
           type="email"
           placeholder="Username"
           value={username}
@@ -49,7 +49,9 @@ export function LoginForm(props) {
         />
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
-      <MutedLink href="#">Forget your password?</MutedLink>
+      <MutedLink href="#" onClick={switchToForgetPassword}>
+        Forget your password?
+      </MutedLink>
       <Marginer direction="vertical" margin="1.6em" />
       <button
         className="btn btn--secondary"

@@ -13,6 +13,7 @@ export function SignupForm(props) {
   const [step, setStep] = useState(0);
 
   const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [ccode, setCcode] = useState("91");
@@ -24,6 +25,7 @@ export function SignupForm(props) {
   const [isPictian, setIsPictian] = useState(false);
   const [college, setCollege] = useState("");
   const [enablePayment, setEnablePayment] = useState(false);
+  const [isSenior, setIsSenior] = useState(false);
 
   const loadScript = (src) => {
     return new Promise((resolve) => {
@@ -48,18 +50,13 @@ export function SignupForm(props) {
 
       API.verifyPayment(bodyData)
         .then((res) => {
-          console.log("Everything is OK!");
           // eslint-disable-next-line no-restricted-globals
           location.reload();
           alert(`Payment successful!`);
           //RESET THE LOCAL STATE
         })
-        .catch((err) => {
-          console.log(err);
-        });
-    } catch (error) {
-      console.log(console.error());
-    }
+        .catch((err) => {});
+    } catch (error) {}
   };
 
   const displayRazorpay = async () => {
@@ -73,7 +70,6 @@ export function SignupForm(props) {
 
     try {
       let { data: orderData } = await API.payment({ username });
-      console.log("ORDER DATA", orderData);
       const options = {
         key: "rzp_test_jIVmcYuQhbIa7k", // Enter the Key ID generated from the Dashboard
         amount: orderData.payment.amount_due.toString(),
@@ -96,9 +92,7 @@ export function SignupForm(props) {
 
       const paymentObject = new window.Razorpay(options);
       paymentObject.open();
-    } catch (error) {
-      console.error("Error", error);
-    }
+    } catch (error) {}
   };
 
   const handleSignUp = () => {
@@ -113,7 +107,7 @@ export function SignupForm(props) {
         ieee_member: isIeeeMember,
         ieee_member_id: ieeeId || 0,
         institute: isPictian ? "PICT" : college,
-        senior: true,
+        senior: isSenior,
       },
     })
       .then((res) => {
@@ -128,6 +122,7 @@ export function SignupForm(props) {
       <FormContainer>
         {step === 0 && (
           <Step1
+            lname={lname}
             fname={fname}
             username={username}
             email={email}
@@ -154,6 +149,8 @@ export function SignupForm(props) {
             setIeeeId={setIeeeId}
             setIsPictian={setIsPictian}
             setCollege={setCollege}
+            isSenior={isSenior}
+            setIsSenior={setIsSenior}
           />
         )}
       </FormContainer>

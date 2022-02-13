@@ -1,29 +1,39 @@
 import React from "react";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Input } from "./common";
 
 const FormContainer = (props) => {
   return (
     <>
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-6 mb-1">
           <Input
             type="text"
-            placeholder="Full Name"
+            placeholder="First Name"
             value={props.fname}
             onChange={(e) => props.setFname(e.target.value)}
           />
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 mb-1">
           <Input
             type="text"
-            placeholder="Username"
+            placeholder="Last Name"
             value={props.username}
-            onChange={(e) => props.setUsername(e.target.value)}
+            onChange={(e) => props.setLname(e.target.value)}
           />
         </div>
       </div>
 
       <Input
+        className="mb-1"
+        type="text"
+        placeholder="Username"
+        value={props.username}
+        onChange={(e) => props.setUsername(e.target.value)}
+      />
+
+      <Input
+        className="mb-1"
         type="email"
         placeholder="Email"
         value={props.email}
@@ -31,6 +41,7 @@ const FormContainer = (props) => {
       />
 
       <select
+        className="mb-2"
         name="countryCode"
         id=""
         value={props.ccode}
@@ -686,6 +697,7 @@ const FormContainer = (props) => {
       </select>
 
       <Input
+        className="mb-1"
         type="number"
         placeholder="Phone"
         value={props.phone}
@@ -693,7 +705,7 @@ const FormContainer = (props) => {
       />
 
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-6 mb-1">
           <Input
             type="password"
             placeholder="Password"
@@ -701,7 +713,7 @@ const FormContainer = (props) => {
             onChange={(e) => props.setPasswd1(e.target.value)}
           />
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 mb-1">
           <Input
             type="password"
             placeholder="Confirm Password"

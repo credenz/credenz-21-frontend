@@ -24,6 +24,7 @@
 
 .section-events {
   align-items: center;
+  overflow-y: scroll !important;
 }
 .o-x-hide {
   overflow-x: hidden;
@@ -68,13 +69,40 @@
   background-image: url("../images/main.png");
   background-size: contain;
   background-repeat: no-repeat;
-  object-fit: cover;
   /* width: 420px; */
-  min-height: 190px;
+  min-height: 12rem;
   transition: box-shadow 0.3s;
   margin: 0;
   padding: 0;
   position: relative;
+}
+
+.new-line {
+  white-space: pre;
+}
+
+.modal-header,
+.modal-content {
+  background-color: var(--primary);
+  font-size: 12px !important;
+}
+
+.modal-logo-img {
+  filter: invert(93%) sepia(100%) saturate(2%) hue-rotate(270deg)
+    brightness(107%) contrast(101%);
+}
+.modal-icon-text {
+  color: var(--light);
+  display: flex;
+  align-items: center;
+}
+.modal-tab-link,
+li .nav-link {
+  color: var(--light);
+}
+
+li .nav-link {
+  padding: 0.5rem 0.5rem;
 }
 
 .main-wrapper:hover {
@@ -97,10 +125,9 @@
   color: var(--light);
   position: absolute;
   font-weight: 700;
-  bottom: 0;
   left: 50%;
   text-align: center;
-  transform: translate(-50%, -25%);
+  transform: translate(-50%, 0);
 }
 ::-webkit-scrollbar {
   display: none;
@@ -201,6 +228,25 @@
   color: var(--light);
 }
 
+@media (max-width: 2560px) {
+  .main-wrapper {
+    width: 50vw;
+    height: 47vh;
+  }
+  .container-inside {
+    padding: 45px;
+    padding-bottom: 87px;
+  }
+  .main-heading {
+    /* bottom: 0;
+    transform: translate(-50%, 0);
+    margin-bottom: 20px; */
+  }
+  .main-text {
+    margin-bottom: 10vw;
+  }
+}
+
 @media (max-width: 1920px) {
   .main-wrapper {
     width: 50vw;
@@ -211,9 +257,12 @@
     padding-bottom: 87px;
   }
   .main-heading {
-    bottom: 0;
+    /* bottom: 0;
     transform: translate(-50%, 0);
-    margin-bottom: 20px;
+    margin-bottom: 20px; */
+  }
+  .main-text {
+    margin-bottom: 2vw;
   }
 }
 
@@ -223,13 +272,16 @@
     height: 38vh;
   }
   .container-inside {
-    padding: 40px;
-    padding-bottom: 100px;
+    padding: 3vw;
+    padding-bottom: 13vw;
   }
   .main-heading {
-    bottom: 0%;
+    /* bottom: 0%;
     transform: translate(-50%, 0%);
-    margin-bottom: 35px;
+    margin-bottom: 35px; */
+  }
+  .main-text {
+    margin-bottom: 4vw;
   }
 }
 
@@ -239,15 +291,16 @@
     height: 32.5vh;
   }
   .container-inside {
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 25px;
-    padding-bottom: 55px;
+    padding: 3vw;
+    padding-bottom: 19vw;
   }
   .main-heading {
-    bottom: 0;
+    /* bottom: 0;
     transform: translate(-50%, 0);
-    margin-bottom: 5px;
+    margin-bottom: 5px; */
+  }
+  .main-text {
+    margin-bottom: 3vw;
   }
 }
 

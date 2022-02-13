@@ -9,13 +9,11 @@ export function PaymentForm(props) {
   // eslint-disable-next-line no-unused-vars
   const history = useHistory();
   const localDetails = props.userDetails;
-  console.log("Localdetails", localDetails);
   const [userDetails, setUserDetails] = useState(null);
 
   const fetchUserDetails = async () => {
     try {
       const { data } = await API.getUserById(localDetails.user_id);
-      console.log("Userdetails", data);
       setUserDetails(data);
     } catch (error) {
       console.error(error);
@@ -52,7 +50,6 @@ export function PaymentForm(props) {
 
       API.verifyPayment(bodyData)
         .then((res) => {
-          console.log("Everything is OK! Payment Completed!");
           //RESET THE LOCAL STATE
           //   history.push("/", { userDetails });
           alert(`Payment successful!`);
@@ -60,12 +57,8 @@ export function PaymentForm(props) {
           location.reload();
           //   window.open("/events", "_self");
         })
-        .catch((err) => {
-          console.log(err);
-        });
-    } catch (error) {
-      console.log(console.error());
-    }
+        .catch((err) => {});
+    } catch (error) {}
   };
 
   const displayRazorpay = async () => {
@@ -81,7 +74,6 @@ export function PaymentForm(props) {
       let { data: orderData } = await API.payment({
         username: userDetails.username,
       });
-      console.log("ORDER DATA", orderData);
       const options = {
         key: "rzp_test_jIVmcYuQhbIa7k", // Enter the Key ID generated from the Dashboard
         amount: orderData.payment.amount_due.toString(),
