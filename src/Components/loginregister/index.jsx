@@ -209,9 +209,9 @@ export function AccountBox(props) {
             class="image-fluid"
             style={{ height: "350px", width: "350px" }}
           />
-          <div className="color-light" style={{ fontSize: "1.5rem" }}>
+          {/* <div className="color-light" style={{ fontSize: "1.5rem" }}>
             Sponsored By Proton
-          </div>
+          </div> */}
         </div>
         <div class="col-md-6  d-flex justify-content-center align-items-center">
           <BoxContainer>

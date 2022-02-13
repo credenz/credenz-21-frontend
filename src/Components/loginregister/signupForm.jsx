@@ -49,6 +49,9 @@ export function SignupForm(props) {
       API.verifyPayment(bodyData)
         .then((res) => {
           console.log("Everything is OK!");
+          // eslint-disable-next-line no-restricted-globals
+          location.reload();
+          alert(`Payment successful!`);
           //RESET THE LOCAL STATE
         })
         .catch((err) => {
