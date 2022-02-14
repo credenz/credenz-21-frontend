@@ -14,7 +14,6 @@ import { SignupForm } from "./signupForm";
 import { ForgetPasswordForm } from "./ForgetPasswordForm";
 
 const BoxContainer = styled.div`
-  margin-top: 46px;
   ${"" /* margin-left:1000px; */}
   width: 480px;
   min-height: 550px;
@@ -213,7 +212,7 @@ export function AccountBox(props) {
       </div>
       <div className="login-preloader" hidden={!loading}></div>
       <div class="mt-4 container-fluid row">
-        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center imagectdlog">
           <Image
             src={CredenzLive}
             class="image-fluid"

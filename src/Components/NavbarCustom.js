@@ -54,7 +54,7 @@ const NavbarCustom = (props) => {
             ? "navbar-wrapper position-relative bg-color-custom"
             : "navbar-wrapper bg-color-custom"
         }
-        expand="xl"
+        expand="md"
       >
         <Navbar.Brand
           href="https://pictieee.in"
@@ -63,7 +63,7 @@ const NavbarCustom = (props) => {
         >
           <img src={PISBLOGO} alt="pisblogo" className="nav-logo ms-4" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="m-2" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav className="s-auto">
             <NavLink
