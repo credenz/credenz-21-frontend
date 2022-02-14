@@ -4,7 +4,8 @@
 .aboutCard {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   position: relative;
   margin: 20px auto;
@@ -17,9 +18,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  width: 100%;
+  margin: 50px 0px;
+  width: 98%;
 }
 
 .c img {
