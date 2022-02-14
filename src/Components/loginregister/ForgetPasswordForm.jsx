@@ -18,6 +18,7 @@ export function ForgetPasswordForm(props) {
     try {
       await API.passwordReset({ email });
       setEmailSent(true);
+      alert("Email sent! Check yout mailbox.");
     } catch (error) {
       console.error(error);
     }
