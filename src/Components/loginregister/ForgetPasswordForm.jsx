@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { API } from "../../axios/API";
 import "../../CSS/loginForm.css";
 import { Marginer } from "../marginer";
@@ -12,7 +13,42 @@ export function ForgetPasswordForm(props) {
   const [email, setEmail] = useState("");
   const [token, setToken] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
+  const validateEmail = (password) => {
+    const reg =
+      '[a-z0-9]+@[a-z]+\.[a-z]{2,3}';
+    const re = new RegExp(reg);
+    console.log("password", email);
+    console.log("pass?", re.test(email));
+    if (!re.test(password)) {
+      setEmailError(true);
+    } else {
+      setEmailError(false);
+    }
+  };
+  const [passwordError, setPasswordError] = useState(false);
+  const validatePassword = (password) => {
+    const reg =
+      "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
+    const re = new RegExp(reg);
+    console.log("password", password);
+    console.log("pass?", re.test(password));
+    if (!re.test(password)) {
+      setPasswordError(true);
+    } else {
+      setPasswordError(false);
+    }
+  };
+
+  useEffect(() => {
+    if(email.length > 3) {
+      validateEmail(email);
+    }
+    if (password.length > 3) {
+      validatePassword(password);
+    }
+  }, [email, email.length, password, password.length]);
 
   const sendVerificationToken = async () => {
     try {
@@ -42,6 +78,9 @@ export function ForgetPasswordForm(props) {
   return (
     <BoxContainer className="p-4">
       <FormContainer>
+      <span hidden={!emailError} className="error-text">
+          Please enter a valid E-Mail id.
+        </span>
         <Input
           disabled={emailSent}
           type="email"
@@ -63,6 +102,10 @@ export function ForgetPasswordForm(props) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <span hidden={!passwordError} className="error-text">
+          The password must contain atleast 1 aplhabet, 1 number and 1 special
+          character
+        </span>
       </FormContainer>
       <Marginer direction="vertical" margin={70} />
 
