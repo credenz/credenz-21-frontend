@@ -44,7 +44,6 @@ const Home = () => {
           <img src={HomeImage} alt="credenzLive" className="logo-img" />
         </div>
       </div>
-      <Footer />
     </div>
   );
   // return (

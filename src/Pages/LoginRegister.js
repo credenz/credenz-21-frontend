@@ -17,11 +17,11 @@ const AppContainer = styled.div`
   //   rgba(238, 31, 32, 1) 0%,
   //   rgba(20, 20, 20, 1) 50%
   // );
-  background: rgb(20, 20, 20);
-  background: linear-gradient(
-    297deg,
-    rgba(20, 20, 20, 1) 29%,
-    rgba(156, 20, 21, 1) 100%
+  background: rgb(50, 42, 42);
+  background: radial-gradient(
+    circle,
+    rgba(50, 42, 42, 1) 0%,
+    rgba(20, 20, 20, 1) 53%
   );
 `;
 

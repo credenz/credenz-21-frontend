@@ -44,7 +44,7 @@
   left: 2px;
   right: 2px;
   bottom: 2px;
-  background-color: var(--yellow-color);
+  background-color: var(--orange);
   clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
 }
 
@@ -53,7 +53,7 @@
 }
 
 .btn__content {
-  background-color: var(--red);
+  background-color: var(--orange);
   color: var(--white-color);
 }
 

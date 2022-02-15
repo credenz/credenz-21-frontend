@@ -3,10 +3,12 @@
   --secondary: #646368;
   --tertiary: #b3aea0;
   --light: #efefef;
-  --orange: #ff5001;
-  --border: rgb(85, 52, 65);
-  /* --text: #26262a; */
-  --text: #efefef;
+  --orange: #ee1f20;
+  --red: #ee1f20;
+  /* --red: #9c1415; */
+  --border: #e01949;
+  --purple: #c344e7;
+  --grey: #797979;
 }
 
 .wrapper-new {
@@ -40,6 +42,7 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  transition: all 0.2s ease;
 }
 
 .card-title {
@@ -47,10 +50,12 @@
   text-align: center;
   font-size: 0.8rem;
 }
+
+.hover,
 .focused {
   transform: scale(1.05);
-  transition: all 0.2s linear !important;
-  box-shadow: 0 0 10px var(--border);
+  transition: all 0.2s ease !important;
+  box-shadow: 0 0 10px rgb(255 60 60 / 92%);
 }
 
 .not-focused {

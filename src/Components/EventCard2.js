@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "../CSS/eventcard2.css";
 
 const EventCard2 = (props) => {
+  const [hover, setHover] = useState("");
   return (
-    <div className={props.active ? `outer focused` : `outer not-focused`}>
+    <div
+      className={props.active ? `outer focused ${hover}` : `outer ${hover}`}
+      onMouseEnter={() => {
+        setHover("hover");
+      }}
+      onMouseLeave={() => {
+        setHover("");
+      }}
+    >
       <div className={props.active ? `wrapper-new` : `wrapper-new`}>
         <div className="container-new">
           <img

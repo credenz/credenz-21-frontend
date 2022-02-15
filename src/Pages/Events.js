@@ -36,7 +36,7 @@ const Events = () => {
     } else return e;
   };
 
-  const [eventSelected, setEventSelected] = useState(0);
+  const [eventSelected, setEventSelected] = useState(-1);
   const [mainText, setMainText] = useState(eventDetails[0].info);
   const [mainHeading, setMainHeading] = useState(titleHelpr(events[0]));
 
@@ -74,11 +74,11 @@ const Events = () => {
   }, []);
 
   return (
-    <div className="bg-dark section-events height-full o-x-hide">
+    <div className="bg-dark section-events height-full o-x-hide-events">
       {/* <NavbarCustom relative /> */}
       {/* NEW GRID */}
-      <div className="row mt-3 ms-3 me-3 cards-wrapper">
-        <div className="col-md-3">
+      <div className="row ms-3 me-3 cards-wrapper">
+        <div className="col-md-3 col-3">
           <div className="row">
             <div
               className="col-6"
@@ -204,16 +204,11 @@ const Events = () => {
             </div>
           </div>
         </div>
-        <div className="col-md-6 mt-3">
-          <div
-            className="row justify-content-center"
-            style={{ height: "fit-content" }}
-          >
+        <div className="col-md-6 col-6">
+          <div className="row justify-content-center" style={{ height: "50%" }}>
             <div className="main-wrapper">
-              <div className="container container-inside ">
-                <div className="main-text">{mainText}</div>
-                <div className="main-heading">{mainHeading}</div>
-              </div>
+              <div className="main-heading">{mainHeading}</div>
+              <div className="main-text">{mainText}</div>
             </div>
           </div>
           <div
@@ -233,7 +228,8 @@ const Events = () => {
                   color="warning"
                   rounded
                   onClick={() => {
-                    setMainText(eventDetails[eventSelected].info);
+                    if (eventSelected)
+                      setMainText(eventDetails[eventSelected].info);
                     setActiveTab(0);
                   }}
                 >
@@ -315,7 +311,7 @@ const Events = () => {
             </div>
           </div>
         </div>
-        <div className="col-md-3">
+        <div className="col-md-3 col-3">
           <div className="row">
             <div
               className="col-6"
@@ -478,28 +474,35 @@ const Events = () => {
               className="modal-tab-link"
               color="#efefef"
             >
-              <p className="new-line">{eventDetails[eventSelected].info}</p>
+              <p className="new-line">
+                {eventSelected !== -1 && eventDetails[eventSelected].info}
+              </p>
             </Tab>
             <Tab eventKey="rules" title="Rules" className="modal-tab-link">
-              <p>{eventDetails[eventSelected].rules}</p>
+              <p>{eventSelected !== -1 && eventDetails[eventSelected].rules}</p>
             </Tab>
             <Tab
               eventKey="structure"
               title="Structure"
               className="modal-tab-link"
             >
-              <p>{eventDetails[eventSelected].structure}</p>
+              <p>
+                {eventSelected !== -1 && eventDetails[eventSelected].structure}
+              </p>
             </Tab>
             <Tab eventKey="judge" title="Judging" className="modal-tab-link">
-              <p>{eventDetails[eventSelected].judging}</p>
+              <p>
+                {eventSelected !== -1 && eventDetails[eventSelected].judging}
+              </p>
             </Tab>
             <Tab eventKey="contact" title="Contact" className="modal-tab-link">
-              <p>{eventDetails[eventSelected].contact}</p>
+              <p>
+                {eventSelected !== -1 && eventDetails[eventSelected].contact}
+              </p>
             </Tab>
           </Tabs>
         </Modal.Body>
       </Modal>
-      <Footer stickyBottom />
     </div>
   );
 };

@@ -20,7 +20,7 @@ const BoxContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 19px;
-  background-color: #231f20;
+  background-color: var(--primary);
   box-shadow: 0px 2px 10px rgba(255, 0, 60, 1);
   position: relative;
   overflow: hidden;
@@ -47,7 +47,7 @@ const BackDrop = styled(motion.div)`
   top: -285px;
   left: -70px;
   z-index: 10;
-  background: var(--red);
+  background: var(--orange);
 `;
 
 const HeaderContainer = styled.div`
