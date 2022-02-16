@@ -80,6 +80,15 @@
 .main-wrapper:hover {
   /* box-shadow: 0 0 10px var(--border); */
 }
+.logo-events {
+  height: 200px;
+  width: 200px;
+}
+.credenz-text-main {
+  color: var(--light);
+  font-size: 40px;
+  font-weight: bold;
+}
 
 .new-line {
   white-space: pre;

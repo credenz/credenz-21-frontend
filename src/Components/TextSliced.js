@@ -1,8 +1,9 @@
 import React from "react";
 import "../CSS/textSlice.css";
 const TextSliced = (props) => {
+  console.log("Navbar:", props.title, props.active);
   return (
-    <span className="item_outer">
+    <span className={`item_outer ${props.active ? "item_active" : ""}`}>
       <span
         className="item_text edgtf-split-holder"
         style={{ position: "relative", whiteSpace: "nowrap" }}

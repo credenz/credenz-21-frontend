@@ -14,6 +14,9 @@
   position: relative;
   display: block;
 }
+.item_active {
+  color: var(--orange);
+}
 
 .item_outer:hover {
   color: var(--orange);

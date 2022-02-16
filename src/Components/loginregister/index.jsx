@@ -212,10 +212,10 @@ export function AccountBox(props) {
       </div>
       <div className="login-preloader" hidden={!loading}></div>
       <div class="mt-4 container-fluid row">
-        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center imagectdlog">
+        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center ">
           <Image
             src={CredenzLive}
-            class="image-fluid"
+            className="logo-login-page"
             style={{ height: "350px", width: "350px" }}
           />
           {/* <div className="color-light" style={{ fontSize: "1.5rem" }}>

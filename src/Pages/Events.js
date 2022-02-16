@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Modal, Tab, Tabs } from "react-bootstrap";
+import { Image, Modal, Tab, Tabs } from "react-bootstrap";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import EventCard2 from "../Components/EventCard2";
-import { Footer } from "../Components/Footer";
 import "../CSS/events.css";
 import BPlan from "../images/bplan.png";
 import Clash from "../images/clash.png";
@@ -18,6 +17,26 @@ import RC from "../images/rc.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import { eventDetails, events } from "../staticInfo.js";
+import CredenzLogo from "../images/onlyLogo.png";
+
+const Logo = () => {
+  return (
+    <div className="row" style={{ height: "100%" }}>
+      <div
+        className="col-md-6 d-flex justify-content-center"
+        style={{ height: "100%" }}
+      >
+        <Image src={CredenzLogo} className="logo-events" />
+      </div>
+      <div
+        className="col-md-6 d-flex justify-content-center align-items-center"
+        style={{ height: "100%" }}
+      >
+        <p className="credenz-text-main">CREDENZ LIVE 2.0</p>
+      </div>
+    </div>
+  );
+};
 
 const Events = () => {
   const height = "65px";
@@ -207,8 +226,14 @@ const Events = () => {
         <div className="col-md-6 col-6">
           <div className="row justify-content-center" style={{ height: "50%" }}>
             <div className="main-wrapper">
-              <div className="main-heading">{mainHeading}</div>
-              <div className="main-text">{mainText}</div>
+              {eventSelected === -1 ? (
+                <Logo />
+              ) : (
+                <>
+                  <div className="main-heading">{mainHeading}</div>
+                  <div className="main-text">{mainText}</div>
+                </>
+              )}
             </div>
           </div>
           <div

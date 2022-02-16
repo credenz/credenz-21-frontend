@@ -5,18 +5,22 @@
   justify-content: center;
 }
 
-.aboutSponsor > img {
-  width: 150px;
-  height: 150px;
-  filter: grayscale(100%) invert(100%);
-  border: 7px solid #111;
-  margin: 30px;
-  transition-duration: 0.12s;
-  transition-timing-function: ease-in-out;
-  transition-property: all;
+.sponsors-text {
+  color: var(--light);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
 }
 
-.aboutSponsor > img:hover {
-  border-color: black;
-  border-radius: 20px;
+.aboutSponsor > a > img {
+  width: 200px;
+  height: 200px;
+  margin: 30px;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+}
+
+.aboutSponsor > a > img:hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease;
 }

@@ -3,6 +3,9 @@ import "aos/dist/aos.css";
 import React, { useEffect } from "react";
 import AboutCards from "../Components/AboutCards";
 import AboutSponsors from "../Components/AboutSponsors";
+import CollegePond from "../images/collegePond.jfif";
+import Proton from "../images/proton.png";
+import CodingNinjas from "../images/codingNinjas.jfif";
 import "../CSS/AboutUs.css";
 
 function AboutUs() {
@@ -19,7 +22,8 @@ function AboutUs() {
         data-aos="zoom-in-up"
         data-aos-duration="100"
         data-aos-easing="ease-in-sine"
-        data-aos-anchor-placement="top-center">
+        data-aos-anchor-placement="top-center"
+      >
         <h1>About Us</h1>
       </div>
 
@@ -28,110 +32,61 @@ function AboutUs() {
         <AboutCards></AboutCards>
       </div>
 
-      <div className="aboutSponsors d-nones">
+      <div className="aboutSponsors">
         {/* About Sponsors */}
         <h1
           data-aos="zoom-in"
-          data-aos-duration="100"
-          data-aos-easing="ease-in-sine">
-          OUR ESTEEMED SPONSORS
+          data-aos-duration="500"
+          data-aos-easing="ease-in-sine"
+        >
+          Sponsors
         </h1>
-        <div className="aboutSpons">
-          <div
-            className="spons1 spons"
-            data-aos="zoom-in"
-            data-aos-duration="800"
-            data-aos-easing="ease-in-sine"
-            data-aos-offset="50">
-            <AboutSponsors
-              slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"></AboutSponsors>
+        <div className="row" style={{ width: "100%" }}>
+          <div className="col-md-4">
+            <div
+              className="spons7 spons"
+              data-aos="zoom-in"
+              data-aos-duration="800"
+              data-aos-easing="ease-in-sine"
+              data-aos-offset="50"
+            >
+              <AboutSponsors
+                slink={CollegePond}
+                href="https://www.collegepond.com/"
+                sname="Higher Education Partner"
+              ></AboutSponsors>
+            </div>
           </div>
-          <div
-            className="spons2 spons"
-            data-aos="zoom-in"
-            data-aos-duration="800"
-            data-aos-easing="ease-in-sine"
-            data-aos-offset="50">
-            <AboutSponsors
-              slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"></AboutSponsors>
+          <div className="col-md-4">
+            <div
+              className="spons8 spons"
+              data-aos="zoom-in"
+              data-aos-duration="800"
+              data-aos-easing="ease-in-sine"
+              data-aos-offset="50"
+            >
+              <AboutSponsors
+                slink={Proton}
+                href="https://protons.in/"
+                sname="Training Partner"
+              ></AboutSponsors>
+            </div>
           </div>
-          <div
-            className="spons3 spons"
-            data-aos="zoom-in"
-            data-aos-duration="800"
-            data-aos-easing="ease-in-sine"
-            data-aos-offset="50">
-            <AboutSponsors
-              slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"></AboutSponsors>
+          <div className="col-md-4">
+            <div
+              className="spons9 spons"
+              data-aos="zoom-in"
+              data-aos-duration="800"
+              data-aos-easing="ease-in-sine"
+              data-aos-offset="50"
+            >
+              <AboutSponsors
+                slink={CodingNinjas}
+                sname="Programming Partner"
+                href="https://www.codingninjas.in/"
+              ></AboutSponsors>
+            </div>
           </div>
-          <div
-            className="spons4 spons"
-            data-aos="zoom-in"
-            data-aos-duration="800"
-            data-aos-easing="ease-in-sine"
-            data-aos-offset="50">
-            <AboutSponsors
-              slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"></AboutSponsors>
-          </div>
-          <div
-            className="spons5 spons"
-            data-aos="zoom-in"
-            data-aos-duration="800"
-            data-aos-easing="ease-in-sine"
-            data-aos-offset="50">
-            <AboutSponsors
-              slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"></AboutSponsors>
-          </div>
-          <div
-            className="spons6 spons"
-            data-aos="zoom-in"
-            data-aos-duration="800"
-            data-aos-easing="ease-in-sine"
-            data-aos-offset="50">
-            <AboutSponsors
-              slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"></AboutSponsors>
-          </div>
-          <div
-            className="spons7 spons"
-            data-aos="zoom-in"
-            data-aos-duration="800"
-            data-aos-easing="ease-in-sine"
-            data-aos-offset="50">
-            <AboutSponsors
-              slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"></AboutSponsors>
-          </div>
-          <div
-            className="spons8 spons"
-            data-aos="zoom-in"
-            data-aos-duration="800"
-            data-aos-easing="ease-in-sine"
-            data-aos-offset="50">
-            <AboutSponsors
-              slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"></AboutSponsors>
-          </div>
-          <div
-            className="spons9 spons"
-            data-aos="zoom-in"
-            data-aos-duration="800"
-            data-aos-easing="ease-in-sine"
-            data-aos-offset="50">
-            <AboutSponsors
-              slink="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKV3hJrxSfK8zRefbvWHYF-Zqiom0k0hXigw&usqp=CAU"
-              sname="sponsorname"></AboutSponsors>
-          </div>
-        </div>
-      </div>
-      <div className="footer">
-        <div className="row justify-content-center">
-          © PICT IEEE Student Branch
         </div>
       </div>
     </div>

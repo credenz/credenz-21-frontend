@@ -8,8 +8,6 @@ import PISBLOGO from "../images/pisb.png";
 import TextSliced from "./TextSliced";
 const NavbarCustom = (props) => {
   const page = useParams().page || "";
-  const history = useHistory();
-  console.log("HISTORY", history);
   // eslint-disable-next-line no-unused-vars
   const [userDetails, setUserDetails] = useState({});
   const [paymentDone, setPaymentDone] = useState(false);
@@ -104,6 +102,7 @@ const NavbarCustom = (props) => {
               <TextSliced
                 title={isLoggedIn ? (!paymentDone ? "Pay Now" : "") : "Login"}
                 hidden
+                active={page === "login"}
               />
             </NavLink>
             <NavLink

@@ -283,3 +283,9 @@ input[type="checkbox"]:checked::before {
 option {
   font-family: Tomorrow, sans-serif;
 }
+
+@media (max-width: 786px) {
+  .logo-login-page {
+    display: none;
+  }
+}
