@@ -1,17 +1,16 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { Image, Toast } from "react-bootstrap";
+import { Image, Spinner, Toast } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { API } from "../../axios/API";
 import "../../CSS/Login.css";
-import Cross from "../../images/close-line.png";
 import CredenzLive from "../../images/credenzlive2.0_1.png";
 import { AccountContext } from "./accountContext";
+import { ForgetPasswordForm } from "./ForgetPasswordForm";
 import { LoginForm } from "./loginForm";
 import { PaymentForm } from "./PaymentForm";
 import { SignupForm } from "./signupForm";
-import { ForgetPasswordForm } from "./ForgetPasswordForm";
 
 const BoxContainer = styled.div`
   ${"" /* margin-left:1000px; */}
@@ -198,21 +197,32 @@ export function AccountBox(props) {
         <Toast show={showPaymentToast}>
           <Toast.Header>
             <strong className="me-auto">Credenz Live 2.0</strong>
-            <img
+            {/* <img
               src={Cross}
               className="rounded me-2 close toast-close"
               alt=""
               data-dismiss="toast"
               height={"10px"}
               onClick={() => setShowPaymentToast(false)}
-            />
+            /> */}
           </Toast.Header>
           <Toast.Body>Please proceed to payment to continue!</Toast.Body>
         </Toast>
       </div>
-      <div className="login-preloader" hidden={!loading}></div>
-      <div class="mt-4 container-fluid row">
-        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center ">
+      {loading && (
+        <div
+          className="d-flex justify-content-center align-items-center"
+          style={{
+            height: "100vh",
+            backgroundColor: "transparent",
+            width: "100%",
+          }}
+        >
+          <Spinner animation="grow" color="red" />
+        </div>
+      )}
+      <div className="mt-4 container-fluid row">
+        <div className="col-md-6 d-flex flex-column justify-content-center align-items-center ">
           <Image
             src={CredenzLive}
             className="logo-login-page"
@@ -222,7 +232,7 @@ export function AccountBox(props) {
             Sponsored By Proton
           </div> */}
         </div>
-        <div class="col-md-6  d-flex justify-content-center align-items-center">
+        <div className="col-md-6  d-flex justify-content-center align-items-center">
           <BoxContainer>
             <TopContainer>
               <BackDrop
@@ -263,8 +273,12 @@ export function AccountBox(props) {
               )}
             </TopContainer>
             <InnerContainer>
-              {active === "signin" && <LoginForm />}
-              {active === "signup" && <SignupForm />}
+              {active === "signin" && (
+                <LoginForm loading={loading} setLoading={setLoading} />
+              )}
+              {active === "signup" && (
+                <SignupForm loading={loading} setLoading={setLoading} />
+              )}
               {active === "payment" && (
                 <PaymentForm userDetails={userDetails} />
               )}

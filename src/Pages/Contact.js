@@ -29,7 +29,6 @@ const Contact = () => {
   }, []);
 
   const handleFeedback = (e) => {
-    console.log(e.target.value);
     e.preventDefault();
     const data = new FormData();
     data.append("Name", feedname);

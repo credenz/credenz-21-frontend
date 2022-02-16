@@ -17,6 +17,7 @@ export function LoginForm(props) {
   const [passwd, setPasswd] = useState("");
 
   const handleSubmit = () => {
+    props.setLoading(true);
     API.getRefreshToken({
       username: username,
       password: passwd,
@@ -27,8 +28,12 @@ export function LoginForm(props) {
         alert(`Welcome Back ${username} !`);
         // eslint-disable-next-line no-restricted-globals
         location.reload();
+        props.setLoading(false);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        props.setLoading(true);
+        console.error(err);
+      });
   };
 
   return (
@@ -51,6 +56,7 @@ export function LoginForm(props) {
       <Marginer direction="vertical" margin={10} />
       <MutedLink
         switchToSignup={switchToSignup}
+        style={{ cursor: "pointer" }}
         onClick={switchToForgetPassword}
       >
         Forgot your password?

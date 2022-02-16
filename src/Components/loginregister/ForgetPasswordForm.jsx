@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useEffect } from "react";
 import { API } from "../../axios/API";
+import { AccountContext } from "./accountContext";
 import "../../CSS/loginForm.css";
 import { Marginer } from "../marginer";
-import { BoxContainer, FormContainer, Input } from "./common";
+import {
+  BoxContainer,
+  FormContainer,
+  Input,
+  MutedLink,
+  BoldLink,
+} from "./common";
 
 export function ForgetPasswordForm(props) {
   // eslint-disable-next-line no-unused-vars
@@ -15,11 +22,10 @@ export function ForgetPasswordForm(props) {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
+  const { switchToSignin } = useContext(AccountContext);
   const validateEmail = (password) => {
     const reg = "[a-z0-9]+@[a-z]+.[a-z]{2,3}";
     const re = new RegExp(reg);
-    console.log("password", email);
-    console.log("pass?", re.test(email));
     if (!re.test(password)) {
       setEmailError(true);
     } else {
@@ -31,8 +37,6 @@ export function ForgetPasswordForm(props) {
     const reg =
       "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
     const re = new RegExp(reg);
-    console.log("password", password);
-    console.log("pass?", re.test(password));
     if (!re.test(password)) {
       setPasswordError(true);
     } else {
@@ -116,17 +120,25 @@ export function ForgetPasswordForm(props) {
         type="submit"
         onClick={sendVerificationToken}
       >
-        <span class="btn__content">Send Verification Mail</span>
-        <span class="btn__glitch"></span>
+        <span className="btn__content">Send Verification Mail</span>
+        <span className="btn__glitch"></span>
       </button>
       <button
         className="btn btn--secondary"
         type="submit"
         onClick={handleForgetPassword}
       >
-        <span class="btn__content">Submit</span>
-        <span class="btn__glitch"></span>
+        <span className="btn__content">Submit</span>
+        <span className="btn__glitch"></span>
       </button>
+      <Marginer direction="vertical" margin="1em" />
+      <MutedLink
+        className="mb-3"
+        style={{ cursor: "pointer" }}
+        onClick={switchToSignin}
+      >
+        Back to Login
+      </MutedLink>
     </BoxContainer>
   );
 }

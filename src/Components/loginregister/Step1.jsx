@@ -8,8 +8,6 @@ const FormContainer = (props) => {
     const reg =
       "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
     const re = new RegExp(reg);
-    console.log("password", password);
-    console.log("pass?", re.test(password));
     if (!re.test(password)) {
       setPasswordError(true);
     } else {

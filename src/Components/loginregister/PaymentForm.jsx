@@ -109,8 +109,8 @@ export function PaymentForm(props) {
         type="submit"
         onClick={displayRazorpay}
       >
-        <span class="btn__content">Pay Now</span>
-        <span class="btn__glitch"></span>
+        <span className="btn__content">Pay Now</span>
+        <span className="btn__glitch"></span>
       </button>
     </BoxContainer>
   );

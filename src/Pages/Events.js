@@ -18,6 +18,7 @@ import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import { eventDetails, events } from "../staticInfo.js";
 import CredenzLogo from "../images/onlyLogo.png";
+import PlayButton from "../Components/PlayButton";
 
 const Logo = () => {
   return (
@@ -39,6 +40,7 @@ const Logo = () => {
 };
 
 const Events = () => {
+  const ptop = "50px";
   const height = "65px";
   const width = "65px";
   const [active, setActive] = useState(-1);
@@ -97,9 +99,7 @@ const Events = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const navigateHorizontal = (event) => {
-    console.log("Event  ->", event);
-  };
+  const navigateHorizontal = (event) => {};
   // document.onload(e=>{
   //   document.querySelector(".tabButton").readyState(function () {
   //     document.body.keydown(function (e) {
@@ -294,9 +294,12 @@ const Events = () => {
                   )}
                 </div>
               </div>
+              <div className="row">
+                {eventSelected === -1 ? null : <PlayButton link="#" />}
+              </div>
               <div
                 className="d-flex justify-content-center row tab-group"
-                style={{ height: "50%", paddingTop: "50px" }}
+                style={{ height: "50%", paddingTop: { ptop } }}
               >
                 <div
                   className="d-flex row justify-content-center"

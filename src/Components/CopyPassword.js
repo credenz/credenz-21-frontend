@@ -14,7 +14,7 @@ const CopyPassword = (props) => {
       <Col sm={3}>
         <CopyToClipboard text={props.password} onCopy={() => setCopied(true)}>
           <button>
-            <i class="fa fa-clone"></i>
+            <i className="fa fa-clone"></i>
           </button>
         </CopyToClipboard>
       </Col>

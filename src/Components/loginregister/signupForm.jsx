@@ -96,6 +96,7 @@ export function SignupForm(props) {
   };
 
   const handleSignUp = () => {
+    props.setLoading(true);
     API.registerUser({
       fullname: fname + lname,
       username: username,
@@ -116,9 +117,10 @@ export function SignupForm(props) {
           "You have been registered!, Pay using the Pay Now button or login later with the credentials to pay later."
         );
         localStorage.setItem("credenz_username", res.data.username);
+        props.setLoading(false);
       })
       .catch((e) => {
-        console.log("Error", e.response.data);
+        props.setLoading(false);
         alert(JSON.stringify(e.response.data));
       });
   };
@@ -179,8 +181,8 @@ export function SignupForm(props) {
             onClick={displayRazorpay}
             disabled={!enablePayment}
           >
-            <span class="btn__content">Pay Now</span>
-            <span class="btn__glitch"></span>
+            <span className="btn__content">Pay Now</span>
+            <span className="btn__glitch"></span>
           </button>
         </>
       )}

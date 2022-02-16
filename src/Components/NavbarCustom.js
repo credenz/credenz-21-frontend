@@ -19,15 +19,12 @@ const NavbarCustom = (props) => {
     if (token) {
       API.getUserDetails(username)
         .then((res) => {
-          console.log("RES DATA", res.data);
           setUserDetails(res.data);
           setIsLoggedIn(true);
           if (res.data.payment === "PO") {
-            console.log("Payment Pending");
             setPaymentDone(false);
             // show payment button - Handeled ✔
           } else if (res.data.payment === "CO") {
-            console.log("Payment Completed");
             setPaymentDone(true);
           }
         })

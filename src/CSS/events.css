@@ -39,6 +39,9 @@
 .m-mb {
   margin-bottom: 20px;
 }
+.tab-group {
+  margin-top: 25px;
+}
 
 .cards-wrapper {
   overflow-y: scroll;
