@@ -112,7 +112,9 @@ export function SignupForm(props) {
     })
       .then((res) => {
         setEnablePayment(true);
-        alert("You have been registered!, Pay using the Pay Now button or login later with the credentials to pay later.")
+        alert(
+          "You have been registered!, Pay using the Pay Now button or login later with the credentials to pay later."
+        );
         localStorage.setItem("credenz_username", res.data.username);
       })
       .catch((e) => {
@@ -199,11 +201,9 @@ export function SignupForm(props) {
         </button>
       )}
       <Marginer direction="vertical" margin="1em" />
-      <MutedLink className="mb-3">
+      <MutedLink className="mb-3" style={{ cursor: "pointer" }}>
         Already have an account?
-        <BoldLink onClick={switchToSignin}>
-          Signin
-        </BoldLink>
+        <BoldLink onClick={switchToSignin}>Signin</BoldLink>
       </MutedLink>
     </BoxContainer>
   );

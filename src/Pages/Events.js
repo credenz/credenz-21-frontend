@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Image, Modal, Tab, Tabs } from "react-bootstrap";
+import { Image, Modal, Tab, Tabs, Spinner } from "react-bootstrap";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import EventCard2 from "../Components/EventCard2";
@@ -58,6 +58,7 @@ const Events = () => {
   const [eventSelected, setEventSelected] = useState(-1);
   const [mainText, setMainText] = useState(eventDetails[0].info);
   const [mainHeading, setMainHeading] = useState(titleHelpr(events[0]));
+  const [loading, setLoading] = useState(false);
 
   const iconHelpr = (e) => {
     if (e === "RC") {
@@ -88,447 +89,555 @@ const Events = () => {
   };
 
   useEffect(() => {
+    setLoading(true);
     setActive(-1);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const navigateHorizontal = (event) => {
+    console.log("Event  ->", event);
+  };
+  // document.onload(e=>{
+  //   document.querySelector(".tabButton").readyState(function () {
+  //     document.body.keydown(function (e) {
+  //       if (e.which === 37) {
+  //         // left
+  //         // document.querySelector(".previous a").trigger("click");
+  //         console.log("37");
+  //       } else if (e.which === 39) {
+  //         // right
+  //         // document.querySelector(".next a").trigger("click");
+  //         console.log("39");
+  //       }
+  //     });
+  //     document
+  //       .querySelector(".previous a")
+  //       .addEventListener("click", function () {
+  //         // your scripts for previous click here
+  //         window.location = "http://www.google.com";
+  //       });
+  //     document.querySelector(".next a").addEventListener("click", function () {
+  //       // your scripts for next click here
+  //       window.location = "http://sg.yahoo.com/";
+  //     });
+  //   });
+  // })
+
   return (
-    <div className="bg-dark section-events height-full o-x-hide-events">
-      {/* <NavbarCustom relative /> */}
-      {/* NEW GRID */}
-      <div className="row ms-3 me-3 cards-wrapper">
-        <div className="col-md-3 col-3">
-          <div className="row">
-            <div
-              className="col-6"
-              onClick={() => {
-                setActive(0);
-                setMainHeading(titleHelpr(events[0]));
-                setMainText(eventDetails[0].info);
-                setEventSelected(0);
-                setShow(true);
-              }}
-            >
-              <EventCard2
-                icon={RC}
-                width={width}
-                height={height}
-                title="Reverse Coding"
-                text="Hone your problem-solving skills by decrypting complex questions"
-                active={0 === active || 0 === eventSelected ? true : false}
-                bgColor={0 === bgColor ? true : false}
-              />
-            </div>
-            <div
-              className="col-6"
-              onClick={() => {
-                setActive(1);
-                setMainHeading(titleHelpr(events[1]));
-                setMainText(eventDetails[1].info);
-                setEventSelected(1);
-                setShow(true);
-              }}
-            >
-              <EventCard2
-                icon={Clash}
-                width={width}
-                height={height}
-                title="Clash"
-                text="Clash is based on Competitive Programming!"
-                active={1 === active || 1 === eventSelected ? true : false}
-                bgColor={1 === bgColor ? true : false}
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div
-              className="col-6"
-              onClick={() => {
-                setActive(2);
-                setMainHeading(titleHelpr(events[2]));
-                setMainText(eventDetails[2].info);
-                setEventSelected(2);
-                setShow(true);
-              }}
-            >
-              <EventCard2
-                icon={NTH}
-                width={width}
-                height={height}
-                title="NTH"
-                text="Decrypt the clues to solve complex puzzles and race your way to finish at top!"
-                active={2 === active || 2 === eventSelected ? true : false}
-                bgColor={2 === bgColor ? true : false}
-              />
-            </div>
-            <div
-              className="col-6"
-              onClick={() => {
-                setActive(3);
-                setMainHeading(titleHelpr(events[3]));
-                setMainText(eventDetails[3].info);
-                setEventSelected(3);
-                setShow(true);
-              }}
-            >
-              <EventCard2
-                icon={Wallstreet}
-                width={"50px"}
-                height={"50px"}
-                title="WallStreet"
-                marginBottomImg="10%"
-                text="Get an insight on stock markets by Investing and trading virtual money!"
-                active={3 === active || 3 === eventSelected ? true : false}
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div
-              className="col-6"
-              onClick={() => {
-                setActive(4);
-                setMainHeading(titleHelpr(events[4]));
-                setMainText(eventDetails[4].info);
-                setEventSelected(4);
-                setShow(true);
-              }}
-            >
-              <EventCard2
-                icon={BPlan}
-                width={"90px"}
-                height={"90px"}
-                title="B-Plan"
-                text="Showcase your entrepreneurial skills by presenting innovative business plans to the world!"
-                active={4 === active || 4 === eventSelected ? true : false}
-              />
-            </div>
-            <div
-              className="col-6"
-              onClick={() => {
-                setActive(5);
-                setMainHeading(titleHelpr(events[5]));
-                setMainText(eventDetails[5].info);
-                setEventSelected(5);
-                setShow(true);
-              }}
-            >
-              <EventCard2
-                icon={Enigma}
-                width={width}
-                height={height}
-                title="Enigma"
-                text="Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions!"
-                active={5 === active || 5 === eventSelected ? true : false}
-              />
-            </div>
-          </div>
+    <>
+      {loading ? (
+        <div
+          className="d-flex justify-content-center align-items-center"
+          style={{ height: "100vh", backgroundColor: "#000" }}
+        >
+          <Spinner animation="grow" color="red" />
         </div>
-        <div className="col-md-6 col-6">
-          <div className="row justify-content-center" style={{ height: "50%" }}>
-            <div className="main-wrapper">
-              {eventSelected === -1 ? (
-                <Logo />
-              ) : (
-                <>
-                  <div className="main-heading">{mainHeading}</div>
-                  <div className="main-text">{mainText}</div>
-                </>
-              )}
-            </div>
-          </div>
+      ) : (
+        <div className="bg-dark section-events height-full o-x-hide-events">
+          {/* <NavbarCustom relative /> */}
+          {/* NEW GRID */}
           <div
-            className="d-flex justify-content-center row tab-group"
-            style={{ height: "50%", paddingTop: "50px" }}
+            className="row ms-3 me-3 cards-wrapper"
+            data-aos="fade-in"
+            data-aos-duration="400"
+            data-aos-easing="ease-in-sine"
+            data-aos-offset="50"
           >
-            <div
-              className="d-flex row justify-content-center"
-              style={{ height: "40%" }}
-            >
-              <div className="col-md-4 mb-2 d-flex justify-content-center">
+            <div className="col-md-3 ">
+              <div className="row">
                 <div
-                  className={`tabButton d-flex justify-content-center align-items-center ${
-                    activeTab === 0 ? "activeTab" : ""
-                  } `}
-                  auto
-                  color="warning"
-                  rounded
+                  className="col-6"
                   onClick={() => {
-                    if (eventSelected)
-                      setMainText(eventDetails[eventSelected].info);
+                    setActive(0);
+                    setMainHeading(titleHelpr(events[0]));
+                    setMainText(eventDetails[0].info);
+                    setEventSelected(0);
+                    setShow(true);
                     setActiveTab(0);
                   }}
                 >
-                  Info
+                  <EventCard2
+                    icon={RC}
+                    width={width}
+                    height={height}
+                    title="Reverse Coding"
+                    text="Hone your problem-solving skills by decrypting complex questions"
+                    active={0 === active || 0 === eventSelected ? true : false}
+                    bgColor={0 === bgColor ? true : false}
+                  />
                 </div>
-              </div>
-              <div className="col-md-4 mb-2 d-flex justify-content-center">
                 <div
-                  className={`tabButton d-flex justify-content-center align-items-center ${
-                    activeTab === 1 ? "activeTab" : ""
-                  } `}
-                  auto
-                  color="warning"
-                  rounded
+                  className="col-6"
                   onClick={() => {
-                    setMainText(eventDetails[eventSelected].rules);
-                    setActiveTab(1);
+                    setActive(1);
+                    setMainHeading(titleHelpr(events[1]));
+                    setMainText(eventDetails[1].info);
+                    setEventSelected(1);
+                    setShow(true);
+                    setActiveTab(0);
                   }}
                 >
-                  Rules
+                  <EventCard2
+                    icon={Clash}
+                    width={width}
+                    height={height}
+                    title="Clash"
+                    text="Clash is based on Competitive Programming!"
+                    active={1 === active || 1 === eventSelected ? true : false}
+                    bgColor={1 === bgColor ? true : false}
+                  />
                 </div>
               </div>
-              <div className="col-md-4 mb-2 d-flex justify-content-center">
+              <div className="row">
                 <div
-                  className={`tabButton d-flex justify-content-center align-items-center ${
-                    activeTab === 2 ? "activeTab" : ""
-                  } `}
-                  auto
-                  color="warning"
-                  rounded
+                  className="col-6"
                   onClick={() => {
-                    setMainText(eventDetails[eventSelected].structure);
-                    setActiveTab(2);
+                    setActive(2);
+                    setMainHeading(titleHelpr(events[2]));
+                    setMainText(eventDetails[2].info);
+                    setEventSelected(2);
+                    setShow(true);
+                    setActiveTab(0);
                   }}
                 >
-                  Structure
+                  <EventCard2
+                    icon={NTH}
+                    width={width}
+                    height={height}
+                    title="NTH"
+                    text="Decrypt the clues to solve complex puzzles and race your way to finish at top!"
+                    active={2 === active || 2 === eventSelected ? true : false}
+                    bgColor={2 === bgColor ? true : false}
+                  />
+                </div>
+                <div
+                  className="col-6"
+                  onClick={() => {
+                    setActive(3);
+                    setMainHeading(titleHelpr(events[3]));
+                    setMainText(eventDetails[3].info);
+                    setEventSelected(3);
+                    setShow(true);
+                    setActiveTab(0);
+                  }}
+                >
+                  <EventCard2
+                    icon={Wallstreet}
+                    width={"50px"}
+                    height={"50px"}
+                    title="WallStreet"
+                    marginBottomImg="10%"
+                    text="Get an insight on stock markets by Investing and trading virtual money!"
+                    active={3 === active || 3 === eventSelected ? true : false}
+                  />
                 </div>
               </div>
-              <div className="mt-4 col-md-4 mb-2 d-flex justify-content-center">
+              <div className="row">
                 <div
-                  className={`tabButton d-flex justify-content-center align-items-center ${
-                    activeTab === 3 ? "activeTab" : ""
-                  } `}
-                  auto
-                  color="warning"
-                  rounded
+                  className="col-6"
                   onClick={() => {
-                    setMainText(eventDetails[eventSelected].judging);
-                    setActiveTab(3);
+                    setActive(4);
+                    setMainHeading(titleHelpr(events[4]));
+                    setMainText(eventDetails[4].info);
+                    setEventSelected(4);
+                    setShow(true);
+                    setActiveTab(0);
                   }}
                 >
-                  Judging Criteria
+                  <EventCard2
+                    icon={BPlan}
+                    width={"90px"}
+                    height={"90px"}
+                    title="B-Plan"
+                    text="Showcase your entrepreneurial skills by presenting innovative business plans to the world!"
+                    active={4 === active || 4 === eventSelected ? true : false}
+                  />
                 </div>
-              </div>
-              <div className="mt-4 col-md-4 mb-2 d-flex justify-content-center">
                 <div
-                  className={`tabButton d-flex justify-content-center align-items-center ${
-                    activeTab === 4 ? "activeTab" : ""
-                  } `}
-                  auto
-                  color="warning"
-                  rounded
+                  className="col-6"
                   onClick={() => {
-                    setMainText(eventDetails[eventSelected].contact);
-                    setActiveTab(4);
+                    setActive(5);
+                    setMainHeading(titleHelpr(events[5]));
+                    setMainText(eventDetails[5].info);
+                    setEventSelected(5);
+                    setShow(true);
+                    setActiveTab(0);
                   }}
                 >
-                  Contact
+                  <EventCard2
+                    icon={Enigma}
+                    width={width}
+                    height={height}
+                    title="Enigma"
+                    text="Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions!"
+                    active={5 === active || 5 === eventSelected ? true : false}
+                  />
                 </div>
               </div>
             </div>
-            <div
-              className="row justify-content-center"
-              style={{ height: "40%" }}
-            >
-              <div className="col-md-12 d-flex justify-content-center">
-                <div className="rectangle d-none"></div>
+            <div className="col-md-6 ">
+              <div
+                className="row justify-content-center"
+                style={{ height: "50%" }}
+              >
+                <div className="main-wrapper">
+                  {eventSelected === -1 ? (
+                    <Logo />
+                  ) : (
+                    <>
+                      <div className="main-heading">{mainHeading}</div>
+                      <div className="main-text">{mainText}</div>
+                    </>
+                  )}
+                </div>
+              </div>
+              <div
+                className="d-flex justify-content-center row tab-group"
+                style={{ height: "50%", paddingTop: "50px" }}
+              >
+                <div
+                  className="d-flex row justify-content-center"
+                  style={{ height: "40%" }}
+                >
+                  <div className="col-md-4 mb-2 d-flex justify-content-center">
+                    <div
+                      className={`tabButton d-flex justify-content-center align-items-center ${
+                        activeTab === 0 ? "activeTab" : ""
+                      } `}
+                      auto
+                      color="warning"
+                      rounded
+                      onClick={() => {
+                        if (eventSelected !== -1) {
+                          setMainText(eventDetails[eventSelected].info);
+                          setActiveTab(0);
+                        }
+                      }}
+                      onKeyPress={(e) => navigateHorizontal(e)}
+                    >
+                      Info
+                    </div>
+                  </div>
+                  <div className="col-md-4 mb-2 d-flex justify-content-center">
+                    <div
+                      className={`tabButton d-flex justify-content-center align-items-center ${
+                        activeTab === 1 ? "activeTab" : ""
+                      } `}
+                      auto
+                      color="warning"
+                      rounded
+                      onClick={() => {
+                        if (eventSelected !== -1) {
+                          setMainText(eventDetails[eventSelected].rules);
+                          setActiveTab(1);
+                        }
+                      }}
+                    >
+                      Rules
+                    </div>
+                  </div>
+                  <div className="col-md-4 mb-2 d-flex justify-content-center">
+                    <div
+                      className={`tabButton d-flex justify-content-center align-items-center ${
+                        activeTab === 2 ? "activeTab" : ""
+                      } `}
+                      auto
+                      color="warning"
+                      rounded
+                      onClick={() => {
+                        if (eventSelected !== -1) {
+                          setMainText(eventDetails[eventSelected].structure);
+                          setActiveTab(2);
+                        }
+                      }}
+                    >
+                      Structure
+                    </div>
+                  </div>
+                  <div className="mt-4 col-md-4 mb-2 d-flex justify-content-center">
+                    <div
+                      className={`tabButton d-flex justify-content-center align-items-center ${
+                        activeTab === 3 ? "activeTab" : ""
+                      } `}
+                      auto
+                      color="warning"
+                      rounded
+                      onClick={() => {
+                        if (eventSelected !== -1) {
+                          setMainText(eventDetails[eventSelected].judging);
+                          setActiveTab(3);
+                        }
+                      }}
+                    >
+                      Judging Criteria
+                    </div>
+                  </div>
+                  <div className="mt-4 col-md-4 mb-2 d-flex justify-content-center">
+                    <div
+                      className={`tabButton d-flex justify-content-center align-items-center ${
+                        activeTab === 4 ? "activeTab" : ""
+                      } `}
+                      auto
+                      color="warning"
+                      rounded
+                      onClick={() => {
+                        if (eventSelected !== -1) {
+                          setMainText(eventDetails[eventSelected].contact);
+                          setActiveTab(4);
+                        }
+                      }}
+                    >
+                      Contact
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="row justify-content-center"
+                  style={{ height: "40%" }}
+                >
+                  <div className="col-md-12 d-flex justify-content-center">
+                    <div className="rectangle d-none"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-3 ">
+              <div className="row">
+                <div
+                  className="col-6"
+                  onClick={() => {
+                    setActive(6);
+                    setMainHeading(titleHelpr(events[6]));
+                    setMainText(eventDetails[6].info);
+                    setEventSelected(6);
+                    setShow(true);
+                    setActiveTab(0);
+                  }}
+                >
+                  <EventCard2
+                    icon={Datawiz}
+                    width={"50px"}
+                    height={"50px"}
+                    title="Datawiz"
+                    text="Test your Machine learning and data analytics skills before stepping into the world of Data Science!"
+                    active={6 === active || 6 === eventSelected ? true : false}
+                  />
+                </div>
+                <div
+                  className="col-6"
+                  onClick={() => {
+                    setActive(7);
+                    setMainHeading(titleHelpr(events[7]));
+                    setMainText(eventDetails[7].info);
+                    setEventSelected(7);
+                    setShow(true);
+                    setActiveTab(0);
+                  }}
+                >
+                  <EventCard2
+                    icon={Quiz}
+                    width={width}
+                    height={height}
+                    title="Quiz"
+                    text="Test your knowledge across wide range of topics and get a chance to win some exciting prizes!"
+                    active={7 === active || 7 === eventSelected ? true : false}
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div
+                  className="col-6"
+                  onClick={() => {
+                    setActive(8);
+                    setMainHeading(titleHelpr(events[8]));
+                    setMainText(eventDetails[8].info);
+                    setEventSelected(8);
+                    setShow(true);
+                    setActiveTab(0);
+                  }}
+                >
+                  <EventCard2
+                    icon={Paper}
+                    width={width}
+                    height={height}
+                    title="Paper Presentation"
+                    text="Present technical research papers with advanced perspectives while honing your skills of research!"
+                    active={8 === active || 8 === eventSelected ? true : false}
+                  />
+                </div>
+                <div
+                  className="col-6"
+                  onClick={() => {
+                    setActive(9);
+                    setMainHeading(titleHelpr(events[9]));
+                    setMainText(eventDetails[9].info);
+                    setEventSelected(9);
+                    setShow(true);
+                    setActiveTab(0);
+                  }}
+                >
+                  <EventCard2
+                    icon={Cretronix}
+                    width={width}
+                    height={height}
+                    title="Cretronix"
+                    text="Build and exhibit your own circuits by solving tech problems!"
+                    active={9 === active || 9 === eventSelected ? true : false}
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div
+                  className="col-6"
+                  onClick={() => {
+                    setActive(10);
+                    setMainHeading(titleHelpr(events[10]));
+                    setMainText(eventDetails[10].info);
+                    setEventSelected(10);
+                    setShow(true);
+                    setActiveTab(0);
+                  }}
+                >
+                  <EventCard2
+                    icon={Pixelate}
+                    width={width}
+                    height={height}
+                    title="Pixelate"
+                    text="Let your creativity fuse with thoughtful designs and artistic originality!"
+                    active={
+                      10 === active || 10 === eventSelected ? true : false
+                    }
+                  />
+                </div>
+                <div
+                  className="col-6"
+                  onClick={() => {
+                    setActive(11);
+                    setMainHeading(titleHelpr(events[11]));
+                    setMainText(eventDetails[11].info);
+                    setEventSelected(11);
+                    setShow(true);
+                    setActiveTab(0);
+                  }}
+                >
+                  <EventCard2
+                    icon={Webweaver}
+                    width={width}
+                    height={height}
+                    title="Webweaver"
+                    text="Build an aesthetic website to showcase your web development skills!"
+                    active={
+                      11 === active || 11 === eventSelected ? true : false
+                    }
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="col-md-3 col-3">
-          <div className="row">
-            <div
-              className="col-6"
-              onClick={() => {
-                setActive(6);
-                setMainHeading(titleHelpr(events[6]));
-                setMainText(eventDetails[6].info);
-                setEventSelected(6);
-                setShow(true);
-              }}
-            >
-              <EventCard2
-                icon={Datawiz}
-                width={"50px"}
-                height={"50px"}
-                title="Datawiz"
-                text="Test your Machine learning and data analytics skills before stepping into the world of Data Science!"
-                active={6 === active || 6 === eventSelected ? true : false}
-              />
-            </div>
-            <div
-              className="col-6"
-              onClick={() => {
-                setActive(7);
-                setMainHeading(titleHelpr(events[7]));
-                setMainText(eventDetails[7].info);
-                setEventSelected(7);
-                setShow(true);
-              }}
-            >
-              <EventCard2
-                icon={Quiz}
-                width={width}
-                height={height}
-                title="Quiz"
-                text="Test your knowledge across wide range of topics and get a chance to win some exciting prizes!"
-                active={7 === active || 7 === eventSelected ? true : false}
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div
-              className="col-6"
-              onClick={() => {
-                setActive(8);
-                setMainHeading(titleHelpr(events[8]));
-                setMainText(eventDetails[8].info);
-                setEventSelected(8);
-                setShow(true);
-              }}
-            >
-              <EventCard2
-                icon={Paper}
-                width={width}
-                height={height}
-                title="Paper Presentation"
-                text="Present technical research papers with advanced perspectives while honing your skills of research!"
-                active={8 === active || 8 === eventSelected ? true : false}
-              />
-            </div>
-            <div
-              className="col-6"
-              onClick={() => {
-                setActive(9);
-                setMainHeading(titleHelpr(events[9]));
-                setMainText(eventDetails[9].info);
-                setEventSelected(9);
-                setShow(true);
-              }}
-            >
-              <EventCard2
-                icon={Cretronix}
-                width={width}
-                height={height}
-                title="Cretronix"
-                text="Build and exhibit your own circuits by solving tech problems!"
-                active={9 === active || 9 === eventSelected ? true : false}
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div
-              className="col-6"
-              onClick={() => {
-                setActive(10);
-                setMainHeading(titleHelpr(events[10]));
-                setMainText(eventDetails[10].info);
-                setEventSelected(10);
-                setShow(true);
-              }}
-            >
-              <EventCard2
-                icon={Pixelate}
-                width={width}
-                height={height}
-                title="Pixelate"
-                text="Let your creativity fuse with thoughtful designs and artistic originality!"
-                active={10 === active || 10 === eventSelected ? true : false}
-              />
-            </div>
-            <div
-              className="col-6"
-              onClick={() => {
-                setActive(11);
-                setMainHeading(titleHelpr(events[11]));
-                setMainText(eventDetails[11].info);
-                setEventSelected(11);
-                setShow(true);
-              }}
-            >
-              <EventCard2
-                icon={Webweaver}
-                width={width}
-                height={height}
-                title="Webweaver"
-                text="Build an aesthetic website to showcase your web development skills!"
-                active={11 === active || 11 === eventSelected ? true : false}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <Modal
-        style={{ zIndex: 9999999 }}
-        centered
-        className="d-lg-none"
-        backdrop="static"
-        show={show}
-        onHide={() => {
-          setShow(false);
-        }}
-        size="lg"
-      >
-        <Modal.Header style={{ width: "100%" }}>
-          <Modal.Title
-            style={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "space-between",
+          <Modal
+            style={{ zIndex: 9999999 }}
+            centered
+            className="d-lg-none"
+            backdrop="static"
+            show={show}
+            onHide={() => {
+              setShow(false);
             }}
+            size="lg"
           >
-            <img
-              class="modal-logo-img"
-              src={iconHelpr(events[active])}
-              alt="Event Icon"
-              style={{
-                color: "white",
-                width: "5rem",
-              }}
-            />
-            <div className="modal-icon-text">{titleHelpr(events[active])}</div>
-            <div onClick={() => setShow(false)}>x</div>
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body text>
-          <Tabs defaultActiveKey="info" className="mb-3">
-            <Tab
-              eventKey="info"
-              title="Info"
-              className="modal-tab-link"
-              color="#efefef"
-            >
-              <p className="new-line">
-                {eventSelected !== -1 && eventDetails[eventSelected].info}
-              </p>
-            </Tab>
-            <Tab eventKey="rules" title="Rules" className="modal-tab-link">
-              <p>{eventSelected !== -1 && eventDetails[eventSelected].rules}</p>
-            </Tab>
-            <Tab
-              eventKey="structure"
-              title="Structure"
-              className="modal-tab-link"
-            >
-              <p>
-                {eventSelected !== -1 && eventDetails[eventSelected].structure}
-              </p>
-            </Tab>
-            <Tab eventKey="judge" title="Judging" className="modal-tab-link">
-              <p>
-                {eventSelected !== -1 && eventDetails[eventSelected].judging}
-              </p>
-            </Tab>
-            <Tab eventKey="contact" title="Contact" className="modal-tab-link">
-              <p>
-                {eventSelected !== -1 && eventDetails[eventSelected].contact}
-              </p>
-            </Tab>
-          </Tabs>
-        </Modal.Body>
-      </Modal>
-    </div>
+            <Modal.Header style={{ width: "100%" }}>
+              <Modal.Title
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <img
+                  class="modal-logo-img"
+                  src={iconHelpr(events[active])}
+                  alt="Event Icon"
+                  style={{
+                    color: "white",
+                    width: "5rem",
+                  }}
+                />
+                <div className="modal-icon-text">
+                  {titleHelpr(events[active])}
+                </div>
+                <div onClick={() => setShow(false)}>x</div>
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body text>
+              <Tabs defaultActiveKey="info" className="mb-3">
+                <Tab
+                  eventKey="info"
+                  title="Info"
+                  className="modal-tab-link"
+                  color="#efefef"
+                >
+                  <div style={{ maxHeight: "47vh", overflowY: "auto" }}>
+                    <p className="new-line">
+                      {eventSelected !== -1 && eventDetails[eventSelected].info}
+                    </p>
+                  </div>
+                </Tab>
+                <Tab eventKey="rules" title="Rules" className="modal-tab-link">
+                  <p className="new-line">
+                    {eventSelected !== -1 && eventDetails[eventSelected].rules}
+                  </p>
+                </Tab>
+                <Tab
+                  eventKey="structure"
+                  title="Structure"
+                  className="modal-tab-link"
+                >
+                  <div style={{ maxHeight: "47vh", overflowY: "scroll" }}>
+                    <p className="new-line">
+                      {eventSelected !== -1 &&
+                        eventDetails[eventSelected].structure}
+                    </p>
+                  </div>
+                </Tab>
+                <Tab
+                  eventKey="judge"
+                  title="Judging"
+                  className="modal-tab-link"
+                >
+                  <div
+                    className=""
+                    style={{ maxHeight: "47vh", overflowY: "auto" }}
+                  >
+                    <p className="new-line">
+                      {eventSelected !== -1 &&
+                        eventDetails[eventSelected].judging}
+                    </p>
+                  </div>
+                </Tab>
+                <Tab
+                  eventKey="contact"
+                  title="Contact"
+                  className="modal-tab-link"
+                >
+                  <div
+                    className=""
+                    style={{ maxHeight: "47vh", overflowY: "auto" }}
+                  >
+                    <p className="new-line">
+                      {eventSelected !== -1 &&
+                        eventDetails[eventSelected].contact}
+                    </p>
+                  </div>
+                </Tab>
+              </Tabs>
+            </Modal.Body>
+          </Modal>
+        </div>
+      )}
+    </>
   );
 };
 

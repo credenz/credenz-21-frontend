@@ -49,7 +49,10 @@ export function LoginForm(props) {
         />
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
-      <MutedLink switchToSignup={switchToSignup} onClick={switchToForgetPassword}>
+      <MutedLink
+        switchToSignup={switchToSignup}
+        onClick={switchToForgetPassword}
+      >
         Forgot your password?
       </MutedLink>
       <Marginer direction="vertical" margin="1.6em" />
@@ -63,11 +66,9 @@ export function LoginForm(props) {
         <span className="btn__glitch"></span>
       </button>
       <Marginer direction="vertical" margin="1em" />
-      <MutedLink className="mb-3">
+      <MutedLink className="mb-3" style={{ cursor: "pointer" }}>
         Don't have an account?{" "}
-        <BoldLink onClick={switchToSignup}>
-          Signup
-        </BoldLink>
+        <BoldLink onClick={switchToSignup}>Signup</BoldLink>
       </MutedLink>
     </BoxContainer>
   );

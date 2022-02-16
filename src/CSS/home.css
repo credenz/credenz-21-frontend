@@ -53,7 +53,7 @@
 
 .logo-img {
   height: 500px;
-  filter: drop-shadow(5px 5px 10px rgba(0, 247, 247, 0.5));
+  filter: drop-shadow(5px 5px 10px rgba(240, 235, 194, 0.5));
   /* box-shadow: 10px 10px 50px -5px rgba(0, 0, 0, 0.71); */
 }
 .coming-soon {

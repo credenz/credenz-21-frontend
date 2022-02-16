@@ -1,79 +1,79 @@
 .contactpage {
-    background-color: #191919;
-    color: #AAA;
-    overflow: hidden;
+  background-color: #191919;
+  color: #aaa;
+  overflow: hidden;
+  padding-bottom: 5rem;
 }
 
 .pict-map {
-    min-height: 100vh;
-    padding: 0px;
-    filter: invert(90%);
+  min-height: 100vh;
+  padding: 0px;
+  filter: invert(90%);
 }
 
 .feedbkfrm {
-    padding-top: 6vh;
-    padding-bottom: 3vh;
-    font-size: xx-large;
-    font-weight: 800;
+  padding-top: 6vh;
+  padding-bottom: 3vh;
+  font-size: xx-large;
+  font-weight: 800;
 }
 .maillink {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
 .contactppl {
-    text-align: center;
-    font-size: 1.2rem;
-    justify-content: center;
-    padding-top: 4vh;
+  text-align: center;
+  font-size: 1.2rem;
+  justify-content: center;
+  padding-top: 4vh;
 }
 
 .pplimages {
-    padding: 5px;
-    border: 2px solid #C344E7;
+  padding: 5px;
+  border: 2px solid #c344e7;
 }
 
 .subbutton {
-    background-color: #C344E7 !important;
-    border-color: #C344E7 !important;
+  background-color: #c344e7 !important;
+  border-color: #c344e7 !important;
 }
 
-@media screen and (min-width: 1330px ) {
-
-    .maillink {
-        font-size: 1rem;
-    }
+@media screen and (min-width: 1330px) {
+  .maillink {
+    font-size: 1rem;
+  }
 }
 
-@media screen and (max-width: 575px ) {
-    .pplimages {
-        max-width: 200px;
-    }
+@media screen and (max-width: 575px) {
+  .pplimages {
+    max-width: 200px;
+  }
 }
 
 .fdbkfrm {
-    background-color: #050505 !important;
-    color: #AAA !important;
+  background-color: #050505 !important;
+  color: #aaa !important;
 }
 
 .socialicons {
-    max-width: 170px;
-    padding-bottom: 15px;
+  max-width: 170px;
+  padding-bottom: 15px;
 }
 
 .socialicons svg {
-    color: #C344E7;
-    width: 100%;
+  color: #c344e7;
+  width: 100%;
 }
 
 .socialicons .col {
-    padding: 0 5%;
+  padding: 0 5%;
 }
 
 .pplcont {
-    padding:6%;
+  padding: 6%;
 }
 
 .pplcard {
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.5)!important;
-    border-radius: 10px
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
+  border-radius: 10px;
 }

@@ -16,8 +16,7 @@ export function ForgetPasswordForm(props) {
   const [emailError, setEmailError] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const validateEmail = (password) => {
-    const reg =
-      '[a-z0-9]+@[a-z]+\.[a-z]{2,3}';
+    const reg = "[a-z0-9]+@[a-z]+.[a-z]{2,3}";
     const re = new RegExp(reg);
     console.log("password", email);
     console.log("pass?", re.test(email));
@@ -42,12 +41,13 @@ export function ForgetPasswordForm(props) {
   };
 
   useEffect(() => {
-    if(email.length > 3) {
+    if (email.length > 3) {
       validateEmail(email);
     }
     if (password.length > 3) {
       validatePassword(password);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [email, email.length, password, password.length]);
 
   const sendVerificationToken = async () => {
@@ -68,6 +68,8 @@ export function ForgetPasswordForm(props) {
       })
         .then((res) => {
           alert("Password changed, you can login!");
+          // eslint-disable-next-line no-restricted-globals
+          location.reload();
         })
         .catch((err) => {});
     } catch (err) {
@@ -78,7 +80,7 @@ export function ForgetPasswordForm(props) {
   return (
     <BoxContainer className="p-4">
       <FormContainer>
-      <span hidden={!emailError} className="error-text">
+        <span hidden={!emailError} className="error-text">
           Please enter a valid E-Mail id.
         </span>
         <Input

@@ -91,7 +91,7 @@
 }
 
 .new-line {
-  white-space: pre;
+  white-space: break-spaces;
 }
 
 .modal-header,
@@ -127,7 +127,8 @@ li .nav-link {
   height: 85%;
   margin-top: 5px;
   color: var(--light);
-  text-align: justify;
+  text-align: center;
+  white-space: break-spaces;
 }
 
 .main-heading {
@@ -339,7 +340,9 @@ li .nav-link {
     width: 20vw;
   }
   .section-events {
-    overflow-y: scroll;
+    overflow-y: hidden;
+    padding-top: 6vh;
+    padding-bottom: 8vh;
   }
   .main-wrapper {
     display: none;
@@ -350,5 +353,19 @@ li .nav-link {
   .modal-backdrop {
     width: fit-content !important;
     height: fit-content !important;
+  }
+  .cards-wrapper {
+    overflow-y: scroll;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+  }
+  .modal-header {
+    height: 20%;
+  }
+  .modal-content {
+    height: 75vh;
+  }
+  .modal-body {
+    height: 80%;
   }
 }
