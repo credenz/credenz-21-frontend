@@ -10,6 +10,7 @@ import {
   Row,
   Spinner,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { Footer } from "../Components/Footer";
 import "../CSS/AboutUs.css";
 import "../CSS/ContactUs.css";
@@ -274,6 +275,27 @@ const Contact = () => {
             ></iframe>
           </Col>
           <Footer />
+          <div className="maillink mt-2 mb-2">
+                      <Container fluid className="socialicons">
+                        <Row>
+                          <Col>
+                            <a href="https://razorpay.com/privacy/">
+                              Privacy Policy
+                            </a>
+                          </Col>
+                          <Col>
+                            <a href="https://razorpay.com/terms/#:~:text=The%20User%20may%20receive%20or,of%20the%20User%2C%20financial%20and">
+                              Terms and Conditions
+                            </a>
+                          </Col>
+                          <Col>
+                            <p>
+                              For Refunds and cancellations contact +91 93079 48342.
+                            </p>
+                          </Col>
+                        </Row>
+                      </Container>
+                    </div>
         </Row>
       </Container>
     </>
