@@ -213,7 +213,7 @@ Timings
     structure: `1) Only soft copy i.e. a .pdf file, of the paper and abstract should be submitted. The paper should not exceed more than 6 pages.
 \n2) Soft copy of the technical paper and the abstract should be mailed to paper.pisbcredenz@gmail.com.
 \n3) The paper must strictly adhere to the IEEE format.
-\n4) Authors will get 15 minutes to deliver a presentation on their topic followed by a question - answer session.
+\n4) Authors will get 15 minutes to deliver a presentation on their topic followed by a question - answer session. Only selected teams will get a chance to present their papers in front of judges at final round on 6th march
 \n5) The presentation should be in power point format (.ppt or .pptx).`,
     judging: `1) Oratory and Presentation skills will be of prime importance.
 \n2) Relevance of the content in context with the chosen topic.
