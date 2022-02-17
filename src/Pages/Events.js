@@ -19,6 +19,7 @@ import Webweaver from "../images/web.png";
 import { eventDetails, events } from "../staticInfo.js";
 import CredenzLogo from "../images/onlyLogo.png";
 import PlayButton from "../Components/PlayButton";
+import Cross from "../images/close-line.png";
 
 const Logo = () => {
   return (
@@ -571,7 +572,16 @@ const Events = () => {
                 <div className="modal-icon-text">
                   {titleHelpr(events[active])}
                 </div>
-                <div onClick={() => setShow(false)}>x</div>
+                <div
+                  className="modal-close-wrapper"
+                  onClick={() => setShow(false)}
+                >
+                  <img
+                    src={Cross}
+                    alt="close button"
+                    className="modal-close-btn"
+                  />
+                </div>
               </Modal.Title>
             </Modal.Header>
             <Modal.Body text>
