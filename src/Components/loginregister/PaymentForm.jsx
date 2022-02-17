@@ -53,11 +53,15 @@ export function PaymentForm(props) {
           //RESET THE LOCAL STATE
           //   history.push("/", { userDetails });
           alert(`Payment successful!`);
-          // eslint-disable-next-line no-restricted-globals
-          location.reload();
+          // setTimeout(() => {
+          //   // eslint-disable-next-line no-restricted-globals
+          //   location.reload();
+          // }, 1600);
           //   window.open("/events", "_self");
         })
-        .catch((err) => {});
+        .catch((err) => {
+          alert(`Payment failed!`);
+        });
     } catch (error) {}
   };
 

@@ -16,7 +16,7 @@ export const Footer = (props) => {
           <div className="branch-text">© PICT IEEE Student Branch</div>
           <div className="social-wrapper">
             <a
-              href="https://www.instagram.com/pisbcredenz/"
+              href="https://www.instagram.com/pictieee/"
               target="_blank"
               rel="noreferrer"
             >

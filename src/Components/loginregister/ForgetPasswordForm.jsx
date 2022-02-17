@@ -109,8 +109,8 @@ export function ForgetPasswordForm(props) {
           onChange={(e) => setPassword(e.target.value)}
         />
         <span hidden={!passwordError} className="error-text">
-          The password must contain atleast 1 aplhabet, 1 number and 1 special
-          character
+          The password must contain atleast 1 capital aplhabet, 1 number and 1
+          special character
         </span>
       </FormContainer>
       <Marginer direction="vertical" margin={70} />

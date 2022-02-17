@@ -2,7 +2,7 @@ import React from "react";
 import "../CSS/textSlice.css";
 const TextSliced = (props) => {
   return (
-    <span className={`item_outer ${props.active ? "item_active" : ""}`}>
+    <span className={`item_outer ${props.activeLink ? "item_active" : ""}`}>
       <span
         className="item_text edgtf-split-holder"
         style={{ position: "relative", whiteSpace: "nowrap" }}

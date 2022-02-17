@@ -335,9 +335,25 @@ li .nav-link {
 }
 
 @media (max-width: 768px) {
+  .play-button-modal {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+  .info-wrapper {
+    overflow-y: scroll;
+    max-height: 40vh;
+  }
+
   .new-line {
     text-align: center;
   }
+
+  .hide-mobile {
+    display: none;
+  }
+
   .modal-close-btn {
     height: 10px;
     width: 10px;
@@ -347,7 +363,7 @@ li .nav-link {
   .modal-close-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .height-full {
     height: fit-content;
@@ -402,5 +418,14 @@ li .nav-link {
   }
   .nav-tabs {
     justify-content: space-evenly;
+  }
+}
+@media (max-height: 600px) {
+}
+
+/* iPhone 6 Plus in portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+  .info-wrapper {
+    max-height: 22vh !important;
   }
 }

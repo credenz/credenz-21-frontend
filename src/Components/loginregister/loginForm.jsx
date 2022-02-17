@@ -33,6 +33,7 @@ export function LoginForm(props) {
       .catch((err) => {
         props.setLoading(true);
         console.error(err);
+        alert(JSON.stringify(err.response.data));
       });
   };
 
@@ -66,6 +67,7 @@ export function LoginForm(props) {
         className="btn btn--secondary"
         type="submit"
         onClick={handleSubmit}
+        disabled={!username || !passwd}
       >
         Sign In
         <span className="btn__content">Sign In</span>

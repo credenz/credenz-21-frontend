@@ -1,10 +1,19 @@
 import React from "react";
-import { Input } from "./common";
+import { Input, MutedLink } from "./common";
 
 const FormContainer = (props) => {
   return (
     <>
       <div className="row temp">
+        <MutedLink
+          className="mb-3"
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            props.setStep(0);
+          }}
+        >
+          &#60; Go back
+        </MutedLink>
         <div className="col-md-6 mb-2">
           <label className="form-control">
             <input

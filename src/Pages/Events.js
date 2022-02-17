@@ -295,7 +295,7 @@ const Events = () => {
                   )}
                 </div>
               </div>
-              <div className="row">
+              <div className="row hide-mobile">
                 {eventSelected === -1 ? null : <PlayButton link="#" />}
               </div>
               <div
@@ -561,7 +561,7 @@ const Events = () => {
                 }}
               >
                 <img
-                  classNam="modal-logo-img"
+                  className="modal-logo-img"
                   src={iconHelpr(events[active])}
                   alt="Event Icon"
                   style={{
@@ -592,23 +592,26 @@ const Events = () => {
                   className="modal-tab-link"
                   color="#efefef"
                 >
-                  <div style={{ maxHeight: "40vh", overflowY: "auto" }}>
+                  <div className="info-wrapper">
                     <p className="new-line">
                       {eventSelected !== -1 && eventDetails[eventSelected].info}
                     </p>
                   </div>
                 </Tab>
                 <Tab eventKey="rules" title="Rules" className="modal-tab-link">
-                  <p className="new-line">
-                    {eventSelected !== -1 && eventDetails[eventSelected].rules}
-                  </p>
+                  <div className="info-wrapper">
+                    <p className="new-line">
+                      {eventSelected !== -1 &&
+                        eventDetails[eventSelected].rules}
+                    </p>
+                  </div>
                 </Tab>
                 <Tab
                   eventKey="structure"
                   title="Structure"
                   className="modal-tab-link"
                 >
-                  <div style={{ maxHeight: "40vh", overflowY: "scroll" }}>
+                  <div className="info-wrapper" style={{ maxHeight: "30vh" }}>
                     <p className="new-line">
                       {eventSelected !== -1 &&
                         eventDetails[eventSelected].structure}
@@ -620,10 +623,7 @@ const Events = () => {
                   title="Judging"
                   className="modal-tab-link"
                 >
-                  <div
-                    className=""
-                    style={{ maxHeight: "40vh", overflowY: "auto" }}
-                  >
+                  <div className="info-wrapper">
                     <p className="new-line">
                       {eventSelected !== -1 &&
                         eventDetails[eventSelected].judging}
@@ -635,10 +635,7 @@ const Events = () => {
                   title="Contact"
                   className="modal-tab-link"
                 >
-                  <div
-                    className=""
-                    style={{ maxHeight: "40vh", overflowY: "auto" }}
-                  >
+                  <div className="info-wrapper">
                     <p className="new-line">
                       {eventSelected !== -1 &&
                         eventDetails[eventSelected].contact}
@@ -646,6 +643,9 @@ const Events = () => {
                   </div>
                 </Tab>
               </Tabs>
+              <div className="play-button-modal">
+                <PlayButton link="#" />
+              </div>
             </Modal.Body>
           </Modal>
         </div>

@@ -69,7 +69,7 @@ const NavbarCustom = (props) => {
                 setPage("");
               }}
             >
-              <TextSliced title="Home" active={page === ""} />
+              <TextSliced title="Home" activeLink={page === ""} />
             </NavLink>
             <NavLink
               // hidden={comingSoon || true}
@@ -80,7 +80,7 @@ const NavbarCustom = (props) => {
                 setPage("events");
               }}
             >
-              <TextSliced title="Events" active={page === "events"} />
+              <TextSliced title="Events" activeLink={page === "events"} />
             </NavLink>
             <NavLink
               to={`/about`}
@@ -90,7 +90,7 @@ const NavbarCustom = (props) => {
                 setPage("about");
               }}
             >
-              <TextSliced title="About" active={page === "about"} />
+              <TextSliced title="About" activeLink={page === "about"} />
             </NavLink>
             <NavLink
               to={`/contact`}
@@ -100,7 +100,11 @@ const NavbarCustom = (props) => {
                 setPage("contact");
               }}
             >
-              <TextSliced title="Contact" hidden active={page === "contact"} />
+              <TextSliced
+                title="Contact"
+                hidden
+                activeLink={page === "contact"}
+              />
             </NavLink>
             <NavLink
               to={`/login`}
@@ -113,7 +117,7 @@ const NavbarCustom = (props) => {
             >
               <TextSliced
                 title={isLoggedIn ? (!paymentDone ? "Pay Now" : "") : "Login"}
-                active={page === "login"}
+                activeLink={page === "login"}
               />
             </NavLink>
             <NavLink
@@ -128,7 +132,7 @@ const NavbarCustom = (props) => {
               }}
               hidden={!isLoggedIn}
             >
-              <TextSliced title="Logout" active={page === "logout"} />
+              <TextSliced title="Logout" activeLink={page === "logout"} />
             </NavLink>
           </Nav>
           <a href="https://www.ieee.org" target="_blank" rel="noreferrer">

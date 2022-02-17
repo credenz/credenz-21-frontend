@@ -150,6 +150,8 @@ export function SignupForm(props) {
         )}
         {step === 1 && (
           <Step2
+            step={step}
+            setStep={setStep}
             isIeeeMember={isIeeeMember}
             ieeeId={ieeeId}
             isPictian={isPictian}
