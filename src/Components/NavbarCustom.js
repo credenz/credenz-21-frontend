@@ -8,7 +8,6 @@ import PISBLOGO from "../images/pisb.png";
 import TextSliced from "./TextSliced";
 const NavbarCustom = (props) => {
   const [page, setPage] = useState("");
-  console.log("page", page);
   // eslint-disable-next-line no-unused-vars
   const [userDetails, setUserDetails] = useState({});
   const [paymentDone, setPaymentDone] = useState(false);
