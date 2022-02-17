@@ -5,7 +5,7 @@ export const events = {
   3: "Wallstreet",
   4: "BPlan",
   5: "Enigma",
-  6: "Dataviz",
+  6: "DataWiz",
   7: "Quiz",
   8: "Paper",
   9: "Cretronix",
@@ -114,13 +114,12 @@ Enigma is a logical reasoning based questionnaire, which will test your aptitude
 
 Timings
 04-03-2022, Friday : 10:00 am to 7:00pm
-05-02-2022, Saturday : 10:00am to 6:00pm
 06-02-2022 , Sunday : 2:00pm to 5:00pm`,
     rules: `1) Candidates pursuing an Undergraduate/graduate program at their institution will be allowed to participate. It will be an individual event.
 \n2)All the participants should follow all the instructions as mentioned in the mail received after registration.`,
     structure: `1) There will be two rounds.
-5)ROUND 1:\n\ta.There will be 35 questions in this round.\n\tb.Time limit is 40 minutes.\n\tc.For every right answer, you will be awarded points and no negative points for a wrong answer.\n\td.The marking scheme will be told on the day of the event.
-6)ROUND 2:\n\ta.There will be 5 Puzzles and 5 MCQs in this round.\n\tb.Time Limit is 2 hours\n\tc.You must claim whenever you are done. Earliest claim with max. score wins.`,
+5)ROUND 1:\n\ta.There will be 31 questions in this round.\n\tb.Time limit is 40 minutes.\n\tc.For every right answer, you will be awarded points and no negative points for a wrong answer.\n\td.The marking scheme will be told on the day of the event.
+6)ROUND 2:\n\ta.There will be 5 Puzzles in this round.\n\tb.Time Limit is 2 hours\n\tc.You must claim whenever you are done. Earliest claim with max. score wins.`,
     judging: `1)There will be two rounds.
 \n2)You need to qualify the threshold score to get into the next round. The threshold will be decided based upon the performance of all the teams.
 \n3)The decision of the organizer will be final.
@@ -130,15 +129,15 @@ Prizes
 Coming Soon`,
     contact: `\nOnkar Shinde\n+91 96572 15844
 
-Shivendu Shukhre\n+91 70300 63914`,
+Shivendu Shukre\n+91 70300 63914`,
   },
   6: {
     info: `Get ready to set off on a journey to the world of data science. DataWiz gives you an opportunity to test your machine learning and data analytics skills, work on datasets to analyse and make predictions using your models.
 Datawiz is a week-long machine learning competition hosted on Kaggle. The participants can form teams of up to 3 members and submit their predicted data values. The team with the highest accuracy on the leaderboard at the end of the week will be declared as winners.
 
-Timings
-Round 1: 27th February - 3rd March 2022
-Round 2: 4th - 6th March 2022`,
+Timings:
+Round 1: 27th 9pm to 3rd March 12pm
+Round 2: 4th March 12pm to 6th march 12pm`,
     rules: `1)Each team of students may consist of a maximum of 3 participants.
 \n2)One account per participant
 \n3)Signing In on Kaggle through Multiple accounts is prohibited.
@@ -206,7 +205,7 @@ Ravikumar Verma
 Compete against the most intellectual minds and their progressive ideas!Paper presentation is the perfect platform for undergraduate/postgraduate students to present technical papers with advanced perspectives while honing their skills of research and creating new dimensions of technology!
 
 Timings
-06-03-2021 , Sunday : 1:00pm to 3:30pm`,
+06-03-2022 , Sunday : 1:00pm to 3:30pm`,
     rules: `1.A team of maximum three candidates pursuing undergraduate/postgraduate program is allowed.
 \n2.Marking Scheme will be declared on the spot.
 \n3.Research Papers sent after 3rd March, 2022 11:59 PM won’t be accepted.
@@ -282,7 +281,7 @@ Prizes
 Coming Soon
 `,
     contact: `Saima Ansari\n+91 83930 05545\n
-    Sufiya Sayyeed\n+91 95119 02152\n
+    Sufiya Sayyed\n+91 95119 02152\n
     Rohit James\n+91 81388 55702
 `,
   },
