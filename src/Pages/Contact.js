@@ -291,7 +291,7 @@ const Contact = () => {
                           <Col>
                             <a href="https://docs.google.com/document/d/1CSwA36F4II-tynRl5P8A-WGW0pb9ATW7v-jaCUXdygM/edit?usp=sharing">
                               For Refunds and cancellations contact +91 93079 48342.
-                            </p>
+                            </a>
                           </Col>
                         </Row>
                       </Container>
