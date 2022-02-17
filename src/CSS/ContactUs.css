@@ -2,11 +2,11 @@
   background-color: #191919;
   color: #aaa;
   overflow: hidden;
-  padding-bottom: 5rem;
+  padding-bottom: 7vh;
 }
 
 .pict-map {
-  min-height: 100vh;
+  min-height: 93vh;
   padding: 0px;
   filter: invert(90%);
 }
@@ -30,12 +30,12 @@
 
 .pplimages {
   padding: 5px;
-  border: 2px solid #c344e7;
+  border: 2px solid #cf1818;
 }
 
 .subbutton {
-  background-color: #c344e7 !important;
-  border-color: #c344e7 !important;
+  background-color: #cf1818 !important;
+  border-color: #cf1818 !important;
 }
 
 @media screen and (min-width: 1330px) {
@@ -61,7 +61,7 @@
 }
 
 .socialicons svg {
-  color: #c344e7;
+  color: #cf1818;
   width: 100%;
 }
 

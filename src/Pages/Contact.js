@@ -232,7 +232,7 @@ const Contact = () => {
                     </Form.Group>
                     <Button
                       className="mb-3 subbutton"
-                      color="#C344E7"
+                      color="#cf1818"
                       type="submit"
                     >
                       {sending ? (
