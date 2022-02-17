@@ -89,7 +89,7 @@
 }
 .credenz-text-main {
   color: var(--light);
-  font-size: 40px;
+  font-size: 36px;
   font-weight: bold;
 }
 
@@ -335,6 +335,9 @@ li .nav-link {
 }
 
 @media (max-width: 768px) {
+  .new-line {
+    text-align: center;
+  }
   .height-full {
     height: fit-content;
     width: 100%;
@@ -353,6 +356,9 @@ li .nav-link {
   .tab-group {
     display: none !important;
   }
+  .modal-dialog {
+    margin: 1rem;
+  }
   .modal-backdrop {
     width: fit-content !important;
     height: fit-content !important;
@@ -364,11 +370,26 @@ li .nav-link {
   }
   .modal-header {
     height: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
   }
   .modal-content {
     height: 75vh;
+    border-image-source: url("../images/square_red.png");
+    border-image-slice: 25;
+    border-image-width: 10;
+    border-image-outset: 0;
+    border-style: solid;
+    border-image-repeat: round;
   }
   .modal-body {
     height: 80%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nav-tabs {
+    justify-content: space-evenly;
   }
 }

@@ -24,13 +24,13 @@ const Logo = () => {
   return (
     <div className="row" style={{ height: "100%" }}>
       <div
-        className="col-md-6 d-flex justify-content-center"
+        className="col-md-4 d-flex justify-content-end"
         style={{ height: "100%" }}
       >
         <Image src={CredenzLogo} className="logo-events" />
       </div>
       <div
-        className="col-md-6 d-flex justify-content-center align-items-center"
+        className="col-md-8 d-flex justify-content-center align-items-center"
         style={{ height: "100%" }}
       >
         <p className="credenz-text-main">CREDENZ LIVE 2.0</p>
@@ -551,7 +551,7 @@ const Events = () => {
             }}
             size="lg"
           >
-            <Modal.Header style={{ width: "100%" }}>
+            <Modal.Header style={{ width: "90%" }}>
               <Modal.Title
                 style={{
                   width: "100%",
@@ -582,7 +582,7 @@ const Events = () => {
                   className="modal-tab-link"
                   color="#efefef"
                 >
-                  <div style={{ maxHeight: "47vh", overflowY: "auto" }}>
+                  <div style={{ maxHeight: "40vh", overflowY: "auto" }}>
                     <p className="new-line">
                       {eventSelected !== -1 && eventDetails[eventSelected].info}
                     </p>
@@ -598,7 +598,7 @@ const Events = () => {
                   title="Structure"
                   className="modal-tab-link"
                 >
-                  <div style={{ maxHeight: "47vh", overflowY: "scroll" }}>
+                  <div style={{ maxHeight: "40vh", overflowY: "scroll" }}>
                     <p className="new-line">
                       {eventSelected !== -1 &&
                         eventDetails[eventSelected].structure}
@@ -612,7 +612,7 @@ const Events = () => {
                 >
                   <div
                     className=""
-                    style={{ maxHeight: "47vh", overflowY: "auto" }}
+                    style={{ maxHeight: "40vh", overflowY: "auto" }}
                   >
                     <p className="new-line">
                       {eventSelected !== -1 &&
@@ -627,7 +627,7 @@ const Events = () => {
                 >
                   <div
                     className=""
-                    style={{ maxHeight: "47vh", overflowY: "auto" }}
+                    style={{ maxHeight: "40vh", overflowY: "auto" }}
                   >
                     <p className="new-line">
                       {eventSelected !== -1 &&

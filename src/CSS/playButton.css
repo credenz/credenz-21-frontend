@@ -72,7 +72,7 @@
 .play-btn__inner {
   position: relative;
   display: block;
-  padding: 20px 30px;
+  padding: 15px 30px;
   background-color: var(--button-background-color);
   overflow: hidden;
   box-shadow: inset 0px 0px 0px 1px var(--button-inner-border-color);
@@ -145,6 +145,13 @@
 
 @media (max-width: 768px) {
   .play-btn {
-    width: 40vw;
+    width: 100%;
+  }
+  .play-btn-wrapper {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .play-btn__inner {
+    padding: 20px 20px;
   }
 }
