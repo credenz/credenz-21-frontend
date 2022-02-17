@@ -299,7 +299,9 @@ const Events = () => {
                 {eventSelected === -1 ? null : <PlayButton link="#" />}
               </div>
               <div
-                className="d-flex justify-content-center row tab-group"
+                className={`d-flex justify-content-center row tab-group ${
+                  eventSelected === -1 ? "d-none" : ""
+                }`}
                 style={{ height: "50%", paddingTop: { ptop } }}
               >
                 <div

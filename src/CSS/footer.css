@@ -57,7 +57,7 @@
     position: inherit;
   }
   .footer-main {
-    height: 12vh;
+    height: 9vh;
   }
   .footer-wrapper {
     height: fit-content;
@@ -65,5 +65,17 @@
   }
   .branch-text {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) and (min-width: 320px) {
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .branch-text {
+    margin-left: 0;
+    transform: translateX(0);
   }
 }

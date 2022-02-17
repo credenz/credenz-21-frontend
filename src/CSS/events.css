@@ -41,6 +41,7 @@
 }
 .tab-group {
   margin-top: 25px;
+  transition: all 0.5s ease;
 }
 
 .cards-wrapper {
@@ -375,7 +376,7 @@ li .nav-link {
   .section-events {
     overflow-y: hidden;
     padding-top: 6vh;
-    padding-bottom: 12vh;
+    padding-bottom: 9vh;
   }
   .main-wrapper {
     display: none;
@@ -419,8 +420,6 @@ li .nav-link {
   .nav-tabs {
     justify-content: space-evenly;
   }
-}
-@media (max-height: 600px) {
 }
 
 /* iPhone 6 Plus in portrait */
