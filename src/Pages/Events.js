@@ -561,7 +561,7 @@ const Events = () => {
                 }}
               >
                 <img
-                  class="modal-logo-img"
+                  classNam="modal-logo-img"
                   src={iconHelpr(events[active])}
                   alt="Event Icon"
                   style={{

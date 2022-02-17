@@ -7,7 +7,8 @@ import IEEELOGO from "../images/ieeelogo.png";
 import PISBLOGO from "../images/pisb.png";
 import TextSliced from "./TextSliced";
 const NavbarCustom = (props) => {
-  const page = useParams().page || "";
+  const [page, setPage] = useState("");
+  console.log("page", page);
   // eslint-disable-next-line no-unused-vars
   const [userDetails, setUserDetails] = useState({});
   const [paymentDone, setPaymentDone] = useState(false);
@@ -65,40 +66,54 @@ const NavbarCustom = (props) => {
               to={`/`}
               isActive={() => page === ""}
               className="header-title"
+              onClick={() => {
+                setPage("");
+              }}
             >
-              <TextSliced title="Home" hidden />
+              <TextSliced title="Home" active={page === ""} />
             </NavLink>
             <NavLink
               // hidden={comingSoon || true}
               to={`/events`}
               isActive={() => page === "events"}
               className="header-title"
+              onClick={() => {
+                setPage("events");
+              }}
             >
-              <TextSliced title="Events" hidden />
+              <TextSliced title="Events" active={page === "events"} />
             </NavLink>
             <NavLink
               to={`/about`}
               isActive={() => page === "about"}
               className="header-title"
+              onClick={() => {
+                setPage("about");
+              }}
             >
-              <TextSliced title="About" hidden />
+              <TextSliced title="About" active={page === "about"} />
             </NavLink>
             <NavLink
               to={`/contact`}
               isActive={() => page === "contact"}
               className="header-title"
+              onClick={() => {
+                setPage("contact");
+              }}
             >
-              <TextSliced title="Contact" hidden />
+              <TextSliced title="Contact" hidden active={page === "contact"} />
             </NavLink>
             <NavLink
               to={`/login`}
               isActive={() => page === "login"}
+              onClick={() => {
+                setPage("login");
+              }}
               className="header-title"
               hidden={isLoggedIn ? (!paymentDone ? false : true) : false}
             >
               <TextSliced
                 title={isLoggedIn ? (!paymentDone ? "Pay Now" : "") : "Login"}
-                hidden
                 active={page === "login"}
               />
             </NavLink>
@@ -114,7 +129,7 @@ const NavbarCustom = (props) => {
               }}
               hidden={!isLoggedIn}
             >
-              <TextSliced title="Logout" hidden />
+              <TextSliced title="Logout" active={page === "logout"} />
             </NavLink>
           </Nav>
           <a href="https://www.ieee.org" target="_blank" rel="noreferrer">
