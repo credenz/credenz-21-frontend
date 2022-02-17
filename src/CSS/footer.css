@@ -63,6 +63,7 @@
     height: fit-content;
     text-align: center;
   }
-  .social-wrapper {
+  .branch-text {
+    font-size: 12px;
   }
 }
