@@ -56,4 +56,13 @@
   .sticky-bottom {
     position: inherit;
   }
+  .footer-main {
+    height: 12vh;
+  }
+  .footer-wrapper {
+    height: fit-content;
+    text-align: center;
+  }
+  .social-wrapper {
+  }
 }

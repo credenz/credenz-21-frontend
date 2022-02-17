@@ -142,3 +142,9 @@
   justify-content: center;
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  .play-btn {
+    width: 40vw;
+  }
+}
