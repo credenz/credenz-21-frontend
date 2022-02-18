@@ -1,0 +1,17 @@
+.termsPage {
+  background-color: var(--primary);
+  min-height: 100vh;
+  padding-top: 8vh;
+  color: var(--light);
+  padding-bottom: 5rem;
+}
+.terms-subheader {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.terms-header {
+  text-align: center;
+}
+.lead {
+  font-size: 1rem;
+}

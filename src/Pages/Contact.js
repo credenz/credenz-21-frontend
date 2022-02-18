@@ -10,6 +10,7 @@ import {
   Row,
   Spinner,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { Footer } from "../Components/Footer";
 import "../CSS/AboutUs.css";
 import "../CSS/ContactUs.css";
@@ -232,7 +233,7 @@ const Contact = () => {
                     </Form.Group>
                     <Button
                       className="mb-3 subbutton"
-                      color="#C344E7"
+                      color="#cf1818"
                       type="submit"
                     >
                       {sending ? (
@@ -273,7 +274,6 @@ const Contact = () => {
               title="iframe"
             ></iframe>
           </Col>
-          <Footer />
         </Row>
       </Container>
     </>
