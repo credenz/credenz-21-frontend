@@ -296,7 +296,7 @@ const Events = () => {
                 </div>
               </div>
               <div className="row hide-mobile">
-                {eventSelected === -1 ? null : <PlayButton link="#" />}
+                {eventSelected === -1 ? null : <PlayButton onClick={() => {alert("Stay Tuned!")}} />}
               </div>
               <div
                 className={`d-flex justify-content-center row tab-group ${
@@ -646,7 +646,7 @@ const Events = () => {
                 </Tab>
               </Tabs>
               <div className="play-button-modal">
-                <PlayButton link="#" />
+                <PlayButton onClick={() => {alert("Stay Tuned!")}} />
               </div>
             </Modal.Body>
           </Modal>
