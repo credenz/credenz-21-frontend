@@ -275,27 +275,6 @@ const Contact = () => {
             ></iframe>
           </Col>
           <Footer />
-          <div className="maillink mt-2 mb-2">
-                      <Container fluid className="socialicons">
-                        <Row>
-                          <Col>
-                            <a href="https://docs.google.com/document/d/1sjNuaDFr5AVTzh2Wn5Vr8u28pte2A9W79Fny3mHdyBE/edit?usp=sharing">
-                              Privacy Policy
-                            </a>
-                          </Col>
-                          <Col>
-                            <a href="https://docs.google.com/document/d/19a9cSiZq-K95upUdZXn9-8SjsKjWxyIM2xCWwhMwke0/edit?usp=sharing">
-                              Terms and Conditions
-                            </a>
-                          </Col>
-                          <Col>
-                            <a href="https://docs.google.com/document/d/1CSwA36F4II-tynRl5P8A-WGW0pb9ATW7v-jaCUXdygM/edit?usp=sharing">
-                              For Refunds and cancellations contact +91 93079 48342.
-                            </a>
-                          </Col>
-                        </Row>
-                      </Container>
-                    </div>
         </Row>
       </Container>
     </>
