@@ -5,6 +5,7 @@ import CyberBg from "../vid/Bg_3_slow.webm";
 // import CyberBg from "../vid/future_1.webm";
 // import CyberBg from "../vid/future_2.webm";
 import { Spinner } from "react-bootstrap";
+import Loader from "../Components/Loader";
 // import CyberBg from "../vid/future_3.webm";
 
 const Home = () => {
@@ -25,16 +26,13 @@ const Home = () => {
     }, 4500);
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
   }, []);
   return (
     <>
       {loading ? (
-        <div
-          className="d-flex justify-content-center align-items-center"
-          style={{ height: "100vh", backgroundColor: "#000" }}
-        >
-          <Spinner animation="grow" color="red" />
+        <div className="d-flex justify-content-center align-items-center styleLoader">
+          <Loader />
         </div>
       ) : (
         <div className="section-home height-full-home o-x-hide">
@@ -51,15 +49,13 @@ const Home = () => {
               className={bgVisible ? "videoTag fade-in-image" : "no-video"}
               autoPlay
               loop
-              muted
-            >
+              muted>
               <source src={CyberBg} type="video/webm" />
             </video>
             <div
               className={
                 logoVisible ? "fade-in-delayed credenz-logo" : "d-none"
-              }
-            >
+              }>
               <img src={HomeImage} alt="credenzLive" className="logo-img" />
             </div>
           </div>
