@@ -31,7 +31,7 @@ export function LoginForm(props) {
         props.setLoading(false);
       })
       .catch((err) => {
-        props.setLoading(true);
+        props.setLoading(false);
         console.error(err);
         alert(JSON.stringify(err.response.data));
       });

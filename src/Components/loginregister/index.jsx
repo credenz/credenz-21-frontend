@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { API } from "../../axios/API";
 import "../../CSS/Login.css";
 import CredenzLive from "../../images/credenzlive2.0_1.png";
+import Loader from "../Loader";
 import { AccountContext } from "./accountContext";
 import { ForgetPasswordForm } from "./ForgetPasswordForm";
 import { LoginForm } from "./loginForm";
@@ -210,15 +211,8 @@ export function AccountBox(props) {
         </Toast>
       </div>
       {loading && (
-        <div
-          className="d-flex justify-content-center align-items-center"
-          style={{
-            height: "100vh",
-            backgroundColor: "transparent",
-            width: "100%",
-          }}
-        >
-          <Spinner animation="grow" color="red" />
+        <div className="d-flex justify-content-center align-items-center height-full">
+          <Loader />
         </div>
       )}
       <div className="mt-4 container-fluid row">
