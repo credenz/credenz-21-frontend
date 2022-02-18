@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import { NavLink, useParams, useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { API } from "../axios/API";
 import "../CSS/navbar.css";
 import IEEELOGO from "../images/ieeelogo.png";

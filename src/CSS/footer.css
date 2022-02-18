@@ -26,13 +26,15 @@
   bottom: 0;
   left: 0;
 }
-.branch-text {
-  display: inline-block;
+.branch-text,
+.terms {
+  text-align: center;
 }
 
-.branch-text {
-  margin-left: 50%;
-  transform: translateX(-50%);
+.terms-text {
+  cursor: pointer;
+  text-decoration: none !important;
+  text-decoration-thickness: 0;
 }
 
 .social-icons {
@@ -49,7 +51,14 @@
 }
 
 .social-wrapper {
+  text-align: center;
   display: inline-block;
+}
+.footer-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
