@@ -65,7 +65,7 @@ const Contact = () => {
                 <Col
                   lg="4"
                   sm="6"
-                  className="mt-2"
+                  className="mt-2 contactcol"
                   data-aos="zoom-in"
                   data-aos-duration="800"
                   data-aos-easing="ease-in-sine"
@@ -108,7 +108,7 @@ const Contact = () => {
                 <Col
                   lg="4"
                   sm="6"
-                  className="mt-2"
+                  className="mt-2 contactcol"
                   data-aos="zoom-in"
                   data-aos-duration="800"
                   data-aos-easing="ease-in-sine"
@@ -150,7 +150,7 @@ const Contact = () => {
                 <Col
                   lg="4"
                   sm="6"
-                  className="mt-2"
+                  className="mt-2 contactcol"
                   data-aos="zoom-in"
                   data-aos-duration="800"
                   data-aos-easing="ease-in-sine"
@@ -190,7 +190,7 @@ const Contact = () => {
                   </div>
                 </Col>
               </Row>
-              <Row>
+              <Row className="feedform" >
                 <Col
                   xs="12"
                   className="feedbkfrm"
@@ -201,7 +201,7 @@ const Contact = () => {
                   FeedBack
                 </Col>
               </Row>
-              <Row>
+              <Row className="feedform" >
                 <Col
                   data-aos="fade-right"
                   data-aos-duration="700"

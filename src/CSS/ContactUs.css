@@ -70,10 +70,20 @@
 }
 
 .pplcont {
-  padding: 6%;
+  padding: 8%;
 }
 
 .pplcard {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
   border-radius: 10px;
+}
+
+.contactcol {
+  padding: 0 1.5vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedform {
+  padding: 0 1.5vw;
 }
