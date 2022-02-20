@@ -79,11 +79,11 @@
 }
 
 .contactcol {
-  padding: 1.5vw;
+  padding: 0 1.5vw;
   justify-content: center;
   align-items: center;
 }
 
 .feedform {
-  padding: 1.5vw;
+  padding: 0 1.5vw;
 }
