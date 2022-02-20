@@ -1,10 +1,10 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import "../CSS/footer.css";
-import Insta from "../images/instagram.png";
-import Facebook from "../images/facebook.png";
-import LinkedIn from "../images/linkedin.png";
+import { Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import "../CSS/footer.css";
+import Facebook from "../images/facebook.png";
+import Insta from "../images/instagram.png";
+import LinkedIn from "../images/linkedin.png";
 export const Footer = (props) => {
   return (
     <div

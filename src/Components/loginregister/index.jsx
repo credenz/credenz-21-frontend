@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { Image, Spinner, Toast } from "react-bootstrap";
+import { Image, Toast } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { API } from "../../axios/API";

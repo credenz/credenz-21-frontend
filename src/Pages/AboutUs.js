@@ -3,11 +3,10 @@ import "aos/dist/aos.css";
 import React, { useEffect } from "react";
 import AboutCards from "../Components/AboutCards";
 import AboutSponsors from "../Components/AboutSponsors";
+import "../CSS/AboutUs.css";
+import CodingNinjas from "../images/codingNinjas.jfif";
 import CollegePond from "../images/collegePond.jfif";
 import Proton from "../images/proton.png";
-import CodingNinjas from "../images/codingNinjas.jfif";
-import "../CSS/AboutUs.css";
-import GridBg from "../vid/grid.webm";
 
 function AboutUs() {
   useEffect(() => {

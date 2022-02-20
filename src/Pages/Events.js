@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Image, Modal, Tab, Tabs, Spinner } from "react-bootstrap";
+import { Image, Modal, Tab, Tabs } from "react-bootstrap";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import EventCard2 from "../Components/EventCard2";
+import Loader from "../Components/Loader";
+import PlayButton from "../Components/PlayButton";
 import "../CSS/events.css";
 import BPlan from "../images/bplan.png";
 import Clash from "../images/clash.png";
+import Cross from "../images/close-line.png";
 import Cretronix from "../images/cretronix.png";
 import Datawiz from "../images/datawiz.png";
 import Enigma from "../images/enigma.png";
 import NTH from "../images/nth.png";
+import CredenzLogo from "../images/onlyLogo.png";
 import Paper from "../images/paper.png";
 import Pixelate from "../images/pixelate.png";
 import Quiz from "../images/quiz.png";
@@ -17,12 +21,6 @@ import RC from "../images/rc.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import { eventDetails, events } from "../staticInfo.js";
-import CredenzLogo from "../images/onlyLogo.png";
-import PlayButton from "../Components/PlayButton";
-import Cross from "../images/close-line.png";
-import Loader from "../Components/Loader";
-// import GridBg from "../vid/hexagon.webm";
-import GridBg from "../vid/grid.webm";
 // import GridBg from "../vid/mesh.webm";
 
 const Logo = () => {

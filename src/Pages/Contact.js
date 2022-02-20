@@ -10,8 +10,6 @@ import {
   Row,
   Spinner,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { Footer } from "../Components/Footer";
 import "../CSS/AboutUs.css";
 import "../CSS/ContactUs.css";
 import { ReactComponent as Linkedinicon } from "../images/linkedin.svg";
