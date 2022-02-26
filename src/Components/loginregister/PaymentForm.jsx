@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import swal from "sweetalert";
 import { API } from "../../axios/API";
 import "../../CSS/loginForm.css";
 import { Marginer } from "../marginer";
@@ -52,7 +53,7 @@ export function PaymentForm(props) {
         .then((res) => {
           //RESET THE LOCAL STATE
           //   history.push("/", { userDetails });
-          alert(`Payment successful!`);
+          swal("Payment Successful", "", "success");
           // setTimeout(() => {
           //   // eslint-disable-next-line no-restricted-globals
           //   location.reload();
@@ -70,7 +71,8 @@ export function PaymentForm(props) {
       "https://checkout.razorpay.com/v1/checkout.js"
     );
     if (!res) {
-      alert("Razorpay SDK failed to load. Are you online?");
+      // alert("Razorpay SDK failed to load. Are you online?");
+      swal("Razorpay SDK failed to load. Are you online?", "", "error");
       return;
     }
 
@@ -111,8 +113,7 @@ export function PaymentForm(props) {
       <button
         className="btn btn--secondary"
         type="submit"
-        onClick={displayRazorpay}
-      >
+        onClick={displayRazorpay}>
         <span className="btn__content">Pay Now</span>
         <span className="btn__glitch"></span>
       </button>

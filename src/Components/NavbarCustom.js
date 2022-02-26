@@ -49,13 +49,11 @@ const NavbarCustom = (props) => {
             ? "navbar-wrapper position-relative bg-color-custom"
             : "navbar-wrapper bg-color-custom"
         }
-        expand="md"
-      >
+        expand="md">
         <Navbar.Brand
           href="https://pictieee.in"
           target="_blank"
-          className="header-header"
-        >
+          className="header-header">
           <img src={PISBLOGO} alt="pisblogo" className="nav-logo ms-4" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="m-2" />
@@ -67,8 +65,7 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("");
-              }}
-            >
+              }}>
               <TextSliced title="Home" activeLink={page === ""} />
             </NavLink>
             <NavLink
@@ -78,8 +75,7 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("events");
-              }}
-            >
+              }}>
               <TextSliced title="Events" activeLink={page === "events"} />
             </NavLink>
             <NavLink
@@ -88,8 +84,7 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("about");
-              }}
-            >
+              }}>
               <TextSliced title="About" activeLink={page === "about"} />
             </NavLink>
             <NavLink
@@ -98,8 +93,7 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("contact");
-              }}
-            >
+              }}>
               <TextSliced
                 title="Contact"
                 hidden
@@ -113,8 +107,7 @@ const NavbarCustom = (props) => {
                 setPage("login");
               }}
               className="header-title"
-              hidden={isLoggedIn ? (!paymentDone ? false : true) : false}
-            >
+              hidden={isLoggedIn ? (!paymentDone ? false : true) : false}>
               <TextSliced
                 title={isLoggedIn ? (!paymentDone ? "Pay Now" : "") : "Login"}
                 activeLink={page === "login"}
@@ -130,8 +123,7 @@ const NavbarCustom = (props) => {
                 // eslint-disable-next-line no-restricted-globals
                 location.reload();
               }}
-              hidden={!isLoggedIn}
-            >
+              hidden={!isLoggedIn}>
               <TextSliced title="Logout" activeLink={page === "logout"} />
             </NavLink>
           </Nav>

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import swal from "sweetalert";
 import { API } from "../../axios/API";
 import "../../CSS/loginForm.css";
 import { Marginer } from "../marginer";
@@ -51,7 +52,7 @@ export function ForgetPasswordForm(props) {
     try {
       await API.passwordReset({ email });
       setEmailSent(true);
-      alert("Email sent! Check yout mailbox.");
+      swal("Email sent! Check yout mailbox.", "", "info");
     } catch (error) {
       console.error(error);
     }
@@ -64,7 +65,7 @@ export function ForgetPasswordForm(props) {
         password: password,
       })
         .then((res) => {
-          alert("Password changed, you can login!");
+          swal("Password changed, you can login!", "", "success");
           // eslint-disable-next-line no-restricted-globals
           location.reload();
         })
@@ -111,16 +112,14 @@ export function ForgetPasswordForm(props) {
       <button
         className="btn btn--secondary mb-1"
         type="submit"
-        onClick={sendVerificationToken}
-      >
+        onClick={sendVerificationToken}>
         <span className="btn__content">Send Verification Mail</span>
         <span className="btn__glitch"></span>
       </button>
       <button
         className="btn btn--secondary"
         type="submit"
-        onClick={handleForgetPassword}
-      >
+        onClick={handleForgetPassword}>
         <span className="btn__content">Submit</span>
         <span className="btn__glitch"></span>
       </button>
@@ -128,8 +127,7 @@ export function ForgetPasswordForm(props) {
       <MutedLink
         className="mb-3"
         style={{ cursor: "pointer" }}
-        onClick={switchToSignin}
-      >
+        onClick={switchToSignin}>
         Back to Login
       </MutedLink>
     </BoxContainer>

@@ -10,6 +10,7 @@ import {
   Input,
   MutedLink,
 } from "./common";
+import swal from "sweetalert";
 
 export function LoginForm(props) {
   const { switchToSignup, switchToForgetPassword } = useContext(AccountContext);
@@ -25,7 +26,8 @@ export function LoginForm(props) {
       .then((res) => {
         localStorage.setItem("credenz_access_token", res.data.access);
         localStorage.setItem("credenz_username", username);
-        alert(`Welcome Back ${username} !`);
+        // alert(`Welcome Back ${username} !`);
+        swal(`Welcome Back ${username} !`, "", "success");
         // eslint-disable-next-line no-restricted-globals
         location.reload();
         props.setLoading(false);
@@ -33,7 +35,8 @@ export function LoginForm(props) {
       .catch((err) => {
         props.setLoading(false);
         console.error(err);
-        alert(JSON.stringify(err.response.data));
+        // alert(JSON.stringify(err.response.data));
+        swal("Error", JSON.stringify(err.response.data), "error");
       });
   };
 
@@ -58,8 +61,7 @@ export function LoginForm(props) {
       <MutedLink
         switchToSignup={switchToSignup}
         style={{ cursor: "pointer" }}
-        onClick={switchToForgetPassword}
-      >
+        onClick={switchToForgetPassword}>
         Forgot your password?
       </MutedLink>
       <Marginer direction="vertical" margin="1.6em" />
@@ -67,8 +69,7 @@ export function LoginForm(props) {
         className="btn btn--secondary"
         type="submit"
         onClick={handleSubmit}
-        disabled={!username || !passwd}
-      >
+        disabled={!username || !passwd}>
         Sign In
         <span className="btn__content">Sign In</span>
         <span className="btn__glitch"></span>

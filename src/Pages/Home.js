@@ -8,6 +8,8 @@ import HomeImage from "../images/credenzlive2.0.png";
 // import CyberBg from '../vid/hexagon.webm'
 import CyberBg from "../vid/future_4.webm";
 import Loader from "../Components/Loader";
+import NavbarCustom from "../Components/NavbarCustom";
+import { Footer } from "../Components/Footer";
 
 const Home = () => {
   const [logoVisible, setLogoVisible] = useState(false);
@@ -36,33 +38,35 @@ const Home = () => {
           <Loader />
         </div>
       ) : (
-        <div className="section-home height-full-home o-x-hide">
-          <div className="video-container">
-            {/* <NavbarCustom comingSoon={true} /> */}
-            {/* <video
+        <>
+          {/* <NavbarCustom /> */}
+          <div className="section-home height-full-home o-x-hide">
+            <div className="video-container">
+              {/* <NavbarCustom comingSoon={true} /> */}
+              {/* <video
           muted
           autoPlay
           className={preVideoEnd ? "fade-out" : "pre-video"}
         >
           <source src={CircleFuture} type="video/mp4" />
         </video> */}
-            <video
-              className={bgVisible ? "videoTag fade-in-image" : "no-video"}
-              autoPlay
-              loop
-              muted
-            >
-              <source src={CyberBg} type="video/webm" />
-            </video>
-            <div
-              className={
-                logoVisible ? "fade-in-delayed credenz-logo" : "d-none"
-              }
-            >
-              <img src={HomeImage} alt="credenzLive" className="logo-img" />
+              <video
+                className={bgVisible ? "videoTag fade-in-image" : "no-video"}
+                autoPlay
+                loop
+                muted>
+                <source src={CyberBg} type="video/webm" />
+              </video>
+              <div
+                className={
+                  logoVisible ? "fade-in-delayed credenz-logo" : "d-none"
+                }>
+                <img src={HomeImage} alt="credenzLive" className="logo-img" />
+              </div>
             </div>
           </div>
-        </div>
+          {/* <Footer /> */}
+        </>
       )}
     </>
   );
