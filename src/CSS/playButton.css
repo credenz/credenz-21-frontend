@@ -78,6 +78,9 @@
   overflow: hidden;
   box-shadow: inset 0px 0px 0px 1px var(--button-inner-border-color);
 }
+.play-btn__inner-green {
+  box-shadow: inset 0px 0px 0px 1px var(--bs-teal);
+}
 
 .play-btn__inner::before {
   content: "";
@@ -112,6 +115,10 @@
   background-color: var(--highlight-color);
   transform: skew(-15deg);
   transition: all 0.2s ease;
+}
+
+.play-btn__slide-green {
+  background-color: var(--bs-teal);
 }
 
 .play-btn__content {

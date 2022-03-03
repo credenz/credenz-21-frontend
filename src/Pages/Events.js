@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import EventCard2 from "../Components/EventCard2";
 import Loader from "../Components/Loader";
-import PlayButton from "../Components/PlayButton";
 import "../CSS/events.css";
 import BPlan from "../images/bplan.png";
 import Clash from "../images/clash.png";
@@ -21,6 +20,7 @@ import RC from "../images/rc.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import { eventDetails, events } from "../staticInfo.js";
+import "../CSS/playButton.css";
 // import GridBg from "../vid/mesh.webm";
 
 const Logo = () => {
@@ -59,6 +59,57 @@ const Events = () => {
       return "Paper Presentation";
     } else return e;
   };
+  function addToCart(event) {
+    console.log("Added to cart:", event);
+  }
+  function submitCart() {
+    console.log("Submitted cart");
+  }
+
+  function PlayButton({ link, event }) {
+    return (
+      <div
+        className="play-btn-wrapper"
+        onClick={() => {
+          addToCart(event);
+        }}
+      >
+        <button
+          onClick={() => {
+            alert("Stay Tuned!");
+          }}
+          className="play-btn play-btn--light"
+        >
+          <span className="play-btn__inner">
+            <span className="play-btn__slide"></span>
+            <span className="play-btn__content">Add to Cart</span>
+          </span>
+        </button>
+      </div>
+    );
+  }
+  function SubmitButton() {
+    return (
+      <div
+        className="play-btn-wrapper"
+        onClick={() => {
+          submitCart();
+        }}
+      >
+        <button
+          onClick={() => {
+            alert("Stay Tuned!");
+          }}
+          className="play-btn play-btn--light"
+        >
+          <span className="play-btn__inner play-btn__inner-green">
+            <span className="play-btn__slide play-btn__slide-green"></span>
+            <span className="play-btn__content">Checkout</span>
+          </span>
+        </button>
+      </div>
+    );
+  }
 
   const [eventSelected, setEventSelected] = useState(-1);
   const [mainText, setMainText] = useState(eventDetails[0].info);
@@ -275,7 +326,16 @@ const Events = () => {
                 </div>
               </div>
               <div className="row hide-mobile">
-                {eventSelected === -1 ? null : <PlayButton link="#" />}
+                {eventSelected === -1 ? null : (
+                  <div className="row">
+                    <div className="col-md-6">
+                      <PlayButton link="#" />
+                    </div>
+                    <div className="col-md-6">
+                      <SubmitButton />
+                    </div>
+                  </div>
+                )}
               </div>
               <div
                 className={`d-flex justify-content-center row tab-group ${
