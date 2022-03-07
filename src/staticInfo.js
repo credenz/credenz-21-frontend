@@ -13,6 +13,57 @@ export const events = {
   11: "Webweaver",
 };
 
+export const cartItems = {
+  0: {
+    name: "RC",
+    price: "₹60",
+  },
+  1: {
+    name: "Clash",
+    price: "₹60",
+  },
+  2: {
+    name: "NTH",
+    price: "₹60",
+  },
+  3: {
+    name: "Wallstreet",
+    price: "₹60",
+  },
+  4: {
+    name: "BPlan",
+    price: "₹60",
+  },
+  5: {
+    name: "Enigma",
+    price: "₹60",
+  },
+  6: {
+    name: "DataWiz",
+    price: "₹60",
+  },
+  7: {
+    name: "Quiz",
+    price: "₹60",
+  },
+  8: {
+    name: "Paper Presentation",
+    price: "₹60",
+  },
+  9: {
+    name: "Cretronix",
+    price: "₹60",
+  },
+  10: {
+    name: "Pixelate",
+    price: "₹60",
+  },
+  11: {
+    name: "Webweaver",
+    price: "₹60",
+  },
+};
+
 export const tabs = {
   0: "info",
   1: "rules",

@@ -1,5 +1,6 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
+import React from "react";
 //import all the pages
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -13,11 +14,18 @@ import Home from "./Pages/Home";
 import LoginRegister from "./Pages/LoginRegister";
 import Profile from "./Pages/Profile";
 import { Terms } from "./Pages/Terms";
+import CartContext from "./Components/CartContext";
+
 let App = () => {
   AOS.init();
+  const [cart, setCart] = React.useState([]);
+  const value = {
+    cart,
+    setCart,
+  };
   //create routing for pages home, events, about, contact, profile
   return (
-    <>
+    <CartContext.Provider value={value}>
       <Router>
         <NavbarCustom />
         <Footer />
@@ -34,7 +42,7 @@ let App = () => {
         {/* <Route path="/:page" component={NavbarCustom} /> */}
         {/* <Route exact path="/" component={NavbarCustom} /> */}
       </Router>
-    </>
+    </CartContext.Provider>
   );
 };
 
