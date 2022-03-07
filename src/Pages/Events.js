@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Image, Modal, Tab, Tabs } from "react-bootstrap";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import EventCard2 from "../Components/EventCard2";
-import { Footer } from "../Components/Footer";
 import Loader from "../Components/Loader";
-import NavbarCustom from "../Components/NavbarCustom";
-import PlayButton from "../Components/PlayButton";
 import "../CSS/events.css";
+import "../CSS/playButton.css";
 import BPlan from "../images/bplan.png";
 import Clash from "../images/clash.png";
 import Cross from "../images/close-line.png";
@@ -22,8 +20,8 @@ import Quiz from "../images/quiz.png";
 import RC from "../images/rc.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
-import { eventDetails, events } from "../staticInfo.js";
-import "../CSS/playButton.css";
+import { eventDetails, events, cartItems } from "../staticInfo.js";
+import CartContext from "../Components/CartContext";
 // import GridBg from "../vid/mesh.webm";
 
 const Logo = () => {
@@ -46,6 +44,8 @@ const Logo = () => {
 };
 
 const Events = () => {
+  const cartContextValue = useContext(CartContext);
+  const [cart, setCart] = useState([]);
   const ptop = "50px";
   const height = "65px";
   const width = "65px";
@@ -69,42 +69,94 @@ const Events = () => {
     console.log("Submitted cart");
   }
 
-  function PlayButton({ link, event }) {
+  function cartHelpr(eventCode) {
+    switch (eventCode) {
+      case 0:
+        cartContextValue.setCart([...cartContextValue.cart, cartItems[0]]);
+        break;
+      case 1:
+        cartContextValue.setCart([...cartContextValue.cart, cartItems[1]]);
+        break;
+      case 2:
+        cartContextValue.setCart([...cartContextValue.cart, cartItems[2]]);
+        break;
+      case 3:
+        cartContextValue.setCart([...cartContextValue.cart, cartItems[3]]);
+        break;
+      case 4:
+        cartContextValue.setCart([...cartContextValue.cart, cartItems[4]]);
+        break;
+      case 5:
+        cartContextValue.setCart([...cartContextValue.cart, cartItems[5]]);
+        break;
+      case 6:
+        cartContextValue.setCart([...cartContextValue.cart, cartItems[6]]);
+        break;
+      case 7:
+        cartContextValue.setCart([...cartContextValue.cart, cartItems[7]]);
+        break;
+      case 8:
+        cartContextValue.setCart([...cartContextValue.cart, cartItems[8]]);
+        break;
+      case 9:
+        cartContextValue.setCart([...cartContextValue.cart, cartItems[9]]);
+        break;
+      case 10:
+        cartContextValue.setCart([...cartContextValue.cart, cartItems[10]]);
+        break;
+      case 11:
+        cartContextValue.setCart([...cartContextValue.cart, cartItems[11]]);
+        break;
+      default:
+        break;
+    }
+  }
+
+  function PlayButton(props) {
+    console.log(
+      "Context values:",
+
+      cartContextValue.cart.map((item) => item.name)
+    );
+    cartContextValue.cart.forEach((item) => console.log(item));
     return (
-      <div
-        className="play-btn-wrapper"
-        onClick={() => {
-          addToCart(event);
-        }}
-      >
+      <div className="play-btn-wrapper">
         <button
           onClick={() => {
-            alert("Stay Tuned!");
+            if (
+              cartContextValue.cart
+                .map((item) => item.name)
+                .includes(events[props.eventSelected])
+            ) {
+              //proceed to cart -> open cart modal
+              console.log("Open cart modal");
+              alert("Open Cart!");
+            } else {
+              cartHelpr(props.eventSelected);
+              setCart([...cart, cartItems[props.eventSelected]]);
+              console.log("Added to cart:", props.eventSelected);
+            }
           }}
           className="play-btn play-btn--light"
         >
           <span className="play-btn__inner">
             <span className="play-btn__slide"></span>
-            <span className="play-btn__content">Add to Cart</span>
+            <span className="play-btn__content">
+              {cartContextValue.cart
+                .map((item) => item.name)
+                .includes(events[props.eventSelected])
+                ? "Added to cart"
+                : "Add to cart"}
+            </span>
           </span>
         </button>
       </div>
     );
   }
-  function SubmitButton() {
+  function SubmitButton(props) {
     return (
-      <div
-        className="play-btn-wrapper"
-        onClick={() => {
-          submitCart();
-        }}
-      >
-        <button
-          onClick={() => {
-            alert("Stay Tuned!");
-          }}
-          className="play-btn play-btn--light"
-        >
+      <div className="play-btn-wrapper">
+        <button className="play-btn play-btn--light">
           <span className="play-btn__inner play-btn__inner-green">
             <span className="play-btn__slide play-btn__slide-green"></span>
             <span className="play-btn__content">Checkout</span>
@@ -347,10 +399,10 @@ const Events = () => {
                   {eventSelected === -1 ? null : (
                     <div className="row">
                       <div className="col-md-6">
-                        <PlayButton link="#" />
+                        <PlayButton link="#" eventSelected={eventSelected} />
                       </div>
                       <div className="col-md-6">
-                        <SubmitButton />
+                        <SubmitButton eventSelected={eventSelected} />
                       </div>
                     </div>
                   )}
