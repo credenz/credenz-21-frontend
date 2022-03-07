@@ -17,6 +17,62 @@
   position: relative !important;
 }
 
+.cartIconContainer {
+  cursor: pointer;
+}
+
+.cartIcon {
+  height: 30px;
+  width: 35px;
+}
+
+.modal-dialog {
+  max-width: 50% !important;
+  height: 80% !important;
+}
+
+.cartHeader {
+  justify-content: center !important;
+}
+
+.cartTitle {
+  color: #fff;
+  text-align: center;
+}
+
+/* .cartBody {
+  overflow-y: scroll;
+} */
+
+.event-card {
+  width: 95% !important;
+  border: 0;
+  margin: 20px auto !important;
+}
+
+.card-body {
+  background-color: #000;
+  color: #fff;
+  border-radius: 10px !important;
+}
+
+.event-logo {
+  height: 120px;
+  width: 140px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(25deg) brightness(102%)
+    contrast(105%);
+}
+
+.cartFooter {
+  border: 0 !important;
+  padding: 10px 30px !important;
+  flex-direction: column;
+}
+
+.closeButton {
+  width: 10% !important;
+}
+
 .bg-color-custom {
   background-color: transparent;
   position: absolute;

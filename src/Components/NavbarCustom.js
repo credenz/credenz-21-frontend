@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Card, Modal, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { API } from "../axios/API";
 import "../CSS/navbar.css";
 import IEEELOGO from "../images/ieeelogo.png";
 import PISBLOGO from "../images/pisb.png";
+import CartIcon from "../images/shopping-cart.png";
+import RCLogo from "../images/rc.png";
 import TextSliced from "./TextSliced";
 const NavbarCustom = (props) => {
   const [page, setPage] = useState("");
@@ -12,6 +14,7 @@ const NavbarCustom = (props) => {
   const [userDetails, setUserDetails] = useState({});
   const [paymentDone, setPaymentDone] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [show, setShow] = useState(false);
 
   const checkPayment = async () => {
     let token = localStorage.getItem("credenz_access_token");
@@ -40,6 +43,10 @@ const NavbarCustom = (props) => {
     checkPayment();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
+
   return (
     <>
       <Navbar
@@ -126,6 +133,11 @@ const NavbarCustom = (props) => {
               hidden={!isLoggedIn}>
               <TextSliced title="Logout" activeLink={page === "logout"} />
             </NavLink>
+            {isLoggedIn && (
+              <div className="cartIconContainer" onClick={handleShow}>
+                <img src={CartIcon} alt="Cart icon" className="cartIcon" />
+              </div>
+            )}
           </Nav>
           <a href="https://www.ieee.org" target="_blank" rel="noreferrer">
             <img
@@ -136,6 +148,143 @@ const NavbarCustom = (props) => {
           </a>
         </Navbar.Collapse>
       </Navbar>
+      <Modal show={show} onHide={handleClose} className="cartModal" scrollable>
+        <Modal.Header className="cartHeader">
+          <Modal.Title className="cartTitle">Cart</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="cartBody">
+          <Card className="event-card">
+            <Card.Body className="d-flex row card-body">
+              <div className="col-md-3 d-flex justify-content-center">
+                <img src={RCLogo} alt="Event logo" className="event-logo" />
+              </div>
+              <div
+                className="col-md-6 d-flex justify-content-start"
+                style={{ flexDirection: "column" }}>
+                <h3>Reverse Coding</h3>
+                <p>
+                  Hone your problem-solving skills by decrypting complex
+                  questions
+                </p>
+              </div>
+              <div className="col-md-3 d-flex justify-content-center align-items-center">
+                <h3>&#8377; 50</h3>
+              </div>
+            </Card.Body>
+          </Card>
+          <Card className="event-card">
+            <Card.Body className="d-flex row card-body">
+              <div className="col-md-3 d-flex justify-content-center">
+                <img src={RCLogo} alt="Event logo" className="event-logo" />
+              </div>
+              <div
+                className="col-md-6 d-flex justify-content-start"
+                style={{ flexDirection: "column" }}>
+                <h3>Reverse Coding</h3>
+                <p>
+                  Hone your problem-solving skills by decrypting complex
+                  questions
+                </p>
+              </div>
+              <div className="col-md-3 d-flex justify-content-center align-items-center">
+                <h3>&#8377; 50</h3>
+              </div>
+            </Card.Body>
+          </Card>
+          <Card className="event-card">
+            <Card.Body className="d-flex row card-body">
+              <div className="col-md-3 d-flex justify-content-center">
+                <img src={RCLogo} alt="Event logo" className="event-logo" />
+              </div>
+              <div
+                className="col-md-6 d-flex justify-content-start"
+                style={{ flexDirection: "column" }}>
+                <h3>Reverse Coding</h3>
+                <p>
+                  Hone your problem-solving skills by decrypting complex
+                  questions
+                </p>
+              </div>
+              <div className="col-md-3 d-flex justify-content-center align-items-center">
+                <h3>&#8377; 50</h3>
+              </div>
+            </Card.Body>
+          </Card>
+          <Card className="event-card">
+            <Card.Body className="d-flex row card-body">
+              <div className="col-md-3 d-flex justify-content-center">
+                <img src={RCLogo} alt="Event logo" className="event-logo" />
+              </div>
+              <div
+                className="col-md-6 d-flex justify-content-start"
+                style={{ flexDirection: "column" }}>
+                <h3>Reverse Coding</h3>
+                <p>
+                  Hone your problem-solving skills by decrypting complex
+                  questions
+                </p>
+              </div>
+              <div className="col-md-3 d-flex justify-content-center align-items-center">
+                <h3>&#8377; 50</h3>
+              </div>
+            </Card.Body>
+          </Card>
+          <Card className="event-card">
+            <Card.Body className="d-flex row card-body">
+              <div className="col-md-3 d-flex justify-content-center">
+                <img src={RCLogo} alt="Event logo" className="event-logo" />
+              </div>
+              <div
+                className="col-md-6 d-flex justify-content-start"
+                style={{ flexDirection: "column" }}>
+                <h3>Reverse Coding</h3>
+                <p>
+                  Hone your problem-solving skills by decrypting complex
+                  questions
+                </p>
+              </div>
+              <div className="col-md-3 d-flex justify-content-center align-items-center">
+                <h3>&#8377; 50</h3>
+              </div>
+            </Card.Body>
+          </Card>
+        </Modal.Body>
+        <Modal.Footer className="cartFooter">
+          <div style={{ width: "100%" }}>
+            <p
+              style={{
+                color: "#fff",
+                float: "right",
+                fontSize: 25,
+                marginRight: 20,
+              }}>
+              Total : &#8377; 200
+            </p>
+          </div>
+          <div className="row d-flex justify-content-between w-100">
+            <button
+              onClick={() => {
+                setShow(false);
+              }}
+              className="play-btn play-btn--light">
+              <span className="play-btn__inner">
+                <span className="play-btn__slide"></span>
+                <span className="play-btn__content">Close</span>
+              </span>
+            </button>
+            <button
+              onClick={() => {
+                setShow(false);
+              }}
+              className="play-btn play-btn--light">
+              <span className="play-btn__inner play-btn__inner-green">
+                <span className="play-btn__slide play-btn__slide-green"></span>
+                <span className="play-btn__content">Pay Now</span>
+              </span>
+            </button>
+          </div>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };
