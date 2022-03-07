@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import swal from "sweetalert";
 import { API } from "../../axios/API";
 import "../../CSS/Login.css";
 import { Marginer } from "../marginer";
@@ -52,7 +53,8 @@ export function SignupForm(props) {
         .then((res) => {
           // eslint-disable-next-line no-restricted-globals
           location.reload();
-          alert(`Payment successful!`);
+          // alert(`Payment successful!`);
+          swal("Payment Successful!", "", "success");
           //RESET THE LOCAL STATE
         })
         .catch((err) => {});
@@ -113,15 +115,21 @@ export function SignupForm(props) {
     })
       .then((res) => {
         setEnablePayment(true);
-        alert(
-          "You have been registered!, Pay using the Pay Now button or login later with the credentials to pay later."
+        // alert(
+        //   "You have been registered!, Pay using the Pay Now button or login later with the credentials to pay later."
+        // );
+        swal(
+          "You have been registered!, Pay using the Pay Now button or login later with the credentials to pay later.",
+          "",
+          "success"
         );
         localStorage.setItem("credenz_username", res.data.username);
         props.setLoading(false);
       })
       .catch((e) => {
         props.setLoading(false);
-        alert(JSON.stringify(e.response.data));
+        // alert(JSON.stringify(e.response.data));
+        swal("Error", JSON.stringify(e.response.data), "error");
       });
   };
 
@@ -172,8 +180,7 @@ export function SignupForm(props) {
           <button
             className="btn btn--secondary"
             type="submit"
-            onClick={handleSignUp}
-          >
+            onClick={handleSignUp}>
             <span className="btn__content">Sign Up</span>
             <span className="btn__glitch"></span>
           </button>
@@ -181,8 +188,7 @@ export function SignupForm(props) {
             className="btn btn--secondary"
             type="submit"
             onClick={displayRazorpay}
-            disabled={!enablePayment}
-          >
+            disabled={!enablePayment}>
             <span className="btn__content">Pay Now</span>
             <span className="btn__glitch"></span>
           </button>
@@ -196,9 +202,8 @@ export function SignupForm(props) {
             onClick={(e) => {
               passwd1 === passwd2
                 ? setStep(1)
-                : alert("Passwords don't match!");
-            }}
-          >
+                : swal("Error", "Passwords don't match!", "error");
+            }}>
             Next
           </span>
           <span className="btn__glitch"></span>

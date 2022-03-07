@@ -6,3 +6,37 @@
 * {
   font-family: "SolThin", sans-serif;
 }
+
+.swal-modal {
+  background-color: #231f20;
+  border-radius: 10px;
+}
+
+.swal-title {
+  color: #fff;
+  background-color: #231f20;
+}
+
+.swal-icon--success:before,
+.swal-icon--success:after,
+.swal-icon--success__hide-corners {
+  background-color: #231f20;
+}
+
+.swal-text {
+  color: #fff;
+}
+
+.swal-button {
+  background-color: #cf1818 !important;
+  border: 1px solid #000 !important;
+}
+
+.swal-button:hover {
+  background-color: #ee1f20;
+  border: 1px solid #000;
+}
+
+.swal-overlay {
+  background-color: rgba(43, 165, 137, 0.45);
+}

@@ -10,6 +10,7 @@ import {
   Row,
   Spinner,
 } from "react-bootstrap";
+import swal from "sweetalert";
 import "../CSS/AboutUs.css";
 import "../CSS/ContactUs.css";
 import { ReactComponent as Linkedinicon } from "../images/linkedin.svg";
@@ -42,7 +43,8 @@ const Contact = () => {
       setFeedname("");
       setFeedmsg("");
       setSending(false);
-      alert("Your feedback has been succesfully submitted!");
+      // alert("Your feedback has been succesfully submitted!");
+      swal("Your feedback has been succesfully submitted!", "", "success");
     });
   };
 
@@ -53,8 +55,7 @@ const Contact = () => {
         data-aos="zoom-in-up"
         data-aos-duration="100"
         data-aos-easing="ease-in-sine"
-        data-aos-anchor-placement="top-center"
-      >
+        data-aos-anchor-placement="top-center">
         <h1>Contact Us</h1>
       </div>
       <Container fluid className="contactpage">
@@ -69,8 +70,7 @@ const Contact = () => {
                   data-aos="zoom-in"
                   data-aos-duration="800"
                   data-aos-easing="ease-in-sine"
-                  data-aos-offset="0"
-                >
+                  data-aos-offset="0">
                   <div className="pplcard">
                     <div className="pplcont">
                       <Image
@@ -112,8 +112,7 @@ const Contact = () => {
                   data-aos="zoom-in"
                   data-aos-duration="800"
                   data-aos-easing="ease-in-sine"
-                  data-aos-offset="200"
-                >
+                  data-aos-offset="200">
                   <div className="pplcard">
                     <div className="pplcont">
                       <Image
@@ -154,8 +153,7 @@ const Contact = () => {
                   data-aos="zoom-in"
                   data-aos-duration="800"
                   data-aos-easing="ease-in-sine"
-                  data-aos-offset="400"
-                >
+                  data-aos-offset="400">
                   <div className="pplcard">
                     <div className="pplcont">
                       <Image
@@ -190,23 +188,21 @@ const Contact = () => {
                   </div>
                 </Col>
               </Row>
-              <Row className="feedform" >
+              <Row className="feedform">
                 <Col
                   xs="12"
                   className="feedbkfrm"
                   data-aos="fade-right"
                   data-aos-duration="700"
-                  data-aos-easing="ease-in-sine"
-                >
+                  data-aos-easing="ease-in-sine">
                   FeedBack
                 </Col>
               </Row>
-              <Row className="feedform" >
+              <Row className="feedform">
                 <Col
                   data-aos="fade-right"
                   data-aos-duration="700"
-                  data-aos-easing="ease-in-sine"
-                >
+                  data-aos-easing="ease-in-sine">
                   <Form onSubmit={handleFeedback}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                       <Form.Label>Name</Form.Label>
@@ -232,8 +228,7 @@ const Contact = () => {
                     <Button
                       className="mb-3 subbutton"
                       color="#cf1818"
-                      type="submit"
-                    >
+                      type="submit">
                       {sending ? (
                         <>
                           <Spinner
@@ -260,8 +255,7 @@ const Contact = () => {
             data-aos="fade-left"
             data-aos-duration="1000"
             data-aos-easing="ease-in-sine"
-            data-aos-offset="200"
-          >
+            data-aos-offset="200">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.5761897254197!2d73.84864491506187!3d18.457542087445784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eac85230ba47%3A0x871eddd0a8a0a108!2sSCTR'S%20Pune%20Institute%20of%20Computer%20Technology!5e0!3m2!1sen!2sin!4v1603520633684!5m2!1sen!2sin"
               width="100%"
@@ -269,8 +263,7 @@ const Contact = () => {
               frameborder="0"
               aria-hidden="false"
               tabindex="0"
-              title="iframe"
-            ></iframe>
+              title="iframe"></iframe>
           </Col>
         </Row>
       </Container>
