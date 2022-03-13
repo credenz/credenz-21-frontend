@@ -7,7 +7,7 @@ export const events = {
   5: "Enigma",
   6: "DataWiz",
   7: "Quiz",
-  8: "Paper",
+  8: "Paper Presentation",
   9: "Cretronix",
   10: "Pixelate",
   11: "Webweaver",

@@ -22,6 +22,7 @@ import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import { eventDetails, events, cartItems } from "../staticInfo.js";
 import CartContext from "../Components/CartContext";
+import swal from "sweetalert";
 // import GridBg from "../vid/mesh.webm";
 
 const Logo = () => {
@@ -29,14 +30,12 @@ const Logo = () => {
     <div className="row" style={{ height: "100%" }}>
       <div
         className="col-md-4 d-flex justify-content-end"
-        style={{ height: "100%" }}
-      >
+        style={{ height: "100%" }}>
         <Image src={CredenzLogo} className="logo-events" />
       </div>
       <div
         className="col-md-8 d-flex justify-content-center align-items-center"
-        style={{ height: "100%" }}
-      >
+        style={{ height: "100%" }}>
         <p className="credenz-text-main">CREDENZ LIVE 2.0</p>
       </div>
     </div>
@@ -130,16 +129,30 @@ const Events = () => {
             ) {
               //proceed to cart -> open cart modal
               console.log("Open cart modal");
-              alert("Open Cart!");
+              swal(`Event already added`, "", "warning");
             } else {
               cartHelpr(props.eventSelected);
               setCart([...cart, cartItems[props.eventSelected]]);
-              console.log("Added to cart:", props.eventSelected);
+              swal(`Event added successfully!`, "", "success");
             }
           }}
-          className="play-btn play-btn--light"
-        >
-          <span className="play-btn__inner">
+          disabled={
+            cartContextValue.cart
+              .map((item) => item.name)
+              .includes(events[props.eventSelected])
+              ? true
+              : false
+          }
+          className="play-btn play-btn--light">
+          <span
+            style={{
+              backgroundColor: cartContextValue.cart
+                .map((item) => item.name)
+                .includes(events[props.eventSelected])
+                ? "#e01949"
+                : "transparent",
+            }}
+            className="play-btn__inner">
             <span className="play-btn__slide"></span>
             <span className="play-btn__content">
               {cartContextValue.cart
@@ -232,8 +245,7 @@ const Events = () => {
               data-aos="fade-in"
               data-aos-duration="400"
               data-aos-easing="ease-in-sine"
-              data-aos-offset="50"
-            >
+              data-aos-offset="50">
               <div className="col-md-3 ">
                 <div className="row">
                   <div
@@ -245,8 +257,7 @@ const Events = () => {
                       setEventSelected(0);
                       setShow(true);
                       setActiveTab(0);
-                    }}
-                  >
+                    }}>
                     <EventCard2
                       icon={RC}
                       width={width}
@@ -268,8 +279,7 @@ const Events = () => {
                       setEventSelected(1);
                       setShow(true);
                       setActiveTab(0);
-                    }}
-                  >
+                    }}>
                     <EventCard2
                       icon={Clash}
                       width={width}
@@ -293,8 +303,7 @@ const Events = () => {
                       setEventSelected(2);
                       setShow(true);
                       setActiveTab(0);
-                    }}
-                  >
+                    }}>
                     <EventCard2
                       icon={NTH}
                       width={width}
@@ -316,8 +325,7 @@ const Events = () => {
                       setEventSelected(3);
                       setShow(true);
                       setActiveTab(0);
-                    }}
-                  >
+                    }}>
                     <EventCard2
                       icon={Wallstreet}
                       width={"50px"}
@@ -341,8 +349,7 @@ const Events = () => {
                       setEventSelected(4);
                       setShow(true);
                       setActiveTab(0);
-                    }}
-                  >
+                    }}>
                     <EventCard2
                       icon={BPlan}
                       width={"90px"}
@@ -363,8 +370,7 @@ const Events = () => {
                       setEventSelected(5);
                       setShow(true);
                       setActiveTab(0);
-                    }}
-                  >
+                    }}>
                     <EventCard2
                       icon={Enigma}
                       width={width}
@@ -381,8 +387,7 @@ const Events = () => {
               <div className="col-md-6 ">
                 <div
                   className="row justify-content-center"
-                  style={{ height: "50%" }}
-                >
+                  style={{ height: "50%" }}>
                   <div className="main-wrapper">
                     {eventSelected === -1 ? (
                       <Logo />
@@ -411,18 +416,15 @@ const Events = () => {
                   className={`d-flex justify-content-center row tab-group ${
                     eventSelected === -1 ? "d-none" : ""
                   }`}
-                  style={{ height: "50%", paddingTop: { ptop } }}
-                >
+                  style={{ height: "50%", paddingTop: { ptop } }}>
                   <div
                     className={`d-flex justify-content-center row tab-group ${
                       eventSelected === -1 ? "d-none" : ""
                     }`}
-                    style={{ height: "50%", paddingTop: { ptop } }}
-                  >
+                    style={{ height: "50%", paddingTop: { ptop } }}>
                     <div
                       className="d-flex row justify-content-center"
-                      style={{ height: "40%" }}
-                    >
+                      style={{ height: "40%" }}>
                       <div className="col-md-4 mb-2 d-flex justify-content-center">
                         <div
                           className={`tabButton d-flex justify-content-center align-items-center ${
@@ -437,8 +439,7 @@ const Events = () => {
                               setActiveTab(0);
                             }
                           }}
-                          onKeyPress={(e) => navigateHorizontal(e)}
-                        >
+                          onKeyPress={(e) => navigateHorizontal(e)}>
                           Info
                         </div>
                       </div>
@@ -455,8 +456,7 @@ const Events = () => {
                               setMainText(eventDetails[eventSelected].rules);
                               setActiveTab(1);
                             }
-                          }}
-                        >
+                          }}>
                           Rules
                         </div>
                       </div>
@@ -475,8 +475,7 @@ const Events = () => {
                               );
                               setActiveTab(2);
                             }
-                          }}
-                        >
+                          }}>
                           Structure
                         </div>
                       </div>
@@ -493,8 +492,7 @@ const Events = () => {
                               setMainText(eventDetails[eventSelected].judging);
                               setActiveTab(3);
                             }
-                          }}
-                        >
+                          }}>
                           Judging Criteria
                         </div>
                       </div>
@@ -511,16 +509,14 @@ const Events = () => {
                               setMainText(eventDetails[eventSelected].contact);
                               setActiveTab(4);
                             }
-                          }}
-                        >
+                          }}>
                           Contact
                         </div>
                       </div>
                     </div>
                     <div
                       className="row justify-content-center"
-                      style={{ height: "40%" }}
-                    >
+                      style={{ height: "40%" }}>
                       <div className="col-md-12 d-flex justify-content-center">
                         <div className="rectangle d-none"></div>
                       </div>
@@ -540,8 +536,7 @@ const Events = () => {
                       setEventSelected(6);
                       setShow(true);
                       setActiveTab(0);
-                    }}
-                  >
+                    }}>
                     <EventCard2
                       icon={Datawiz}
                       width={"50px"}
@@ -562,8 +557,7 @@ const Events = () => {
                       setEventSelected(7);
                       setShow(true);
                       setActiveTab(0);
-                    }}
-                  >
+                    }}>
                     <EventCard2
                       icon={Quiz}
                       width={width}
@@ -586,8 +580,7 @@ const Events = () => {
                       setEventSelected(8);
                       setShow(true);
                       setActiveTab(0);
-                    }}
-                  >
+                    }}>
                     <EventCard2
                       icon={Paper}
                       width={width}
@@ -608,8 +601,7 @@ const Events = () => {
                       setEventSelected(9);
                       setShow(true);
                       setActiveTab(0);
-                    }}
-                  >
+                    }}>
                     <EventCard2
                       icon={Cretronix}
                       width={width}
@@ -632,8 +624,7 @@ const Events = () => {
                       setEventSelected(10);
                       setShow(true);
                       setActiveTab(0);
-                    }}
-                  >
+                    }}>
                     <EventCard2
                       icon={Pixelate}
                       width={width}
@@ -654,8 +645,7 @@ const Events = () => {
                       setEventSelected(11);
                       setShow(true);
                       setActiveTab(0);
-                    }}
-                  >
+                    }}>
                     <EventCard2
                       icon={Webweaver}
                       width={width}
@@ -679,16 +669,14 @@ const Events = () => {
               onHide={() => {
                 setShow(false);
               }}
-              size="lg"
-            >
+              size="lg">
               <Modal.Header style={{ width: "90%" }}>
                 <Modal.Title
                   style={{
                     width: "100%",
                     display: "flex",
                     justifyContent: "space-between",
-                  }}
-                >
+                  }}>
                   <img
                     className="modal-logo-img"
                     src={iconHelpr(events[active])}
@@ -703,8 +691,7 @@ const Events = () => {
                   </div>
                   <div
                     className="modal-close-wrapper"
-                    onClick={() => setShow(false)}
-                  >
+                    onClick={() => setShow(false)}>
                     <img
                       src={Cross}
                       alt="close button"
@@ -719,8 +706,7 @@ const Events = () => {
                     eventKey="info"
                     title="Info"
                     className="modal-tab-link"
-                    color="#efefef"
-                  >
+                    color="#efefef">
                     <div className="info-wrapper">
                       <p className="new-line">
                         {eventSelected !== -1 &&
@@ -731,8 +717,7 @@ const Events = () => {
                   <Tab
                     eventKey="rules"
                     title="Rules"
-                    className="modal-tab-link"
-                  >
+                    className="modal-tab-link">
                     <div className="info-wrapper">
                       <p className="new-line">
                         {eventSelected !== -1 &&
@@ -743,8 +728,7 @@ const Events = () => {
                   <Tab
                     eventKey="structure"
                     title="Structure"
-                    className="modal-tab-link"
-                  >
+                    className="modal-tab-link">
                     <div className="info-wrapper" style={{ maxHeight: "30vh" }}>
                       <p className="new-line">
                         {eventSelected !== -1 &&
@@ -755,8 +739,7 @@ const Events = () => {
                   <Tab
                     eventKey="judge"
                     title="Judging"
-                    className="modal-tab-link"
-                  >
+                    className="modal-tab-link">
                     <div className="info-wrapper">
                       <p className="new-line">
                         {eventSelected !== -1 &&
@@ -767,8 +750,7 @@ const Events = () => {
                   <Tab
                     eventKey="contact"
                     title="Contact"
-                    className="modal-tab-link"
-                  >
+                    className="modal-tab-link">
                     <div className="info-wrapper">
                       <p className="new-line">
                         {eventSelected !== -1 &&
