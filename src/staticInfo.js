@@ -16,51 +16,73 @@ export const events = {
 export const cartItems = {
   0: {
     name: "RC",
-    price: "₹60",
+    price: 60,
+    tagline:
+      "Hone your problem-solving skills by decrypting complex questions!",
   },
   1: {
     name: "Clash",
-    price: "₹60",
+    price: 60,
+    tagline: "Clash is based on Competitive Programming!",
   },
   2: {
     name: "NTH",
-    price: "₹60",
+    price: 60,
+    tagline:
+      "Decrypt the clues to solve complex puzzles and race your way to finish at top!",
   },
   3: {
     name: "Wallstreet",
-    price: "₹60",
+    price: 60,
+    tagline:
+      "Get an insight on stock markets by Investing and trading virtual money!",
   },
   4: {
     name: "BPlan",
-    price: "₹60",
+    price: 60,
+    tagline:
+      "Showcase your entrepreneurial skills by presenting innovative business plans to the world!",
   },
   5: {
     name: "Enigma",
-    price: "₹60",
+    price: 60,
+    tagline:
+      "Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions!",
   },
   6: {
     name: "DataWiz",
-    price: "₹60",
+    price: 60,
+    tagline:
+      "Test your Machine learning and data analytics skills before stepping into the world of Data Science!",
   },
   7: {
     name: "Quiz",
-    price: "₹60",
+    price: 60,
+    tagline:
+      "Test your knowledge across wide range of topics and get a chance to win some exciting prizes!",
   },
   8: {
     name: "Paper Presentation",
-    price: "₹60",
+    price: 60,
+    tagline:
+      "Present technical research papers with advanced perspectives while honing your skills of research!",
   },
   9: {
     name: "Cretronix",
-    price: "₹60",
+    price: 60,
+    tagline: "Build and exhibit your own circuits by solving tech problems!",
   },
   10: {
     name: "Pixelate",
-    price: "₹60",
+    price: 60,
+    tagline:
+      "Let your creativity fuse with thoughtful designs and artistic originality!",
   },
   11: {
     name: "Webweaver",
-    price: "₹60",
+    price: 60,
+    tagline:
+      "Build an aesthetic website to showcase your web development skill!",
   },
 };
 
