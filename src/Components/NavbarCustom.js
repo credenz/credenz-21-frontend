@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Card, Modal, Nav, Navbar } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Card, Dropdown, Modal, Nav, Navbar } from "react-bootstrap";
+import { NavLink, useLocation } from "react-router-dom";
 import { API } from "../axios/API";
 import "../CSS/navbar.css";
 import IEEELOGO from "../images/ieeelogo.png";
 import PISBLOGO from "../images/pisb.png";
 import CartIcon from "../images/shopping-cart.png";
+import ProfileIcon from "../images/user.png";
+import DownArrow from "../images/arrow-down-sign-to-navigate.png";
 import deleteIcon from "../images/bin.png";
 import BPlan from "../images/bplan.png";
 import Clash from "../images/clash.png";
@@ -24,13 +26,16 @@ import Webweaver from "../images/web.png";
 import TextSliced from "./TextSliced";
 import CartContext from "./CartContext";
 const NavbarCustom = (props) => {
-  const [page, setPage] = useState("");
+  const location = useLocation();
+  console.log("Locaton", location.pathname);
+  const [page, setPage] = useState(location.pathname);
   const cartContextValue = useContext(CartContext);
   // eslint-disable-next-line no-unused-vars
   const [userDetails, setUserDetails] = useState({});
   const [paymentDone, setPaymentDone] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [show, setShow] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   const iconHelpr = (name) => {
     switch (name) {
@@ -88,11 +93,14 @@ const NavbarCustom = (props) => {
 
   useEffect(() => {
     checkPayment();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleShow = () => setShow(true);
-  const handleClose = () => setShow(false);
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
+  const handleShowMenu = () => setShowMenu(!showMenu);
 
   const deleteEventHandler = (name) => {
     console.log("Delete name -> ", name);
@@ -138,6 +146,47 @@ const NavbarCustom = (props) => {
     );
   };
 
+  const ProfileMenu = () => {
+    return (
+      <div style={{ position: "absolute", top: "150%", right: "0%" }}>
+        <Card>
+          <Card.Body>
+            <NavLink
+              to="/profile"
+              onClick={() => {
+                setPage("");
+                handleShowMenu();
+              }}
+              className="menu-item"
+              style={{
+                cursor: "pointer",
+                textDecoration: "none",
+                color: "#fff",
+              }}>
+              My Profile
+            </NavLink>
+            <div
+              className="divider"
+              style={{
+                height: "1px",
+                width: "100%",
+                backgroundColor: "#fff",
+                marginBottom: 10,
+                marginTop: 10,
+              }}
+            />
+            <div
+              onClick={handleShowMenu}
+              className="menu-item"
+              style={{ cursor: "pointer" }}>
+              Logout
+            </div>
+          </Card.Body>
+        </Card>
+      </div>
+    );
+  };
+
   return (
     <>
       <Navbar
@@ -156,59 +205,59 @@ const NavbarCustom = (props) => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="m-2" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
-          <Nav className="s-auto">
+          <Nav className="s-auto" style={{ position: "relative" }}>
             <NavLink
               to={`/`}
-              isActive={() => page === ""}
+              isActive={() => page === "/"}
               className="header-title"
               onClick={() => {
-                setPage("");
+                setPage("/");
               }}>
-              <TextSliced title="Home" activeLink={page === ""} />
+              <TextSliced title="Home" activeLink={page === "/"} />
             </NavLink>
             <NavLink
               // hidden={comingSoon || true}
               to={`/events`}
-              isActive={() => page === "events"}
+              isActive={() => page === "/events"}
               className="header-title"
               onClick={() => {
-                setPage("events");
+                setPage("/events");
               }}>
-              <TextSliced title="Events" activeLink={page === "events"} />
+              <TextSliced title="Events" activeLink={page === "/events"} />
             </NavLink>
             <NavLink
               to={`/about`}
-              isActive={() => page === "about"}
+              isActive={() => page === "/about"}
               className="header-title"
               onClick={() => {
-                setPage("about");
+                setPage("/about");
               }}>
-              <TextSliced title="About" activeLink={page === "about"} />
+              <TextSliced title="About" activeLink={page === "/about"} />
             </NavLink>
             <NavLink
               to={`/contact`}
-              isActive={() => page === "contact"}
+              isActive={() => page === "/contact"}
               className="header-title"
               onClick={() => {
-                setPage("contact");
+                setPage("/contact");
               }}>
               <TextSliced
                 title="Contact"
                 hidden
-                activeLink={page === "contact"}
+                activeLink={page === "/contact"}
               />
             </NavLink>
             <NavLink
               to={`/login`}
-              isActive={() => page === "login"}
+              isActive={() => page === "/login"}
               onClick={() => {
-                setPage("login");
+                setPage("/login");
               }}
               className="header-title"
               hidden={isLoggedIn ? (!paymentDone ? false : true) : false}>
               <TextSliced
                 title={isLoggedIn ? (!paymentDone ? "Pay Now" : "") : "Login"}
-                activeLink={page === "login"}
+                activeLink={page === "/login"}
               />
             </NavLink>
             <NavLink
@@ -224,9 +273,28 @@ const NavbarCustom = (props) => {
               hidden={!isLoggedIn}>
               <TextSliced title="Logout" activeLink={page === "logout"} />
             </NavLink>
+            {/* {isLoggedIn && ( */}
+            <div
+              className="d-flex align-items-center"
+              style={{ cursor: "pointer" }}
+              onClick={handleShowMenu}>
+              <div className="profileIconContainer">
+                <img
+                  src={ProfileIcon}
+                  alt="Cart icon"
+                  className="profileIcon"
+                />
+              </div>
+              <div className="downArrowContainer">
+                <img src={DownArrow} alt="Down icon" className="downArrow" />
+              </div>
+            </div>
+            {showMenu && <ProfileMenu />}
+
+            {/* )} */}
             {isLoggedIn && (
               <>
-                <div className="cartIconContainer" onClick={handleShow}>
+                <div className="cartIconContainer" onClick={handleShowModal}>
                   {cartContextValue.cart.length > 0 && (
                     <div className="badgeContainer">
                       <p className="badge">{cartContextValue.cart.length}</p>
@@ -246,7 +314,11 @@ const NavbarCustom = (props) => {
           </a>
         </Navbar.Collapse>
       </Navbar>
-      <Modal show={show} onHide={handleClose} className="cartModal" scrollable>
+      <Modal
+        show={showModal}
+        onHide={handleCloseModal}
+        className="cartModal"
+        scrollable>
         <Modal.Header className="cartHeader">
           <Modal.Title className="cartTitle">Checkout Cart</Modal.Title>
         </Modal.Header>
@@ -285,7 +357,7 @@ const NavbarCustom = (props) => {
           <div className="row d-flex justify-content-between w-100">
             <button
               onClick={() => {
-                setShow(false);
+                setShowModal(false);
               }}
               className="play-btn play-btn--light">
               <span className="play-btn__inner">
@@ -295,7 +367,7 @@ const NavbarCustom = (props) => {
             </button>
             <button
               onClick={() => {
-                setShow(false);
+                setShowModal(false);
               }}
               disabled={cartContextValue.cart.length > 0 ? false : true}
               className="play-btn play-btn--light">
