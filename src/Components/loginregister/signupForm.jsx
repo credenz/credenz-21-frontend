@@ -118,11 +118,7 @@ export function SignupForm(props) {
         // alert(
         //   "You have been registered!, Pay using the Pay Now button or login later with the credentials to pay later."
         // );
-        swal(
-          "You have been registered!, Pay using the Pay Now button or login later with the credentials to pay later.",
-          "",
-          "success"
-        );
+        swal("You have been registered successfully!", "", "success");
         localStorage.setItem("credenz_username", res.data.username);
         props.setLoading(false);
       })
@@ -180,18 +176,19 @@ export function SignupForm(props) {
           <button
             className="btn btn--secondary"
             type="submit"
-            onClick={handleSignUp}>
+            onClick={handleSignUp}
+          >
             <span className="btn__content">Sign Up</span>
             <span className="btn__glitch"></span>
           </button>
-          <button
+          {/* <button
             className="btn btn--secondary"
             type="submit"
             onClick={displayRazorpay}
             disabled={!enablePayment}>
             <span className="btn__content">Pay Now</span>
             <span className="btn__glitch"></span>
-          </button>
+          </button> */}
         </>
       )}
 
@@ -203,7 +200,8 @@ export function SignupForm(props) {
               passwd1 === passwd2
                 ? setStep(1)
                 : swal("Error", "Passwords don't match!", "error");
-            }}>
+            }}
+          >
             Next
           </span>
           <span className="btn__glitch"></span>
