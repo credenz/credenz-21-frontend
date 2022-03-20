@@ -17,7 +17,8 @@
   position: relative !important;
 }
 
-.cartIconContainer {
+.cartIconContainer,
+.profileIconContainer {
   cursor: pointer;
   position: relative !important;
 }
@@ -25,6 +26,17 @@
 .cartIcon {
   height: 30px;
   width: 35px;
+}
+
+.profileIcon {
+  height: 28px;
+  width: 32px;
+}
+
+.downArrow {
+  height: 10px;
+  width: 12px;
+  margin-left: 10px;
 }
 
 .badgeContainer {
