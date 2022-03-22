@@ -273,30 +273,26 @@ const NavbarCustom = (props) => {
               hidden={!isLoggedIn}>
               <TextSliced title="Logout" activeLink={page === "logout"} />
             </NavLink>
-            {isLoggedIn && (
-              <>
-                <div
-                  className="d-flex align-items-center"
-                  style={{ cursor: "pointer" }}
-                  onClick={handleShowMenu}>
-                  <div className="profileIconContainer">
-                    <img
-                      src={ProfileIcon}
-                      alt="Cart icon"
-                      className="profileIcon"
-                    />
-                  </div>
-                  <div className="downArrowContainer">
-                    <img
-                      src={DownArrow}
-                      alt="Down icon"
-                      className="downArrow"
-                    />
-                  </div>
+            {/* {isLoggedIn && ( */}
+            <>
+              <div
+                className="d-flex align-items-center"
+                style={{ cursor: "pointer" }}
+                onClick={handleShowMenu}>
+                <div className="profileIconContainer">
+                  <img
+                    src={ProfileIcon}
+                    alt="Profile icon"
+                    className="profileIcon"
+                  />
                 </div>
-                {showMenu && <ProfileMenu />}
-              </>
-            )}
+                <div className="downArrowContainer">
+                  <img src={DownArrow} alt="Down icon" className="downArrow" />
+                </div>
+              </div>
+              {showMenu && <ProfileMenu />}
+            </>
+            {/* )} */}
             {isLoggedIn && (
               <>
                 <div className="cartIconContainer" onClick={handleShowModal}>

@@ -23,6 +23,7 @@ import Webweaver from "../images/web.png";
 import { eventDetails, events, cartItems } from "../staticInfo.js";
 import CartContext from "../Components/CartContext";
 import swal from "sweetalert";
+import { API } from "../axios/API";
 // import GridBg from "../vid/mesh.webm";
 
 const Logo = () => {
@@ -51,8 +52,25 @@ const Events = () => {
   const [active, setActive] = useState(-1);
   const [show, setShow] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [bgColor, setBgColor] = useState(0);
+
+  const fetchProfile = async () => {
+    let token = localStorage.getItem("credenz_access_token");
+    let username = localStorage.getItem("credenz_username");
+    if (token) {
+      API.getUserDetails(username)
+        .then((res) => {
+          setIsLoggedIn(true);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    } else {
+      setIsLoggedIn(false);
+    }
+  };
 
   const titleHelpr = (e) => {
     if (e === "RC") {
@@ -122,14 +140,10 @@ const Events = () => {
       <div className="play-btn-wrapper">
         <button
           onClick={() => {
-            if (
-              cartContextValue.cart
-                .map((item) => item.name)
-                .includes(events[props.eventSelected])
-            ) {
+            if (!isLoggedIn) {
               //proceed to cart -> open cart modal
               console.log("Open cart modal");
-              swal(`Event already added`, "", "warning");
+              swal(`You need to login first!`, "", "warning");
             } else {
               cartHelpr(props.eventSelected);
               setCart([...cart, cartItems[props.eventSelected]]);
@@ -214,10 +228,11 @@ const Events = () => {
 
   useEffect(() => {
     setLoading(true);
+    fetchProfile();
     setActive(-1);
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 1500);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

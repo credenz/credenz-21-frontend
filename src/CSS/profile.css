@@ -1,97 +1,86 @@
-.profile-page {
-    background: #231f20;
-    min-height: 95vh;
-    color: white;
+.bg-dark2 {
+  background: radial-gradient(
+    circle,
+    rgba(50, 42, 42, 1) 0%,
+    rgba(20, 20, 20, 1) 53%
+  );
+  padding-top: 14vh;
+  height: 100vh !important;
+  overflow-y: hidden;
 }
 
-.profile-page h2 {
-    margin: 0;
-    padding-top: 5%;
-    text-align: center;
-    color: #ff5001;
+.personalCardContainer {
+  clip-path: polygon(0 0, 93% 0, 100% 8%, 100% 100%, 8% 100%, 0 93%);
+  height: 70.5vh;
+  width: 100%;
+  background-color: #ee1f20;
+  position: relative;
 }
 
-.profile-page .registered-events {
-    text-align: center;
+.personalCard {
+  position: absolute;
+  top: 0.25vh;
+  left: 0.5%;
+  clip-path: polygon(0 0, 93% 0, 100% 8%, 100% 100%, 8% 100%, 0 93%);
+  height: 70vh;
+  width: 99%;
+  background-color: #231f20;
+  color: #fff;
 }
 
-.profile-page .registered-events .registered-event-card {
-    margin: 5% auto;
-    width: 60%;
-    min-width: 350px;
-    background: #231f20;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px #000000;
+.imgContainer {
+  height: 150px;
+  width: 150px;
+  border: 1px solid #fff;
+  border-radius: 75px;
 }
 
-.profile-page .registered-events .registered-event-card img {
-    border-radius: 100%;
-    background-color: #efefef;
-    margin: 5% auto;
-    transition: 0.5s ease-in-out;
+.userName {
+  font-style: italic;
 }
 
-.profile-page .registered-events .registered-event-card img:hover {
-    transform: scale(1.05);
+.itemContainer {
+  margin: 0 auto;
+  width: 80%;
 }
 
-.profile-page .registered-events .registered-event-card .event-password {
-    margin: 5% auto;
-    width: 65%;
-    min-width: 300px;
-    background: #646368;
-    text-align: left;
-    color: white;
-    padding: 15px 15px 7px;
-    border-radius: 5px;
+.itemRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 2vh;
 }
 
-.profile-page .registered-events .registered-event-card .event-password button {
-    padding: 10px 15px;
-    background: #ff5001;
-    color: #fff;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    transform: translateY(-5px);
+.detailText {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.profile-page .registered-events .heading {
-    color: #ff5001;
+.commonIcon {
+  height: 20px;
+  width: 20px;
 }
 
-.copy-text button:active {
-    background: #809ce2;
+.secondContainer {
+  overflow-y: scroll !important;
+  max-height: 70vh;
 }
 
-.copy-text button:before {
-    content: "Copied";
-    position: absolute;
-    top: -45px;
-    right: 0px;
-    background: #5c81dc;
-    padding: 8px 10px;
-    border-radius: 20px;
-    font-size: 15px;
-    display: none;
+.heading {
+  color: #fff;
+  text-align: center;
 }
 
-.copy-text button:after {
-    content: "";
-    position: absolute;
-    top: -20px;
-    right: 25px;
-    width: 10px;
-    height: 10px;
-    background: #5c81dc;
-    transform: rotate(45deg);
-    display: none;
+.outer {
+  margin-bottom: 0 !important;
 }
 
-.copy-text.active button:before,
-.copy-text.active button:after {
-    display: block;
+@media (max-width: 768px) {
+  .bg-dark {
+    overflow: scroll;
+  }
+  .secondContainer {
+    max-height: fit-content;
+    margin-bottom: 120px;
+  }
 }
