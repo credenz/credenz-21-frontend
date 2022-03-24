@@ -407,7 +407,7 @@ li .nav-link {
   }
   .info-wrapper {
     overflow-y: scroll;
-    max-height: 27vh;
+    max-height: 20vh;
   }
 
   .new-line {

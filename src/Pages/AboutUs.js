@@ -17,13 +17,14 @@ function AboutUs() {
 
   return (
     <div className="aboutUs">
-      <div
-        className="aboutHeader"
-        data-aos="zoom-in-up"
-        data-aos-duration="100"
-        data-aos-easing="ease-in-sine"
-        data-aos-anchor-placement="top-center">
-        <h1>About Us</h1>
+      <div className="aboutHeader">
+        <h1
+          data-aos="zoom-in-up"
+          data-aos-duration="500"
+          data-aos-easing="linear"
+          data-aos-anchor-placement="top-center">
+          About Us
+        </h1>
       </div>
 
       <div className="aboutCards container">

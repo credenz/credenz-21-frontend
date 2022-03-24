@@ -50,13 +50,14 @@ const Contact = () => {
 
   return (
     <>
-      <div
-        className="aboutHeader"
-        data-aos="zoom-in-up"
-        data-aos-duration="100"
-        data-aos-easing="ease-in-sine"
-        data-aos-anchor-placement="top-center">
-        <h1>Contact Us</h1>
+      <div className="aboutHeader">
+        <h1
+          data-aos="zoom-in-up"
+          data-aos-duration="500"
+          data-aos-easing="ease-in-sine"
+          data-aos-anchor-placement="top-center">
+          Contact Us
+        </h1>
       </div>
       <Container fluid className="contactpage">
         <Row>
