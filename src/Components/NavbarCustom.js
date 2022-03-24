@@ -148,7 +148,7 @@ const NavbarCustom = (props) => {
 
   const ProfileMenu = () => {
     return (
-      <div style={{ position: "absolute", top: "150%", right: "0%" }}>
+      <div className="menuPosition">
         <Card>
           <Card.Body>
             <NavLink

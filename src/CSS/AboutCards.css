@@ -72,7 +72,7 @@
 /* Media queries for ipad */
 @media screen and (max-width: 768px) {
   .aboutCard {
-    width: 90%;
+    /* width: 90%; */
   }
 
   .aboutCard-nam-messe {
@@ -83,7 +83,7 @@
 /* Media queries for mobile */
 @media screen and (max-width: 415px) {
   .aboutCard {
-    width: 90%;
+    /* width: 90%; */
     flex-direction: column;
     padding: 10px;
   }

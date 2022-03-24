@@ -23,6 +23,12 @@
   position: relative !important;
 }
 
+.menuPosition {
+  position: absolute;
+  top: 150%;
+  right: 0%;
+}
+
 .cartIcon {
   height: 30px;
   width: 35px;
@@ -169,5 +175,11 @@
   }
   .bg-color-custom {
     background-color: #000;
+  }
+  .menuPosition {
+    position: absolute;
+    top: 101%;
+    left: 0%;
+    width: 80%;
   }
 }
