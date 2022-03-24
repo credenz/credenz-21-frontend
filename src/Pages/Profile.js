@@ -16,7 +16,7 @@ const Profile = () => {
   const user = {
     name: "Sanket Kulkarni",
     email: "sanketkulkani@gmail.com",
-    contact: "+91 9921167376",
+    contact: "+91 9090807990",
     userName: "Sanketak08",
     registeredEvents: [
       { eventName: "Enigma", password: "df8en24rr23hr" },

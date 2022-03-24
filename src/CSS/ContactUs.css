@@ -1,5 +1,9 @@
 .contactpage {
-  background-color: #191919;
+  background-color: #111;
+  /* background-image: url("../images/ABSTRACT_BACKGROUND_03.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover; */
   color: #aaa;
   overflow: hidden;
   padding-bottom: 7vh;

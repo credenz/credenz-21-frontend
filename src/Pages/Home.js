@@ -3,10 +3,10 @@ import "../CSS/home.css";
 import HomeImage from "../images/credenzlive2.0.png";
 // import CyberBg from "../vid/Bg_3_slow.webm";
 // import CyberBg from "../vid/future_1.webm";
-// import CyberBg from "../vid/future_2.webm";
+import CyberBg from "../vid/future_2.webm";
 // import CyberBg from "../vid/future_3.webm";
 // import CyberBg from '../vid/hexagon.webm'
-import CyberBg from "../vid/future_4.webm";
+// import CyberBg from "../vid/future_4.webm";
 import Loader from "../Components/Loader";
 import NavbarCustom from "../Components/NavbarCustom";
 import { Footer } from "../Components/Footer";

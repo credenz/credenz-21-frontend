@@ -17,10 +17,9 @@ function AboutCards() {
     <div className="aboutCard">
       <div
         className="c1 c"
-        data-aos="fade-right"
-        data-aos-duration="700"
-        data-aos-easing="ease-in-sine"
-      >
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        data-aos-easing="linear">
         <img src={CredenzLogo} alt="Branchlogo"></img>
         <div className="aboutCard-nam-messe">
           <h2>CREDENZ</h2>
@@ -45,10 +44,9 @@ function AboutCards() {
 
       <div
         className="c2 c"
-        data-aos="fade-left"
-        data-aos-duration="700"
-        data-aos-easing="ease-in-sine"
-      >
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        data-aos-easing="linear">
         <img src={PISBLogo} alt="Branchlogo"></img>
         <div className="aboutCard-nam-messe">
           <h2>PICT IEEE Student Branch</h2>
@@ -68,10 +66,9 @@ function AboutCards() {
 
       <div
         className="c3 c"
-        data-aos="fade-right"
-        data-aos-duration="700"
-        data-aos-easing="ease-in-sine"
-      >
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        data-aos-easing="linear">
         <img src={PING} alt="PING LOGO"></img>
         <div className="aboutCard-nam-messe">
           <h2>P.I.N.G.</h2>

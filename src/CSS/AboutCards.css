@@ -59,7 +59,7 @@
 .aboutCard-messege {
   font-style: normal;
   text-align: justify;
-  font-size: 20px;
+  font-size: 17px;
   transition: color 0.1s 0.3s ease-in-out;
   max-width: max-content;
 }

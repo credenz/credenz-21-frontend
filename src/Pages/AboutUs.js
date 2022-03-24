@@ -22,12 +22,11 @@ function AboutUs() {
         data-aos="zoom-in-up"
         data-aos-duration="100"
         data-aos-easing="ease-in-sine"
-        data-aos-anchor-placement="top-center"
-      >
+        data-aos-anchor-placement="top-center">
         <h1>About Us</h1>
       </div>
 
-      <div className="aboutCards">
+      <div className="aboutCards container">
         {/* About Cards */}
         <AboutCards></AboutCards>
       </div>
@@ -37,8 +36,7 @@ function AboutUs() {
         <h1
           data-aos="zoom-in"
           data-aos-duration="500"
-          data-aos-easing="ease-in-sine"
-        >
+          data-aos-easing="ease-in-sine">
           Sponsors
         </h1>
         <div className="row" style={{ width: "100%" }}>
@@ -48,13 +46,11 @@ function AboutUs() {
               data-aos="zoom-in"
               data-aos-duration="800"
               data-aos-easing="ease-in-sine"
-              data-aos-offset="50"
-            >
+              data-aos-offset="50">
               <AboutSponsors
                 slink={CollegePond}
                 href="https://www.collegepond.com/"
-                sname="Higher Education Partner"
-              ></AboutSponsors>
+                sname="Higher Education Partner"></AboutSponsors>
             </div>
           </div>
           <div className="col-md-4">
@@ -63,13 +59,11 @@ function AboutUs() {
               data-aos="zoom-in"
               data-aos-duration="800"
               data-aos-easing="ease-in-sine"
-              data-aos-offset="50"
-            >
+              data-aos-offset="50">
               <AboutSponsors
                 slink={Proton}
                 href="https://protons.in/"
-                sname="Training Partner"
-              ></AboutSponsors>
+                sname="Training Partner"></AboutSponsors>
             </div>
           </div>
           <div className="col-md-4">
@@ -78,13 +72,11 @@ function AboutUs() {
               data-aos="zoom-in"
               data-aos-duration="800"
               data-aos-easing="ease-in-sine"
-              data-aos-offset="50"
-            >
+              data-aos-offset="50">
               <AboutSponsors
                 slink={CodingNinjas}
                 sname="Programming Partner"
-                href="https://www.codingninjas.in/"
-              ></AboutSponsors>
+                href="https://www.codingninjas.in/"></AboutSponsors>
             </div>
           </div>
         </div>
