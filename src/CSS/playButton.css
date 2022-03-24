@@ -164,3 +164,8 @@
     padding: 10px 10px;
   }
 }
+
+@media (max-width: 320px) {
+  .play-button {
+  }
+}
