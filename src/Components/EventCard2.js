@@ -11,9 +11,8 @@ const EventCard2 = (props) => {
       }}
       onMouseLeave={() => {
         setHover("");
-      }}
-    >
-      <div className={props.active ? `wrapper-new` : `wrapper-new`}>
+      }}>
+      <div className={props.active ? `wrapper-new bg-focused` : `wrapper-new`}>
         <div className="container-new">
           <img
             src={props.icon}
