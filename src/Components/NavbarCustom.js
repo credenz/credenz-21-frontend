@@ -150,7 +150,7 @@ const NavbarCustom = (props) => {
     return (
       <div className="menuPosition">
         <Card>
-          <Card.Body>
+          <Card.Body style={{ backgroundColor: "#000" }}>
             <NavLink
               to="/profile"
               onClick={() => {
@@ -207,15 +207,18 @@ const NavbarCustom = (props) => {
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav className="s-auto" style={{ position: "relative" }}>
             <NavLink
+              activeClassName="activeLink"
               to={`/`}
               isActive={() => page === "/"}
               className="header-title"
               onClick={() => {
                 setPage("/");
               }}>
-              <TextSliced title="Home" activeLink={page === "/"} />
+              {/* <TextSliced title="Home" activeLink={page === "/"} /> */}
+              Home
             </NavLink>
             <NavLink
+              activeClassName="activeLink"
               // hidden={comingSoon || true}
               to={`/events`}
               isActive={() => page === "/events"}
@@ -223,31 +226,42 @@ const NavbarCustom = (props) => {
               onClick={() => {
                 setPage("/events");
               }}>
-              <TextSliced title="Events" activeLink={page === "/events"} />
+              {/* <TextSliced title="Events" activeLink={page === "/events"} /> */}
+              Events
             </NavLink>
             <NavLink
+              activeClassName="activeLink"
               to={`/about`}
               isActive={() => page === "/about"}
               className="header-title"
               onClick={() => {
                 setPage("/about");
               }}>
-              <TextSliced title="About" activeLink={page === "/about"} />
+              {/* <TextSliced
+                title="About"
+                activeLink={page === "/about"}
+                page="About"
+              /> */}
+              About
             </NavLink>
             <NavLink
+              activeClassName="activeLink"
               to={`/contact`}
               isActive={() => page === "/contact"}
               className="header-title"
               onClick={() => {
                 setPage("/contact");
               }}>
-              <TextSliced
+              {/* <TextSliced
                 title="Contact"
                 hidden
                 activeLink={page === "/contact"}
-              />
+                page="Contact"
+              /> */}
+              Contact
             </NavLink>
             <NavLink
+              activeClassName="activeLink"
               to={`/login`}
               isActive={() => page === "/login"}
               onClick={() => {
@@ -255,10 +269,11 @@ const NavbarCustom = (props) => {
               }}
               className="header-title"
               hidden={isLoggedIn ? (!paymentDone ? false : true) : false}>
-              <TextSliced
+              {/* <TextSliced
                 title={isLoggedIn ? (!paymentDone ? "Pay Now" : "") : "Login"}
                 activeLink={page === "/login"}
-              />
+              /> */}
+              Login
             </NavLink>
             <NavLink
               to={`/`}
@@ -271,12 +286,12 @@ const NavbarCustom = (props) => {
                 location.reload();
               }}
               hidden={!isLoggedIn}>
-              <TextSliced title="Logout" activeLink={page === "logout"} />
+              {/* <TextSliced title="Logout" activeLink={page === "logout"} pagr /> */}
             </NavLink>
             {/* {isLoggedIn && ( */}
             <>
               <div
-                className="d-flex align-items-center"
+                className="d-flex align-items-center responsive-pos"
                 style={{ cursor: "pointer" }}
                 onClick={handleShowMenu}>
                 <div className="profileIconContainer">
