@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
 
+
 :root {
   --yellow-color: #fcee09;
-  --red-color: #ff003c;
+  --red-color:#e01949;
   --black-color: #0e2b42;
   --blue-color: #00f0ff;
   --white-color: #fafafa;
@@ -31,7 +32,7 @@
 }
 
 .error-text {
-  color: var(--red-color);
+  color: #e01949;
   font-size: 0.8rem;
 }
 
@@ -44,7 +45,7 @@
   left: 2px;
   right: 2px;
   bottom: 2px;
-  background-color: var(--orange);
+  background-color: var(--red-color);
   clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
 }
 
@@ -53,7 +54,7 @@
 }
 
 .btn__content {
-  background-color: var(--orange);
+  background-color:  var(--red-color);
   color: var(--white-color);
 }
 

@@ -11,12 +11,7 @@ const AppContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  // background: rgb(238, 31, 32);
-  // background: linear-gradient(
-  //   297deg,
-  //   rgba(238, 31, 32, 1) 0%,
-  //   rgba(20, 20, 20, 1) 50%
-  // );
+ 
   background: rgb(50, 42, 42);
   background: radial-gradient(
     circle,
