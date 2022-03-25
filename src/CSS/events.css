@@ -382,7 +382,11 @@ li .nav-link {
   /* width */
   .info-wrapper::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
     display: block;
+  }
+  .modal-tab-link {
+    height: 100%;
   }
 
   /* Track */
@@ -407,7 +411,8 @@ li .nav-link {
   }
   .info-wrapper {
     overflow-y: scroll;
-    max-height: 20vh;
+    /* max-height: 20vh,; */
+    height: 100%;
   }
 
   .new-line {
@@ -483,6 +488,10 @@ li .nav-link {
   }
   .nav-tabs {
     justify-content: space-evenly;
+    height: 20%;
+  }
+  .tab-content {
+    height: 50%;
   }
 }
 

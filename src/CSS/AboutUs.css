@@ -160,12 +160,22 @@
     display: flex;
     justify-content: center;
   }
+  .aboutHeader {
+    background-position-x: initial;
+    background-position-y: initial;
+  }
 }
 
-/* Media quey for mobile */
-@media screen and (max-width: 415px) {
+/* Media query for mobile */
+@media screen and (max-width: 768px) {
   .aboutCards {
     flex-direction: column;
+  }
+  .c img {
+    display: none;
+  }
+  .about-heading {
+    text-align: center;
   }
 
   .aboutSpons {

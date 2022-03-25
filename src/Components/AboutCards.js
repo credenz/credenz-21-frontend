@@ -19,10 +19,11 @@ function AboutCards() {
         className="c1 c"
         data-aos="fade-down"
         data-aos-duration="1000"
-        data-aos-easing="linear">
+        data-aos-easing="linear"
+      >
         <img src={CredenzLogo} alt="Branchlogo"></img>
         <div className="aboutCard-nam-messe">
-          <h2>CREDENZ</h2>
+          <h2 className="about-heading">CREDENZ</h2>
           <div className="aboutCard-messege">
             Credenz is the annual technical festival organised by the PICT IEEE
             Student Branch. Started in 2004, with a view to elicit the best out
@@ -46,10 +47,11 @@ function AboutCards() {
         className="c2 c"
         data-aos="fade-down"
         data-aos-duration="1000"
-        data-aos-easing="linear">
+        data-aos-easing="linear"
+      >
         <img src={PISBLogo} alt="Branchlogo"></img>
         <div className="aboutCard-nam-messe">
-          <h2>PICT IEEE Student Branch</h2>
+          <h2 className="about-heading">PICT IEEE Student Branch</h2>
           <div className="aboutCard-messege">
             PICT IEEE Student Branch (PISB) was established in the year 1988
             with an aim of inculcating a sense of technical awareness amongst
@@ -68,10 +70,11 @@ function AboutCards() {
         className="c3 c"
         data-aos="fade-down"
         data-aos-duration="1000"
-        data-aos-easing="linear">
+        data-aos-easing="linear"
+      >
         <img src={PING} alt="PING LOGO"></img>
         <div className="aboutCard-nam-messe">
-          <h2>P.I.N.G.</h2>
+          <h2 className="about-heading">P.I.N.G.</h2>
           <div className="aboutCard-messege">
             P.I.N.G. (PICT IEEE Newsletter Group) is the annual technical
             magazine published by the student members of PICT IEEE Student

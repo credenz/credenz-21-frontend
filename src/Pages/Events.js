@@ -221,7 +221,7 @@ const Events = () => {
       return BPlan;
     } else if (e === "Enigma") {
       return Enigma;
-    } else if (e === "Dataviz") {
+    } else if (e === "Datawiz") {
       return Datawiz;
     } else if (e === "Quiz") {
       return Quiz;
@@ -466,7 +466,6 @@ const Events = () => {
                           className={`tabButton d-flex justify-content-center align-items-center ${
                             activeTab === 0 ? "activeTab" : ""
                           } `}
-                          auto
                           color="warning"
                           rounded
                           onClick={() => {
@@ -485,7 +484,6 @@ const Events = () => {
                           className={`tabButton d-flex justify-content-center align-items-center ${
                             activeTab === 1 ? "activeTab" : ""
                           } `}
-                          auto
                           color="warning"
                           rounded
                           onClick={() => {
@@ -503,7 +501,6 @@ const Events = () => {
                           className={`tabButton d-flex justify-content-center align-items-center ${
                             activeTab === 2 ? "activeTab" : ""
                           } `}
-                          auto
                           color="warning"
                           rounded
                           onClick={() => {
@@ -523,7 +520,6 @@ const Events = () => {
                           className={`tabButton d-flex justify-content-center align-items-center ${
                             activeTab === 3 ? "activeTab" : ""
                           } `}
-                          auto
                           color="warning"
                           rounded
                           onClick={() => {
@@ -541,7 +537,6 @@ const Events = () => {
                           className={`tabButton d-flex justify-content-center align-items-center ${
                             activeTab === 4 ? "activeTab" : ""
                           } `}
-                          auto
                           color="warning"
                           rounded
                           onClick={() => {
@@ -709,7 +704,7 @@ const Events = () => {
               </div>
             </div>
             <Modal
-              style={{ zIndex: 9999999 }}
+              style={{ zIndex: 1000 }}
               centered
               className="d-lg-none"
               backdrop="static"
@@ -783,7 +778,7 @@ const Events = () => {
                     title="Structure"
                     className="modal-tab-link"
                   >
-                    <div className="info-wrapper" style={{ maxHeight: "30vh" }}>
+                    <div className="info-wrapper">
                       <p className="new-line">
                         {eventSelected !== -1 &&
                           eventDetails[eventSelected].structure}
