@@ -120,7 +120,8 @@ const NavbarCustom = (props) => {
         <Card.Body className="d-flex row card-body">
           <div
             className="deleteIconContainer"
-            onClick={() => deleteEventHandler(props.name)}>
+            onClick={() => deleteEventHandler(props.name)}
+          >
             <img src={deleteIcon} alt="Delete icon" className="deleteIcon" />
           </div>
           <>
@@ -133,7 +134,8 @@ const NavbarCustom = (props) => {
             </div>
             <div
               className="col-md-6 d-flex justify-content-center"
-              style={{ flexDirection: "column" }}>
+              style={{ flexDirection: "column" }}
+            >
               <h3>{props.name}</h3>
               <p>{props.tagline}</p>
             </div>
@@ -150,7 +152,7 @@ const NavbarCustom = (props) => {
     return (
       <div className="menuPosition">
         <Card>
-          <Card.Body>
+          <Card.Body style={{ backgroundColor: "#000" }}>
             <NavLink
               to="/profile"
               onClick={() => {
@@ -162,7 +164,8 @@ const NavbarCustom = (props) => {
                 cursor: "pointer",
                 textDecoration: "none",
                 color: "#fff",
-              }}>
+              }}
+            >
               My Profile
             </NavLink>
             <div
@@ -178,7 +181,8 @@ const NavbarCustom = (props) => {
             <div
               onClick={handleShowMenu}
               className="menu-item"
-              style={{ cursor: "pointer" }}>
+              style={{ cursor: "pointer" }}
+            >
               Logout
             </div>
           </Card.Body>
@@ -196,69 +200,91 @@ const NavbarCustom = (props) => {
             ? "navbar-wrapper position-relative bg-color-custom"
             : "navbar-wrapper bg-color-custom"
         }
-        expand="md">
+        expand="md"
+      >
         <Navbar.Brand
           href="https://pictieee.in"
           target="_blank"
-          className="header-header">
+          className="header-header"
+        >
           <img src={PISBLOGO} alt="pisblogo" className="nav-logo ms-4" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="m-2" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav className="s-auto" style={{ position: "relative" }}>
             <NavLink
+              activeClassName="activeLink"
               to={`/`}
               isActive={() => page === "/"}
               className="header-title"
               onClick={() => {
                 setPage("/");
-              }}>
-              <TextSliced title="Home" activeLink={page === "/"} />
+              }}
+            >
+              {/* <TextSliced title="Home" activeLink={page === "/"} /> */}
+              Home
             </NavLink>
             <NavLink
+              activeClassName="activeLink"
               // hidden={comingSoon || true}
               to={`/events`}
               isActive={() => page === "/events"}
               className="header-title"
               onClick={() => {
                 setPage("/events");
-              }}>
-              <TextSliced title="Events" activeLink={page === "/events"} />
+              }}
+            >
+              {/* <TextSliced title="Events" activeLink={page === "/events"} /> */}
+              Events
             </NavLink>
             <NavLink
+              activeClassName="activeLink"
               to={`/about`}
               isActive={() => page === "/about"}
               className="header-title"
               onClick={() => {
                 setPage("/about");
-              }}>
-              <TextSliced title="About" activeLink={page === "/about"} />
+              }}
+            >
+              {/* <TextSliced
+                title="About"
+                activeLink={page === "/about"}
+                page="About"
+              /> */}
+              About
             </NavLink>
             <NavLink
+              activeClassName="activeLink"
               to={`/contact`}
               isActive={() => page === "/contact"}
               className="header-title"
               onClick={() => {
                 setPage("/contact");
-              }}>
-              <TextSliced
+              }}
+            >
+              {/* <TextSliced
                 title="Contact"
                 hidden
                 activeLink={page === "/contact"}
-              />
+                page="Contact"
+              /> */}
+              Contact
             </NavLink>
             <NavLink
+              activeClassName="activeLink"
               to={`/login`}
               isActive={() => page === "/login"}
               onClick={() => {
                 setPage("/login");
               }}
               className="header-title"
-              hidden={isLoggedIn ? (!paymentDone ? false : true) : false}>
-              <TextSliced
+              hidden={isLoggedIn ? (!paymentDone ? false : true) : false}
+            >
+              {/* <TextSliced
                 title={isLoggedIn ? (!paymentDone ? "Pay Now" : "") : "Login"}
                 activeLink={page === "/login"}
-              />
+              /> */}
+              Login
             </NavLink>
             <NavLink
               to={`/`}
@@ -270,29 +296,35 @@ const NavbarCustom = (props) => {
                 // eslint-disable-next-line no-restricted-globals
                 location.reload();
               }}
-              hidden={!isLoggedIn}>
-              <TextSliced title="Logout" activeLink={page === "logout"} />
+              hidden={!isLoggedIn}
+            >
+              {/* <TextSliced title="Logout" activeLink={page === "logout"} pagr /> */}
             </NavLink>
-            {/* {isLoggedIn && ( */}
-            <>
-              <div
-                className="d-flex align-items-center"
-                style={{ cursor: "pointer" }}
-                onClick={handleShowMenu}>
-                <div className="profileIconContainer">
-                  <img
-                    src={ProfileIcon}
-                    alt="Profile icon"
-                    className="profileIcon"
-                  />
+            {isLoggedIn && (
+              <>
+                <div
+                  className="d-flex align-items-center responsive-pos"
+                  style={{ cursor: "pointer" }}
+                  onClick={handleShowMenu}
+                >
+                  <div className="profileIconContainer">
+                    <img
+                      src={ProfileIcon}
+                      alt="Profile icon"
+                      className="profileIcon"
+                    />
+                  </div>
+                  <div className="downArrowContainer">
+                    <img
+                      src={DownArrow}
+                      alt="Down icon"
+                      className="downArrow"
+                    />
+                  </div>
                 </div>
-                <div className="downArrowContainer">
-                  <img src={DownArrow} alt="Down icon" className="downArrow" />
-                </div>
-              </div>
-              {showMenu && <ProfileMenu />}
-            </>
-            {/* )} */}
+                {showMenu && <ProfileMenu />}
+              </>
+            )}
             {isLoggedIn && (
               <>
                 <div className="cartIconContainer" onClick={handleShowModal}>
@@ -319,7 +351,8 @@ const NavbarCustom = (props) => {
         show={showModal}
         onHide={handleCloseModal}
         className="cartModal"
-        scrollable>
+        scrollable
+      >
         <Modal.Header className="cartHeader">
           <Modal.Title className="cartTitle">Checkout Cart</Modal.Title>
         </Modal.Header>
@@ -347,7 +380,8 @@ const NavbarCustom = (props) => {
                   float: "right",
                   fontSize: 25,
                   marginRight: 20,
-                }}>
+                }}
+              >
                 Total : &#8377;
                 {cartContextValue.cart
                   .map((item) => item.price)
@@ -360,7 +394,8 @@ const NavbarCustom = (props) => {
               onClick={() => {
                 setShowModal(false);
               }}
-              className="play-btn play-btn--light">
+              className="play-btn play-btn--light"
+            >
               <span className="play-btn__inner">
                 <span className="play-btn__slide"></span>
                 <span className="play-btn__content">Close</span>
@@ -371,7 +406,8 @@ const NavbarCustom = (props) => {
                 setShowModal(false);
               }}
               disabled={cartContextValue.cart.length > 0 ? false : true}
-              className="play-btn play-btn--light">
+              className="play-btn play-btn--light"
+            >
               <span className="play-btn__inner play-btn__inner-green">
                 <span className="play-btn__slide play-btn__slide-green"></span>
                 <span className="play-btn__content">Pay Now</span>

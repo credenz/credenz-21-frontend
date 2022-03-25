@@ -18,7 +18,7 @@
   font-weight: 700;
   z-index: 999;
   letter-spacing: 0.12em;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0);
 }
 
 .sticky-bottom {
@@ -75,6 +75,10 @@
   }
   .branch-text {
     font-size: 12px;
+    margin-top: 10px;
+  }
+  .social-wrapper {
+    margin: 10px 0;
   }
 }
 
