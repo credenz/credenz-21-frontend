@@ -29,7 +29,9 @@ export function LoginForm(props) {
         // alert(`Welcome Back ${username} !`);
         swal(`Welcome Back ${username} !`, "", "success");
         // eslint-disable-next-line no-restricted-globals
-        location.reload();
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
         props.setLoading(false);
       })
       .catch((err) => {
@@ -61,7 +63,8 @@ export function LoginForm(props) {
       <MutedLink
         switchToSignup={switchToSignup}
         style={{ cursor: "pointer" }}
-        onClick={switchToForgetPassword}>
+        onClick={switchToForgetPassword}
+      >
         Forgot your password?
       </MutedLink>
       <Marginer direction="vertical" margin="1.6em" />
@@ -69,7 +72,8 @@ export function LoginForm(props) {
         className="btn btn--secondary"
         type="submit"
         onClick={handleSubmit}
-        disabled={!username || !passwd}>
+        disabled={!username || !passwd}
+      >
         Sign In
         <span className="btn__content">Sign In</span>
         <span className="btn__glitch"></span>

@@ -124,11 +124,10 @@ export function AccountBox(props) {
   const checkToken = async () => {
     setLoading(true);
     let token = localStorage.getItem("credenz_access_token");
-    //if token is present, show profile page
     if (token) {
       //if token then logged in = > push to home and remove login from nav
       history.push({
-        pathname: "/",
+        pathname: "/home",
       });
     }
 
