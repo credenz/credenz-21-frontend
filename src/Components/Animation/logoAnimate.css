@@ -1,0 +1,170 @@
+.animate-main-container {
+  transform: translateY(-10%);
+}
+@media only screen and (max-width: 480px) {
+  .animate-main-container {
+    transform: translateY(-25%);
+  }
+}
+
+.credenz-logo-main-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  height: 346px;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+#credenz-init-logo {
+  position: relative;
+  z-index: 99;
+  margin: auto;
+  display: block;
+}
+
+#credenz-final-logo {
+  top: -346px;
+  position: relative;
+  z-index: 100;
+  opacity: 0;
+  animation: MainLogoReveal 1s ease-in-out forwards;
+  animation-delay: 2.95s;
+  margin: auto;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.credenz-svg-text {
+  text-align: center;
+  display: block;
+  position: relative;
+  top: -348px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 346px;
+  height: 90px;
+}
+
+.credenz-svg-text svg {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  transform-origin: center center;
+}
+
+.credenz-svg-text #credenz-logo-name ~ #credenz-final-logo:hover,
+#credenz-final-logo:hover {
+  transform: scale(1.05);
+}
+#credenz-final-logo:hover {
+  margin-bottom: 20px;
+}
+
+#credenz-logo {
+  width: 100%;
+  height: auto;
+  fill: transparent;
+  stroke: white;
+  stroke-width: 60;
+  stroke-dasharray: 35771.23828125;
+  stroke-dashoffset: 35771.23828125;
+  animation: animateIcon 2s ease forwards, fillLogo 1s ease forwards,
+    changeShade1 0.6s ease forwards, changeShade2 1s ease forwards;
+  animation-delay: 0s, 1.75s, 2.7s, 3.3s;
+}
+
+.credenz-init-logo-container {
+  transform-origin: center center;
+  animation: logoExpand 1s ease forwards, logoShrink 1s ease forwards,
+    InitLogoHide 0.5s ease forwards;
+  animation-delay: 2s, 3s, 3.2s;
+}
+
+#credenz-logo-name {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 0;
+  animation: logoNameTrans 0.5s ease-in-out forwards;
+  animation-delay: 3.5s;
+}
+@keyframes logoNameTrans {
+  to {
+    fill: white;
+    stroke-width: 0.5;
+    stroke: white;
+  }
+}
+@keyframes MainLogoReveal {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes InitLogoHide {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes animateIcon {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fillLogo {
+  to {
+    fill: rgb(255, 255, 255);
+  }
+}
+@keyframes logoExpand {
+  to {
+    transform: scale(1.05);
+  }
+}
+@keyframes logoShrink {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes changeShade1 {
+  0% {
+    background-color: #ffffff;
+  }
+
+  20% {
+    fill: #eaf9ff;
+  }
+  60% {
+    fill: #87b2c3;
+  }
+  100% {
+    fill: #568fa5;
+  }
+}
+
+@keyframes changeShade2 {
+  0% {
+    fill: #3d7d96;
+  }
+  20% {
+    fill: #31748f;
+  }
+
+  40% {
+    fill: #246b87;
+  }
+  60% {
+    fill: #165d78;
+  }
+  80% {
+    fill: #034a66;
+  }
+  90% {
+    fill: #00405c;
+  }
+  100% {
+    fill: #003654;
+  }
+}
