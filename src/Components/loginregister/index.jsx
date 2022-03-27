@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { Image, Toast } from "react-bootstrap";
+import { Container, Image, Toast } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { API } from "../../axios/API";
@@ -17,11 +17,20 @@ const BoxContainer = styled.div`
   ${"" /* margin-left:1000px; */}
   width: 480px;
   min-height: 550px;
+
   display: flex;
   flex-direction: column;
-  border-radius: 19px;
+  border-image-source: url("img/border_1.png");
+  border-image-slice: 30;
+  border-image-width: 9;
+  border-image-outset: 1.5;
+  border-style: solid;
+  border-image-repeat: round;
+
+  ${"" /* border-radius: 20px; */}
   background-color: var(--primary);
-  box-shadow: 0px 2px 10px rgba(255, 0, 60, 1);
+  box-shadow: 0px 1px 6px #e01949;
+
   position: relative;
   overflow: hidden;
 `;
@@ -47,7 +56,7 @@ const BackDrop = styled(motion.div)`
   top: -285px;
   left: -70px;
   z-index: 10;
-  background: var(--orange);
+  background: #e71a4b;
 `;
 
 const HeaderContainer = styled.div`
@@ -217,16 +226,16 @@ export function AccountBox(props) {
       )}
       <div className="mt-4 container-fluid row">
         <div className="col-md-6 d-flex flex-column justify-content-center align-items-center ">
-          <Image
+          {/* <Image
             src={CredenzLive}
             className="logo-login-page"
             style={{ height: "350px", width: "350px" }}
-          />
+          /> */}
           {/* <div className="color-light" style={{ fontSize: "1.5rem" }}>
             Sponsored By Proton
           </div> */}
         </div>
-        <div className="col-md-6  d-flex justify-content-center align-items-center">
+        <div className="col-md-12  d-flex justify-content-center align-items-center">
           <BoxContainer>
             <TopContainer>
               <BackDrop

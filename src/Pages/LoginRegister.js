@@ -10,26 +10,37 @@ const AppContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+ 
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  z-index: 101;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url("img/website bg.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+  background-position: center 0px;
 
-  // background: rgb(238, 31, 32);
-  // background: linear-gradient(
-  //   297deg,
-  //   rgba(238, 31, 32, 1) 0%,
-  //   rgba(20, 20, 20, 1) 50%
-  // );
-  background: rgb(50, 42, 42);
+  ${
+    "" /* background: rgb(50, 42, 42);
   background: radial-gradient(
     circle,
     rgba(50, 42, 42, 1) 0%,
     rgba(20, 20, 20, 1) 53%
-  );
+  ); */
+  }
 `;
 
 const LoginRegister = () => {
   return (
-    <AppContainer>
+  
+     <AppContainer>
+     
       <AccountBox />
-    </AppContainer>
+    </AppContainer> 
+   
   );
 };
 

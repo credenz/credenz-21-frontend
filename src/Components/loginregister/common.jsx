@@ -26,7 +26,7 @@ export const MutedLink = styled.a`
   }
   &:hover {
     text-decoration: none;
-    color: rgba(255, 0, 60, 1);
+    color: #e01949;
   }
   &:active {
     text-decoration: none;
@@ -35,13 +35,13 @@ export const MutedLink = styled.a`
 
 export const BoldLink = styled.a`
   font-size: 11px;
-  color: rgba(255, 0, 60, 1);
+  color: #e01949;
   font-weight: 500;
   text-decoration: none;
   margin: 0 4px;
   &:hover {
     text-decoration: none;
-    color: rgba(255, 0, 60, 1);
+    color: #e01949;
   }
 `;
 
@@ -52,7 +52,7 @@ export const Input = styled.input`
   background-color: #231f20;
   border: 1px solid rgba(200, 200, 200, 0.3);
   padding: 0px 10px;
-   ${'' /* border-bottom: 1.4px solid transparent; */}
+  ${"" /* border-bottom: 1.4px solid transparent; */}
   transition: all 200ms ease-in-out;
   font-size: 12px;
   color: #fff;
@@ -70,7 +70,7 @@ export const Input = styled.input`
 
   &:focus {
     outline: none;
-    border-bottom: 2px solid rgba(255, 0, 60, 1);
+    border-bottom: 2px solid #e01949;
   }
   &::webkit-input-placeholder {
     color: #fff;
