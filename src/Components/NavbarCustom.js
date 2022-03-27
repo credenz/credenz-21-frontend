@@ -1,29 +1,28 @@
-import React, { useEffect, useState, useContext } from "react";
-import { Card, Dropdown, Modal, Nav, Navbar } from "react-bootstrap";
+import React, { useContext, useEffect, useState } from "react";
+import { Card, Modal, Nav, Navbar } from "react-bootstrap";
 import { NavLink, useLocation } from "react-router-dom";
+import swal from "sweetalert";
 import { API } from "../axios/API";
+import { useHistory } from "react-router-dom";
 import "../CSS/navbar.css";
-import IEEELOGO from "../images/ieeelogo.png";
-import PISBLOGO from "../images/pisb.png";
-import CartIcon from "../images/shopping-cart.png";
-import ProfileIcon from "../images/user.png";
 import DownArrow from "../images/arrow-down-sign-to-navigate.png";
 import deleteIcon from "../images/bin.png";
 import BPlan from "../images/bplan.png";
 import Clash from "../images/clash.png";
-import Cross from "../images/close-line.png";
 import Cretronix from "../images/cretronix.png";
 import Datawiz from "../images/datawiz.png";
 import Enigma from "../images/enigma.png";
+import IEEELOGO from "../images/ieeelogo.png";
 import NTH from "../images/nth.png";
-import CredenzLogo from "../images/onlyLogo.png";
 import Paper from "../images/paper.png";
+import PISBLOGO from "../images/pisb.png";
 import Pixelate from "../images/pixelate.png";
 import Quiz from "../images/quiz.png";
 import RC from "../images/rc.png";
+import CartIcon from "../images/shopping-cart.png";
+import ProfileIcon from "../images/user.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
-import TextSliced from "./TextSliced";
 import CartContext from "./CartContext";
 const NavbarCustom = (props) => {
   const location = useLocation();
@@ -34,8 +33,22 @@ const NavbarCustom = (props) => {
   const [userDetails, setUserDetails] = useState({});
   const [paymentDone, setPaymentDone] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [showModal, setShowModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const history = useHistory();
+
+  const loadScript = (src) => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
+      document.body.appendChild(script);
+    });
+  };
 
   const iconHelpr = (name) => {
     switch (name) {
@@ -91,14 +104,145 @@ const NavbarCustom = (props) => {
     }
   };
 
+  const checkLoggedIn = () => {
+    let token = localStorage.getItem("credenz_access_token");
+    let username = localStorage.getItem("credenz_username");
+    if (token) {
+      API.getUserDetails(username)
+        .then((res) => {
+          setUserDetails(res.data);
+          // console.log("User Details", res.data);
+          fetchUserDetails(res.data.user_id);
+          setIsLoggedIn(true);
+        })
+        .catch((err) => {
+          swal("Invalid token, please log out and sign in again");
+          console.error(err);
+        });
+    }
+  };
+
+  const fetchUserDetails = async (id) => {
+    try {
+      const { data } = await API.getUserById(id);
+      cartContextValue.setUserDetails(data);
+      // console.log("User Details by ID", data);
+      setUserDetails(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const EventNameHelpr = (event) => {
+    switch (event) {
+      case "RC":
+        return "Reverse Coding";
+      case "BPlan":
+        return "Business Plan";
+      case "Clash":
+        return "Clash";
+      case "Cretronix":
+        return "Cretronix";
+      case "Datawiz":
+        return "Datawiz";
+      case "Enigma":
+        return "Enigma";
+      case "NTH":
+        return "Network Treasure Hunt";
+      case "Paper":
+        return "Paper Presentation";
+      case "Pixelate":
+        return "Pixelate";
+      case "Quiz":
+        return "Quiz";
+      case "Wallstreet":
+        return "Wallstreet";
+      case "Webweaver":
+        return "Webweaver";
+      default:
+        break;
+    }
+  };
+
+  const handlePaymentSuccess = async (response) => {
+    try {
+      let bodyData = new FormData();
+
+      // we will send the response we've got from razorpay to the backend to validate the payment
+      bodyData.append("response", JSON.stringify(response));
+
+      API.verifyPayment(bodyData)
+        .then((res) => {
+          //RESET THE LOCAL STATE
+          //   history.push("/", { userDetails });
+          swal("Payment Successful", "", "success");
+          // setTimeout(() => {
+          //   // eslint-disable-next-line no-restricted-globals
+          //   location.reload();
+          // }, 1600);
+          //   window.open("/events", "_self");
+        })
+        .catch((err) => {
+          alert(`Payment failed!`);
+        });
+    } catch (error) {}
+  };
+
+  const displayRazorpay = async () => {
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+    if (!res) {
+      // alert("Razorpay SDK failed to load. Are you online?");
+      swal("Razorpay SDK failed to load. Are you online?", "", "error");
+      return;
+    }
+
+    try {
+      let { data: orderData } = await API.payment({
+        username: userDetails.username,
+        amount: cartContextValue.cart
+          .map((item) => item.price)
+          .reduce((a, b) => a + b, 0),
+        pass: cartContextValue.cart.length === 0 ? true : false,
+        events: cartContextValue.cart.map((item) => EventNameHelpr(item.name)),
+      });
+      const options = {
+        key: "rzp_test_jIVmcYuQhbIa7k", // Enter the Key ID generated from the Dashboard
+        amount: orderData.payment.amount_due.toString(),
+        currency: orderData.payment.currency,
+        name: "Credenz Live 2.0 Payment",
+        description: "Test Transaction",
+        order_id: orderData.payment.id,
+        handler: async function (response) {
+          handlePaymentSuccess(response);
+        },
+        prefill: {
+          name: userDetails.username || "",
+          email: userDetails.email || "",
+          contact: userDetails.profile.phone_no || "",
+        },
+        theme: {
+          color: "#61dafb",
+        },
+      };
+
+      const paymentObject = new window.Razorpay(options);
+      paymentObject.open();
+    } catch (error) {
+      console.error("Error", error);
+    }
+  };
+
   useEffect(() => {
-    checkPayment();
+    // checkPayment();
+    checkLoggedIn();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleShowModal = () => setShowModal(true);
-  const handleCloseModal = () => setShowModal(false);
+  const handleShowModal = () => cartContextValue.setCartModal(true);
+  const handleCloseModal = () => cartContextValue.setCartModal(false);
 
   const handleShowMenu = () => setShowMenu(!showMenu);
 
@@ -120,7 +264,8 @@ const NavbarCustom = (props) => {
         <Card.Body className="d-flex row card-body">
           <div
             className="deleteIconContainer"
-            onClick={() => deleteEventHandler(props.name)}>
+            onClick={() => deleteEventHandler(props.name)}
+          >
             <img src={deleteIcon} alt="Delete icon" className="deleteIcon" />
           </div>
           <>
@@ -133,7 +278,8 @@ const NavbarCustom = (props) => {
             </div>
             <div
               className="col-md-6 d-flex justify-content-center"
-              style={{ flexDirection: "column" }}>
+              style={{ flexDirection: "column" }}
+            >
               <h3>{props.name}</h3>
               <p>{props.tagline}</p>
             </div>
@@ -162,7 +308,8 @@ const NavbarCustom = (props) => {
                 cursor: "pointer",
                 textDecoration: "none",
                 color: "#fff",
-              }}>
+              }}
+            >
               My Profile
             </NavLink>
             <div
@@ -177,12 +324,19 @@ const NavbarCustom = (props) => {
             />
             <NavLink
               to={`/`}
+              className="menu-item"
+              style={{
+                cursor: "pointer",
+                textDecoration: "none",
+                color: "#fff",
+              }}
               onClick={() => {
                 localStorage.removeItem("credenz_access_token");
                 localStorage.removeItem("credenz_username");
-                // eslint-disable-next-line no-restricted-globals
-                location.reload();
-              }}>
+                swal("Logged out successfully!", "", "success");
+                history.push("/");
+              }}
+            >
               Logout
             </NavLink>
           </Card.Body>
@@ -200,11 +354,13 @@ const NavbarCustom = (props) => {
             ? "navbar-wrapper position-relative bg-color-custom"
             : "navbar-wrapper bg-color-custom"
         }
-        expand="md">
+        expand="md"
+      >
         <Navbar.Brand
           href="https://pictieee.in"
           target="_blank"
-          className="header-header">
+          className="header-header"
+        >
           <img src={PISBLOGO} alt="pisblogo" className="nav-logo ms-4" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="m-2" />
@@ -217,7 +373,8 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("/");
-              }}>
+              }}
+            >
               {/* <TextSliced title="Home" activeLink={page === "/"} /> */}
               Home
             </NavLink>
@@ -229,7 +386,8 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("/events");
-              }}>
+              }}
+            >
               {/* <TextSliced title="Events" activeLink={page === "/events"} /> */}
               Events
             </NavLink>
@@ -240,7 +398,8 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("/about");
-              }}>
+              }}
+            >
               {/* <TextSliced
                 title="About"
                 activeLink={page === "/about"}
@@ -255,7 +414,8 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("/contact");
-              }}>
+              }}
+            >
               {/* <TextSliced
                 title="Contact"
                 hidden
@@ -272,7 +432,8 @@ const NavbarCustom = (props) => {
                 setPage("/login");
               }}
               className="header-title"
-              hidden={isLoggedIn ? (!paymentDone ? false : true) : false}>
+              hidden={isLoggedIn ? true : false}
+            >
               {/* <TextSliced
                 title={isLoggedIn ? (!paymentDone ? "Pay Now" : "") : "Login"}
                 activeLink={page === "/login"}
@@ -297,7 +458,8 @@ const NavbarCustom = (props) => {
                 <div
                   className="d-flex align-items-center responsive-pos"
                   style={{ cursor: "pointer" }}
-                  onClick={handleShowMenu}>
+                  onClick={handleShowMenu}
+                >
                   <div className="profileIconContainer">
                     <img
                       src={ProfileIcon}
@@ -339,10 +501,11 @@ const NavbarCustom = (props) => {
         </Navbar.Collapse>
       </Navbar>
       <Modal
-        show={showModal}
+        show={cartContextValue.cartModal}
         onHide={handleCloseModal}
         className="cartModal"
-        scrollable>
+        scrollable
+      >
         <Modal.Header className="cartHeader">
           <Modal.Title className="cartTitle">Checkout Cart</Modal.Title>
         </Modal.Header>
@@ -370,7 +533,8 @@ const NavbarCustom = (props) => {
                   float: "right",
                   fontSize: 25,
                   marginRight: 20,
-                }}>
+                }}
+              >
                 Total : &#8377;
                 {cartContextValue.cart
                   .map((item) => item.price)
@@ -381,9 +545,10 @@ const NavbarCustom = (props) => {
           <div className="row d-flex justify-content-between w-100">
             <button
               onClick={() => {
-                setShowModal(false);
+                cartContextValue.setCartModal(false);
               }}
-              className="play-btn play-btn--light">
+              className="play-btn play-btn--light"
+            >
               <span className="play-btn__inner">
                 <span className="play-btn__slide"></span>
                 <span className="play-btn__content">Close</span>
@@ -391,10 +556,12 @@ const NavbarCustom = (props) => {
             </button>
             <button
               onClick={() => {
-                setShowModal(false);
+                // cartContextValue.setCartModal(false);
+                displayRazorpay();
               }}
               disabled={cartContextValue.cart.length > 0 ? false : true}
-              className="play-btn play-btn--light">
+              className="play-btn play-btn--light"
+            >
               <span className="play-btn__inner play-btn__inner-green">
                 <span className="play-btn__slide play-btn__slide-green"></span>
                 <span className="play-btn__content">Pay Now</span>

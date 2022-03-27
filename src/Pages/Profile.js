@@ -24,7 +24,7 @@ import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import { eventDetails, events } from "../staticInfo";
 
-const Profile = () => {
+const Profile = (props) => {
   const height = "65px";
   const width = "65px";
   const [loading, setLoading] = useState(true);
@@ -65,7 +65,7 @@ const Profile = () => {
       return BPlan;
     } else if (e === "Enigma") {
       return Enigma;
-    } else if (e === "Dataviz") {
+    } else if (e === "Datawiz") {
       return Datawiz;
     } else if (e === "Quiz") {
       return Quiz;
@@ -181,7 +181,8 @@ const Profile = () => {
                           setEventSelected(0);
                           setShow(true);
                         }}
-                        className="row d-flex flex-row justify-content-evenly flex-wrap">
+                        className="row d-flex flex-row justify-content-evenly flex-wrap"
+                      >
                         {user.registeredEvents.map((col, i) => (
                           <EventCard3
                             icon={RC}
@@ -196,7 +197,8 @@ const Profile = () => {
                   ) : (
                     <div
                       className="m-5 d-flex justify-content-center align-items-center"
-                      style={{ color: "#fff" }}>
+                      style={{ color: "#fff" }}
+                    >
                       Not registered for any event
                     </div>
                   )}
@@ -213,14 +215,16 @@ const Profile = () => {
             onHide={() => {
               setShow(false);
             }}
-            size="lg">
+            size="lg"
+          >
             <Modal.Header style={{ width: "90%" }}>
               <Modal.Title
                 style={{
                   width: "100%",
                   display: "flex",
                   justifyContent: "space-between",
-                }}>
+                }}
+              >
                 <img
                   className="modal-logo-img1"
                   src={iconHelpr(events[active])}
@@ -235,7 +239,8 @@ const Profile = () => {
                 </div>
                 <div
                   className="modal-close-wrapper1"
-                  onClick={() => setShow(false)}>
+                  onClick={() => setShow(false)}
+                >
                   <img
                     src={Cross}
                     alt="close button"
@@ -250,7 +255,8 @@ const Profile = () => {
                   eventKey="info"
                   title="Info"
                   className="modal-tab-link1"
-                  color="#efefef">
+                  color="#efefef"
+                >
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 && eventDetails[eventSelected].info}
@@ -268,7 +274,8 @@ const Profile = () => {
                 <Tab
                   eventKey="structure"
                   title="Structure"
-                  className="modal-tab-link1">
+                  className="modal-tab-link1"
+                >
                   <div className="info-wrapper1" style={{ maxHeight: "30vh" }}>
                     <p className="new-line1">
                       {eventSelected !== -1 &&
@@ -279,7 +286,8 @@ const Profile = () => {
                 <Tab
                   eventKey="judge"
                   title="Judging"
-                  className="modal-tab-link1">
+                  className="modal-tab-link1"
+                >
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 &&
@@ -290,7 +298,8 @@ const Profile = () => {
                 <Tab
                   eventKey="contact"
                   title="Contact"
-                  className="modal-tab-link1">
+                  className="modal-tab-link1"
+                >
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 &&

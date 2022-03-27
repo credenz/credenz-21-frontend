@@ -19,9 +19,15 @@ import CartContext from "./Components/CartContext";
 let App = () => {
   AOS.init();
   const [cart, setCart] = React.useState([]);
+  const [cartModal, setCartModal] = React.useState(false);
+  const [userDetails, setUserDetails] = React.useState({});
   const value = {
     cart,
     setCart,
+    cartModal,
+    setCartModal,
+    userDetails,
+    setUserDetails,
   };
   //create routing for pages home, events, about, contact, profile
   return (

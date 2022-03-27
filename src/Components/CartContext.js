@@ -1,10 +1,18 @@
 import React from "react";
 
 let cart = [];
+let cartModal = false;
 cart = localStorage.getItem("cart");
 if (cart === null || cart.length === 0) {
   cart = [];
 }
-const CartContext = React.createContext({ cart: cart, setCart: () => {} });
+const CartContext = React.createContext({
+  cart: cart,
+  setCart: () => {},
+  cartModal: cartModal,
+  setCartModal: () => {},
+  userDetails: {},
+  setUserDetails: () => {},
+});
 
 export default CartContext;

@@ -48,6 +48,7 @@ const Logo = () => {
 const Events = () => {
   const cartContextValue = useContext(CartContext);
   const [cart, setCart] = useState([]);
+  const [cartModal, setCartModal] = useState(false);
   const ptop = "50px";
   const height = "65px";
   const width = "65px";
@@ -193,7 +194,12 @@ const Events = () => {
   function SubmitButton(props) {
     return (
       <div className="play-btn-wrapper">
-        <button className="play-btn play-btn--light">
+        <button
+          className="play-btn play-btn--light"
+          onClick={() => {
+            cartContextValue.setCartModal(!cartContextValue.cartModal);
+          }}
+        >
           <span className="play-btn__inner play-btn__inner-green">
             <span className="play-btn__slide play-btn__slide-green"></span>
             <span className="play-btn__content">Checkout</span>
