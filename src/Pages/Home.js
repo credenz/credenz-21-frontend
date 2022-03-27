@@ -10,6 +10,7 @@ import CyberBg from "../vid/future_2.webm";
 import Loader from "../Components/Loader";
 import NavbarCustom from "../Components/NavbarCustom";
 import { Footer } from "../Components/Footer";
+import Animate from "../Components/Animation/Animate";
 
 const Home = () => {
   const [logoVisible, setLogoVisible] = useState(false);
@@ -50,18 +51,20 @@ const Home = () => {
         >
           <source src={CircleFuture} type="video/mp4" />
         </video> */}
-              <video
+              {/* <video
                 className={bgVisible ? "videoTag fade-in-image" : "no-video"}
                 autoPlay
                 loop
                 muted>
                 <source src={CyberBg} type="video/webm" />
-              </video>
+              </video> */}
               <div
                 className={
                   logoVisible ? "fade-in-delayed credenz-logo" : "d-none"
-                }>
-                <img src={HomeImage} alt="credenzLive" className="logo-img" />
+                }
+              >
+                {/* <img src={HomeImage} alt="credenzLive" className="logo-img" /> */}
+                <Animate />
               </div>
             </div>
           </div>
