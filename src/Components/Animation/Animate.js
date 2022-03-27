@@ -25,7 +25,7 @@ const Animate = () => {
           <div className="credenz-svg-text">
             <LogoTextSvg
               className="credenz-logo-name-text"
-              width={"346"}
+              width={"312"}
               maxWidth="100%"
               id="credenz-logo-name"
             />
