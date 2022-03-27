@@ -22,7 +22,7 @@ export const cartItems = {
   },
   1: {
     name: "Clash",
-    price: 60,
+    price: 40,
     tagline: "Clash is based on Competitive Programming!",
   },
   2: {

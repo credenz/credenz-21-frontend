@@ -26,7 +26,7 @@ import Webweaver from "../images/web.png";
 import { eventDetails, events } from "../staticInfo";
 import swal from "sweetalert";
 
-const Profile = () => {
+const Profile = (props) => {
   const height = "65px";
   const width = "65px";
   const [loading, setLoading] = useState(true);

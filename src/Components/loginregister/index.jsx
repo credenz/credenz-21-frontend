@@ -56,7 +56,7 @@ const BackDrop = styled(motion.div)`
   top: -285px;
   left: -70px;
   z-index: 10;
-  background: #e71a4b;
+  background: #9d1b3b;
 `;
 
 const HeaderContainer = styled.div`
@@ -124,33 +124,14 @@ export function AccountBox(props) {
   const checkToken = async () => {
     setLoading(true);
     let token = localStorage.getItem("credenz_access_token");
-    let username = localStorage.getItem("credenz_username");
+    //if token is present, show profile page
     if (token) {
-      API.getUserDetails(username)
-        .then((res) => {
-          setUserDetails(res.data);
-          if (res.data.payment === "PO") {
-            setPaymentDone(false);
-            setShowPaymentToast(true);
-            setActive("payment");
-            setTimeout(() => {
-              setShowPaymentToast(false);
-            }, 3500);
-            // show payment button - Handeled ✔
-          } else if (res.data.payment === "CO") {
-            setPaymentDone(true);
-            //redirect to events page
-            // history.push("/events", { userDetails: res.data });
-            history.push({
-              pathname: "/",
-              state: { userDetails: res.data },
-            });
-          }
-        })
-        .catch((err) => {
-          console.error(err);
-        });
+      //if token then logged in = > push to home and remove login from nav
+      history.push({
+        pathname: "/",
+      });
     }
+
     setLoading(false);
   };
 
@@ -203,22 +184,6 @@ export function AccountBox(props) {
 
   return (
     <AccountContext.Provider value={contextValue}>
-      <div className="toast-container" hidden={!showPaymentToast}>
-        <Toast show={showPaymentToast}>
-          <Toast.Header>
-            <strong className="me-auto">Credenz Live 2.0</strong>
-            {/* <img
-              src={Cross}
-              className="rounded me-2 close toast-close"
-              alt=""
-              data-dismiss="toast"
-              height={"10px"}
-              onClick={() => setShowPaymentToast(false)}
-            /> */}
-          </Toast.Header>
-          <Toast.Body>Please proceed to payment to continue!</Toast.Body>
-        </Toast>
-      </div>
       {loading && (
         <div className="d-flex justify-content-center align-items-center height-full">
           <Loader />
