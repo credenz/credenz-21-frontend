@@ -1,4 +1,4 @@
-import AxiosInstance from "./instance";
+import AxiosInstance, { setAuthorizationToken } from "./instance";
 
 export const API = {};
 
@@ -36,4 +36,9 @@ API.passwordReset = async (data) => {
 
 API.passwordResetConfirm = async (data) => {
   return AxiosInstance.post(`password_reset/confirm/`, data);
+};
+
+API.getProfile = async (token) => {
+  setAuthorizationToken(localStorage.getItem("credenz_access_token"));
+  return AxiosInstance.get(`profile/`);
 };

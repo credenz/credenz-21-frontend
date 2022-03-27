@@ -3,6 +3,7 @@ import Loader from "../Components/Loader";
 import "../CSS/profile.css";
 import ProfileIcon from "../images/user.png";
 import CallIcon from "../images/phone-receiver-silhouette.png";
+import SchoolIcon from "../images/school.png";
 import EmailIcon from "../images/email.png";
 import EventCard2 from "../Components/EventCard2";
 import RC from "../images/rc.png";
@@ -23,34 +24,28 @@ import Quiz from "../images/quiz.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import { eventDetails, events } from "../staticInfo";
+import swal from "sweetalert";
 
 const Profile = () => {
   const height = "65px";
   const width = "65px";
   const [loading, setLoading] = useState(true);
-  const user = {
-    name: "Sanket Kulkarni",
-    email: "sanketkulkani@gmail.com",
-    contact: "+91 9090807990",
-    userName: "Sanketak08",
-    registeredEvents: [
-      { eventName: "Enigma", password: "df8en24rr23hr" },
-      { eventName: "RC", password: "df8en24rr23hr" },
-      { eventName: "Clash", password: "df8en24rr23hr" },
-      { eventName: "NTH", password: "df8en24rr23hr" },
-      { eventName: "Pixelate", password: "df8en24rr23hr" },
-      { eventName: "Wallstreet", password: "df8en24rr23hr" },
-      { eventName: "NTH", password: "df8en24rr23hr" },
-      { eventName: "Pixelate", password: "df8en24rr23hr" },
-      { eventName: "Wallstreet", password: "df8en24rr23hr" },
-    ],
-  };
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userDetails, setUserDetails] = useState(false);
   const [show, setShow] = useState(false);
   const [active, setActive] = useState(-1);
   const [eventSelected, setEventSelected] = useState(-1);
+  const [profileDetails, setProfileDetails] = useState({
+    name: "",
+    email: "",
+    contact: "",
+    userName: "",
+    is_pass: false,
+    senior: false,
+    institute: "",
+    registeredEvents: [],
+  });
 
   const iconHelpr = (e) => {
     if (e === "RC") {
@@ -65,7 +60,7 @@ const Profile = () => {
       return BPlan;
     } else if (e === "Enigma") {
       return Enigma;
-    } else if (e === "Dataviz") {
+    } else if (e === "Datawiz") {
       return Datawiz;
     } else if (e === "Quiz") {
       return Quiz;
@@ -88,11 +83,11 @@ const Profile = () => {
     } else return e;
   };
 
-  const fetchProfileDetails = async () => {
+  const fetchPaymentDetails = async () => {
     let token = localStorage.getItem("credenz_access_token");
     let username = localStorage.getItem("credenz_username");
     if (token) {
-      API.getUserDetails(username)
+      await API.getUserDetails(username)
         .then((res) => {
           setUserDetails(res.data);
           setIsLoggedIn(true);
@@ -105,8 +100,35 @@ const Profile = () => {
     }
   };
 
+  const fetchProfileDetails = async () => {
+    let token = localStorage.getItem("credenz_access_token");
+
+    if (token) {
+      await API.getProfile(token)
+        .then((res) => {
+          setProfileDetails({
+            ...profileDetails,
+            userName: res.data?.username,
+            name: res.data?.name,
+            email: res.data?.email,
+            contact: res.data?.contact,
+            senior: res.data?.senior,
+            is_pass: res.data?.is_pass,
+            institute: res.data?.institute,
+            registeredEvents: res.data?.events,
+          });
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    } else {
+      swal("Not authenticated!", "", "error");
+    }
+  };
+
   useEffect(() => {
     setLoading(true);
+    fetchPaymentDetails();
     fetchProfileDetails();
     setTimeout(() => {
       setLoading(false);
@@ -129,7 +151,9 @@ const Profile = () => {
                     <div className="personalCard">
                       <div className="userContainer my-5 flex-column d-flex justify-content-center align-items-center">
                         <div className="imgContainer"></div>
-                        <div className="userName mt-4">{user.userName}</div>
+                        <div className="userName mt-4">
+                          {profileDetails.userName}
+                        </div>
                       </div>
                       <div className="itemContainer">
                         <div className="itemRow">
@@ -140,7 +164,7 @@ const Profile = () => {
                             className="commonIcon"
                           />
                           <p className="detailText" style={{ margin: 0 }}>
-                            {user.name}
+                            {profileDetails.name}
                           </p>
                         </div>
                         <div className="itemRow">
@@ -151,7 +175,7 @@ const Profile = () => {
                             className="commonIcon"
                           />
                           <p className="detailText" style={{ margin: 0 }}>
-                            {user.email}
+                            {profileDetails.email}
                           </p>
                         </div>
                         <div className="itemRow">
@@ -162,7 +186,18 @@ const Profile = () => {
                             className="commonIcon"
                           />
                           <p className="detailText" style={{ margin: 0 }}>
-                            {user.contact}
+                            {profileDetails.contact}
+                          </p>
+                        </div>
+                        <div className="itemRow">
+                          <img
+                            src={SchoolIcon}
+                            alt="School icon"
+                            style={{ marginRight: 10 }}
+                            className="commonIcon"
+                          />
+                          <p className="detailText" style={{ margin: 0 }}>
+                            {profileDetails.institute}
                           </p>
                         </div>
                       </div>
@@ -173,7 +208,7 @@ const Profile = () => {
                   <div className="heading">
                     <h2>My Events</h2>
                   </div>
-                  {user.registeredEvents.length > 0 ? (
+                  {profileDetails.registeredEvents.length > 0 ? (
                     <div className="secondContainer">
                       <div
                         onClick={() => {
@@ -182,7 +217,7 @@ const Profile = () => {
                           setShow(true);
                         }}
                         className="row d-flex flex-row justify-content-evenly flex-wrap">
-                        {user.registeredEvents.map((col, i) => (
+                        {profileDetails.registeredEvents.map((col, i) => (
                           <EventCard3
                             icon={RC}
                             width={width}

@@ -26,9 +26,9 @@ import Webweaver from "../images/web.png";
 import TextSliced from "./TextSliced";
 import CartContext from "./CartContext";
 const NavbarCustom = (props) => {
-  const location = useLocation();
-  console.log("Locaton", location.pathname);
-  const [page, setPage] = useState(location.pathname);
+  const pathLocation = useLocation();
+  console.log("Locaton", pathLocation.pathname);
+  const [page, setPage] = useState(pathLocation.pathname);
   const cartContextValue = useContext(CartContext);
   // eslint-disable-next-line no-unused-vars
   const [userDetails, setUserDetails] = useState({});
@@ -177,7 +177,14 @@ const NavbarCustom = (props) => {
             />
             <NavLink
               to={`/`}
+              style={{
+                cursor: "pointer",
+                textDecoration: "none",
+                color: "#fff",
+              }}
               onClick={() => {
+                setPage("");
+                handleShowMenu();
                 localStorage.removeItem("credenz_access_token");
                 localStorage.removeItem("credenz_username");
                 // eslint-disable-next-line no-restricted-globals
@@ -279,23 +286,10 @@ const NavbarCustom = (props) => {
               /> */}
               Login
             </NavLink>
-            {/* <NavLink
-              to={`/`}
-              isActive={() => page === "logout"}
-              className="header-title"
-              onClick={() => {
-                localStorage.removeItem("credenz_access_token");
-                localStorage.removeItem("credenz_username");
-                // eslint-disable-next-line no-restricted-globals
-                location.reload();
-              }}
-              hidden={!isLoggedIn}>
-              <TextSliced title="Logout" activeLink={page === "logout"} pagr />
-            </NavLink> */}
             {isLoggedIn && (
               <>
                 <div
-                  className="d-flex align-items-center responsive-pos"
+                  className="d-flex align-items-center responsive-pos m-10"
                   style={{ cursor: "pointer" }}
                   onClick={handleShowMenu}>
                   <div className="profileIconContainer">

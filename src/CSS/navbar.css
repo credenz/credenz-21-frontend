@@ -30,8 +30,12 @@
 }
 
 .cartIcon {
-  height: 30px;
-  width: 35px;
+  height: 27px;
+  width: 32px;
+}
+
+.m-10 {
+  margin: 0 4%;
 }
 
 .profileIcon {
@@ -42,7 +46,7 @@
 .downArrow {
   height: 10px;
   width: 12px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .badgeContainer {

@@ -50,7 +50,7 @@ export const cartItems = {
       "Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions!",
   },
   6: {
-    name: "DataWiz",
+    name: "Datawiz",
     price: 60,
     tagline:
       "Test your Machine learning and data analytics skills before stepping into the world of Data Science!",
