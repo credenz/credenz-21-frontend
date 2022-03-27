@@ -37,7 +37,6 @@ const Profile = (props) => {
   const [active, setActive] = useState(-1);
   const [eventSelected, setEventSelected] = useState(-1);
   const [profileDetails, setProfileDetails] = useState({
-    name: "",
     email: "",
     contact: "",
     userName: "",
@@ -83,6 +82,34 @@ const Profile = (props) => {
     } else return e;
   };
 
+  const eventHelper = (eventName) => {
+    if (eventName === "Reverse Coding") {
+      return 0;
+    } else if (eventName === "Clash") {
+      return 1;
+    } else if (eventName === "Network Treasure Hunt") {
+      return 2;
+    } else if (eventName === "WallStreet") {
+      return 3;
+    } else if (eventName === "B-Plan") {
+      return 4;
+    } else if (eventName === "Enigma") {
+      return 5;
+    } else if (eventName === "Datawiz") {
+      return 6;
+    } else if (eventName === "Quiz") {
+      return 7;
+    } else if (eventName === "Paper Presentation") {
+      return 8;
+    } else if (eventName === "Cretronix") {
+      return 9;
+    } else if (eventName === "Pixelate") {
+      return 10;
+    } else if (eventName === "Web Weaver") {
+      return 11;
+    }
+  };
+
   const fetchPaymentDetails = async () => {
     let token = localStorage.getItem("credenz_access_token");
     let username = localStorage.getItem("credenz_username");
@@ -106,12 +133,12 @@ const Profile = (props) => {
     if (token) {
       await API.getProfile(token)
         .then((res) => {
+          console.log(res.data);
           setProfileDetails({
             ...profileDetails,
             userName: res.data?.username,
-            name: res.data?.name,
             email: res.data?.email,
-            contact: res.data?.contact,
+            contact: res.data?.phone_no,
             senior: res.data?.senior,
             is_pass: res.data?.is_pass,
             institute: res.data?.institute,
@@ -150,23 +177,16 @@ const Profile = (props) => {
                   <div className="personalCardContainer">
                     <div className="personalCard">
                       <div className="userContainer my-5 flex-column d-flex justify-content-center align-items-center">
-                        <div className="imgContainer"></div>
+                        <div className="imgContainer">
+                          <div className="initials">
+                            {profileDetails.userName[0]}
+                          </div>
+                        </div>
                         <div className="userName mt-4">
                           {profileDetails.userName}
                         </div>
                       </div>
                       <div className="itemContainer">
-                        <div className="itemRow">
-                          <img
-                            src={ProfileIcon}
-                            alt="Profile icon"
-                            style={{ marginRight: 10 }}
-                            className="commonIcon"
-                          />
-                          <p className="detailText" style={{ margin: 0 }}>
-                            {profileDetails.name}
-                          </p>
-                        </div>
                         <div className="itemRow">
                           <img
                             src={EmailIcon}
@@ -210,21 +230,23 @@ const Profile = (props) => {
                   </div>
                   {profileDetails.registeredEvents.length > 0 ? (
                     <div className="secondContainer">
-                      <div
-                        onClick={() => {
-                          setActive(0);
-                          setEventSelected(0);
-                          setShow(true);
-                        }}
-                        className="row d-flex flex-row justify-content-evenly flex-wrap">
+                      <div className="row d-flex flex-row justify-content-evenly flex-wrap">
                         {profileDetails.registeredEvents.map((col, i) => (
-                          <EventCard3
-                            icon={RC}
-                            width={width}
-                            height={height}
-                            title={col.eventName}
-                            text="Hone your problem-solving skills by decrypting complex questions"
-                          />
+                          <span
+                            className="d-flex justify-content-center"
+                            style={{ width: "200px" }}
+                            onClick={() => {
+                              setActive(eventHelper(col.eventName));
+                              setEventSelected(eventHelper(col.eventName));
+                              setShow(true);
+                            }}>
+                            <EventCard3
+                              icon={RC}
+                              width={width}
+                              height={height}
+                              title={col.eventName}
+                            />
+                          </span>
                         ))}
                       </div>
                     </div>

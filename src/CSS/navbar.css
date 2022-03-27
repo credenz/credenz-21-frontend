@@ -35,7 +35,7 @@
 }
 
 .m-10 {
-  margin: 0 4%;
+  margin: 0 5%;
 }
 
 .profileIcon {
@@ -213,5 +213,18 @@ a:hover {
   .responsive-pos {
     margin-bottom: 10px;
     padding-left: 15px;
+  }
+  .cartIcon {
+    margin-left: 15px;
+  }
+
+  .m-10 {
+    margin-left: 0;
+    margin-bottom: 15px !important;
+  }
+  .badgeContainer {
+    left: 13%;
+    top: -%;
+    right: auto;
   }
 }

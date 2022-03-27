@@ -33,6 +33,16 @@
   width: 150px;
   border: 1px solid #fff;
   border-radius: 75px;
+  position: relative;
+}
+
+.initials {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4vw;
+  font-style: italic;
 }
 
 .userName {
@@ -187,5 +197,11 @@
   .secondContainer {
     max-height: fit-content;
     margin-bottom: 120px;
+  }
+  .heading {
+    margin-top: 10vw;
+  }
+  .initials {
+    font-size: 12vw;
   }
 }
