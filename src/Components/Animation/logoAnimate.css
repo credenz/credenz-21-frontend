@@ -30,10 +30,11 @@
   z-index: 100;
   opacity: 0;
   animation: MainLogoReveal 1s ease-in-out forwards;
-  animation-delay: 2.95s;
+  animation-delay: 1.5s;
   margin: auto;
   display: block;
   margin-bottom: 8px;
+  transition: all 1s ease-in-out;
 }
 
 .credenz-svg-text {
@@ -57,6 +58,7 @@
 .credenz-svg-text #credenz-logo-name ~ #credenz-final-logo:hover,
 #credenz-final-logo:hover {
   transform: scale(1.05);
+  transition: all 1s ease-in-out;
 }
 #credenz-final-logo:hover {
   margin-bottom: 20px;
