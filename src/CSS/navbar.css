@@ -120,7 +120,7 @@
 }
 
 .bg-color-custom {
-  background-color: transparent;
+  background-color: #000;
   position: absolute;
   top: 0;
 }

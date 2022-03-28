@@ -22,7 +22,7 @@
   bottom: 0;
   left: 0;
   z-index: 3;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
 }
 .videoTag {
   width: 100%;
@@ -33,8 +33,37 @@
   height: 100vh;
   width: 100%;
   position: relative;
-  background: linear-gradient(180deg, #00002f 0%, #29004b 100%);
+  /* background: linear-gradient(180deg, #00002f 0%, #29004b 100%); */
+  background: rgb(2, 1, 8);
+  background: radial-gradient(
+    circle,
+    rgba(2, 1, 8, 1) 0%,
+    rgba(1, 0, 9, 1) 50%,
+    rgba(2, 1, 8, 1) 100%
+  );
 }
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 3;
+  opacity: 0;
+  animation: bganimate 2s forwards;
+  animation-delay: 3.75s;
+}
+
+@keyframes bganimate {
+  to {
+    opacity: 1;
+    background-image: url("../images/bg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
 .video-container video {
   height: 100%;
   width: 100%;
