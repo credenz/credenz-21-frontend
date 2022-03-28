@@ -11,6 +11,7 @@ import Loader from "../Components/Loader";
 import NavbarCustom from "../Components/NavbarCustom";
 import { Footer } from "../Components/Footer";
 import Animate from "../Components/Animation/Animate";
+import bgImage from "../images/bg.png";
 
 const Home = () => {
   const [logoVisible, setLogoVisible] = useState(false);
@@ -42,6 +43,7 @@ const Home = () => {
         <>
           {/* <NavbarCustom /> */}
           <div className="section-home height-full-home o-x-hide">
+            <img src={bgImage} alt="bg" className="bg-image" />
             <div className="video-container">
               {/* <NavbarCustom comingSoon={true} /> */}
               {/* <video
