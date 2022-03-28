@@ -172,7 +172,7 @@
     flex-direction: column;
   }
   .c img {
-    display: none;
+    margin-bottom: 20vw;
   }
   .about-heading {
     text-align: center;
