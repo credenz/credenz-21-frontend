@@ -119,8 +119,8 @@ export const eventDetails = {
 Tread carefully along your way, solving a series of strategic clues, watching out for the concealed misdirection.
 Decrypt the clues, enjoy the hunt and race your way to the finish to win some exciting goodies!
 This is your chance to put your logic and reasoning to test. So, log on to our website and be a Sherlock for a day!`,
-    rules: `1)Register to get your NTH username and password.\n\n2)Open NTH website: http://www.nth.credenz.in/\n\n3)Login using the credentials sent on the mail.\n\n4)You will be directed to the starting page of the hunt.\n\n5)To advance, crack the question, and put the answer in the URL:\n\tFROM\n\thttp://www.nth.credenz.in/question.php\n\n\tTO\n\thttp://www.nth.credenz.in/answer.php\n\n6)You need to use Google for many of them to solve. Of course, that is where you search for everything you don't know.\n\n7)Check the source of the pages, you'll get some important clues for hunting further. The titles may also give you clues.Most importantly, do not forget to have fun!`,
-    structure: `1) NTH will be conducted twice during Credenz. Both the Treasure Hunt are conducted independently and will have a separate list of winners.
+    rules: `1)Register to get your NTH username and password.\n\n2)Open NTH website: http://www.nth.credenz.in/\n\n3)Login using the credentials sent on the mail.\n\n4)You will be directed to the starting page of the hunt.\n\n5)To advance, crack the question, and put the answer in the URL:\n\tFROM\n\thttp://www.nth.credenz.in/question\n\n\tTO\n\thttp://www.nth.credenz.in/answer\n\n6)You need to use Google for many of them to solve. Of course, that is where you search for everything you don't know.\n\n7)Check the source of the pages, you'll get some important clues for hunting further. The titles may also give you clues.Most importantly, do not forget to have fun!`,
+    structure: `1) NTH will be conducted once during Credenz. Both the Treasure Hunt are conducted independently and will have a separate list of winners.
 \n2)The first hunt is to get the participants acquainted with the format of the online hunt and also with the wide variety of riddles and puzzles that they could come across in the main hunt.
 \n3) The second hunt, also the main "Network Treasure Hunt" has much higher stakes with some amazing prizes. This hunt will be longer than the previous hunt and will test the limits of the participants.
 \n4) The hunt is designed to be very intriguing and super fun to play.`,
@@ -191,7 +191,7 @@ Timings
     rules: `1) Candidates pursuing an Undergraduate/graduate program at their institution will be allowed to participate. It will be an individual event.
 \n2)All the participants should follow all the instructions as mentioned in the mail received after registration.`,
     structure: `1) There will be two rounds.
-5)ROUND 1:\n\ta.There will be 31 questions in this round.\n\tb.Time limit is 40 minutes.\n\tc.For every right answer, you will be awarded points and no negative points for a wrong answer.\n\td.The marking scheme will be told on the day of the event.
+5)ROUND 1:\n\ta.There will be 30 questions in this round.\n\tb.Time limit is 35 minutes.\n\tc.For every right answer, you will be awarded points and no negative points for a wrong answer.\n\td.The marking scheme will be told on the day of the event.
 6)ROUND 2:\n\ta.There will be 5 Puzzles in this round.\n\tb.Time Limit is 2 hours\n\tc.You must claim whenever you are done. Earliest claim with max. score wins.`,
     judging: `1)There will be two rounds.
 \n2)You need to qualify the threshold score to get into the next round. The threshold will be decided based upon the performance of all the teams.
@@ -281,12 +281,12 @@ Timings
 06-03-2022 , Sunday : 1:00pm to 3:30pm`,
     rules: `1.A team of maximum three candidates pursuing undergraduate/postgraduate program is allowed.
 \n2.Marking Scheme will be declared on the spot.
-\n3.Research Papers sent after 3rd March, 2022 11:59 PM won’t be accepted.
+\n3.Research Papers sent after 8th April, 2022 11:59 PM won’t be accepted.
 `,
     structure: `1) Only soft copy i.e. a .pdf file, of the paper and abstract should be submitted. The paper should not exceed more than 6 pages.
-\n2) Soft copy of the technical paper and the abstract should be mailed to paper.pisbcredenz@gmail.com.
+\n2) Soft copy of the technical paper and the abstract should be mailed to credenzpaperpresentation@gmail.com (Include name of participants, college name and year of study in mail) 
 \n3) The paper must strictly adhere to the IEEE format.
-\n4) Authors will get 15 minutes to deliver a presentation on their topic followed by a question - answer session. Only selected teams will get a chance to present their papers in front of judges at final round on 6th march
+\n4) Authors will get 15 minutes to deliver a presentation on their topic followed by a question - answer session. Only selected teams will get a chance to present their papers in front of judges at final round on 15th April, 2022.
 \n5) The presentation should be in power point format (.ppt or .pptx).`,
     judging: `1) Oratory and Presentation skills will be of prime importance.
 \n2) Relevance of the content in context with the chosen topic.
@@ -294,7 +294,7 @@ Timings
 
 Prizes
 Coming Soon`,
-    contact: `\nRohan Khole\n+91 78880 43852`,
+    contact: `\nRohan Khole\n+91 78880 43852\nDhaval\n+91 9823272551`,
   },
   9: {
     info: `Battle it out on the breadboard!Challenge your brains to clear a test where you demonstrate your knowledge in the field of electronics, physics, logical ability and build a circuit by interpreting the hints provided.
@@ -378,7 +378,7 @@ Approximately 10 teams shall be shortlisted.
 The teams shall be given certain add-ons over the pages designed earlier.
 Five add-ons shall be given, specific to the pages designed by the participants.
 `,
-    judging: `Participants can participate either individually or in a group of 2 and develop a website which is supposed to be submitted 1-2 days before the start of Credenz. On the first day of Credenz, the best website teams are promoted to the second round where people are informed by us to add specific changes to their website. The website with the most aesthetic changes and best compatibility will be announced as the winner.
+    judging: `Participants can participate individually and develop a website which is supposed to be submitted 1-2 days before the start of Credenz. On the first day of Credenz, the best website teams are promoted to the second round where people are informed by us to add specific changes to their website. The website with the most aesthetic changes and best compatibility will be announced as the winner.
 
 Prizes
 Coming Soon
