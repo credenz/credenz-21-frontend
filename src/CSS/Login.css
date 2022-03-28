@@ -291,3 +291,10 @@ option {
     display: none;
   }
 }
+
+
+@media (max-width: 770px) {
+  .temp {
+    margin-bottom:40px;
+  }
+}

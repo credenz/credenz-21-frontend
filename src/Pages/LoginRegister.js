@@ -36,9 +36,10 @@ const AppContainer = styled.div`
 const LoginRegister = () => {
   return (
   
-     <AppContainer>
+     <AppContainer className="temp">
      
       <AccountBox />
+      <br/><br/>
     </AppContainer> 
    
   );

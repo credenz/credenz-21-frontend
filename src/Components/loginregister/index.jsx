@@ -16,14 +16,14 @@ import { SignupForm } from "./signupForm";
 const BoxContainer = styled.div`
   ${"" /* margin-left:1000px; */}
   width: 480px;
-  min-height: 550px;
-
+  min-height: 500px;
+  margin-top:20px;
   display: flex;
   flex-direction: column;
-  border-image-source: url("img/border_1.png");
-  border-image-slice: 30;
-  border-image-width: 9;
-  border-image-outset: 1.5;
+  border-image-source: url("img/square_red.png");
+  border-image-slice: 20;
+  border-image-width: 3;
+  border-image-outset:7;
   border-style: solid;
   border-image-repeat: round;
 
