@@ -434,7 +434,21 @@ const NavbarCustom = (props) => {
             {isLoggedIn && (
               <>
                 <div
-                  className="d-flex align-items-center responsive-pos m-10"
+                  className="cartIconContainer m-10"
+                  onClick={handleShowModal}>
+                  {cartContextValue.cart.length > 0 && (
+                    <div className="badgeContainer">
+                      <p className="badge">{cartContextValue.cart.length}</p>
+                    </div>
+                  )}
+                  <img src={CartIcon} alt="Cart icon" className="cartIcon" />
+                </div>
+              </>
+            )}
+            {isLoggedIn && (
+              <>
+                <div
+                  className="d-flex align-items-center responsive-pos"
                   style={{ cursor: "pointer" }}
                   onClick={handleShowMenu}>
                   <div className="profileIconContainer">
@@ -453,18 +467,6 @@ const NavbarCustom = (props) => {
                   </div>
                 </div>
                 {showMenu && <ProfileMenu />}
-              </>
-            )}
-            {isLoggedIn && (
-              <>
-                <div className="cartIconContainer" onClick={handleShowModal}>
-                  {cartContextValue.cart.length > 0 && (
-                    <div className="badgeContainer">
-                      <p className="badge">{cartContextValue.cart.length}</p>
-                    </div>
-                  )}
-                  <img src={CartIcon} alt="Cart icon" className="cartIcon" />
-                </div>
               </>
             )}
           </Nav>
