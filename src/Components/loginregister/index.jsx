@@ -1,29 +1,25 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { Container, Image, Toast } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { API } from "../../axios/API";
 import "../../CSS/Login.css";
-import CredenzLive from "../../images/credenzlive2.0_1.png";
 import Loader from "../Loader";
 import { AccountContext } from "./accountContext";
 import { ForgetPasswordForm } from "./ForgetPasswordForm";
 import { LoginForm } from "./loginForm";
-import { PaymentForm } from "./PaymentForm";
 import { SignupForm } from "./signupForm";
 
 const BoxContainer = styled.div`
   ${"" /* margin-left:1000px; */}
   width: 480px;
   min-height: 500px;
-  margin-top:20px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   border-image-source: url("img/square_red.png");
   border-image-slice: 20;
   border-image-width: 3;
-  border-image-outset:7;
+  border-image-outset: 7;
   border-style: solid;
   border-image-repeat: round;
 
@@ -117,8 +113,6 @@ export function AccountBox(props) {
   // eslint-disable-next-line no-unused-vars
   const [paymentDone, setPaymentDone] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [showPaymentToast, setShowPaymentToast] = useState(false);
-  const [userDetails, setUserDetails] = useState(null);
   const history = useHistory();
 
   const checkToken = async () => {
@@ -160,13 +154,6 @@ export function AccountBox(props) {
     }, 400);
   };
 
-  const switchToPayment = () => {
-    playExpandingAnimation();
-    setTimeout(() => {
-      setActive("payment");
-    }, 400);
-  };
-
   const switchToForgetPassword = () => {
     playExpandingAnimation();
     setTimeout(() => {
@@ -177,7 +164,6 @@ export function AccountBox(props) {
   const contextValue = {
     switchToSignup,
     switchToSignin,
-    switchToPayment,
     switchToForgetPassword,
   };
 
@@ -222,13 +208,6 @@ export function AccountBox(props) {
                   <SmallText>Please sign-up to continue!</SmallText>
                 </HeaderContainer>
               )}
-              {active === "payment" && (
-                <HeaderContainer>
-                  <HeaderText>Welcome</HeaderText>
-                  <HeaderText>Back</HeaderText>
-                  <SmallText>Please proceed to Payment to continue!</SmallText>
-                </HeaderContainer>
-              )}
               {active === "forgetPassword" && (
                 <HeaderContainer>
                   <HeaderText>Please Enter your Email</HeaderText>
@@ -245,9 +224,6 @@ export function AccountBox(props) {
               )}
               {active === "signup" && (
                 <SignupForm loading={loading} setLoading={setLoading} />
-              )}
-              {active === "payment" && (
-                <PaymentForm userDetails={userDetails} />
               )}
               {active === "forgetPassword" && <ForgetPasswordForm />}
             </InnerContainer>

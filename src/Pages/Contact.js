@@ -270,7 +270,7 @@ const Contact = () => {
               width="100%"
               height="100%"
               aria-hidden="false"
-              tabindex="0"
+              tabIndex="0"
               title="iframe"
             ></iframe>
           </Col>

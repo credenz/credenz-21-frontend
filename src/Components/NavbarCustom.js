@@ -3,7 +3,6 @@ import { Card, Modal, Nav, Navbar } from "react-bootstrap";
 import { NavLink, useLocation } from "react-router-dom";
 import swal from "sweetalert";
 import { API } from "../axios/API";
-import { useHistory } from "react-router-dom";
 import "../CSS/navbar.css";
 import DownArrow from "../images/arrow-down-sign-to-navigate.png";
 import deleteIcon from "../images/bin.png";
@@ -26,15 +25,13 @@ import Webweaver from "../images/web.png";
 import CartContext from "./CartContext";
 const NavbarCustom = (props) => {
   const location = useLocation();
-  console.log("Locaton", location.pathname);
+  // console.log("Locaton", location.pathname);
   const [page, setPage] = useState(location.pathname);
   const cartContextValue = useContext(CartContext);
   // eslint-disable-next-line no-unused-vars
   const [userDetails, setUserDetails] = useState({});
-  const [paymentDone, setPaymentDone] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const history = useHistory();
 
   const loadScript = (src) => {
     return new Promise((resolve) => {
@@ -81,55 +78,21 @@ const NavbarCustom = (props) => {
     }
   };
 
-  const checkPayment = async () => {
-    let token = localStorage.getItem("credenz_access_token");
-    let username = localStorage.getItem("credenz_username");
-    if (token) {
-      API.getUserDetails(username)
-        .then((res) => {
-          setUserDetails(res.data);
-          setIsLoggedIn(true);
-          if (res.data.payment === "PO") {
-            setPaymentDone(false);
-            // show payment button - Handeled ✔
-          } else if (res.data.payment === "CO") {
-            setPaymentDone(true);
-          }
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    } else {
-      setIsLoggedIn(false);
-    }
-  };
-
   const checkLoggedIn = () => {
     let token = localStorage.getItem("credenz_access_token");
     let username = localStorage.getItem("credenz_username");
     if (token) {
       API.getUserDetails(username)
         .then((res) => {
-          setUserDetails(res.data);
-          // console.log("User Details", res.data);
-          fetchUserDetails(res.data.user_id);
+          setUserDetails({ ...res.data, username: username });
+          console.log("User Details", res.data);
+          // fetchUserDetails(res.data.user_id);
           setIsLoggedIn(true);
         })
         .catch((err) => {
           swal("Invalid token, please log out and sign in again");
           console.error(err);
         });
-    }
-  };
-
-  const fetchUserDetails = async (id) => {
-    try {
-      const { data } = await API.getUserById(id);
-      cartContextValue.setUserDetails(data);
-      // console.log("User Details by ID", data);
-      setUserDetails(data);
-    } catch (error) {
-      console.error(error);
     }
   };
 
@@ -176,11 +139,7 @@ const NavbarCustom = (props) => {
           //RESET THE LOCAL STATE
           //   history.push("/", { userDetails });
           swal("Payment Successful", "", "success");
-          // setTimeout(() => {
-          //   // eslint-disable-next-line no-restricted-globals
-          //   location.reload();
-          // }, 1600);
-          //   window.open("/events", "_self");
+          cartContextValue.setCart([]);
         })
         .catch((err) => {
           alert(`Payment failed!`);
@@ -220,7 +179,7 @@ const NavbarCustom = (props) => {
         prefill: {
           name: userDetails.username || "",
           email: userDetails.email || "",
-          contact: userDetails.profile.phone_no || "",
+          contact: userDetails.phone_no || "",
         },
         theme: {
           color: "#61dafb",
@@ -235,9 +194,7 @@ const NavbarCustom = (props) => {
   };
 
   useEffect(() => {
-    // checkPayment();
     checkLoggedIn();
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -264,7 +221,8 @@ const NavbarCustom = (props) => {
         <Card.Body className="d-flex row card-body">
           <div
             className="deleteIconContainer"
-            onClick={() => deleteEventHandler(props.name)}>
+            onClick={() => deleteEventHandler(props.name)}
+          >
             <img src={deleteIcon} alt="Delete icon" className="deleteIcon" />
           </div>
           <>
@@ -277,7 +235,8 @@ const NavbarCustom = (props) => {
             </div>
             <div
               className="col-md-6 d-flex justify-content-center"
-              style={{ flexDirection: "column" }}>
+              style={{ flexDirection: "column" }}
+            >
               <h3>{props.name}</h3>
               <p>{props.tagline}</p>
             </div>
@@ -306,7 +265,8 @@ const NavbarCustom = (props) => {
                 cursor: "pointer",
                 textDecoration: "none",
                 color: "#fff",
-              }}>
+              }}
+            >
               My Profile
             </NavLink>
             <div
@@ -330,11 +290,11 @@ const NavbarCustom = (props) => {
               onClick={() => {
                 localStorage.removeItem("credenz_access_token");
                 localStorage.removeItem("credenz_username");
-                swal("Logged out successfully!", "", "success");
-                setTimeout(() => {
+                swal("Logged out successfully!", "", "success").then((val) => {
                   window.location.reload();
-                }, 1500);
-              }}>
+                });
+              }}
+            >
               Logout
             </NavLink>
           </Card.Body>
@@ -352,11 +312,13 @@ const NavbarCustom = (props) => {
             ? "navbar-wrapper position-relative bg-color-custom"
             : "navbar-wrapper bg-color-custom"
         }
-        expand="md">
+        expand="md"
+      >
         <Navbar.Brand
           href="https://pictieee.in"
           target="_blank"
-          className="header-header">
+          className="header-header"
+        >
           <img src={PISBLOGO} alt="pisblogo" className="nav-logo ms-4" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="m-2" />
@@ -369,7 +331,8 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("/");
-              }}>
+              }}
+            >
               {/* <TextSliced title="Home" activeLink={page === "/"} /> */}
               Home
             </NavLink>
@@ -381,7 +344,8 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("/events");
-              }}>
+              }}
+            >
               {/* <TextSliced title="Events" activeLink={page === "/events"} /> */}
               Events
             </NavLink>
@@ -392,7 +356,8 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("/about");
-              }}>
+              }}
+            >
               {/* <TextSliced
                 title="About"
                 activeLink={page === "/about"}
@@ -407,7 +372,8 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("/contact");
-              }}>
+              }}
+            >
               {/* <TextSliced
                 title="Contact"
                 hidden
@@ -424,7 +390,8 @@ const NavbarCustom = (props) => {
                 setPage("/login");
               }}
               className="header-title"
-              hidden={isLoggedIn ? true : false}>
+              hidden={isLoggedIn ? true : false}
+            >
               {/* <TextSliced
                 title={isLoggedIn ? (!paymentDone ? "Pay Now" : "") : "Login"}
                 activeLink={page === "/login"}
@@ -435,7 +402,8 @@ const NavbarCustom = (props) => {
               <>
                 <div
                   className="cartIconContainer m-10"
-                  onClick={handleShowModal}>
+                  onClick={handleShowModal}
+                >
                   {cartContextValue.cart.length > 0 && (
                     <div className="badgeContainer">
                       <p className="badge">{cartContextValue.cart.length}</p>
@@ -450,7 +418,8 @@ const NavbarCustom = (props) => {
                 <div
                   className="d-flex align-items-center responsive-pos"
                   style={{ cursor: "pointer" }}
-                  onClick={handleShowMenu}>
+                  onClick={handleShowMenu}
+                >
                   <div className="profileIconContainer">
                     <img
                       src={ProfileIcon}
@@ -483,7 +452,8 @@ const NavbarCustom = (props) => {
         show={cartContextValue.cartModal}
         onHide={handleCloseModal}
         className="cartModal"
-        scrollable>
+        scrollable
+      >
         <Modal.Header className="cartHeader">
           <Modal.Title className="cartTitle">Checkout Cart</Modal.Title>
         </Modal.Header>
@@ -511,7 +481,8 @@ const NavbarCustom = (props) => {
                   float: "right",
                   fontSize: 25,
                   marginRight: 20,
-                }}>
+                }}
+              >
                 Total : &#8377;
                 {cartContextValue.cart
                   .map((item) => item.price)
@@ -524,7 +495,8 @@ const NavbarCustom = (props) => {
               onClick={() => {
                 cartContextValue.setCartModal(false);
               }}
-              className="play-btn play-btn--light">
+              className="play-btn play-btn--light"
+            >
               <span className="play-btn__inner">
                 <span className="play-btn__slide"></span>
                 <span className="play-btn__content">Close</span>
@@ -536,7 +508,8 @@ const NavbarCustom = (props) => {
                 displayRazorpay();
               }}
               disabled={cartContextValue.cart.length > 0 ? false : true}
-              className="play-btn play-btn--light">
+              className="play-btn play-btn--light"
+            >
               <span className="play-btn__inner play-btn__inner-green">
                 <span className="play-btn__slide play-btn__slide-green"></span>
                 <span className="play-btn__content">Pay Now</span>

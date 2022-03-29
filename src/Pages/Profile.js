@@ -1,38 +1,32 @@
 import React, { useEffect, useState } from "react";
+import { Modal, Tab, Tabs } from "react-bootstrap";
+import swal from "sweetalert";
+import { API } from "../axios/API";
+import EventCard3 from "../Components/EventCard3";
 import Loader from "../Components/Loader";
 import "../CSS/profile.css";
-import ProfileIcon from "../images/user.png";
-import CallIcon from "../images/phone-receiver-silhouette.png";
-import SchoolIcon from "../images/school.png";
-import EmailIcon from "../images/email.png";
-import EventCard2 from "../Components/EventCard2";
-import RC from "../images/rc.png";
-import EventCard3 from "../Components/EventCard3";
-import { API } from "../axios/API";
-import { Modal, Tab, Tabs } from "react-bootstrap";
 import BPlan from "../images/bplan.png";
 import Clash from "../images/clash.png";
 import Cross from "../images/close-line.png";
 import Cretronix from "../images/cretronix.png";
 import Datawiz from "../images/datawiz.png";
+import EmailIcon from "../images/email.png";
 import Enigma from "../images/enigma.png";
 import NTH from "../images/nth.png";
-import CredenzLogo from "../images/onlyLogo.png";
 import Paper from "../images/paper.png";
+import CallIcon from "../images/phone-receiver-silhouette.png";
 import Pixelate from "../images/pixelate.png";
 import Quiz from "../images/quiz.png";
+import RC from "../images/rc.png";
+import SchoolIcon from "../images/school.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import { eventDetails, events } from "../staticInfo";
-import swal from "sweetalert";
 
 const Profile = (props) => {
   const height = "65px";
   const width = "65px";
   const [loading, setLoading] = useState(true);
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userDetails, setUserDetails] = useState(false);
   const [show, setShow] = useState(false);
   const [active, setActive] = useState(-1);
   const [eventSelected, setEventSelected] = useState(-1);
@@ -110,30 +104,13 @@ const Profile = (props) => {
     }
   };
 
-  const fetchPaymentDetails = async () => {
-    let token = localStorage.getItem("credenz_access_token");
-    let username = localStorage.getItem("credenz_username");
-    if (token) {
-      await API.getUserDetails(username)
-        .then((res) => {
-          setUserDetails(res.data);
-          setIsLoggedIn(true);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    } else {
-      setIsLoggedIn(false);
-    }
-  };
-
   const fetchProfileDetails = async () => {
     let token = localStorage.getItem("credenz_access_token");
-
+    setLoading(true);
     if (token) {
       await API.getProfile(token)
         .then((res) => {
-          console.log(res.data);
+          console.log("getProfile:", res.data);
           setProfileDetails({
             ...profileDetails,
             userName: res.data?.username,
@@ -148,6 +125,7 @@ const Profile = (props) => {
         .catch((err) => {
           console.error(err);
         });
+      setLoading(false);
     } else {
       swal("Not authenticated!", "", "error");
     }
@@ -155,12 +133,17 @@ const Profile = (props) => {
 
   useEffect(() => {
     setLoading(true);
-    fetchPaymentDetails();
+    // fetchPaymentDetails();
     fetchProfileDetails();
     setTimeout(() => {
       setLoading(false);
     }, 1500);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // useEffect(() => {
+  //   console.log("Profile deets:", cartContextValue.userDetails);
+  // }, []);
 
   return (
     <>
@@ -179,7 +162,7 @@ const Profile = (props) => {
                       <div className="userContainer my-5 flex-column d-flex justify-content-center align-items-center">
                         <div className="imgContainer">
                           <div className="initials">
-                            {profileDetails.userName[0]}
+                            {profileDetails.userName[0].toUpperCase()}
                           </div>
                         </div>
                         <div className="userName mt-4">
@@ -233,13 +216,15 @@ const Profile = (props) => {
                       <div className="row d-flex flex-row justify-content-evenly flex-wrap">
                         {profileDetails.registeredEvents.map((col, i) => (
                           <span
+                            key={i}
                             className="d-flex justify-content-center"
                             style={{ width: "200px" }}
                             onClick={() => {
                               setActive(eventHelper(col?.name));
                               setEventSelected(eventHelper(col?.name));
                               setShow(true);
-                            }}>
+                            }}
+                          >
                             <EventCard3
                               icon={iconHelpr(col?.name)}
                               width={width}
@@ -253,7 +238,8 @@ const Profile = (props) => {
                   ) : (
                     <div
                       className="m-5 d-flex justify-content-center align-items-center"
-                      style={{ color: "#fff" }}>
+                      style={{ color: "#fff" }}
+                    >
                       Not registered for any event
                     </div>
                   )}
@@ -270,14 +256,16 @@ const Profile = (props) => {
             onHide={() => {
               setShow(false);
             }}
-            size="lg">
+            size="lg"
+          >
             <Modal.Header style={{ width: "90%" }}>
               <Modal.Title
                 style={{
                   width: "100%",
                   display: "flex",
                   justifyContent: "space-between",
-                }}>
+                }}
+              >
                 <img
                   className="modal-logo-img1"
                   src={iconHelpr(events[active])}
@@ -292,7 +280,8 @@ const Profile = (props) => {
                 </div>
                 <div
                   className="modal-close-wrapper1"
-                  onClick={() => setShow(false)}>
+                  onClick={() => setShow(false)}
+                >
                   <img
                     src={Cross}
                     alt="close button"
@@ -307,7 +296,8 @@ const Profile = (props) => {
                   eventKey="info"
                   title="Info"
                   className="modal-tab-link1"
-                  color="#efefef">
+                  color="#efefef"
+                >
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 && eventDetails[eventSelected].info}
@@ -325,7 +315,8 @@ const Profile = (props) => {
                 <Tab
                   eventKey="structure"
                   title="Structure"
-                  className="modal-tab-link1">
+                  className="modal-tab-link1"
+                >
                   <div className="info-wrapper1" style={{ maxHeight: "30vh" }}>
                     <p className="new-line1">
                       {eventSelected !== -1 &&
@@ -336,7 +327,8 @@ const Profile = (props) => {
                 <Tab
                   eventKey="judge"
                   title="Judging"
-                  className="modal-tab-link1">
+                  className="modal-tab-link1"
+                >
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 &&
@@ -347,7 +339,8 @@ const Profile = (props) => {
                 <Tab
                   eventKey="contact"
                   title="Contact"
-                  className="modal-tab-link1">
+                  className="modal-tab-link1"
+                >
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 &&

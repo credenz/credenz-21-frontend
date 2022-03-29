@@ -1,21 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "../CSS/home.css";
-import HomeImage from "../images/credenzlive2.0.png";
-// import CyberBg from "../vid/Bg_3_slow.webm";
-// import CyberBg from "../vid/future_1.webm";
-import CyberBg from "../vid/future_2.webm";
+import Animate from "../Components/Animation/Animate";
 // import CyberBg from "../vid/future_3.webm";
 // import CyberBg from '../vid/hexagon.webm'
 // import CyberBg from "../vid/future_4.webm";
 import Loader from "../Components/Loader";
-import NavbarCustom from "../Components/NavbarCustom";
-import { Footer } from "../Components/Footer";
-import Animate from "../Components/Animation/Animate";
+import "../CSS/home.css";
 import bgImage from "../images/bg.png";
 
 const Home = () => {
   const [logoVisible, setLogoVisible] = useState(false);
-  const [bgVisible, setBgVisible] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [preVideoEnd, setPreVideoEnd] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -25,7 +18,6 @@ const Home = () => {
     setTimeout(() => {
       setLogoVisible(true);
     }, 1300);
-    setTimeout(() => setBgVisible(true), 600);
     setTimeout(() => {
       setPreVideoEnd(true);
     }, 4500);

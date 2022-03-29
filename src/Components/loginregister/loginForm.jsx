@@ -27,11 +27,14 @@ export function LoginForm(props) {
         localStorage.setItem("credenz_access_token", res.data.access);
         localStorage.setItem("credenz_username", username);
         // alert(`Welcome Back ${username} !`);
-        swal(`Welcome Back ${username} !`, "", "success");
+        swal(`Welcome Back, ${username}!`, "", "success")
+          .then((val) => {
+            window.location.reload();
+          })
+          .catch((err) => {
+            console.error(err);
+          });
         // eslint-disable-next-line no-restricted-globals
-        setTimeout(() => {
-          window.location.reload();
-        }, 1500);
         props.setLoading(false);
       })
       .catch((err) => {

@@ -267,9 +267,6 @@
   cursor: pointer;
 }
 
-.no-sun {
-}
-
 .city[data-v-cf18eb5c] {
   position: absolute;
   filter: blur(2px);

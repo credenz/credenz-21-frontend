@@ -21,6 +21,7 @@ let App = () => {
   const [cart, setCart] = React.useState([]);
   const [cartModal, setCartModal] = React.useState(false);
   const [userDetails, setUserDetails] = React.useState({});
+  const [userProfile, setUserProfile] = React.useState({});
   const value = {
     cart,
     setCart,
@@ -28,6 +29,8 @@ let App = () => {
     setCartModal,
     userDetails,
     setUserDetails,
+    userProfile,
+    setUserProfile,
   };
   //create routing for pages home, events, about, contact, profile
   return (

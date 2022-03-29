@@ -25,77 +25,7 @@ export function SignupForm(props) {
   const [ieeeId, setIeeeId] = useState("");
   const [isPictian, setIsPictian] = useState(false);
   const [college, setCollege] = useState("");
-  const [enablePayment, setEnablePayment] = useState(false);
   const [isSenior, setIsSenior] = useState(false);
-
-  const loadScript = (src) => {
-    return new Promise((resolve) => {
-      const script = document.createElement("script");
-      script.src = src;
-      script.onload = () => {
-        resolve(true);
-      };
-      script.onerror = () => {
-        resolve(false);
-      };
-      document.body.appendChild(script);
-    });
-  };
-
-  const handlePaymentSuccess = async (response) => {
-    try {
-      let bodyData = new FormData();
-
-      // we will send the response we've got from razorpay to the backend to validate the payment
-      bodyData.append("response", JSON.stringify(response));
-
-      API.verifyPayment(bodyData)
-        .then((res) => {
-          // eslint-disable-next-line no-restricted-globals
-          location.reload();
-          // alert(`Payment successful!`);
-          swal("Payment Successful!", "", "success");
-          //RESET THE LOCAL STATE
-        })
-        .catch((err) => {});
-    } catch (error) {}
-  };
-
-  const displayRazorpay = async () => {
-    const res = await loadScript(
-      "https://checkout.razorpay.com/v1/checkout.js"
-    );
-    if (!res) {
-      alert("Razorpay SDK failed to load. Are you online?");
-      return;
-    }
-
-    try {
-      let { data: orderData } = await API.payment({ username });
-      const options = {
-        key: "rzp_test_jIVmcYuQhbIa7k", // Enter the Key ID generated from the Dashboard
-        amount: orderData.payment.amount_due.toString(),
-        currency: orderData.payment.currency,
-        name: "Credenz Live 2.0 Payment",
-        description: "Test Transaction",
-        order_id: orderData.payment.id,
-        handler: async function (response) {
-          handlePaymentSuccess(response);
-        },
-        prefill: {
-          name: fname,
-          email: email,
-          contact: phone,
-        },
-        theme: {
-          color: "#61dafb",
-        },
-      };
-
-      const paymentObject = new window.Razorpay(options);
-      paymentObject.open();
-    } catch (error) {}
-  };
 
   const handleSignUp = () => {
     props.setLoading(true);
@@ -114,10 +44,6 @@ export function SignupForm(props) {
       },
     })
       .then((res) => {
-        setEnablePayment(true);
-        // alert(
-        //   "You have been registered!, Pay using the Pay Now button or login later with the credentials to pay later."
-        // );
         swal("You have been registered successfully!", "", "success");
         localStorage.setItem("credenz_username", res.data.username);
         props.setLoading(false);

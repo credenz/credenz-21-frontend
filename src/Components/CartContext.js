@@ -13,6 +13,8 @@ const CartContext = React.createContext({
   setCartModal: () => {},
   userDetails: {},
   setUserDetails: () => {},
+  userProfile: {},
+  setUserProfile: () => {},
 });
 
 export default CartContext;
