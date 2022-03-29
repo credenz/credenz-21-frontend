@@ -243,7 +243,7 @@ const Events = () => {
     setActive(-1);
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 900);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

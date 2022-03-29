@@ -47,11 +47,11 @@ const Profile = (props) => {
   });
 
   const iconHelpr = (e) => {
-    if (e === "RC") {
+    if (e === "Reverse Coding") {
       return RC;
     } else if (e === "Clash") {
       return Clash;
-    } else if (e === "NTH") {
+    } else if (e === "Network Treasure Hunt") {
       return NTH;
     } else if (e === "Wallstreet") {
       return Wallstreet;
@@ -236,15 +236,15 @@ const Profile = (props) => {
                             className="d-flex justify-content-center"
                             style={{ width: "200px" }}
                             onClick={() => {
-                              setActive(eventHelper(col.eventName));
-                              setEventSelected(eventHelper(col.eventName));
+                              setActive(eventHelper(col?.name));
+                              setEventSelected(eventHelper(col?.name));
                               setShow(true);
                             }}>
                             <EventCard3
-                              icon={RC}
+                              icon={iconHelpr(col?.name)}
                               width={width}
                               height={height}
-                              title={col.eventName}
+                              title={col?.name}
                             />
                           </span>
                         ))}
