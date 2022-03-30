@@ -13,6 +13,21 @@ export const events = {
   11: "Webweaver",
 };
 
+export const eventsFull = {
+  0: "Reverse Coding",
+  1: "Clash",
+  2: "Network Treasure Hunt",
+  3: "Wallstreet",
+  4: "BPlan",
+  5: "Enigma",
+  6: "Datawiz",
+  7: "Quiz",
+  8: "Paper",
+  9: "Cretronix",
+  10: "Pixelate",
+  11: "Webweaver",
+};
+
 export const cartItems = {
   0: {
     name: "RC",
