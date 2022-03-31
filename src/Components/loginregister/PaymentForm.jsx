@@ -81,7 +81,7 @@ export function PaymentForm(props) {
         username: userDetails.username,
       });
       const options = {
-        key: "rzp_test_jIVmcYuQhbIa7k", // Enter the Key ID generated from the Dashboard
+        key: "rzp_live_jwcNMaBQ5tVXKC", // Enter the Key ID generated from the Dashboard
         amount: orderData.payment.amount_due.toString(),
         currency: orderData.payment.currency,
         name: "Credenz Live 2.0 Payment",
