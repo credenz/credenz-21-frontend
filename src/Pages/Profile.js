@@ -21,7 +21,7 @@ import RC from "../images/rc.png";
 import SchoolIcon from "../images/school.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
-import { eventDetails, events } from "../staticInfo";
+import { eventDetails, events, eventsFull } from "../staticInfo";
 
 const Profile = (props) => {
   const height = "65px";
@@ -40,6 +40,21 @@ const Profile = (props) => {
     registeredEvents: [],
   });
 
+  const allEvents = [
+    "Reverse Coding",
+    "Clash",
+    "Network Treasure Hunt",
+    "Wallstreet",
+    "B-Plan",
+    "Enigma",
+    "Datawiz",
+    "Quiz",
+    "Paper Presentation",
+    "Cretronix",
+    "Pixelate",
+    "Web Weaver",
+  ];
+
   const iconHelpr = (e) => {
     if (e === "Reverse Coding") {
       return RC;
@@ -49,7 +64,7 @@ const Profile = (props) => {
       return NTH;
     } else if (e === "Wallstreet") {
       return Wallstreet;
-    } else if (e === "BPlan") {
+    } else if (e === "B-Plan") {
       return BPlan;
     } else if (e === "Enigma") {
       return Enigma;
@@ -57,13 +72,13 @@ const Profile = (props) => {
       return Datawiz;
     } else if (e === "Quiz") {
       return Quiz;
-    } else if (e === "Paper") {
+    } else if (e === "Paper Presentation") {
       return Paper;
     } else if (e === "Cretronix") {
       return Cretronix;
     } else if (e === "Pixelate") {
       return Pixelate;
-    } else if (e === "Webweaver") {
+    } else if (e === "Web Weaver") {
       return Webweaver;
     }
   };
@@ -211,10 +226,10 @@ const Profile = (props) => {
                   <div className="heading">
                     <h2>My Events</h2>
                   </div>
-                  {profileDetails.registeredEvents.length > 0 ? (
+                  {profileDetails?.registeredEvents.length > 0 ? (
                     <div className="secondContainer">
                       <div className="row d-flex flex-row justify-content-evenly flex-wrap">
-                        {profileDetails.registeredEvents.map((col, i) => (
+                        {profileDetails?.registeredEvents.map((col, i) => (
                           <span
                             key={i}
                             className="d-flex justify-content-center"
@@ -223,8 +238,7 @@ const Profile = (props) => {
                               setActive(eventHelper(col?.name));
                               setEventSelected(eventHelper(col?.name));
                               setShow(true);
-                            }}
-                          >
+                            }}>
                             <EventCard3
                               icon={iconHelpr(col?.name)}
                               width={width}
@@ -235,11 +249,33 @@ const Profile = (props) => {
                         ))}
                       </div>
                     </div>
+                  ) : profileDetails?.is_pass === true ? (
+                    <div className="secondContainer">
+                      <div className="row d-flex flex-row justify-content-evenly flex-wrap">
+                        {allEvents.map((col, i) => (
+                          <span
+                            key={i}
+                            className="d-flex justify-content-center"
+                            style={{ width: "200px" }}
+                            onClick={() => {
+                              setActive(eventHelper(col));
+                              setEventSelected(eventHelper(col));
+                              setShow(true);
+                            }}>
+                            <EventCard3
+                              icon={iconHelpr(col)}
+                              width={width}
+                              height={height}
+                              title={col}
+                            />
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   ) : (
                     <div
                       className="m-5 d-flex justify-content-center align-items-center"
-                      style={{ color: "#fff" }}
-                    >
+                      style={{ color: "#fff" }}>
                       Not registered for any event
                     </div>
                   )}
@@ -256,19 +292,17 @@ const Profile = (props) => {
             onHide={() => {
               setShow(false);
             }}
-            size="lg"
-          >
+            size="lg">
             <Modal.Header style={{ width: "90%" }}>
               <Modal.Title
                 style={{
                   width: "100%",
                   display: "flex",
                   justifyContent: "space-between",
-                }}
-              >
+                }}>
                 <img
                   className="modal-logo-img1"
-                  src={iconHelpr(events[active])}
+                  src={iconHelpr(eventsFull[active])}
                   alt="Event Icon"
                   style={{
                     color: "white",
@@ -280,8 +314,7 @@ const Profile = (props) => {
                 </div>
                 <div
                   className="modal-close-wrapper1"
-                  onClick={() => setShow(false)}
-                >
+                  onClick={() => setShow(false)}>
                   <img
                     src={Cross}
                     alt="close button"
@@ -296,8 +329,7 @@ const Profile = (props) => {
                   eventKey="info"
                   title="Info"
                   className="modal-tab-link1"
-                  color="#efefef"
-                >
+                  color="#efefef">
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 && eventDetails[eventSelected].info}
@@ -315,8 +347,7 @@ const Profile = (props) => {
                 <Tab
                   eventKey="structure"
                   title="Structure"
-                  className="modal-tab-link1"
-                >
+                  className="modal-tab-link1">
                   <div className="info-wrapper1" style={{ maxHeight: "30vh" }}>
                     <p className="new-line1">
                       {eventSelected !== -1 &&
@@ -327,8 +358,7 @@ const Profile = (props) => {
                 <Tab
                   eventKey="judge"
                   title="Judging"
-                  className="modal-tab-link1"
-                >
+                  className="modal-tab-link1">
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 &&
@@ -339,8 +369,7 @@ const Profile = (props) => {
                 <Tab
                   eventKey="contact"
                   title="Contact"
-                  className="modal-tab-link1"
-                >
+                  className="modal-tab-link1">
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 &&
