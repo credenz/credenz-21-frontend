@@ -37,9 +37,6 @@
   flex-direction: row-reverse;
 }
 
-.c2 img {
-}
-
 .aboutCard-nam-messe {
   display: flex;
   flex-direction: column;
@@ -71,10 +68,6 @@
 
 /* Media queries for ipad */
 @media screen and (max-width: 768px) {
-  .aboutCard {
-    /* width: 90%; */
-  }
-
   .aboutCard-nam-messe {
     margin: 0 15px;
   }
