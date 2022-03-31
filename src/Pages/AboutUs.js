@@ -7,11 +7,12 @@ import "../CSS/AboutUs.css";
 import CodingNinjas from "../images/codingNinjas.jfif";
 import CollegePond from "../images/collegePond.jfif";
 import Proton from "../images/proton.png";
-import ChanakyaMP from "../images/ChanakyaMandalPariwar.png"
-import BudhaniBros from "../images/BudhaniBros.png"
-import ImperialOE from "../images/Imperial.png"
-import CionDigital from "../images/CionDigital.svg"
-import Converge from "../images/Converge.svg"
+import ChanakyaMP from "../images/ChanakyaMandalPariwar.png";
+import BudhaniBros from "../images/BudhaniBros.png";
+import ImperialOE from "../images/Imperial.png";
+import CionDigital from "../images/CionDigital.svg";
+import Converge from "../images/convergeLogo.png";
+import KatrajDairy from "../images/katrajdairy_1.jpg";
 
 function AboutUs() {
   useEffect(() => {
@@ -27,7 +28,8 @@ function AboutUs() {
           data-aos="zoom-in-up"
           data-aos-duration="500"
           data-aos-easing="linear"
-          data-aos-anchor-placement="top-center">
+          data-aos-anchor-placement="top-center"
+        >
           About Us
         </h1>
       </div>
@@ -42,75 +44,86 @@ function AboutUs() {
         <h1
           data-aos="zoom-in"
           data-aos-duration="500"
-          data-aos-easing="ease-in-sine">
+          data-aos-easing="ease-in-sine"
+        >
           Sponsors
         </h1>
         <div className="row" style={{ width: "100%" }}>
+          <div className="col-md-6">
+            <div
+              className="spons9 spons"
+              data-aos="zoom-in"
+              data-aos-duration="800"
+              data-aos-easing="ease-in-sine"
+              data-aos-offset="50"
+            >
+              <AboutSponsors
+                slink={CionDigital}
+                sname="Title Sponsor"
+                href="https://www.ciondigital.com/"
+              ></AboutSponsors>
+            </div>
+          </div>
           <div className="col-md-6">
             <div
               className="spons7 spons"
               data-aos="zoom-in"
               data-aos-duration="800"
               data-aos-easing="ease-in-sine"
-              data-aos-offset="50">
+              data-aos-offset="50"
+            >
               <AboutSponsors
                 slink={Converge}
-                href="https://www.converge.com/"
-                sname="Event Partner"></AboutSponsors>
+                href="https://www.convergeapp.co"
+                sname="Event Partner"
+              ></AboutSponsors>
             </div>
           </div>
-          <div className="col-md-6">
+        </div>
+        <div className="row" style={{ width: "100%" }}>
+          <div className="col-md-4">
+            <div
+              className="spons9 spons"
+              data-aos="zoom-in"
+              data-aos-duration="800"
+              data-aos-easing="ease-in-sine"
+              data-aos-offset="50"
+            >
+              <AboutSponsors
+                slink={ImperialOE}
+                sname="Event Partner"
+                href="https://www.imperial-overseas.com/"
+              ></AboutSponsors>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div
+              className="spons9 spons"
+              data-aos="zoom-in"
+              data-aos-duration="800"
+              data-aos-easing="ease-in-sine"
+              data-aos-offset="50"
+            >
+              <AboutSponsors
+                slink={ChanakyaMP}
+                sname="Educational Partner"
+                href="https://chanakyamandal.org/"
+              ></AboutSponsors>
+            </div>
+          </div>
+          <div className="col-md-4">
             <div
               className="spons8 spons"
               data-aos="zoom-in"
               data-aos-duration="800"
               data-aos-easing="ease-in-sine"
-              data-aos-offset="50">
+              data-aos-offset="50"
+            >
               <AboutSponsors
                 slink={CodingNinjas}
                 href="https://www.codingninjas.in/"
-                sname="Clash Sponsor"></AboutSponsors>
-            </div>
-          </div>
-        </div>
-        <div className="row" style={{ width: "100%" }}>
-          <div className="col-md-4">
-            <div
-              className="spons9 spons"
-              data-aos="zoom-in"
-              data-aos-duration="800"
-              data-aos-easing="ease-in-sine"
-              data-aos-offset="50">
-              <AboutSponsors
-                slink={ChanakyaMP}
-                sname="Educational Partner"
-                href="https://chanakyamandal.org/"></AboutSponsors>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div
-              className="spons9 spons"
-              data-aos="zoom-in"
-              data-aos-duration="800"
-              data-aos-easing="ease-in-sine"
-              data-aos-offset="50">
-              <AboutSponsors
-                slink={CionDigital}
-                sname="Title Sponsor"
-                href="https://www.ciondigital.com/"></AboutSponsors>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div
-              className="spons9 spons"
-              data-aos="zoom-in"
-              data-aos-duration="800"
-              data-aos-easing="ease-in-sine"
-              data-aos-offset="50">
-              <AboutSponsors
-                slink={CodingNinjas}
-                sname="Food Partner"
-                href="https://www.codingninjas.in/"></AboutSponsors>
+                sname="Clash Sponsor"
+              ></AboutSponsors>
             </div>
           </div>
         </div>
@@ -121,11 +134,13 @@ function AboutUs() {
               data-aos="zoom-in"
               data-aos-duration="800"
               data-aos-easing="ease-in-sine"
-              data-aos-offset="50">
+              data-aos-offset="50"
+            >
               <AboutSponsors
                 slink={BudhaniBros}
                 sname="Food Partner"
-                href="https://www.budhanibros.com/"></AboutSponsors>
+                href="https://www.budhanibros.com/"
+              ></AboutSponsors>
             </div>
           </div>
           <div className="col-md-6">
@@ -134,13 +149,16 @@ function AboutUs() {
               data-aos="zoom-in"
               data-aos-duration="800"
               data-aos-easing="ease-in-sine"
-              data-aos-offset="50">
+              data-aos-offset="50"
+            >
               <AboutSponsors
-                slink={ImperialOE}
-                sname="Event Partner"
-                href="https://www.imperial-overseas.com/"></AboutSponsors>
+                slink={KatrajDairy}
+                sname="Food Partner"
+                href="https://katrajdairy.com"
+              ></AboutSponsors>
             </div>
           </div>
+          6
         </div>
       </div>
     </div>
