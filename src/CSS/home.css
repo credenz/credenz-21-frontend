@@ -14,6 +14,12 @@
 .no-video {
   display: none;
 }
+
+.title-sponsor-home {
+  color: #fff;
+  z-index: 10000;
+}
+
 .video-container:before {
   position: absolute;
   content: "";
@@ -44,9 +50,9 @@
 }
 .bg-image {
   position: absolute;
-  top: 0;
+  top: 9vh;
   left: 0;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   z-index: 3;
   opacity: 0;

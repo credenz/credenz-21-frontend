@@ -54,7 +54,7 @@ export const cartItems = {
   },
   4: {
     name: "BPlan",
-    price: 120,
+    price: 50,
     tagline:
       "Showcase your entrepreneurial skills by presenting innovative business plans to the world!",
   },
@@ -66,7 +66,7 @@ export const cartItems = {
   },
   6: {
     name: "Datawiz",
-    price: 80,
+    price: 50,
     tagline:
       "Test your Machine learning and data analytics skills before stepping into the world of Data Science!",
   },
@@ -78,7 +78,7 @@ export const cartItems = {
   },
   8: {
     name: "Paper Presentation",
-    price: 150,
+    price: 50,
     tagline:
       "Present technical research papers with advanced perspectives while honing your skills of research!",
   },
@@ -111,30 +111,26 @@ export const tabs = {
 
 export const eventDetails = {
   0: {
-    info: `A coding competition to test your compilation of the combinations of algorithms and conceptual understanding of the programming languages C/C++. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.\n\nTimings\n04-03-2022 , Friday : 10:00am to 7:00pm\n05-03-2022 , Saturday : 10:00am to 6:00pm\n06-03-2022 , Sunday : 12:00pm to 2:00pm\n
+    info: `A coding competition to test your conceptual understanding of algorithms and programming languages. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.\n\nTimings\n13-04-2022, Wednesday\n14-04-2022, Thursday \n15-04-2022, Friday\n
       `,
-    rules: `1. A maximum of 1 participant pursuing under-graduate program at their institution is allowed to partic\n2. The participants must keep their college verification in handy as you can be asked to disclose it any point of time. Before the final round, all participants will be asked to verify their identity as an under-graduate student and failure to do so will lead to immediate disqualifica\n3. Marking scheme and further rules and regulation while playing RC will be released during the time of the event itself.\n`,
-    structure: `1)There are two rounds in RC:\n\ta)Logic Round (elimination)\n\tb)Decipher and code Round (final)\n\n2)Participants can register via the Credenz app or the website.\n\n3)The event will be divided into two levels, Junior and Senior where the difficulty will vary accordingly. All the levels will test out your knowledge of C/C++ and Python.\n\n4)The FE and SE participants will be taking on the Junior Category and the TE and BE participants will take on the Senior Category.\n\n5)The participants clearing out the cut off score in round 1 will be notified for round 2 and will be able to participate in the final round for the prize.\n`,
+    rules: `1. A maximum of 2 participants (in a team) pursuing an undergraduate program at their institution are allowed to participate\n2. The participants must keep their college verification handy as they may be asked to disclose it at any point of time. Before the final round, all participants will be asked to verify their identity as an undergraduate student. Failure to do so will lead to immediate disqualification\n3. Marking scheme along with further rules and regulation while playing RC will be released during the time of the event itself.\n`,
+    structure: `1)There are two rounds in RC:\n\ta) Logic Round (elimination)\n\tb) Decipher and code Round (final)\n\n2)Participants can register via the Credenz website.\n\n3)The event will be divided into two levels, Junior and Senior where the difficulty will vary accordingly. All the levels will test out your knowledge of C/C++ and Python.\n\n4)The FE and SE participants will be taking on the Junior Category while the TE and BE participants will take on the Senior Category.\n\n5)The participants clearing the cut off score in round 1 will be notified for round 2 and will be able to participate for the prize.\n`,
     judging: `1) Judging in round 1 will be based on the correctness of the decoded mathematical pattern with or without coding.\n\n2) Judging for round 2 will be based on the time and space efficiency of your code to solve the given challenges in restricted time.\n\nPrizes\nJunior Section\nComing Soon\n\nSenior Section\nComing Soon\n`,
     contact: `\nNeil Deshpande\n+91 88056 00298\n\nPranav Mohril\n+91 75883 43127`,
   },
   1: {
-    info: `Put your logical acumen and coding expertise to the test as you clash with a round of perplexing MCQs followed by a set of time-bound coding challenges, carefully designed to assess your command over programming in the language of your choice- Python, C or C++. Showcase your technical proficiency as you have a go at competitive coding with plenty to learn and nothing to lose.\n\nTimings\n04-03-2022 , Friday : 10:00am to 7:00pm\n05-03-2022 , Saturday : 10:00am to 6:00pm\n06-03-2023 , Sunday : 9:00am to 11:00am\n`,
-    rules: `1. A maximum of 1 participant pursuing under-graduate program at their institution is allowed to participate\n\n2. The participants must keep their college verification in handy as you can be asked to disclose it any point of time. Before the final round, all participants will be asked to verify their identity as an under-graduate student and failure to do so will lead to immediate disqualification.\n\n3. Marking scheme and further rules and regulation while playing Clash will be released during the time of the event itself.\n`,
-    structure: `1)There are two rounds in clash:\n\ta)MCQ Round(elimination)\n\tb)Coding Round(final)\n\n2)Participants can register via the Credenz app or the website.\n\n3)The event will be divided into two levels, Junior and Senior where the difficulty will vary accordingly. All the levels will test out your knowledge of C/C++ and Python.\n\n4)The FE and SE participants will be taking on the Junior Category and the TE and BE participants will take on the Senior Category.\n\n5)The participants clearing out the cut off score in round 1 will be notified for round 2 and will be able to participate in the final round for the prize.`,
+    info: `Put your logical acumen and coding expertise to the test as you clash with a round of perplexing MCQs followed by a set of time-bound coding challenges, carefully designed to assess your command over programming in the language of your choice- Python, C or C++. Showcase your technical proficiency as you have a go at competitive coding with plenty to learn and nothing to lose.\n\nTimings\n13-04-2022, Wednesday\n14-04-2022, Thursday \n15-04-2022, Friday\n`,
+    rules: `1. A maximum of 2 participants (in a team) pursuing an undergraduate program at their institution are allowed to participate\n\n2. The participants must keep their college verification handy as they may be asked to disclose it at any point of time. Before the final round, all participants will be asked to verify their identity as an undergraduate student. Failure to do so will lead to immediate disqualification.\n\n3. Marking scheme along with further rules and regulation while playing Clash will be released during the time of the event itself.\n`,
+    structure: `1)There are two rounds in clash:\n\ta) MCQ Round (elimination)\n\tb) Coding Round (final)\n\n2)Participants can register via the Credenz website.\n\n3)The event will be divided into two levels, Junior and Senior where the difficulty will vary accordingly. All the levels will test out your knowledge of C/C++ and Python.\n\n4)The FE and SE participants will be taking on the Junior Category while the TE and BE participants will take on the Senior Category.\n\n5)The participants clearing the cut off score in round 1 will be notified for round 2 and will be able to participate for the prize.`,
     judging: `1)Judging in round 1 will be based on programming skills, ability to understand code, algorithms and knowledge of the fundamentals of C/C++ and Python.\n\n2)Judging for round 2 will be based on the time and space efficiency of your code to solve the given challenges in restricted time.\n\nPrizes\nJunior Section\nComing Soon\n\nSenior Section\nComing Soon`,
-    contact: `Siddharth Bora 
-    +91 94033 04652
-    
-    Megha Dandapat
-    +91 88304 01437`,
+    contact: `\nSiddharth Bora\n+91 94033 04652\n\nMegha Dandapat\n+91 88304 01437`,
   },
   2: {
     info: `Network Treasure Hunt is an online treasure hunt where participants follow a trail of clues, surfing a range of websites to decipher the puzzles.
 Tread carefully along your way, solving a series of strategic clues, watching out for the concealed misdirection.
-Decrypt the clues, enjoy the hunt and race your way to the finish to win some exciting goodies!
-This is your chance to put your logic and reasoning to test. So, log on to our website and be a Sherlock for a day!`,
-    rules: `1)Register to get your NTH username and password.\n\n2)Open NTH website: http://www.nth.credenz.in/\n\n3)Login using the credentials sent on the mail.\n\n4)You will be directed to the starting page of the hunt.\n\n5)To advance, crack the question, and put the answer in the URL:\n\tFROM\n\thttp://www.nth.credenz.in/question\n\n\tTO\n\thttp://www.nth.credenz.in/answer\n\n6)You need to use Google for many of them to solve. Of course, that is where you search for everything you don't know.\n\n7)Check the source of the pages, you'll get some important clues for hunting further. The titles may also give you clues.Most importantly, do not forget to have fun!`,
+Decrypt the clues, enjoy the hunt and race your way to the finish to win some exciting prizes!
+This is your chance to put your logic and reasoning ability to the test. So, log in to our website and be a Sherlock for a day!`,
+    rules: `1)Register to get your NTH username and password.\n\n2)Go to NTH website: http://www.nth.credenz.in/\n\n3)Login using the credentials sent on the email.\n\n4)You will be directed to the starting page of the hunt.\n\n5)To advance, crack the question, and write your answer in the URL:\n\tFROM\n\thttp://www.nth.credenz.in/question\n\n\tTO\n\thttp://www.nth.credenz.in/answer\n\n6)You may use Google to try and solve the conundrum at hand. Of course, that is where you search for everything you don't know.\n\n7)Check the source of the pages, you'll get some important clues for hunting further. The titles may also give you clues. Most importantly, do not forget to have fun!`,
     structure: `1) NTH will be conducted once during Credenz. Both the Treasure Hunt are conducted independently and will have a separate list of winners.
 \n2)The first hunt is to get the participants acquainted with the format of the online hunt and also with the wide variety of riddles and puzzles that they could come across in the main hunt.
 \n3) The second hunt, also the main "Network Treasure Hunt" has much higher stakes with some amazing prizes. This hunt will be longer than the previous hunt and will test the limits of the participants.
@@ -142,9 +138,7 @@ This is your chance to put your logic and reasoning to test. So, log on to our w
     judging: `An online dynamic leaderboard is maintained throughout the hunt. The leaderboard shows the level and rank of the participants.
 
 NOTE: In case of a tie, the participant who cleared the level faster will acquire the top spot.
-
-Prizes
-Coming Soon`,
+`,
     contact: `Siddharth Bora 
 +91 94033 04652
 
@@ -152,25 +146,24 @@ Shrikrushna Zirape
 +91 98349 21293`,
   },
   3: {
-    info: `Let the rise and fall of market shares bring out your inner businessman! Get an insight in the field of Investment banking, corporate financing and trading to take over the virtual stock market. After all, every investment is one step closer to your dream bank balance!`,
-    rules: `1) Every Participating candidate should be pursuing Undergraduate/Graduate courses.
+    info: `Let the rise and fall of market shares bring out your inner businessman! Get an insight into the field of Investment banking, corporate financing and trading to take over the virtual stock market. After all, every investment is one step closer to your dream bank balance!`,
+    rules: `1) Every participating candidate should be pursuing Undergraduate/Graduate courses.
 \n2) Participants should have their own college ID cards.`,
     structure: `1) Every participant will be given virtual money to trade on our virtual stock market.
 \n2) The event will be conducted on our Android App/Website.
 \n3) Mock NEWS will be flashed regarding listed companies and their sectors based on which participants will buy/sell stocks to ultimately become the biggest gainer.`,
     judging: `Top 2 participants with Highest Capital at the end of Day 3 will be declared as winners.
-\nPrizes
-Coming Soon`,
+\n`,
     contact: `\nShrikrushna Zirape\n+91 98349 21293`,
   },
   4: {
     info: `Ever dreamt of having your own business or a product? B-Plan is the perfect platform for you! A perfect presentation describing your business idea will help you grab a chance to win funding from the investors. So showcase your ideas before a panel of best marketing professionals.
 
 Timings
-06-03-2022 , Sunday : 10:30am to 4:00pm`,
+14-04-2022`,
     rules: `1) A maximum of three candidates per plan pursuing undergraduate/graduate/postgraduate program at their institution will be allowed per team.
 \n2) Proposed business plan should not be in violation of any intellectual property rights.
-\n3) Proposed business plan should be submitted by 10th February 2021`,
+\n3) Proposed business plan should be submitted by 14th April 2022`,
     structure: `1) At stage 1, the soft copy of the abstract (summary) should be submitted to pisb.bplan21@gmail.com by 10th February 2021.
 \n2) The Soft copy should be a .pdf file.
 \n3)The top 7 teams will compete in the next stage.
@@ -184,11 +177,7 @@ Timings
 \n5) Cost efficiency (if relevant).
 \n6) Superiority of the product over existing products in market.
 \n7) Participants will be judged on the basis of their business acumen and on how sustainable and innovative their solution is.
-\n8) The decision of the judges will be final and shall be respected.
-
-
-Prizes
-Coming Soon`,
+\n8) The decision of the judges will be final and shall be respected.`,
     contact: `\nTanvi Mane
     +91 70208 36169
 
@@ -201,20 +190,18 @@ Rathish Kumar
 Enigma is a logical reasoning based questionnaire, which will test your aptitude, thinking capability, response time and mental ability. Get ready to put your Grey Cells to work!
 
 Timings
-04-03-2022, Friday : 10:00 am to 7:00pm
-06-02-2022 , Sunday : 2:00pm to 5:00pm`,
-    rules: `1) Candidates pursuing an Undergraduate/graduate program at their institution will be allowed to participate. It will be an individual event.
+13-04-2022, 
+15-04-2022 `,
+    rules: `1) Candidates pursuing an undergraduate/graduate program at their institution will be allowed to participate. Participants can either participate individually or in a team of 2.
 \n2)All the participants should follow all the instructions as mentioned in the mail received after registration.`,
     structure: `1) There will be two rounds.
-5)ROUND 1:\n\ta.There will be 30 questions in this round.\n\tb.Time limit is 35 minutes.\n\tc.For every right answer, you will be awarded points and no negative points for a wrong answer.\n\td.The marking scheme will be told on the day of the event.
+5)ROUND 1:\n\ta.There will be 25 questions in this round.\n\tb.Time limit is 35 minutes.\n\tc.For every right answer, you will be awarded points and no negative points for a wrong answer.\n\td.The marking scheme will be told on the day of the event.
 6)ROUND 2:\n\ta.There will be 5 Puzzles in this round.\n\tb.Time Limit is 2 hours\n\tc.You must claim whenever you are done. Earliest claim with max. score wins.`,
     judging: `1)There will be two rounds.
 \n2)You need to qualify the threshold score to get into the next round. The threshold will be decided based upon the performance of all the teams.
 \n3)The decision of the organizer will be final.
 \n4)There is no negative marking at any stage.
-
-Prizes
-Coming Soon`,
+`,
     contact: `\nOnkar Shinde\n+91 96572 15844
 
 Shivendu Shukre\n+91 70300 63914`,
@@ -224,8 +211,8 @@ Shivendu Shukre\n+91 70300 63914`,
 Datawiz is a week-long machine learning competition hosted on Kaggle. The participants can form teams of up to 3 members and submit their predicted data values. The team with the highest accuracy on the leaderboard at the end of the week will be declared as winners.
 
 Timings:
-Round 1: 27th 9pm to 3rd March 12pm
-Round 2: 4th March 12pm to 6th march 12pm`,
+Round 1: 10th April 9pm to 12th April 12pm
+Round 2: 13th April 12pm to 15th April 12pm`,
     rules: `1)Each team of students may consist of a maximum of 3 participants.
 \n2)One account per participant
 \n3)Signing In on Kaggle through Multiple accounts is prohibited.
@@ -240,49 +227,36 @@ A team may consist of a maximum of 3 participants.`,
     judging: `Submission Limits
 You may submit a maximum of 10 entries per day.
 You may select up to 2 final submissions for judging.
-
-Prizes
-Coming Soon`,
+`,
     contact: `\nAnupam Patil\n+91 94052 29861`,
   },
   7: {
     info: `Brainstorm on the questions ranging from Greek mythology to world politics, from Shakespeare to business gurus. Set out on a voyage through mind-boggling questions captained by a witty quiz master. Flex your IQ in a set of three quizzes, designed to be a battle of wits.
-General Quiz
-
-Timings
-05-03-2022 , Saturday :
-Round 1: 12:00 noon to 12:30 pm
-Round 2: 1:30pm to 3:00 pm
-BizTech Quiz
-
-04-03-2022 , Friday :
-Round 1: 4:30pm to 5:00 pm
-Round 2: 5:30pm to 7:00 pm
 MELA Quiz
 
-06-02-2021 , Sunday :
-Round 1: 11:30am to 12:00 pm
-Round 2: 1:00pm to 2:30 pm
+13-04-2022 , Wednesday
+
+BizTech Quiz
+
+14-04-2022 , Thursday
+
+General Quiz
+
+15-04-2022 , Friday
+
 `,
     rules: `1.General Quiz: It includes everything from robotics to politics. Test your GK!
 \n2.MELA Quiz: Movies Entertainment Literature and Arts (MELA) is all set to test your knowledge of literature, arts and entertainment. If you are an entertainment lover, this is for you!
 \n3.BizTech Quiz: If you are passionate about marketing, economics and Business, then BizTech is the ultimate questionnaire you need to answer.
+\n4.Participants will be shortlisted for Round 2 on the basis of the scores of Round 1.
 `,
     structure: `1)Candidate pursuing an undergraduate program at any institute is allowed to participate. Participants are encouraged to maintain a copy of their ID card.
-\n2)Participants can register online on the official Credenz website.
-\n3)Each team will have a maximum of one participant.
-\n4)Marking scheme and other rules will be announced on the day of the event itself.`,
+\n2)Participants may register online on the official Credenz website.
+\n3)Each team may have a maximum of 2 participants.
+\n4)For Round 1, there will be 25 questions with a time constraint of 50 seconds per question
+\n5)For Round 2 the marking scheme and other rules will be announced on the day of the event itself.`,
     judging: `The winner will be selected on the basis of the maximum points scored in final round and/or on the exclusive discretion of the quiz master.
-
-Prizes
-1)General Quiz
-Coming Soon
-
-2)MELA Quiz
-Coming Soon
-
-3)BizTech Quiz
-Coming Soon`,
+`,
     contact: `\nShashwat Tandon\n+91 93700 57494
 
 Ravikumar Verma
@@ -292,11 +266,11 @@ Ravikumar Verma
     info: `An investment in knowledge always pays the best interest.
 Compete against the most intellectual minds and their progressive ideas!Paper presentation is the perfect platform for undergraduate/postgraduate students to present technical papers with advanced perspectives while honing their skills of research and creating new dimensions of technology!
 
-Timings
-06-03-2022 , Sunday : 1:00pm to 3:30pm`,
+Timings:
+15-04-2022 `,
     rules: `1.A team of maximum three candidates pursuing undergraduate/postgraduate program is allowed.
 \n2.Marking Scheme will be declared on the spot.
-\n3.Research Papers sent after 8th April, 2022 11:59 PM won’t be accepted.
+\n3.Research Papers sent after 14th April, 2022 11:59 PM won’t be accepted.
 `,
     structure: `1) Only soft copy i.e. a .pdf file, of the paper and abstract should be submitted. The paper should not exceed more than 6 pages.
 \n2) Soft copy of the technical paper and the abstract should be mailed to credenzpaperpresentation@gmail.com (Include name of participants, college name and year of study in mail) 
@@ -306,34 +280,29 @@ Timings
     judging: `1) Oratory and Presentation skills will be of prime importance.
 \n2) Relevance of the content in context with the chosen topic.
 \n3) Judge's decision will be final and binding on all.
-
-Prizes
-Coming Soon`,
+`,
     contact: `\nRohan Khole\n+91 78880 43852\nDhaval\n+91 9823272551`,
   },
   9: {
-    info: `Battle it out on the breadboard!Challenge your brains to clear a test where you demonstrate your knowledge in the field of electronics, physics, logical ability and build a circuit by interpreting the hints provided.
+    info: `Battle it out on the breadboard! Challenge your brains to clear a test where you demonstrate your knowledge in the field of electronics, physics, logical ability and building a circuit by interpreting the hints provided.
 \nPrerequisites: Theoretical and practical knowledge in the field of digital electronics, electrical circuits and physics.
 
-Timings
-04-03-2022 , Friday : 10:00am to 7:00pm
-06-03-2022 , Sunday : 10:00am to 12:00pm`,
-    rules: `1) ) Participant can participate individually.
-\n2) Participants will be provided with credentials to join tinkercad for the 2nd round.
-\n3) Participants can use datasheets for the components they are using and are supposed to provide a link of the same.
-`,
-    structure: `(Junior and Senior):
-1) 1st round:It will consist of Multiple Choice Questions (MCQs) from different categories. There will be 30 questions for a time limit of 30 minutes.
-\n2) 2nd round:The participants will be given a problem statement and they are supposed to implement the solution with the help of tinkercad simulation environment.
-\nLINK: https://www.tinkercad.com/dashboard`,
-    judging: `Round 1:
-Each question carries a single mark. No negative marking. Teams having score above the score threshold will be selected for Round 2.
-\nRound 2:
-Top two teams earning maximum credits based on the understanding of the problem statement, component selection, practical performance and explanation of the implemented circuit will be declared as winners.
-Winner and runner-up will be awarded.
+Dates:
+Round 1: 13-04-2022 
+Round 2: 15-04-2022`,
+    rules: `1) ) Participants may participate individually or in group of maximum 3.
 
-Prizes
-Coming Soon`,
+\n2) Participants can use datasheets for the components provided to them.
+`,
+    structure: `
+1) 1st round: It will consist of Multiple Choice Questions (MCQs). There will be 30 questions for a time limit of 45 minutes.
+\n2) 2nd round: The participants will be given a problem statement. They are supposed to implement a solution (circuit) to it with the help of hardware components.
+\n`,
+    judging: `Round 1:
+Each question carries a single mark. No negative marking. Teams/Individuals having score above a certain threshold will be selected for Round 2.
+\nRound 2:
+Top two teams/individuals earning maximum points based on the understanding of the problem statement, component selection, practical performance and explanation of the implemented circuit will be declared as winner and runner-up respectively. 
+`,
     contact: `\nRavikumar Verma\n+91 96617 15024
 
 Advait Chandorkar\n+91 83082 04651`,
@@ -342,7 +311,7 @@ Advait Chandorkar\n+91 83082 04651`,
     info: `Get ready to paint virtual canvas with your creative and thoughtful designs! Come, digitalise your art and let your mouse be your brush.
 
 Timings
-05-03-2022 , Saturday : 2:30pm to 5:15pm
+15-04-2022 
 `,
     rules: `1)Candidate pursuing undergraduate course at any institute is allowed to participate.
 \n2)Participants can register online on the official Credenz website.
@@ -365,8 +334,6 @@ Timings
 \n5) Layering and masking.
 \n6) The decision of the judges will be final and shall be respected.
 
-Prizes
-Coming Soon
 `,
     contact: `Saima Ansari\n+91 83930 05545\n
     Sufiya Sayyed\n+91 95119 02152\n
@@ -376,8 +343,7 @@ Coming Soon
   11: {
     info: `An aesthetically pleasing and user-friendly website is necessary to keep visitors engaged online. If you think you have the flair to create such a site, WebWeaver is the competition for you! A perfect integration of technology and creativity will lead you to win this competition.
 \nTimings
-06-03-2022 , Sunday : 1:00pm to 4:00pm
-`,
+Round 1: 13-04-2022 ,\nRound 2: 15-04-2022`,
     rules: `1) A team of maximum 2 is permissible for the event.
 \n2) Use of any front end framework is permitted.
 \n3) You are allowed to use any language but readymade template must not be used.
@@ -386,17 +352,13 @@ Coming Soon
 
 `,
     structure: `1st ROUND:
-The problem statement for this year is Fictional universe. Fiction fanatics flaunt your development skills, creating a website on your favourite series anime, movies, books!
+The theme for this year is Cyberpunk. This is the chance for technocrats to flaunt their development skills by creating a website!
 \n2nd ROUND:
-The second round shall be conducted during Credenz Live.
-Approximately 10 teams shall be shortlisted.
-The teams shall be given certain add-ons over the pages designed earlier.
-Five add-ons shall be given, specific to the pages designed by the participants.
+Approximately 10 teams shall be shortlisted from Round 1.
+The teams shall be asked to make certain add-ons/changes over the pages designed earlier.
+Three major add-ons/changes shall be given, specific to the pages designed by the participants.
 `,
-    judging: `Participants can participate individually and develop a website which is supposed to be submitted 1-2 days before the start of Credenz. On the first day of Credenz, the best website teams are promoted to the second round where people are informed by us to add specific changes to their website. The website with the most aesthetic changes and best compatibility will be announced as the winner.
-
-Prizes
-Coming Soon
+    judging: `The entries for Round 1 will be posted on our Webweaver platform. The entries recieving the maximum amount of likes over a span of 2 days will qualify for the second round. For Round 2, the website with the most aesthetic add-ons/changes and best compatibility will be announced as the winner.
 `,
     contact: `\nManav Majithia\n+91 79725 02835
 `,

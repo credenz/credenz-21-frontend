@@ -88,7 +88,6 @@ const NavbarCustom = (props) => {
       API.getUserDetails(username)
         .then((res) => {
           setUserDetails({ ...res.data, username: username });
-          console.log("User Details", res.data);
           // fetchUserDetails(res.data.user_id);
           setIsLoggedIn(true);
         })

@@ -35,23 +35,11 @@ const Home = () => {
         <>
           {/* <NavbarCustom /> */}
           <div className="section-home height-full-home o-x-hide">
+            {/* <div className="row d-flex justify-content-center h2 title-sponsor-home ">
+              Presents
+            </div> */}
             <img src={bgImage} alt="bg" className="bg-image" />
             <div className="video-container">
-              {/* <NavbarCustom comingSoon={true} /> */}
-              {/* <video
-          muted
-          autoPlay
-          className={preVideoEnd ? "fade-out" : "pre-video"}
-        >
-          <source src={CircleFuture} type="video/mp4" />
-        </video> */}
-              {/* <video
-                className={bgVisible ? "videoTag fade-in-image" : "no-video"}
-                autoPlay
-                loop
-                muted>
-                <source src={CyberBg} type="video/webm" />
-              </video> */}
               <div
                 className={
                   logoVisible ? "fade-in-delayed credenz-logo" : "d-none"

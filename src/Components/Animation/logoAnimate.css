@@ -11,10 +11,15 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  height: 346px;
+  height: 385px;
   text-align: center;
   width: 100%;
   display: block;
+}
+
+.credenz-logo-name-text-top {
+  height: 100px;
+  width: auto;
 }
 
 #credenz-init-logo {
@@ -48,6 +53,21 @@
   margin-right: auto;
   width: 346px;
   height: 90px;
+}
+
+.bg-color-white {
+  color: white;
+}
+
+.credenz-svg-text-top {
+  text-align: center;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 346px;
+  height: 110px;
+  margin-top: -30px;
 }
 
 .credenz-svg-text svg {
