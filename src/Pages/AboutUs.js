@@ -4,14 +4,12 @@ import React, { useEffect } from "react";
 import AboutCards from "../Components/AboutCards";
 import AboutSponsors from "../Components/AboutSponsors";
 import "../CSS/AboutUs.css";
-import CodingNinjas from "../images/codingNinjas.jfif";
-import CollegePond from "../images/collegePond.jfif";
-import Proton from "../images/proton.png";
-import ChanakyaMP from "../images/ChanakyaMandalPariwar.png";
 import BudhaniBros from "../images/BudhaniBros.png";
-import ImperialOE from "../images/Imperial.png";
+import ChanakyaMP from "../images/ChanakyaMandalPariwar.png";
 import CionDigital from "../images/CionDigital.svg";
+import CodingNinjas from "../images/codingNinjas.jfif";
 import Converge from "../images/convergeLogo.png";
+import ImperialOE from "../images/Imperial.png";
 import KatrajDairy from "../images/katrajdairy_1.jpg";
 
 function AboutUs() {
