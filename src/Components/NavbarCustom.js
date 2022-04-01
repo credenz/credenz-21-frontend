@@ -23,6 +23,7 @@ import ProfileIcon from "../images/user.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import CartContext from "./CartContext";
+import CredenzLogo from "../images/logo_final.jpg";
 
 const NavbarCustom = (props) => {
   const location = useLocation();
@@ -76,7 +77,7 @@ const NavbarCustom = (props) => {
       case "Webweaver":
         return Webweaver;
       default:
-        break;
+        return CredenzLogo;
     }
   };
 
@@ -278,7 +279,8 @@ const NavbarCustom = (props) => {
         <Card.Body className="d-flex row card-body">
           <div
             className="deleteIconContainer"
-            onClick={() => deleteEventHandler(props.name)}>
+            onClick={() => deleteEventHandler(props.name)}
+          >
             <img src={deleteIcon} alt="Delete icon" className="deleteIcon" />
           </div>
           <>
@@ -291,7 +293,8 @@ const NavbarCustom = (props) => {
             </div>
             <div
               className="col-md-6 d-flex justify-content-center"
-              style={{ flexDirection: "column" }}>
+              style={{ flexDirection: "column" }}
+            >
               <h3>{props.name}</h3>
               <p>{props.tagline}</p>
             </div>
@@ -320,7 +323,8 @@ const NavbarCustom = (props) => {
                 cursor: "pointer",
                 textDecoration: "none",
                 color: "#fff",
-              }}>
+              }}
+            >
               My Profile
             </NavLink>
             <div
@@ -347,7 +351,8 @@ const NavbarCustom = (props) => {
                 swal("Logged out successfully!", "", "success").then((val) => {
                   window.location.reload();
                 });
-              }}>
+              }}
+            >
               Logout
             </NavLink>
           </Card.Body>
@@ -365,11 +370,13 @@ const NavbarCustom = (props) => {
             ? "navbar-wrapper position-relative bg-color-custom"
             : "navbar-wrapper bg-color-custom"
         }
-        expand="md">
+        expand="md"
+      >
         <Navbar.Brand
           href="https://pictieee.in"
           target="_blank"
-          className="header-header">
+          className="header-header"
+        >
           <img src={PISBLOGO} alt="pisblogo" className="nav-logo ms-4" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="m-2" />
@@ -382,7 +389,8 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("/");
-              }}>
+              }}
+            >
               {/* <TextSliced title="Home" activeLink={page === "/"} /> */}
               Home
             </NavLink>
@@ -394,7 +402,8 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("/events");
-              }}>
+              }}
+            >
               {/* <TextSliced title="Events" activeLink={page === "/events"} /> */}
               Events
             </NavLink>
@@ -405,7 +414,8 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("/about");
-              }}>
+              }}
+            >
               {/* <TextSliced
                 title="About"
                 activeLink={page === "/about"}
@@ -420,7 +430,8 @@ const NavbarCustom = (props) => {
               className="header-title"
               onClick={() => {
                 setPage("/contact");
-              }}>
+              }}
+            >
               {/* <TextSliced
                 title="Contact"
                 hidden
@@ -437,7 +448,8 @@ const NavbarCustom = (props) => {
                 setPage("/login");
               }}
               className="header-title"
-              hidden={isLoggedIn ? true : false}>
+              hidden={isLoggedIn ? true : false}
+            >
               {/* <TextSliced
                 title={isLoggedIn ? (!paymentDone ? "Pay Now" : "") : "Login"}
                 activeLink={page === "/login"}
@@ -448,7 +460,8 @@ const NavbarCustom = (props) => {
               <>
                 <div
                   className="cartIconContainer m-10"
-                  onClick={handleShowModal}>
+                  onClick={handleShowModal}
+                >
                   {cartContextValue.cart.length > 0 && (
                     <div className="badgeContainer">
                       <p className="badge">{cartContextValue.cart.length}</p>
@@ -463,7 +476,8 @@ const NavbarCustom = (props) => {
                 <div
                   className="d-flex align-items-center responsive-pos"
                   style={{ cursor: "pointer" }}
-                  onClick={handleShowMenu}>
+                  onClick={handleShowMenu}
+                >
                   <div className="profileIconContainer">
                     <img
                       src={ProfileIcon}
@@ -496,7 +510,8 @@ const NavbarCustom = (props) => {
         show={cartContextValue.cartModal}
         onHide={handleCloseModal}
         className="cartModal"
-        scrollable>
+        scrollable
+      >
         <Modal.Header className="cartHeader">
           <Modal.Title className="cartTitle">Checkout Cart</Modal.Title>
         </Modal.Header>
@@ -524,7 +539,8 @@ const NavbarCustom = (props) => {
                   float: "right",
                   fontSize: 25,
                   marginRight: 20,
-                }}>
+                }}
+              >
                 Total : &#8377;
                 {cartContextValue.cart
                   .map((item) => item.price)
@@ -537,7 +553,8 @@ const NavbarCustom = (props) => {
               onClick={() => {
                 cartContextValue.setCartModal(false);
               }}
-              className="play-btn play-btn--light">
+              className="play-btn play-btn--light"
+            >
               <span className="play-btn__inner">
                 <span className="play-btn__slide"></span>
                 <span className="play-btn__content">Close</span>
@@ -547,11 +564,17 @@ const NavbarCustom = (props) => {
               onClick={() => {
                 // cartContextValue.setCartModal(false);
                 // console.log("first ->", userDetails);
-                cartContextValue.setCart([]);
+                const pass = {
+                  name: "Pass",
+                  price: 200,
+                  tagline: "All events can be played with this pass",
+                };
+                cartContextValue.setCart([pass]);
                 displayRazorpayPass();
               }}
               disabled={userDetails?.is_pass ? true : false}
-              className="play-btn play-btn--light">
+              className="play-btn play-btn--light"
+            >
               <span className="play-btn__inner">
                 <span className="play-btn__slide"></span>
                 <span className="play-btn__content">Buy Pass</span>
@@ -564,7 +587,8 @@ const NavbarCustom = (props) => {
               }}
               disabled={cartContextValue.cart.length > 0 ? false : true}
               className="play-btn play-btn--light"
-              style={{}}>
+              style={{}}
+            >
               <span className="play-btn__inner play-btn__inner-green">
                 <span className="play-btn__slide play-btn__slide-green"></span>
                 <span className="play-btn__content">Pay Now</span>
