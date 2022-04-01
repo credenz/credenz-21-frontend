@@ -74,6 +74,11 @@
 .secondContainer {
   overflow-y: scroll !important;
   max-height: 70vh;
+  overflow-x: hidden;
+}
+
+.secondContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .heading {

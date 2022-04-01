@@ -13,7 +13,14 @@ export const Footer = (props) => {
       }
     >
       <Row className="footer-row">
-        <div className="branch-text col-md-4">© PICT IEEE Student Branch</div>
+        <a
+          href="https://pictieee.in"
+          target="_blank"
+          className="branch-text col-md-4"
+          rel="noreferrer"
+        >
+          © PICT IEEE Student Branch
+        </a>
         <div className="social-wrapper col-md-4">
           <a
             href="https://www.instagram.com/pictieee/"

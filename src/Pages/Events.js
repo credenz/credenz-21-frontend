@@ -99,51 +99,87 @@ const Events = () => {
     switch (eventCode) {
       case 0:
         cartContextValue.setCart([...cartContextValue.cart, cartItems[0]]);
-        localStorage.setItem("cart", JSON.stringify(cartContextValue.cart));
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...cartContextValue.cart, cartItems[0]])
+        );
         break;
       case 1:
         cartContextValue.setCart([...cartContextValue.cart, cartItems[1]]);
-        localStorage.setItem("cart", JSON.stringify(cartContextValue.cart));
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...cartContextValue.cart, cartItems[1]])
+        );
         break;
       case 2:
         cartContextValue.setCart([...cartContextValue.cart, cartItems[2]]);
-        localStorage.setItem("cart", JSON.stringify(cartContextValue.cart));
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...cartContextValue.cart, cartItems[2]])
+        );
         break;
       case 3:
         cartContextValue.setCart([...cartContextValue.cart, cartItems[3]]);
-        localStorage.setItem("cart", JSON.stringify(cartContextValue.cart));
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...cartContextValue.cart, cartItems[3]])
+        );
         break;
       case 4:
         cartContextValue.setCart([...cartContextValue.cart, cartItems[4]]);
-        localStorage.setItem("cart", JSON.stringify(cartContextValue.cart));
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...cartContextValue.cart, cartItems[4]])
+        );
         break;
       case 5:
         cartContextValue.setCart([...cartContextValue.cart, cartItems[5]]);
-        localStorage.setItem("cart", JSON.stringify(cartContextValue.cart));
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...cartContextValue.cart, cartItems[5]])
+        );
         break;
       case 6:
         cartContextValue.setCart([...cartContextValue.cart, cartItems[6]]);
-        localStorage.setItem("cart", JSON.stringify(cartContextValue.cart));
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...cartContextValue.cart, cartItems[6]])
+        );
         break;
       case 7:
         cartContextValue.setCart([...cartContextValue.cart, cartItems[7]]);
-        localStorage.setItem("cart", JSON.stringify(cartContextValue.cart));
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...cartContextValue.cart, cartItems[7]])
+        );
         break;
       case 8:
         cartContextValue.setCart([...cartContextValue.cart, cartItems[8]]);
-        localStorage.setItem("cart", JSON.stringify(cartContextValue.cart));
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...cartContextValue.cart, cartItems[8]])
+        );
         break;
       case 9:
         cartContextValue.setCart([...cartContextValue.cart, cartItems[9]]);
-        localStorage.setItem("cart", JSON.stringify(cartContextValue.cart));
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...cartContextValue.cart, cartItems[9]])
+        );
         break;
       case 10:
         cartContextValue.setCart([...cartContextValue.cart, cartItems[10]]);
-        localStorage.setItem("cart", JSON.stringify(cartContextValue.cart));
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...cartContextValue.cart, cartItems[10]])
+        );
         break;
       case 11:
         cartContextValue.setCart([...cartContextValue.cart, cartItems[11]]);
-        localStorage.setItem("cart", JSON.stringify(cartContextValue.cart));
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...cartContextValue.cart, cartItems[11]])
+        );
         break;
       default:
         break;
@@ -266,9 +302,15 @@ const Events = () => {
     }
   };
 
+  const fetchLocalEvents = () => {
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    cartContextValue.setCart(cart);
+  };
+
   useEffect(() => {
     setLoading(true);
     fetchProfile();
+    fetchLocalEvents();
     setActive(-1);
     setTimeout(() => {
       setLoading(false);

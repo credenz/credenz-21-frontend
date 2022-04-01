@@ -1,6 +1,3 @@
-::-webkit-scrollbar {
-  display: none;
-}
 .aboutCard {
   display: flex;
   flex-direction: column;

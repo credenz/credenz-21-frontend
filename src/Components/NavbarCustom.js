@@ -27,8 +27,8 @@ import CredenzLogo from "../images/logo_final.jpg";
 
 const NavbarCustom = (props) => {
   const location = useLocation();
-  // console.log("Locaton", location.pathname);
-  const [page, setPage] = useState(location.pathname);
+  console.log("Location:", location.pathname);
+  const [page, setPage] = useState("/");
   const cartContextValue = useContext(CartContext);
   // eslint-disable-next-line no-unused-vars
   const [userDetails, setUserDetails] = useState({});
@@ -180,8 +180,8 @@ const NavbarCustom = (props) => {
         key: "rzp_live_jwcNMaBQ5tVXKC", // Enter the Key ID generated from the Dashboard
         amount: orderData.payment.amount_due.toString(),
         currency: orderData.payment.currency,
-        name: "Credenz Live 2.0 Payment",
-        description: "Test Transaction",
+        name: "Credenz 21-22",
+        description: "Event registration payment",
         order_id: orderData.payment.id,
         handler: async function (response) {
           handlePaymentSuccess(response);
@@ -252,6 +252,7 @@ const NavbarCustom = (props) => {
 
   useEffect(() => {
     checkLoggedIn();
+    setPage(location.pathname);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -261,15 +262,13 @@ const NavbarCustom = (props) => {
   const handleShowMenu = () => setShowMenu(!showMenu);
 
   const deleteEventHandler = (name) => {
-    console.log("Delete name -> ", name);
     let cartItems = cartContextValue.cart;
     cartItems = cartContextValue.cart.filter((item) => {
       return item.name !== name;
     });
 
-    console.log("All items after delete ->", cartItems);
-
     cartContextValue.setCart(cartItems);
+    localStorage.setItem("cart", JSON.stringify(cartItems));
   };
 
   const CartBody = (props) => {
@@ -360,6 +359,25 @@ const NavbarCustom = (props) => {
     );
   };
 
+  const defaultActive = () => {
+    switch (page) {
+      case "/":
+        return "home";
+      case "/profile":
+        return "profile";
+      case "/events":
+        return "events";
+      case "/about":
+        return "about";
+      case "/contact":
+        return "contact";
+      case "/login":
+        return "login";
+      default:
+        return "home";
+    }
+  };
+
   return (
     <>
       <Navbar
@@ -380,20 +398,27 @@ const NavbarCustom = (props) => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="m-2" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
-          <Nav className="s-auto" style={{ position: "relative" }}>
+          <Nav
+            className="s-auto"
+            style={{ position: "relative" }}
+            defaultActiveKey={"home"}
+          >
             <NavLink
+              key={"home"}
               activeClassName="activeLink"
               to={`/`}
-              isActive={() => page === "/"}
-              className="header-title"
+              isActive={() => {
+                return page === "/";
+              }}
+              className={`header-title ${page === "/" ? "activeLink" : ""}`}
               onClick={() => {
                 setPage("/");
               }}
             >
-              {/* <TextSliced title="Home" activeLink={page === "/"} /> */}
               Home
             </NavLink>
             <NavLink
+              key={"events"}
               activeClassName="activeLink"
               // hidden={comingSoon || true}
               to={`/events`}
@@ -407,6 +432,7 @@ const NavbarCustom = (props) => {
               Events
             </NavLink>
             <NavLink
+              key={"about"}
               activeClassName="activeLink"
               to={`/about`}
               isActive={() => page === "/about"}
@@ -415,14 +441,10 @@ const NavbarCustom = (props) => {
                 setPage("/about");
               }}
             >
-              {/* <TextSliced
-                title="About"
-                activeLink={page === "/about"}
-                page="About"
-              /> */}
               About
             </NavLink>
             <NavLink
+              key={"contact"}
               activeClassName="activeLink"
               to={`/contact`}
               isActive={() => page === "/contact"}
@@ -431,15 +453,10 @@ const NavbarCustom = (props) => {
                 setPage("/contact");
               }}
             >
-              {/* <TextSliced
-                title="Contact"
-                hidden
-                activeLink={page === "/contact"}
-                page="Contact"
-              /> */}
               Contact
             </NavLink>
             <NavLink
+              key={"login"}
               activeClassName="activeLink"
               to={`/login`}
               isActive={() => page === "/login"}
@@ -496,12 +513,13 @@ const NavbarCustom = (props) => {
               </>
             )}
           </Nav>
-          <a href="https://www.ieee.org" target="_blank" rel="noreferrer">
-            <img
-              src={IEEELOGO}
-              alt="iEEElogo"
-              className="nav-logo logo-ieee me-3 ms-5"
-            />
+          <a
+            href="https://www.ieee.org"
+            target="_blank"
+            rel="noreferrer"
+            className="me-3 ms-5"
+          >
+            <img src={IEEELOGO} alt="iEEElogo" className="nav-logo logo-ieee" />
           </a>
         </Navbar.Collapse>
       </Navbar>

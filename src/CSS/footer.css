@@ -26,6 +26,12 @@
   bottom: 0;
   left: 0;
 }
+
+.branch-text {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
 .branch-text,
 .terms {
   text-align: center;

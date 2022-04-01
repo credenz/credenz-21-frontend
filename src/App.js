@@ -47,9 +47,8 @@ let App = () => {
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/login" component={LoginRegister} />
           <Route exact path="/terms" component={Terms} />
+          <Route component={Home} />
         </Switch>
-        {/* <Route path="/:page" component={NavbarCustom} /> */}
-        {/* <Route exact path="/" component={NavbarCustom} /> */}
       </Router>
     </CartContext.Provider>
   );

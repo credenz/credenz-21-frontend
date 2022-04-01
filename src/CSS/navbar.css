@@ -129,9 +129,25 @@
   top: 0;
 }
 
-.activeLink {
+/* .activeLink {
   font-weight: 1000;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  width: 0;
+  bottom: 0px;
+  background: #fff;
+  height: 3px;
+  transition-property: width;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
 }
+.activeLink::after {
+  left: 10%;
+  right: auto;
+  width: 80%;
+} */
 
 .header-header {
   font-size: 30px !important;
@@ -224,7 +240,7 @@ a:hover {
   }
   .badgeContainer {
     left: 13%;
-    top: -%;
-    right: auto;
+    /* top: -%;
+    right: auto; */
   }
 }

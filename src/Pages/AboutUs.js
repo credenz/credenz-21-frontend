@@ -156,7 +156,6 @@ function AboutUs() {
               ></AboutSponsors>
             </div>
           </div>
-          6
         </div>
       </div>
     </div>
