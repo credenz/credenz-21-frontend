@@ -226,7 +226,7 @@ const Profile = (props) => {
                   <div className="heading">
                     <h2>My Events</h2>
                   </div>
-                  {profileDetails?.registeredEvents.length > 0 ? (
+                  {profileDetails.payment === "CO" ? (
                     <div className="secondContainer">
                       <div className="row d-flex flex-row justify-content-evenly flex-wrap">
                         {profileDetails?.registeredEvents.map((col, i) => (
@@ -238,7 +238,8 @@ const Profile = (props) => {
                               setActive(eventHelper(col?.name));
                               setEventSelected(eventHelper(col?.name));
                               setShow(true);
-                            }}>
+                            }}
+                          >
                             <EventCard3
                               icon={iconHelpr(col?.name)}
                               width={width}
@@ -261,7 +262,8 @@ const Profile = (props) => {
                               setActive(eventHelper(col));
                               setEventSelected(eventHelper(col));
                               setShow(true);
-                            }}>
+                            }}
+                          >
                             <EventCard3
                               icon={iconHelpr(col)}
                               width={width}
@@ -275,7 +277,8 @@ const Profile = (props) => {
                   ) : (
                     <div
                       className="m-5 d-flex justify-content-center align-items-center"
-                      style={{ color: "#fff" }}>
+                      style={{ color: "#fff" }}
+                    >
                       Not registered for any event
                     </div>
                   )}
@@ -292,14 +295,16 @@ const Profile = (props) => {
             onHide={() => {
               setShow(false);
             }}
-            size="lg">
+            size="lg"
+          >
             <Modal.Header style={{ width: "90%" }}>
               <Modal.Title
                 style={{
                   width: "100%",
                   display: "flex",
                   justifyContent: "space-between",
-                }}>
+                }}
+              >
                 <img
                   className="modal-logo-img1"
                   src={iconHelpr(eventsFull[active])}
@@ -314,7 +319,8 @@ const Profile = (props) => {
                 </div>
                 <div
                   className="modal-close-wrapper1"
-                  onClick={() => setShow(false)}>
+                  onClick={() => setShow(false)}
+                >
                   <img
                     src={Cross}
                     alt="close button"
@@ -329,7 +335,8 @@ const Profile = (props) => {
                   eventKey="info"
                   title="Info"
                   className="modal-tab-link1"
-                  color="#efefef">
+                  color="#efefef"
+                >
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 && eventDetails[eventSelected].info}
@@ -347,7 +354,8 @@ const Profile = (props) => {
                 <Tab
                   eventKey="structure"
                   title="Structure"
-                  className="modal-tab-link1">
+                  className="modal-tab-link1"
+                >
                   <div className="info-wrapper1" style={{ maxHeight: "30vh" }}>
                     <p className="new-line1">
                       {eventSelected !== -1 &&
@@ -358,7 +366,8 @@ const Profile = (props) => {
                 <Tab
                   eventKey="judge"
                   title="Judging"
-                  className="modal-tab-link1">
+                  className="modal-tab-link1"
+                >
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 &&
@@ -369,7 +378,8 @@ const Profile = (props) => {
                 <Tab
                   eventKey="contact"
                   title="Contact"
-                  className="modal-tab-link1">
+                  className="modal-tab-link1"
+                >
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 &&
