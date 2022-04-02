@@ -51,6 +51,15 @@ export function ForgetPasswordForm(props) {
     }
   }
 
+  const customErrorMessages = (err) => {
+    const errArr = Object.values(err);
+    let errMsg = "";
+    errArr.forEach((err) => {
+      errMsg += err + "\n";
+    });
+    return errMsg;
+  };
+
   const sendVerificationToken = async () => {
     const validEmail = ValidateEmail(email);
     if (validEmail) {
@@ -59,7 +68,9 @@ export function ForgetPasswordForm(props) {
         setEmailSent(true);
         swal("Email sent! Check yout mailbox.", "", "info");
       } catch (error) {
-        console.error(error);
+        const errMsg = customErrorMessages(error.response.data);
+        // alert(JSON.stringify(err.response.data));
+        swal("Error", errMsg, "error");
       }
     } else {
     }

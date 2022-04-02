@@ -39,10 +39,19 @@ export function LoginForm(props) {
       })
       .catch((err) => {
         props.setLoading(false);
-        console.error(err);
+        const errMsg = customErrorMessages(err.response.data);
         // alert(JSON.stringify(err.response.data));
-        swal("Error", JSON.stringify(err.response.data), "error");
+        swal("Error", errMsg, "error");
       });
+  };
+
+  const customErrorMessages = (err) => {
+    const errArr = Object.values(err);
+    let errMsg = "";
+    errArr.forEach((err) => {
+      errMsg += err + "\n";
+    });
+    return errMsg;
   };
 
   return (
