@@ -11,14 +11,16 @@ const Animate = () => {
       <div className="animate-main-container">
         <div className="credenz-logo-main-container">
           <div className="credenz-svg-text-top bg-color-white">
-            <img
-              src={TitlePng}
-              alt="adkjad"
-              className="credenz-logo-name-text-top"
-              width={"200"}
-              maxWidth="100%"
-              id="credenz-logo-name"
-            />
+            <a href="https://www.ciondigital.com/"> 
+              <img
+                src={TitlePng}
+                alt="adkjad"
+                className="credenz-logo-name-text-top"
+                width={"200"}
+                maxWidth="100%"
+                id="credenz-logo-name"
+              />
+            </a>
           </div>
           <InitLogoSvg
             className="credenz-init-logo-container"
