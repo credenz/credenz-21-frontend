@@ -587,6 +587,7 @@ const NavbarCustom = (props) => {
                   tagline: "All events can be played with this pass",
                 };
                 cartContextValue.setCart([pass]);
+                localStorage.setItem("cart", JSON.stringify([pass]));
                 displayRazorpayPass();
               }}
               disabled={userDetails?.is_pass ? true : false}
