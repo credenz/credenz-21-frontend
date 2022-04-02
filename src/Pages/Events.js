@@ -385,7 +385,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[0]));
                       setMainText(eventDetails[0].info);
                       setEventSelected(0);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -408,7 +410,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[1]));
                       setMainText(eventDetails[1].info);
                       setEventSelected(1);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -433,7 +437,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[2]));
                       setMainText(eventDetails[2].info);
                       setEventSelected(2);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -456,7 +462,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[3]));
                       setMainText(eventDetails[3].info);
                       setEventSelected(3);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -481,7 +489,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[4]));
                       setMainText(eventDetails[4].info);
                       setEventSelected(4);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -503,7 +513,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[5]));
                       setMainText(eventDetails[5].info);
                       setEventSelected(5);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -670,7 +682,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[6]));
                       setMainText(eventDetails[6].info);
                       setEventSelected(6);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -692,7 +706,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[7]));
                       setMainText(eventDetails[7].info);
                       setEventSelected(7);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -716,7 +732,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[8]));
                       setMainText(eventDetails[8].info);
                       setEventSelected(8);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -738,7 +756,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[9]));
                       setMainText(eventDetails[9].info);
                       setEventSelected(9);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -762,7 +782,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[10]));
                       setMainText(eventDetails[10].info);
                       setEventSelected(10);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -784,7 +806,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[11]));
                       setMainText(eventDetails[11].info);
                       setEventSelected(11);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
