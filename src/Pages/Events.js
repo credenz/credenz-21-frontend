@@ -74,10 +74,17 @@ const Events = () => {
         });
       API.getProfile(token)
         .then((res) => {
-          setProfileDetails({
-            ...profileDetails,
-            registeredEvents: res?.data?.events,
-          });
+          if (res.data.payment === "PO") {
+            setProfileDetails({
+              ...profileDetails,
+              registeredEvents: [],
+            });
+          } else {
+            setProfileDetails({
+              ...profileDetails,
+              registeredEvents: res.data.events,
+            });
+          }
         })
         .catch((err) => {
           console.error(err);
@@ -192,11 +199,13 @@ const Events = () => {
 
       cartContextValue.cart.map((item) => item.name)
     );
+    console.log("Profile Details:", profileDetails);
     cartContextValue.cart.forEach((item) => console.log(item));
     return (
       <div className="play-btn-wrapper">
         <button
           onClick={() => {
+            console.log("Clicked:", props.eventCode, cartContextValue.cart);
             if (!isLoggedIn) {
               //proceed to cart -> open cart modal
               console.log("Open cart modal");
@@ -207,17 +216,17 @@ const Events = () => {
               swal(`Event added successfully!`, "", "success");
             }
           }}
-          disabled={
-            cartContextValue.cart
-              .map((item) => item.name)
-              .includes(events[props.eventSelected])
-              ? true
-              : profileDetails.registeredEvents
-                  .map((event) => event.name)
-                  .includes(eventsFull[props.eventSelected])
-              ? true
-              : false
-          }
+          // disabled={
+          //   cartContextValue.cart
+          //     .map((item) => item.name)
+          //     .includes(events[props.eventSelected])
+          //     ? true
+          //     : profileDetails.registeredEvents
+          //         .map((event) => event.name)
+          //         .includes(eventsFull[props.eventSelected])
+          //     ? true
+          //     : false
+          // }
           className="play-btn play-btn--light"
         >
           <span
