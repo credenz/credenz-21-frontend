@@ -17,6 +17,7 @@ const FormContainer = (props) => {
         <div className="col-md-6 mb-2">
           <label className="form-control">
             <input
+              checked={props.isIeeeMember}
               type="checkbox"
               name="checkbox"
               onClick={() => props.setIsIeeeMember(!props.isIeeeMember)}
@@ -27,6 +28,7 @@ const FormContainer = (props) => {
         <div className="col-md-6 mb-2">
           <label className="form-control">
             <input
+              checked={props.isPictian}
               type="checkbox"
               name="checkbox"
               onClick={() => props.setIsPictian(!props.isPictian)}
@@ -58,6 +60,7 @@ const FormContainer = (props) => {
         <div className="col-md-12 mb-2">
           <label className="form-control">
             <input
+              checked={props.isSenior}
               type="checkbox"
               name="checkbox"
               onClick={() => props.setIsSenior(!props.isSenior)}

@@ -125,7 +125,6 @@ const Profile = (props) => {
     if (token) {
       await API.getProfile(token)
         .then((res) => {
-          console.log("getProfile:", res.data);
           setProfileDetails({
             ...profileDetails,
             userName: res.data?.username,
@@ -157,7 +156,6 @@ const Profile = (props) => {
   }, []);
 
   // useEffect(() => {
-  //   console.log("Profile deets:", cartContextValue.userDetails);
   // }, []);
 
   return (

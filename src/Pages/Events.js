@@ -30,7 +30,7 @@ const Logo = () => {
   return (
     <div className="row" style={{ height: "100%" }}>
       <div
-        className="col-md-4 d-flex justify-content-end"
+        className="col-md-4 d-flex justify-content-end align-items-center"
         style={{ height: "100%" }}
       >
         <Image src={CredenzLogo} className="logo-events" />
@@ -194,21 +194,12 @@ const Events = () => {
   }
 
   function PlayButton(props) {
-    console.log(
-      "Context values:",
-
-      cartContextValue.cart.map((item) => item.name)
-    );
-    console.log("Profile Details:", profileDetails);
-    cartContextValue.cart.forEach((item) => console.log(item));
     return (
       <div className="play-btn-wrapper">
         <button
           onClick={() => {
-            console.log("Clicked:", props.eventCode, cartContextValue.cart);
             if (!isLoggedIn) {
               //proceed to cart -> open cart modal
-              console.log("Open cart modal");
               swal(`You need to login first!`, "", "warning");
             } else {
               cartHelpr(props.eventSelected);
@@ -550,7 +541,6 @@ const Events = () => {
                             activeTab === 0 ? "activeTab" : ""
                           } `}
                           color="warning"
-                          rounded
                           onClick={() => {
                             if (eventSelected !== -1) {
                               setMainText(eventDetails[eventSelected].info);
@@ -568,7 +558,6 @@ const Events = () => {
                             activeTab === 1 ? "activeTab" : ""
                           } `}
                           color="warning"
-                          rounded
                           onClick={() => {
                             if (eventSelected !== -1) {
                               setMainText(eventDetails[eventSelected].rules);
@@ -585,7 +574,6 @@ const Events = () => {
                             activeTab === 2 ? "activeTab" : ""
                           } `}
                           color="warning"
-                          rounded
                           onClick={() => {
                             if (eventSelected !== -1) {
                               setMainText(
@@ -604,7 +592,6 @@ const Events = () => {
                             activeTab === 3 ? "activeTab" : ""
                           } `}
                           color="warning"
-                          rounded
                           onClick={() => {
                             if (eventSelected !== -1) {
                               setMainText(eventDetails[eventSelected].judging);
@@ -621,7 +608,6 @@ const Events = () => {
                             activeTab === 4 ? "activeTab" : ""
                           } `}
                           color="warning"
-                          rounded
                           onClick={() => {
                             if (eventSelected !== -1) {
                               setMainText(eventDetails[eventSelected].contact);
@@ -829,7 +815,7 @@ const Events = () => {
                   </div>
                 </Modal.Title>
               </Modal.Header>
-              <Modal.Body text>
+              <Modal.Body>
                 <Tabs defaultActiveKey="info" className="mb-3">
                   <Tab
                     eventKey="info"

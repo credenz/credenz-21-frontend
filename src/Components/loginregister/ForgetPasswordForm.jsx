@@ -17,15 +17,7 @@ export function ForgetPasswordForm(props) {
   const [emailError, setEmailError] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const { switchToSignin } = useContext(AccountContext);
-  const validateEmail = (password) => {
-    const reg = "[a-z0-9]+@[a-z]+.[a-z]{2,3}";
-    const re = new RegExp(reg);
-    if (!re.test(password)) {
-      setEmailError(true);
-    } else {
-      setEmailError(false);
-    }
-  };
+
   const [passwordError, setPasswordError] = useState(false);
   const validatePassword = (password) => {
     const reg =
@@ -38,23 +30,38 @@ export function ForgetPasswordForm(props) {
     }
   };
 
-  useEffect(() => {
-    if (email.length > 3) {
-      validateEmail(email);
+  // useEffect(() => {
+  //   if (email.length > 3) {
+  //     validateEmail(email);
+  //   }
+  //   if (password.length > 3) {
+  //     validatePassword(password);
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [email, email.length, password, password.length]);
+
+  function ValidateEmail(mail) {
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (mailformat.test(mail)) {
+      setEmailError(false);
+      return true;
+    } else {
+      setEmailError(true);
+      return false;
     }
-    if (password.length > 3) {
-      validatePassword(password);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [email, email.length, password, password.length]);
+  }
 
   const sendVerificationToken = async () => {
-    try {
-      await API.passwordReset({ email });
-      setEmailSent(true);
-      swal("Email sent! Check yout mailbox.", "", "info");
-    } catch (error) {
-      console.error(error);
+    const validEmail = ValidateEmail(email);
+    if (validEmail) {
+      try {
+        await API.passwordReset({ email });
+        setEmailSent(true);
+        swal("Email sent! Check yout mailbox.", "", "info");
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
     }
   };
 
@@ -90,13 +97,16 @@ export function ForgetPasswordForm(props) {
         />
         <Marginer direction="vertical" margin={20} />
         <Input
-          className="mb-2"
+          className={!emailSent ? "input-disabled mb-2" : "mb-2"}
+          disabled={!emailSent}
           type="string"
           placeholder="Verfication Token"
           value={token}
           onChange={(e) => setToken(e.target.value)}
         />
         <Input
+          className={!emailSent ? "input-disabled" : ""}
+          disabled={!emailSent}
           type="password"
           placeholder="New Password"
           value={password}
@@ -112,14 +122,18 @@ export function ForgetPasswordForm(props) {
       <button
         className="btn btn--secondary mb-1"
         type="submit"
-        onClick={sendVerificationToken}>
+        disabled={emailSent}
+        onClick={sendVerificationToken}
+      >
         <span className="btn__content">Send Verification Mail</span>
         <span className="btn__glitch"></span>
       </button>
       <button
+        disabled={!emailSent}
         className="btn btn--secondary"
         type="submit"
-        onClick={handleForgetPassword}>
+        onClick={handleForgetPassword}
+      >
         <span className="btn__content">Submit</span>
         <span className="btn__glitch"></span>
       </button>
@@ -127,7 +141,8 @@ export function ForgetPasswordForm(props) {
       <MutedLink
         className="mb-3"
         style={{ cursor: "pointer" }}
-        onClick={switchToSignin}>
+        onClick={switchToSignin}
+      >
         Back to Login
       </MutedLink>
     </BoxContainer>
