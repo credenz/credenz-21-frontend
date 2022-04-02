@@ -59,8 +59,18 @@ export function SignupForm(props) {
       .catch((e) => {
         props.setLoading(false);
         // alert(JSON.stringify(e.response.data));
-        swal("Error", JSON.stringify(e.response.data), "error");
+        const errMsg = customErrorMessages(e.response.data);
+        swal("Error", errMsg, "error");
       });
+  };
+
+  const customErrorMessages = (err) => {
+    const errArr = Object.values(err);
+    let errMsg = "";
+    errArr.forEach((err) => {
+      errMsg += err + "\n";
+    });
+    return errMsg;
   };
 
   function ValidateEmail(mail) {
