@@ -91,3 +91,9 @@
 .feedform {
   padding: 0 1.5vw;
 }
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}

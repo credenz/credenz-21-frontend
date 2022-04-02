@@ -253,25 +253,26 @@ const Profile = (props) => {
                   ) : profileDetails?.is_pass === true ? (
                     <div className="secondContainer">
                       <div className="row d-flex flex-row justify-content-evenly flex-wrap">
-                        {allEvents.map((col, i) => (
-                          <span
-                            key={i}
-                            className="d-flex justify-content-center"
-                            style={{ width: "200px" }}
-                            onClick={() => {
-                              setActive(eventHelper(col));
-                              setEventSelected(eventHelper(col));
-                              setShow(true);
-                            }}
-                          >
-                            <EventCard3
-                              icon={iconHelpr(col)}
-                              width={width}
-                              height={height}
-                              title={col}
-                            />
-                          </span>
-                        ))}
+                        {allEvents.length > 0 &&
+                          allEvents.map((col, i) => (
+                            <span
+                              key={i}
+                              className="d-flex justify-content-center"
+                              style={{ width: "200px" }}
+                              onClick={() => {
+                                setActive(eventHelper(col));
+                                setEventSelected(eventHelper(col));
+                                setShow(true);
+                              }}
+                            >
+                              <EventCard3
+                                icon={iconHelpr(col)}
+                                width={width}
+                                height={height}
+                                title={col}
+                              />
+                            </span>
+                          ))}
                       </div>
                     </div>
                   ) : (

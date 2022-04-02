@@ -10,6 +10,7 @@
 .swal-modal {
   background-color: #231f20;
   border-radius: 10px;
+  box-shadow: 7px 7px 15px #000;
 }
 
 .swal-title {
@@ -37,6 +38,17 @@
   border: 1px solid #000;
 }
 
+.swal-button:active,
+.swal-button:focus {
+  outline: none !important;
+}
+
 .swal-overlay {
-  background-color: rgba(90, 42, 42, 0.5);
+  background-color: rgba(1, 0, 0, 0.682);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
 }
