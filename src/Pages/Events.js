@@ -304,7 +304,9 @@ const Events = () => {
 
   const fetchLocalEvents = () => {
     const cart = JSON.parse(localStorage.getItem("cart"));
-    cartContextValue.setCart(cart);
+    if (cart !== null) {
+      cartContextValue.setCart(cart);
+    }
   };
 
   useEffect(() => {
