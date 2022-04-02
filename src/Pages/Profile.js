@@ -38,6 +38,7 @@ const Profile = (props) => {
     senior: false,
     institute: "",
     registeredEvents: [],
+    payment: false,
   });
 
   const allEvents = [
@@ -125,16 +126,31 @@ const Profile = (props) => {
     if (token) {
       await API.getProfile(token)
         .then((res) => {
-          setProfileDetails({
-            ...profileDetails,
-            userName: res.data?.username,
-            email: res.data?.email,
-            contact: res.data?.phone_no,
-            senior: res.data?.senior,
-            is_pass: res.data?.is_pass,
-            institute: res.data?.institute,
-            registeredEvents: res.data?.events,
-          });
+          if (res.data.payment === "CO") {
+            setProfileDetails({
+              ...profileDetails,
+              userName: res.data?.username,
+              email: res.data?.email,
+              contact: res.data?.phone_no,
+              senior: res.data?.senior,
+              is_pass: res.data?.is_pass,
+              institute: res.data?.institute,
+              payment: res.data?.payment,
+              registeredEvents: res.data?.events,
+            });
+          } else {
+            setProfileDetails({
+              ...profileDetails,
+              userName: res.data?.username,
+              email: res.data?.email,
+              contact: res.data?.phone_no,
+              senior: res.data?.senior,
+              is_pass: res.data?.is_pass,
+              institute: res.data?.institute,
+              payment: res.data?.payment,
+              registeredEvents: [],
+            });
+          }
         })
         .catch((err) => {
           console.error(err);

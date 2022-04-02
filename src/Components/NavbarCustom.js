@@ -88,6 +88,7 @@ const NavbarCustom = (props) => {
         .then((res) => {
           setUserDetails({ ...res.data, username: username });
           // fetchUserDetails(res.data.user_id);
+          cartContextValue.setIsLoggedIn(true);
           setIsLoggedIn(true);
         })
         .catch((err) => {
@@ -96,12 +97,17 @@ const NavbarCustom = (props) => {
         });
       API.getProfile(token)
         .then((res) => {
-          setProfileDetails(res.data);
+          const data = { events: [], ...res.data };
+          setProfileDetails(data);
+          cartContextValue.setUserProfile(data);
         })
         .catch((err) => {
           swal("Invalid token, please log out and sign in again");
           console.error(err);
         });
+    } else {
+      // cartContextValue.setUserProfile(res.data);
+      cartContextValue.setIsLoggedIn(false);
     }
   };
 
@@ -342,6 +348,7 @@ const NavbarCustom = (props) => {
               onClick={() => {
                 localStorage.removeItem("credenz_access_token");
                 localStorage.removeItem("credenz_username");
+                localStorage.removeItem("isLoggedIn");
                 swal("Logged out successfully!", "", "success").then((val) => {
                   window.location.reload();
                 });

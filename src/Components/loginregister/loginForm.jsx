@@ -11,11 +11,13 @@ import {
   MutedLink,
 } from "./common";
 import swal from "sweetalert";
+import CartContext from "../CartContext";
 
 export function LoginForm(props) {
   const { switchToSignup, switchToForgetPassword } = useContext(AccountContext);
   const [username, setUsername] = useState("");
   const [passwd, setPasswd] = useState("");
+  const cartContextValue = useContext(CartContext);
 
   const handleSubmit = () => {
     props.setLoading(true);
@@ -26,6 +28,8 @@ export function LoginForm(props) {
       .then((res) => {
         localStorage.setItem("credenz_access_token", res.data.access);
         localStorage.setItem("credenz_username", username);
+        localStorage.setItem("isLoggedIn", true);
+        cartContextValue.setIsLoggedIn(true);
         // alert(`Welcome Back ${username} !`);
         swal(`Welcome Back, ${username}!`, "", "success")
           .then((val) => {

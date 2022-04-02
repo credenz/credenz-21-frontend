@@ -15,6 +15,8 @@ const CartContext = React.createContext({
   setUserDetails: () => {},
   userProfile: {},
   setUserProfile: () => {},
+  isLoggedIn: false,
+  setIsLoggedIn: () => {},
 });
 
 export default CartContext;

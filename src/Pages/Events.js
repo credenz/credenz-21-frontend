@@ -17,6 +17,7 @@ import Datawiz from "../images/datawiz.png";
 import Enigma from "../images/enigma.png";
 import NTH from "../images/nth.png";
 import CredenzLogo from "../images/onlyLogo.png";
+import CredenzLogoCombined from "../images/event_logo_white.png";
 import Paper from "../images/paper.png";
 import Pixelate from "../images/pixelate.png";
 import Quiz from "../images/quiz.png";
@@ -40,6 +41,19 @@ const Logo = () => {
         style={{ height: "100%" }}
       >
         <p className="credenz-text-main">CREDENZ 21-22</p>
+      </div>
+    </div>
+  );
+};
+
+const LogoCombined = () => {
+  return (
+    <div className="row" style={{ height: "100%" }}>
+      <div
+        className="col-md-12 d-flex justify-content-center align-items-center"
+        style={{ height: "100%" }}
+      >
+        <Image src={CredenzLogoCombined} style={{ height: "100%" }} />
       </div>
     </div>
   );
@@ -207,30 +221,36 @@ const Events = () => {
               swal(`Event added successfully!`, "", "success");
             }
           }}
-          // disabled={
-          //   cartContextValue.cart
-          //     .map((item) => item.name)
-          //     .includes(events[props.eventSelected])
-          //     ? true
-          //     : profileDetails.registeredEvents
-          //         .map((event) => event.name)
-          //         .includes(eventsFull[props.eventSelected])
-          //     ? true
-          //     : false
-          // }
+          disabled={
+            cartContextValue.cart
+              .map((item) => item.name)
+              .includes(events[props.eventSelected])
+              ? true
+              : profileDetails.registeredEvents
+                  .map((event) => event.name)
+                  .includes(eventsFull[props.eventSelected])
+              ? true
+              : cartContextValue.cart.length > 0 &&
+                cartContextValue.cart[0].name === "Pass"
+              ? true
+              : false
+          }
           className="play-btn play-btn--light"
         >
           <span
             style={{
-              backgroundColor: cartContextValue.cart
-                .map((item) => item.name)
-                .includes(events[props.eventSelected])
-                ? "#e01949"
-                : profileDetails.registeredEvents
-                    .map((event) => event.name)
-                    .includes(eventsFull[props.eventSelected])
-                ? "#e01949"
-                : "transparent",
+              backgroundColor:
+                cartContextValue.cart
+                  .map((item) => item.name)
+                  .includes(events[props.eventSelected]) ||
+                (cartContextValue.cart.length > 0 &&
+                  cartContextValue.cart[0].name === "Pass")
+                  ? "#e01949"
+                  : profileDetails.registeredEvents
+                      .map((event) => event.name)
+                      .includes(eventsFull[props.eventSelected])
+                  ? "#e01949"
+                  : "transparent",
             }}
             className="play-btn__inner"
           >
@@ -238,7 +258,9 @@ const Events = () => {
             <span className="play-btn__content">
               {cartContextValue.cart
                 .map((item) => item.name)
-                .includes(events[props.eventSelected])
+                .includes(events[props.eventSelected]) ||
+              (cartContextValue.cart.length > 0 &&
+                cartContextValue.cart[0].name === "Pass")
                 ? "Added to cart"
                 : profileDetails.registeredEvents
                     .map((event) => event.name)
@@ -257,7 +279,15 @@ const Events = () => {
         <button
           className="play-btn play-btn--light"
           onClick={() => {
-            cartContextValue.setCartModal(!cartContextValue.cartModal);
+            if (!isLoggedIn) {
+              //proceed to cart -> open cart modal
+              swal(`You need to login first!`, "", "warning");
+            } else {
+              cartContextValue.setCartModal(!cartContextValue.cartModal);
+              // cartHelpr(props.eventSelected);
+              // setCart([...cart, cartItems[props.eventSelected]]);
+              // swal(`Event added successfully!`, "", "success");
+            }
           }}
         >
           <span className="play-btn__inner play-btn__inner-green">
@@ -497,7 +527,7 @@ const Events = () => {
                 >
                   <div className="main-wrapper">
                     {eventSelected === -1 ? (
-                      <Logo />
+                      <LogoCombined />
                     ) : (
                       <>
                         <div className="main-heading">{mainHeading}</div>
