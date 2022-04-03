@@ -126,7 +126,7 @@ const Profile = (props) => {
     if (token) {
       await API.getProfile(token)
         .then((res) => {
-          if (res.data.payment === "CO") {
+          if (res.data.payment === "CO" && res.data.is_pass === true) {
             setProfileDetails({
               ...profileDetails,
               userName: res.data?.username,
@@ -137,6 +137,18 @@ const Profile = (props) => {
               institute: res.data?.institute,
               payment: res.data?.payment,
               registeredEvents: allEvents,
+            });
+          } else if (res.data.payment === "CO" && res.data.is_pass === false) {
+            setProfileDetails({
+              ...profileDetails,
+              userName: res.data?.username,
+              email: res.data?.email,
+              contact: res.data?.phone_no,
+              senior: res.data?.senior,
+              is_pass: res.data?.is_pass,
+              institute: res.data?.institute,
+              payment: res.data?.payment,
+              registeredEvents: res.data.events,
             });
           } else {
             setProfileDetails({

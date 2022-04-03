@@ -103,7 +103,19 @@
 
 .new-line1 {
   text-align: center;
+  white-space: break-spaces;
   font-size: 18px !important;
+}
+
+.new-line1::-webkit-scrollbar {
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+}
+.new-line1::-webkit-scrollbar-thumb {
+  background: #f1f1f1 !important;
+}
+.new-line1::-webkit-scrollbar-track {
+  background: #888 !important;
 }
 
 .modal-close-btn1 {
@@ -149,9 +161,9 @@
   color: #efefef;
 }
 
-/* .modal-tab-link1:hover {
+.modal-tab-link1:hover {
   color: #fff !important;
-} */
+}
 
 .modal-logo-img1 {
   filter: invert(93%) sepia(100%) saturate(2%) hue-rotate(270deg)
