@@ -195,7 +195,7 @@ Timings
     rules: `1) Candidates pursuing an undergraduate/graduate program at their institution will be allowed to participate. Participants can either participate individually or in a team of 2.
 \n2)All the participants should follow all the instructions as mentioned in the mail received after registration.`,
     structure: `1) There will be two rounds.
-5)ROUND 1:\n\ta.There will be 25 questions in this round.\n\tb.Time limit is 35 minutes.\n\tc.For every right answer, you will be awarded points and no negative points for a wrong answer.\n\td.The marking scheme will be told on the day of the event.
+5)ROUND 1:\n\ta.There will be 30 questions in this round.\n\tb.Time limit is 35 minutes.\n\tc.For every right answer, you will be awarded points and no negative points for a wrong answer.\n\td.The marking scheme will be told on the day of the event.
 6)ROUND 2:\n\ta.There will be 5 Puzzles in this round.\n\tb.Time Limit is 2 hours\n\tc.You must claim whenever you are done. Earliest claim with max. score wins.`,
     judging: `1)There will be two rounds.
 \n2)You need to qualify the threshold score to get into the next round. The threshold will be decided based upon the performance of all the teams.
