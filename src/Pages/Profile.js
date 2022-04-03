@@ -53,7 +53,7 @@ const Profile = (props) => {
     "Paper Presentation",
     "Cretronix",
     "Pixelate",
-    "Web Weaver",
+    "Webweaver",
   ];
 
   const iconHelpr = (e) => {
@@ -79,7 +79,7 @@ const Profile = (props) => {
       return Cretronix;
     } else if (e === "Pixelate") {
       return Pixelate;
-    } else if (e === "Web Weaver") {
+    } else if (e === "Webweaver") {
       return Webweaver;
     }
   };
@@ -115,7 +115,7 @@ const Profile = (props) => {
       return 9;
     } else if (eventName === "Pixelate") {
       return 10;
-    } else if (eventName === "Web Weaver") {
+    } else if (eventName === "Webweaver") {
       return 11;
     }
   };
