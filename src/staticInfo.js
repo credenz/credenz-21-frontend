@@ -163,8 +163,8 @@ Timings
 14-04-2022`,
     rules: `1) A maximum of three candidates per plan pursuing undergraduate/graduate/postgraduate program at their institution will be allowed per team.
 \n2) Proposed business plan should not be in violation of any intellectual property rights.
-\n3) Proposed business plan should be submitted by 14th April 2022`,
-    structure: `1) At stage 1, the soft copy of the abstract (summary) should be submitted to pisb.bplan21@gmail.com by 10th February 2021.
+\n3) Proposed business plan should be submitted by 12th April 2022`,
+    structure: `1) At stage 1, the soft copy of the abstract (summary) should be submitted to pisb.bplan21@gmail.com by 12th April 2022.
 \n2) The Soft copy should be a .pdf file.
 \n3)The top 7 teams will compete in the next stage.
 \n4) Each team will be given 12 minutes in the final round to present their B-PLAN in front of a panel of judges and audience. A warning bell will be given at 10 minutes and a final 2 minutes thereafter.
