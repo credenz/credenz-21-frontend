@@ -324,6 +324,7 @@ const NavbarCustom = (props) => {
               onClick={() => {
                 setPage("");
                 handleShowMenu();
+                handleCollapse();
               }}
               className="menu-item"
               style={{
@@ -353,6 +354,7 @@ const NavbarCustom = (props) => {
                 color: "#fff",
               }}
               onClick={() => {
+                handleCollapse();
                 localStorage.removeItem("credenz_access_token");
                 localStorage.removeItem("credenz_username");
                 localStorage.removeItem("isLoggedIn");
@@ -516,6 +518,7 @@ const NavbarCustom = (props) => {
                 isActive={() => page === "/login"}
                 onClick={() => {
                   setPage("/login");
+                  handleCollapse();
                 }}
                 className="header-title"
                 hidden={isLoggedIn ? true : false}
@@ -530,7 +533,10 @@ const NavbarCustom = (props) => {
                 <>
                   <div
                     className="cartIconContainer m-10"
-                    onClick={handleShowModal}
+                    onClick={() => {
+                      handleShowModal();
+                      handleCollapse();
+                    }}
                   >
                     {cartContextValue.cart.length > 0 && (
                       <div className="badgeContainer">
@@ -546,7 +552,10 @@ const NavbarCustom = (props) => {
                   <div
                     className="d-flex align-items-center responsive-pos"
                     style={{ cursor: "pointer" }}
-                    onClick={handleShowMenu}
+                    onClick={() => {
+                      handleShowMenu();
+                      handleCollapse();
+                    }}
                   >
                     <div className="profileIconContainer">
                       <img
