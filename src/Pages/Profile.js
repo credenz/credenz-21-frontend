@@ -99,7 +99,7 @@ const Profile = (props) => {
       return 1;
     } else if (eventName === "Network Treasure Hunt") {
       return 2;
-    } else if (eventName === "WallStreet") {
+    } else if (eventName === "Wallstreet") {
       return 3;
     } else if (eventName === "B-Plan") {
       return 4;
