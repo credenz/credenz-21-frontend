@@ -554,7 +554,6 @@ const NavbarCustom = (props) => {
                     style={{ cursor: "pointer" }}
                     onClick={() => {
                       handleShowMenu();
-                      handleCollapse();
                     }}
                   >
                     <div className="profileIconContainer">
