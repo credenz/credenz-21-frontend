@@ -24,7 +24,13 @@ import Quiz from "../images/quiz.png";
 import RC from "../images/rc.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
-import { cartItems, eventDetails, events, eventsFull } from "../staticInfo.js";
+import {
+  cartItems,
+  eventDetails,
+  events,
+  eventsFull,
+  allEventsForPass,
+} from "../staticInfo.js";
 // import GridBg from "../vid/mesh.webm";
 
 const Logo = () => {
@@ -90,13 +96,36 @@ const Events = () => {
         .then((res) => {
           if (res.data.payment === "PO") {
             setProfileDetails({
-              ...profileDetails,
+              userName: res.data?.username,
+              email: res.data?.email,
+              contact: res.data?.phone_no,
+              senior: res.data?.senior,
+              is_pass: res.data?.is_pass,
+              institute: res.data?.institute,
+              payment: res.data?.payment,
               registeredEvents: [],
+            });
+          } else if (res.data.payment === "CO" && res.data.is_pass === false) {
+            setProfileDetails({
+              userName: res.data?.username,
+              email: res.data?.email,
+              contact: res.data?.phone_no,
+              senior: res.data?.senior,
+              is_pass: res.data?.is_pass,
+              institute: res.data?.institute,
+              payment: res.data?.payment,
+              registeredEvents: res.data.events,
             });
           } else {
             setProfileDetails({
-              ...profileDetails,
-              registeredEvents: res.data.events,
+              userName: res.data?.username,
+              email: res.data?.email,
+              contact: res.data?.phone_no,
+              senior: res.data?.senior,
+              is_pass: res.data?.is_pass,
+              institute: res.data?.institute,
+              payment: res.data?.payment,
+              registeredEvents: allEventsForPass,
             });
           }
         })
@@ -208,6 +237,7 @@ const Events = () => {
   }
 
   function PlayButton(props) {
+    console.log("Profile Details:", profileDetails);
     return (
       <div className="play-btn-wrapper">
         <button
@@ -225,6 +255,8 @@ const Events = () => {
             cartContextValue.cart
               .map((item) => item.name)
               .includes(events[props.eventSelected])
+              ? true
+              : profileDetails.is_pass === true
               ? true
               : profileDetails.registeredEvents
                   .map((event) => event.name)
@@ -246,6 +278,8 @@ const Events = () => {
                 (cartContextValue.cart.length > 0 &&
                   cartContextValue.cart[0].name === "Pass")
                   ? "#e01949"
+                  : profileDetails.is_pass === true
+                  ? "#e01949"
                   : profileDetails.registeredEvents
                       .map((event) => event.name)
                       .includes(eventsFull[props.eventSelected])
@@ -262,6 +296,8 @@ const Events = () => {
               (cartContextValue.cart.length > 0 &&
                 cartContextValue.cart[0].name === "Pass")
                 ? "Added to cart"
+                : profileDetails.is_pass === true
+                ? "Already Registered"
                 : profileDetails.registeredEvents
                     .map((event) => event.name)
                     .includes(eventsFull[props.eventSelected])

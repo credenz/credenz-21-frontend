@@ -136,7 +136,7 @@ const Profile = (props) => {
               is_pass: res.data?.is_pass,
               institute: res.data?.institute,
               payment: res.data?.payment,
-              registeredEvents: res.data?.events,
+              registeredEvents: allEvents,
             });
           } else {
             setProfileDetails({
@@ -241,54 +241,58 @@ const Profile = (props) => {
                     <h2>My Events</h2>
                   </div>
                   {profileDetails.payment === "CO" ? (
-                    <div className="secondContainer">
-                      <div className="row d-flex flex-row justify-content-evenly flex-wrap">
-                        {profileDetails?.registeredEvents.map((col, i) => (
-                          <span
-                            key={i}
-                            className="d-flex justify-content-center"
-                            style={{ width: "200px" }}
-                            onClick={() => {
-                              setActive(eventHelper(col?.name));
-                              setEventSelected(eventHelper(col?.name));
-                              setShow(true);
-                            }}
-                          >
-                            <EventCard3
-                              icon={iconHelpr(col?.name)}
-                              width={width}
-                              height={height}
-                              title={col?.name}
-                            />
-                          </span>
-                        ))}
+                    profileDetails?.is_pass === true ? (
+                      <div className="secondContainer">
+                        <div className="row d-flex flex-row justify-content-evenly flex-wrap">
+                          {allEvents.length > 0 &&
+                            allEvents.map((col, i) => (
+                              <span
+                                key={i}
+                                className="d-flex justify-content-center"
+                                style={{ width: "200px" }}
+                                onClick={() => {
+                                  setActive(eventHelper(col));
+                                  setEventSelected(eventHelper(col));
+                                  setShow(true);
+                                }}
+                              >
+                                <EventCard3
+                                  icon={iconHelpr(col)}
+                                  width={width}
+                                  height={height}
+                                  title={col}
+                                />
+                              </span>
+                            ))}
+                        </div>
                       </div>
-                    </div>
-                  ) : profileDetails?.is_pass === true ? (
-                    <div className="secondContainer">
-                      <div className="row d-flex flex-row justify-content-evenly flex-wrap">
-                        {allEvents.length > 0 &&
-                          allEvents.map((col, i) => (
-                            <span
-                              key={i}
-                              className="d-flex justify-content-center"
-                              style={{ width: "200px" }}
-                              onClick={() => {
-                                setActive(eventHelper(col));
-                                setEventSelected(eventHelper(col));
-                                setShow(true);
-                              }}
-                            >
-                              <EventCard3
-                                icon={iconHelpr(col)}
-                                width={width}
-                                height={height}
-                                title={col}
-                              />
-                            </span>
-                          ))}
+                    ) : (
+                      <div className="secondContainer">
+                        <div className="row d-flex flex-row justify-content-evenly flex-wrap">
+                          {profileDetails?.registeredEvents.map((col, i) => {
+                            return (
+                              <span
+                                key={i}
+                                className="d-flex justify-content-center"
+                                style={{ width: "200px" }}
+                                onClick={() => {
+                                  setActive(eventHelper(col?.name));
+                                  setEventSelected(eventHelper(col?.name));
+                                  setShow(true);
+                                }}
+                              >
+                                <EventCard3
+                                  icon={iconHelpr(col?.name)}
+                                  width={width}
+                                  height={height}
+                                  title={col?.name}
+                                />
+                              </span>
+                            );
+                          })}
+                        </div>
                       </div>
-                    </div>
+                    )
                   ) : (
                     <div
                       className="m-5 d-flex justify-content-center align-items-center"

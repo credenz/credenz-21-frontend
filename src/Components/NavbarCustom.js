@@ -391,7 +391,6 @@ const NavbarCustom = (props) => {
   };
 
   const handleCollapse = () => {
-    console.log("handleCollapse");
     var nav = document.getElementById("responsive-navbar-nav");
     var btn = document.getElementById("navbar-toggler-btn");
     nav.classList.remove("show");

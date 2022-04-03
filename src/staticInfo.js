@@ -28,6 +28,79 @@ export const eventsFull = {
   11: "Webweaver",
 };
 
+export const allEventsForPass = [
+  {
+    name: "RC",
+    price: 50,
+    tagline:
+      "Hone your problem-solving skills by decrypting complex questions!",
+  },
+  {
+    name: "Clash",
+    price: 50,
+    tagline: "Clash is based on Competitive Programming!",
+  },
+  {
+    name: "NTH",
+    price: 0,
+    tagline:
+      "Decrypt the clues to solve complex puzzles and race your way to finish at top!",
+  },
+  {
+    name: "Wallstreet",
+    price: 50,
+    tagline:
+      "Get an insight on stock markets by Investing and trading virtual money!",
+  },
+  {
+    name: "BPlan",
+    price: 50,
+    tagline:
+      "Showcase your entrepreneurial skills by presenting innovative business plans to the world!",
+  },
+  {
+    name: "Enigma",
+    price: 50,
+    tagline:
+      "Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions!",
+  },
+  {
+    name: "Datawiz",
+    price: 50,
+    tagline:
+      "Test your Machine learning and data analytics skills before stepping into the world of Data Science!",
+  },
+  {
+    name: "Quiz",
+    price: 50,
+    tagline:
+      "Test your knowledge across wide range of topics and get a chance to win some exciting prizes!",
+  },
+  {
+    name: "Paper Presentation",
+    price: 50,
+    tagline:
+      "Present technical research papers with advanced perspectives while honing your skills of research!",
+  },
+  {
+    name: "Cretronix",
+    price: 50,
+    tagline: "Build and exhibit your own circuits by solving tech problems!",
+  },
+  {
+    name: "Pixelate",
+    price: 50,
+    tagline:
+      "Let your creativity fuse with thoughtful designs and artistic originality!",
+  },
+  {
+    name: "Webweaver",
+    price: 50,
+    tagline:
+      "Build an aesthetic website to showcase your web development skill!",
+  },
+];
+
 export const cartItems = {
   0: {
     name: "RC",
