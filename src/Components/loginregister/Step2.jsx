@@ -65,7 +65,7 @@ const FormContainer = (props) => {
               name="checkbox"
               onClick={() => props.setIsSenior(!props.isSenior)}
             />
-            Senior
+            Senior (TE/BE)
           </label>
         </div>
       </div>

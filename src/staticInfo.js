@@ -163,8 +163,8 @@ Timings
 14-04-2022`,
     rules: `1) A maximum of three candidates per plan pursuing undergraduate/graduate/postgraduate program at their institution will be allowed per team.
 \n2) Proposed business plan should not be in violation of any intellectual property rights.
-\n3) Proposed business plan should be submitted by 14th April 2022`,
-    structure: `1) At stage 1, the soft copy of the abstract (summary) should be submitted to pisb.bplan21@gmail.com by 10th February 2021.
+\n3) Proposed business plan should be submitted by 12th April 2022`,
+    structure: `1) At stage 1, the soft copy of the abstract (summary) should be submitted to pisb.bplan21@gmail.com by 12th April 2022.
 \n2) The Soft copy should be a .pdf file.
 \n3)The top 7 teams will compete in the next stage.
 \n4) Each team will be given 12 minutes in the final round to present their B-PLAN in front of a panel of judges and audience. A warning bell will be given at 10 minutes and a final 2 minutes thereafter.
@@ -195,7 +195,7 @@ Timings
     rules: `1) Candidates pursuing an undergraduate/graduate program at their institution will be allowed to participate. Participants can either participate individually or in a team of 2.
 \n2)All the participants should follow all the instructions as mentioned in the mail received after registration.`,
     structure: `1) There will be two rounds.
-5)ROUND 1:\n\ta.There will be 25 questions in this round.\n\tb.Time limit is 35 minutes.\n\tc.For every right answer, you will be awarded points and no negative points for a wrong answer.\n\td.The marking scheme will be told on the day of the event.
+5)ROUND 1:\n\ta.There will be 30 questions in this round.\n\tb.Time limit is 35 minutes.\n\tc.For every right answer, you will be awarded points and no negative points for a wrong answer.\n\td.The marking scheme will be told on the day of the event.
 6)ROUND 2:\n\ta.There will be 5 Puzzles in this round.\n\tb.Time Limit is 2 hours\n\tc.You must claim whenever you are done. Earliest claim with max. score wins.`,
     judging: `1)There will be two rounds.
 \n2)You need to qualify the threshold score to get into the next round. The threshold will be decided based upon the performance of all the teams.
