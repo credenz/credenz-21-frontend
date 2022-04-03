@@ -185,8 +185,8 @@ const NavbarCustom = (props) => {
         key: "rzp_live_jwcNMaBQ5tVXKC", // Enter the Key ID generated from the Dashboard
         amount: orderData.payment.amount_due.toString(),
         currency: orderData.payment.currency,
-        name: "Credenz 21-22",
-        description: "Event registration payment",
+        name: "Credenz 21-22 Registration",
+        description: "Credenz 21-22 Registration",
         order_id: orderData.payment.id,
         handler: async function (response) {
           handlePaymentSuccess(response);
@@ -229,8 +229,8 @@ const NavbarCustom = (props) => {
         key: "rzp_live_jwcNMaBQ5tVXKC", // Enter the Key ID generated from the Dashboard
         amount: orderData.payment.amount_due.toString(),
         currency: orderData.payment.currency,
-        name: "Credenz Live 2.0 Payment",
-        description: "Test Transaction",
+        name: "Credenz 21-22 Registration",
+        description: "Credenz 21-22 Registration",
         order_id: orderData.payment.id,
         handler: async function (response) {
           handlePaymentSuccess(response);
