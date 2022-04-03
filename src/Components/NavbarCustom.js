@@ -1,5 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Card, Modal, Nav, Navbar } from "react-bootstrap";
+import {
+  Card,
+  Container,
+  Modal,
+  Nav,
+  Navbar,
+  NavDropdown,
+} from "react-bootstrap";
 import { NavLink, useLocation } from "react-router-dom";
 import swal from "sweetalert";
 import { API } from "../axios/API";
@@ -381,9 +388,31 @@ const NavbarCustom = (props) => {
     }
   };
 
+  const handleCollapse = () => {
+    console.log("handleCollapse");
+    var nav = document.getElementById("responsive-navbar-nav");
+    var btn = document.getElementById("navbar-toggler-btn");
+    nav.classList.remove("show");
+    btn.classList.add("collapsed");
+  };
+
+  const toggleHamburger = () => {
+    var nav = document.getElementById("responsive-navbar-nav");
+    var btn = document.getElementById("navbar-toggler-btn");
+    btn.classList.toggle("collapsed");
+    nav.classList.toggle("collapse");
+    nav.classList.add("collapsing");
+    setTimeout(() => {
+      nav.classList.remove("collapsing");
+      nav.classList.toggle("collapse");
+      nav.classList.toggle("show");
+    }, 300);
+  };
+
   return (
     <>
       <Navbar
+        collapseOnSelect
         variant="dark"
         className={
           props.relative
@@ -392,139 +421,166 @@ const NavbarCustom = (props) => {
         }
         expand="md"
       >
-        <Navbar.Brand
-          href="https://pictieee.in"
-          target="_blank"
-          className="header-header"
-        >
-          <img src={PISBLOGO} alt="pisblogo" className="nav-logo ms-4" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className="m-2" />
-        <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
-          <Nav
-            className="s-auto"
-            style={{ position: "relative" }}
-            defaultActiveKey={"home"}
+        <Container>
+          <Navbar.Brand
+            href="https://pictieee.in"
+            target="_blank"
+            className="header-header"
           >
-            <NavLink
-              key={"home"}
-              activeClassName="activeLink"
-              to={`/`}
-              isActive={() => {
-                return page === "/";
-              }}
-              className={`header-title ${page === "/" ? "activeLink" : ""}`}
-              onClick={() => {
-                setPage("/");
-              }}
+            <img src={PISBLOGO} alt="pisblogo" className="nav-logo ms-4" />
+          </Navbar.Brand>
+          {/* <Navbar.Toggle
+            id="navbar-toggler-btn"
+            aria-controls="responsive-navbar-nav"
+            className="m-2"
+            // onClick={() => toggleHamburger()}
+          /> */}
+          <button
+            id="navbar-toggler-btn"
+            aria-controls="responsive-navbar-nav"
+            className="m-2 navbar-toggler"
+            onClick={() => toggleHamburger()}
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <Navbar.Collapse
+            className="justify-content-end"
+            id="responsive-navbar-nav"
+          >
+            <Nav
+              className="s-auto"
+              id="navbarNav"
+              style={{ position: "relative" }}
+              defaultActiveKey={"home"}
             >
-              Home
-            </NavLink>
-            <NavLink
-              key={"events"}
-              activeClassName="activeLink"
-              // hidden={comingSoon || true}
-              to={`/events`}
-              isActive={() => page === "/events"}
-              className="header-title"
-              onClick={() => {
-                setPage("/events");
-              }}
-            >
-              {/* <TextSliced title="Events" activeLink={page === "/events"} /> */}
-              Events
-            </NavLink>
-            <NavLink
-              key={"about"}
-              activeClassName="activeLink"
-              to={`/about`}
-              isActive={() => page === "/about"}
-              className="header-title"
-              onClick={() => {
-                setPage("/about");
-              }}
-            >
-              About
-            </NavLink>
-            <NavLink
-              key={"contact"}
-              activeClassName="activeLink"
-              to={`/contact`}
-              isActive={() => page === "/contact"}
-              className="header-title"
-              onClick={() => {
-                setPage("/contact");
-              }}
-            >
-              Contact
-            </NavLink>
-            <NavLink
-              key={"login"}
-              activeClassName="activeLink"
-              to={`/login`}
-              isActive={() => page === "/login"}
-              onClick={() => {
-                setPage("/login");
-              }}
-              className="header-title"
-              hidden={isLoggedIn ? true : false}
-            >
-              {/* <TextSliced
+              <NavLink
+                key={"home"}
+                activeClassName="activeLink"
+                to={`/`}
+                isActive={() => {
+                  return page === "/";
+                }}
+                className={`header-title ${page === "/" ? "activeLink" : ""}`}
+                onClick={() => {
+                  setPage("/");
+                  handleCollapse();
+                }}
+              >
+                Home
+              </NavLink>
+              <NavLink
+                key={"events"}
+                activeClassName="activeLink"
+                // hidden={comingSoon || true}
+                to={`/events`}
+                isActive={() => page === "/events"}
+                className="header-title"
+                onClick={() => {
+                  setPage("/events");
+                  handleCollapse();
+                }}
+              >
+                {/* <TextSliced title="Events" activeLink={page === "/events"} /> */}
+                Events
+              </NavLink>
+              <NavLink
+                key={"about"}
+                activeClassName="activeLink"
+                to={`/about`}
+                isActive={() => page === "/about"}
+                className="header-title"
+                onClick={() => {
+                  setPage("/about");
+                  handleCollapse();
+                }}
+              >
+                About
+              </NavLink>
+              <NavLink
+                key={"contact"}
+                activeClassName="activeLink"
+                to={`/contact`}
+                isActive={() => page === "/contact"}
+                className="header-title"
+                onClick={() => {
+                  setPage("/contact");
+                  handleCollapse();
+                }}
+              >
+                Contact
+              </NavLink>
+              <NavLink
+                key={"login"}
+                activeClassName="activeLink"
+                to={`/login`}
+                isActive={() => page === "/login"}
+                onClick={() => {
+                  setPage("/login");
+                }}
+                className="header-title"
+                hidden={isLoggedIn ? true : false}
+              >
+                {/* <TextSliced
                 title={isLoggedIn ? (!paymentDone ? "Pay Now" : "") : "Login"}
                 activeLink={page === "/login"}
               /> */}
-              Login
-            </NavLink>
-            {isLoggedIn && (
-              <>
-                <div
-                  className="cartIconContainer m-10"
-                  onClick={handleShowModal}
-                >
-                  {cartContextValue.cart.length > 0 && (
-                    <div className="badgeContainer">
-                      <p className="badge">{cartContextValue.cart.length}</p>
+                Login
+              </NavLink>
+              {isLoggedIn && (
+                <>
+                  <div
+                    className="cartIconContainer m-10"
+                    onClick={handleShowModal}
+                  >
+                    {cartContextValue.cart.length > 0 && (
+                      <div className="badgeContainer">
+                        <p className="badge">{cartContextValue.cart.length}</p>
+                      </div>
+                    )}
+                    <img src={CartIcon} alt="Cart icon" className="cartIcon" />
+                  </div>
+                </>
+              )}
+              {isLoggedIn && (
+                <>
+                  <div
+                    className="d-flex align-items-center responsive-pos"
+                    style={{ cursor: "pointer" }}
+                    onClick={handleShowMenu}
+                  >
+                    <div className="profileIconContainer">
+                      <img
+                        src={ProfileIcon}
+                        alt="Profile icon"
+                        className="profileIcon"
+                      />
                     </div>
-                  )}
-                  <img src={CartIcon} alt="Cart icon" className="cartIcon" />
-                </div>
-              </>
-            )}
-            {isLoggedIn && (
-              <>
-                <div
-                  className="d-flex align-items-center responsive-pos"
-                  style={{ cursor: "pointer" }}
-                  onClick={handleShowMenu}
-                >
-                  <div className="profileIconContainer">
-                    <img
-                      src={ProfileIcon}
-                      alt="Profile icon"
-                      className="profileIcon"
-                    />
+                    <div className="downArrowContainer">
+                      <img
+                        src={DownArrow}
+                        alt="Down icon"
+                        className="downArrow"
+                      />
+                    </div>
                   </div>
-                  <div className="downArrowContainer">
-                    <img
-                      src={DownArrow}
-                      alt="Down icon"
-                      className="downArrow"
-                    />
-                  </div>
-                </div>
-                {showMenu && <ProfileMenu />}
-              </>
-            )}
-          </Nav>
-          <a
-            href="https://www.ieee.org"
-            target="_blank"
-            rel="noreferrer"
-            className="me-3 ms-5"
-          >
-            <img src={IEEELOGO} alt="iEEElogo" className="nav-logo logo-ieee" />
-          </a>
-        </Navbar.Collapse>
+                  {showMenu && <ProfileMenu />}
+                </>
+              )}
+            </Nav>
+            <a
+              href="https://www.ieee.org"
+              target="_blank"
+              rel="noreferrer"
+              className="me-3 ms-5"
+            >
+              <img
+                src={IEEELOGO}
+                alt="iEEElogo"
+                className="nav-logo logo-ieee"
+              />
+            </a>
+          </Navbar.Collapse>
+        </Container>
       </Navbar>
       <Modal
         show={cartContextValue.cartModal}
