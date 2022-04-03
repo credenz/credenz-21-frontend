@@ -237,7 +237,6 @@ const Events = () => {
   }
 
   function PlayButton(props) {
-    console.log("Profile Details:", profileDetails);
     return (
       <div className="play-btn-wrapper">
         <button
