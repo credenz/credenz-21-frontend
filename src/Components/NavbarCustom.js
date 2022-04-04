@@ -66,7 +66,7 @@ const NavbarCustom = (props) => {
         return Enigma;
       case "NTH":
         return NTH;
-      case "Paper":
+      case "Paper Presentation":
         return Paper;
       case "Pixelate":
         return Pixelate;
@@ -111,7 +111,7 @@ const NavbarCustom = (props) => {
       case "RC":
         return "Reverse Coding";
       case "BPlan":
-        return "Business Plan";
+        return "B-Plan";
       case "Clash":
         return "Clash";
       case "Cretronix":
@@ -272,6 +272,7 @@ const NavbarCustom = (props) => {
   };
 
   const CartBody = (props) => {
+    console.log("Props ->", props);
     return (
       <Card className="event-card">
         <Card.Body className="d-flex row card-body">

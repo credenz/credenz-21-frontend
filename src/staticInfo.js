@@ -3,7 +3,7 @@ export const events = {
   1: "Clash",
   2: "NTH",
   3: "Wallstreet",
-  4: "BPlan",
+  4: "B-Plan",
   5: "Enigma",
   6: "Datawiz",
   7: "Quiz",
