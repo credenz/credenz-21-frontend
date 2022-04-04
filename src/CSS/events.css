@@ -63,12 +63,6 @@
   width: 0;
 }
 
-.modal-backdrop {
-  width: 0 !important;
-  height: 0 !important;
-  display: none !important;
-}
-
 .section-events {
   align-items: center;
 }
@@ -138,7 +132,7 @@
 }
 .credenz-text-main {
   color: var(--light);
-  font-size: 36px;
+  font-size: 45px;
   font-weight: bold;
 }
 
@@ -472,8 +466,7 @@ li .nav-link {
     max-width: 100% !important;
   }
   .modal-backdrop {
-    width: fit-content !important;
-    height: fit-content !important;
+    z-index: 1000;
   }
   .cards-wrapper {
     overflow-y: scroll;

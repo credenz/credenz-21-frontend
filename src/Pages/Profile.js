@@ -38,6 +38,7 @@ const Profile = (props) => {
     senior: false,
     institute: "",
     registeredEvents: [],
+    payment: false,
   });
 
   const allEvents = [
@@ -52,7 +53,7 @@ const Profile = (props) => {
     "Paper Presentation",
     "Cretronix",
     "Pixelate",
-    "Web Weaver",
+    "Webweaver",
   ];
 
   const iconHelpr = (e) => {
@@ -78,7 +79,7 @@ const Profile = (props) => {
       return Cretronix;
     } else if (e === "Pixelate") {
       return Pixelate;
-    } else if (e === "Web Weaver") {
+    } else if (e === "Webweaver") {
       return Webweaver;
     }
   };
@@ -98,7 +99,7 @@ const Profile = (props) => {
       return 1;
     } else if (eventName === "Network Treasure Hunt") {
       return 2;
-    } else if (eventName === "WallStreet") {
+    } else if (eventName === "Wallstreet") {
       return 3;
     } else if (eventName === "B-Plan") {
       return 4;
@@ -114,7 +115,7 @@ const Profile = (props) => {
       return 9;
     } else if (eventName === "Pixelate") {
       return 10;
-    } else if (eventName === "Web Weaver") {
+    } else if (eventName === "Webweaver") {
       return 11;
     }
   };
@@ -125,17 +126,43 @@ const Profile = (props) => {
     if (token) {
       await API.getProfile(token)
         .then((res) => {
-          console.log("getProfile:", res.data);
-          setProfileDetails({
-            ...profileDetails,
-            userName: res.data?.username,
-            email: res.data?.email,
-            contact: res.data?.phone_no,
-            senior: res.data?.senior,
-            is_pass: res.data?.is_pass,
-            institute: res.data?.institute,
-            registeredEvents: res.data?.events,
-          });
+          if (res.data.payment === "CO" && res.data.is_pass === true) {
+            setProfileDetails({
+              ...profileDetails,
+              userName: res.data?.username,
+              email: res.data?.email,
+              contact: res.data?.phone_no,
+              senior: res.data?.senior,
+              is_pass: res.data?.is_pass,
+              institute: res.data?.institute,
+              payment: res.data?.payment,
+              registeredEvents: allEvents,
+            });
+          } else if (res.data.payment === "CO" && res.data.is_pass === false) {
+            setProfileDetails({
+              ...profileDetails,
+              userName: res.data?.username,
+              email: res.data?.email,
+              contact: res.data?.phone_no,
+              senior: res.data?.senior,
+              is_pass: res.data?.is_pass,
+              institute: res.data?.institute,
+              payment: res.data?.payment,
+              registeredEvents: res.data.events,
+            });
+          } else {
+            setProfileDetails({
+              ...profileDetails,
+              userName: res.data?.username,
+              email: res.data?.email,
+              contact: res.data?.phone_no,
+              senior: res.data?.senior,
+              is_pass: res.data?.is_pass,
+              institute: res.data?.institute,
+              payment: res.data?.payment,
+              registeredEvents: [],
+            });
+          }
         })
         .catch((err) => {
           console.error(err);
@@ -157,7 +184,6 @@ const Profile = (props) => {
   }, []);
 
   // useEffect(() => {
-  //   console.log("Profile deets:", cartContextValue.userDetails);
   // }, []);
 
   return (
@@ -226,57 +252,64 @@ const Profile = (props) => {
                   <div className="heading">
                     <h2>My Events</h2>
                   </div>
-                  {profileDetails?.registeredEvents.length > 0 ? (
-                    <div className="secondContainer">
-                      <div className="row d-flex flex-row justify-content-evenly flex-wrap">
-                        {profileDetails?.registeredEvents.map((col, i) => (
-                          <span
-                            key={i}
-                            className="d-flex justify-content-center"
-                            style={{ width: "200px" }}
-                            onClick={() => {
-                              setActive(eventHelper(col?.name));
-                              setEventSelected(eventHelper(col?.name));
-                              setShow(true);
-                            }}>
-                            <EventCard3
-                              icon={iconHelpr(col?.name)}
-                              width={width}
-                              height={height}
-                              title={col?.name}
-                            />
-                          </span>
-                        ))}
+                  {profileDetails.payment === "CO" ? (
+                    profileDetails?.is_pass === true ? (
+                      <div className="secondContainer">
+                        <div className="row d-flex flex-row justify-content-evenly flex-wrap">
+                          {allEvents.length > 0 &&
+                            allEvents.map((col, i) => (
+                              <span
+                                key={i}
+                                className="d-flex justify-content-center"
+                                style={{ width: "200px" }}
+                                onClick={() => {
+                                  setActive(eventHelper(col));
+                                  setEventSelected(eventHelper(col));
+                                  setShow(true);
+                                }}
+                              >
+                                <EventCard3
+                                  icon={iconHelpr(col)}
+                                  width={width}
+                                  height={height}
+                                  title={col}
+                                />
+                              </span>
+                            ))}
+                        </div>
                       </div>
-                    </div>
-                  ) : profileDetails?.is_pass === true ? (
-                    <div className="secondContainer">
-                      <div className="row d-flex flex-row justify-content-evenly flex-wrap">
-                        {allEvents.length > 0 &&
-                          allEvents.map((col, i) => (
-                            <span
-                              key={i}
-                              className="d-flex justify-content-center"
-                              style={{ width: "200px" }}
-                              onClick={() => {
-                                setActive(eventHelper(col));
-                                setEventSelected(eventHelper(col));
-                                setShow(true);
-                              }}>
-                              <EventCard3
-                                icon={iconHelpr(col)}
-                                width={width}
-                                height={height}
-                                title={col}
-                              />
-                            </span>
-                          ))}
+                    ) : (
+                      <div className="secondContainer">
+                        <div className="row d-flex flex-row justify-content-evenly flex-wrap">
+                          {profileDetails?.registeredEvents.map((col, i) => {
+                            return (
+                              <span
+                                key={i}
+                                className="d-flex justify-content-center"
+                                style={{ width: "200px" }}
+                                onClick={() => {
+                                  setActive(eventHelper(col?.name));
+                                  setEventSelected(eventHelper(col?.name));
+                                  setShow(true);
+                                }}
+                              >
+                                <EventCard3
+                                  icon={iconHelpr(col?.name)}
+                                  width={width}
+                                  height={height}
+                                  title={col?.name}
+                                />
+                              </span>
+                            );
+                          })}
+                        </div>
                       </div>
-                    </div>
+                    )
                   ) : (
                     <div
                       className="m-5 d-flex justify-content-center align-items-center"
-                      style={{ color: "#fff" }}>
+                      style={{ color: "#fff" }}
+                    >
                       Not registered for any event
                     </div>
                   )}
@@ -293,14 +326,16 @@ const Profile = (props) => {
             onHide={() => {
               setShow(false);
             }}
-            size="lg">
+            size="lg"
+          >
             <Modal.Header style={{ width: "90%" }}>
               <Modal.Title
                 style={{
                   width: "100%",
                   display: "flex",
                   justifyContent: "space-between",
-                }}>
+                }}
+              >
                 <img
                   className="modal-logo-img1"
                   src={iconHelpr(eventsFull[active])}
@@ -315,7 +350,8 @@ const Profile = (props) => {
                 </div>
                 <div
                   className="modal-close-wrapper1"
-                  onClick={() => setShow(false)}>
+                  onClick={() => setShow(false)}
+                >
                   <img
                     src={Cross}
                     alt="close button"
@@ -330,7 +366,8 @@ const Profile = (props) => {
                   eventKey="info"
                   title="Info"
                   className="modal-tab-link1"
-                  color="#efefef">
+                  color="#efefef"
+                >
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 && eventDetails[eventSelected].info}
@@ -348,7 +385,8 @@ const Profile = (props) => {
                 <Tab
                   eventKey="structure"
                   title="Structure"
-                  className="modal-tab-link1">
+                  className="modal-tab-link1"
+                >
                   <div className="info-wrapper1" style={{ maxHeight: "30vh" }}>
                     <p className="new-line1">
                       {eventSelected !== -1 &&
@@ -359,7 +397,8 @@ const Profile = (props) => {
                 <Tab
                   eventKey="judge"
                   title="Judging"
-                  className="modal-tab-link1">
+                  className="modal-tab-link1"
+                >
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 &&
@@ -370,7 +409,8 @@ const Profile = (props) => {
                 <Tab
                   eventKey="contact"
                   title="Contact"
-                  className="modal-tab-link1">
+                  className="modal-tab-link1"
+                >
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 &&

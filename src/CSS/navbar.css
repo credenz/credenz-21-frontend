@@ -239,7 +239,8 @@ a:hover {
     margin-bottom: 15px !important;
   }
   .badgeContainer {
-    left: 13%;
+    /* left: 13%; */
+    right: 81%;
     /* top: -%;
     right: auto; */
   }

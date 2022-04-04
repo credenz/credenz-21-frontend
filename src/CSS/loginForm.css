@@ -21,3 +21,7 @@
   cursor: pointer;
   display: block !important;
 }
+
+.input-disabled {
+  color: gray !important;
+}

@@ -2,7 +2,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect } from "react";
 import "../CSS/AboutCards.css";
-import CredenzLogo from "../images/credenzlive2.0_1.png";
+import CredenzLogo from "../images/logo_website_aboutus.png";
 import PISBLogo from "../images/logopisb.png";
 import PING from "../images/ping.png";
 
@@ -19,7 +19,8 @@ function AboutCards() {
         className="c1 c"
         data-aos="fade-down"
         data-aos-duration="1000"
-        data-aos-easing="linear">
+        data-aos-easing="linear"
+      >
         <img src={CredenzLogo} alt="Branchlogo"></img>
         <div className="aboutCard-nam-messe">
           <h2 className="about-heading">CREDENZ</h2>
@@ -46,7 +47,8 @@ function AboutCards() {
         className="c2 c"
         data-aos="fade-down"
         data-aos-duration="1000"
-        data-aos-easing="linear">
+        data-aos-easing="linear"
+      >
         <img src={PISBLogo} alt="Branchlogo"></img>
         <div className="aboutCard-nam-messe">
           <h2 className="about-heading">PICT IEEE Student Branch</h2>
@@ -68,7 +70,8 @@ function AboutCards() {
         className="c3 c"
         data-aos="fade-down"
         data-aos-duration="1000"
-        data-aos-easing="linear">
+        data-aos-easing="linear"
+      >
         <img src={PING} alt="PING LOGO"></img>
         <div className="aboutCard-nam-messe">
           <h2 className="about-heading">P.I.N.G.</h2>

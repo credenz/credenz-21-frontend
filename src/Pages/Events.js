@@ -17,20 +17,27 @@ import Datawiz from "../images/datawiz.png";
 import Enigma from "../images/enigma.png";
 import NTH from "../images/nth.png";
 import CredenzLogo from "../images/onlyLogo.png";
+import CredenzLogoCombined from "../images/event_logo_white.png";
 import Paper from "../images/paper.png";
 import Pixelate from "../images/pixelate.png";
 import Quiz from "../images/quiz.png";
 import RC from "../images/rc.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
-import { cartItems, eventDetails, events, eventsFull } from "../staticInfo.js";
+import {
+  cartItems,
+  eventDetails,
+  events,
+  eventsFull,
+  allEventsForPass,
+} from "../staticInfo.js";
 // import GridBg from "../vid/mesh.webm";
 
 const Logo = () => {
   return (
     <div className="row" style={{ height: "100%" }}>
       <div
-        className="col-md-4 d-flex justify-content-end"
+        className="col-md-4 d-flex justify-content-end align-items-center"
         style={{ height: "100%" }}
       >
         <Image src={CredenzLogo} className="logo-events" />
@@ -40,6 +47,19 @@ const Logo = () => {
         style={{ height: "100%" }}
       >
         <p className="credenz-text-main">CREDENZ 21-22</p>
+      </div>
+    </div>
+  );
+};
+
+const LogoCombined = () => {
+  return (
+    <div className="row" style={{ height: "100%" }}>
+      <div
+        className="col-md-12 d-flex justify-content-center align-items-center"
+        style={{ height: "100%" }}
+      >
+        <Image src={CredenzLogoCombined} style={{ height: "100%" }} />
       </div>
     </div>
   );
@@ -76,13 +96,36 @@ const Events = () => {
         .then((res) => {
           if (res.data.payment === "PO") {
             setProfileDetails({
-              ...profileDetails,
+              userName: res.data?.username,
+              email: res.data?.email,
+              contact: res.data?.phone_no,
+              senior: res.data?.senior,
+              is_pass: res.data?.is_pass,
+              institute: res.data?.institute,
+              payment: res.data?.payment,
               registeredEvents: [],
+            });
+          } else if (res.data.payment === "CO" && res.data.is_pass === false) {
+            setProfileDetails({
+              userName: res.data?.username,
+              email: res.data?.email,
+              contact: res.data?.phone_no,
+              senior: res.data?.senior,
+              is_pass: res.data?.is_pass,
+              institute: res.data?.institute,
+              payment: res.data?.payment,
+              registeredEvents: res.data.events,
             });
           } else {
             setProfileDetails({
-              ...profileDetails,
-              registeredEvents: res.data.events,
+              userName: res.data?.username,
+              email: res.data?.email,
+              contact: res.data?.phone_no,
+              senior: res.data?.senior,
+              is_pass: res.data?.is_pass,
+              institute: res.data?.institute,
+              payment: res.data?.payment,
+              registeredEvents: allEventsForPass,
             });
           }
         })
@@ -194,21 +237,12 @@ const Events = () => {
   }
 
   function PlayButton(props) {
-    console.log(
-      "Context values:",
-
-      cartContextValue.cart.map((item) => item.name)
-    );
-    console.log("Profile Details:", profileDetails);
-    cartContextValue.cart.forEach((item) => console.log(item));
     return (
       <div className="play-btn-wrapper">
         <button
           onClick={() => {
-            console.log("Clicked:", props.eventCode, cartContextValue.cart);
             if (!isLoggedIn) {
               //proceed to cart -> open cart modal
-              console.log("Open cart modal");
               swal(`You need to login first!`, "", "warning");
             } else {
               cartHelpr(props.eventSelected);
@@ -216,30 +250,40 @@ const Events = () => {
               swal(`Event added successfully!`, "", "success");
             }
           }}
-          // disabled={
-          //   cartContextValue.cart
-          //     .map((item) => item.name)
-          //     .includes(events[props.eventSelected])
-          //     ? true
-          //     : profileDetails.registeredEvents
-          //         .map((event) => event.name)
-          //         .includes(eventsFull[props.eventSelected])
-          //     ? true
-          //     : false
-          // }
+          disabled={
+            cartContextValue.cart
+              .map((item) => item.name)
+              .includes(events[props.eventSelected])
+              ? true
+              : profileDetails.is_pass === true
+              ? true
+              : profileDetails.registeredEvents
+                  .map((event) => event.name)
+                  .includes(eventsFull[props.eventSelected])
+              ? true
+              : cartContextValue.cart.length > 0 &&
+                cartContextValue.cart[0].name === "Pass"
+              ? true
+              : false
+          }
           className="play-btn play-btn--light"
         >
           <span
             style={{
-              backgroundColor: cartContextValue.cart
-                .map((item) => item.name)
-                .includes(events[props.eventSelected])
-                ? "#e01949"
-                : profileDetails.registeredEvents
-                    .map((event) => event.name)
-                    .includes(eventsFull[props.eventSelected])
-                ? "#e01949"
-                : "transparent",
+              backgroundColor:
+                cartContextValue.cart
+                  .map((item) => item.name)
+                  .includes(events[props.eventSelected]) ||
+                (cartContextValue.cart.length > 0 &&
+                  cartContextValue.cart[0].name === "Pass")
+                  ? "#e01949"
+                  : profileDetails.is_pass === true
+                  ? "#e01949"
+                  : profileDetails.registeredEvents
+                      .map((event) => event.name)
+                      .includes(eventsFull[props.eventSelected])
+                  ? "#e01949"
+                  : "transparent",
             }}
             className="play-btn__inner"
           >
@@ -247,8 +291,12 @@ const Events = () => {
             <span className="play-btn__content">
               {cartContextValue.cart
                 .map((item) => item.name)
-                .includes(events[props.eventSelected])
+                .includes(events[props.eventSelected]) ||
+              (cartContextValue.cart.length > 0 &&
+                cartContextValue.cart[0].name === "Pass")
                 ? "Added to cart"
+                : profileDetails.is_pass === true
+                ? "Already Registered"
                 : profileDetails.registeredEvents
                     .map((event) => event.name)
                     .includes(eventsFull[props.eventSelected])
@@ -266,7 +314,15 @@ const Events = () => {
         <button
           className="play-btn play-btn--light"
           onClick={() => {
-            cartContextValue.setCartModal(!cartContextValue.cartModal);
+            if (!isLoggedIn) {
+              //proceed to cart -> open cart modal
+              swal(`You need to login first!`, "", "warning");
+            } else {
+              cartContextValue.setCartModal(!cartContextValue.cartModal);
+              // cartHelpr(props.eventSelected);
+              // setCart([...cart, cartItems[props.eventSelected]]);
+              // swal(`Event added successfully!`, "", "success");
+            }
           }}
         >
           <span className="play-btn__inner play-btn__inner-green">
@@ -364,7 +420,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[0]));
                       setMainText(eventDetails[0].info);
                       setEventSelected(0);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -387,7 +445,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[1]));
                       setMainText(eventDetails[1].info);
                       setEventSelected(1);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -412,7 +472,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[2]));
                       setMainText(eventDetails[2].info);
                       setEventSelected(2);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -435,7 +497,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[3]));
                       setMainText(eventDetails[3].info);
                       setEventSelected(3);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -460,7 +524,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[4]));
                       setMainText(eventDetails[4].info);
                       setEventSelected(4);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -482,7 +548,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[5]));
                       setMainText(eventDetails[5].info);
                       setEventSelected(5);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -506,7 +574,7 @@ const Events = () => {
                 >
                   <div className="main-wrapper">
                     {eventSelected === -1 ? (
-                      <Logo />
+                      <LogoCombined />
                     ) : (
                       <>
                         <div className="main-heading">{mainHeading}</div>
@@ -550,7 +618,6 @@ const Events = () => {
                             activeTab === 0 ? "activeTab" : ""
                           } `}
                           color="warning"
-                          rounded
                           onClick={() => {
                             if (eventSelected !== -1) {
                               setMainText(eventDetails[eventSelected].info);
@@ -568,7 +635,6 @@ const Events = () => {
                             activeTab === 1 ? "activeTab" : ""
                           } `}
                           color="warning"
-                          rounded
                           onClick={() => {
                             if (eventSelected !== -1) {
                               setMainText(eventDetails[eventSelected].rules);
@@ -585,7 +651,6 @@ const Events = () => {
                             activeTab === 2 ? "activeTab" : ""
                           } `}
                           color="warning"
-                          rounded
                           onClick={() => {
                             if (eventSelected !== -1) {
                               setMainText(
@@ -604,7 +669,6 @@ const Events = () => {
                             activeTab === 3 ? "activeTab" : ""
                           } `}
                           color="warning"
-                          rounded
                           onClick={() => {
                             if (eventSelected !== -1) {
                               setMainText(eventDetails[eventSelected].judging);
@@ -621,7 +685,6 @@ const Events = () => {
                             activeTab === 4 ? "activeTab" : ""
                           } `}
                           color="warning"
-                          rounded
                           onClick={() => {
                             if (eventSelected !== -1) {
                               setMainText(eventDetails[eventSelected].contact);
@@ -654,7 +717,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[6]));
                       setMainText(eventDetails[6].info);
                       setEventSelected(6);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -676,7 +741,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[7]));
                       setMainText(eventDetails[7].info);
                       setEventSelected(7);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -700,7 +767,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[8]));
                       setMainText(eventDetails[8].info);
                       setEventSelected(8);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -722,7 +791,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[9]));
                       setMainText(eventDetails[9].info);
                       setEventSelected(9);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -746,7 +817,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[10]));
                       setMainText(eventDetails[10].info);
                       setEventSelected(10);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -768,7 +841,9 @@ const Events = () => {
                       setMainHeading(titleHelpr(events[11]));
                       setMainText(eventDetails[11].info);
                       setEventSelected(11);
-                      setShow(true);
+                      if (window.innerWidth <= 768) {
+                        setShow(true);
+                      }
                       setActiveTab(0);
                     }}
                   >
@@ -829,7 +904,7 @@ const Events = () => {
                   </div>
                 </Modal.Title>
               </Modal.Header>
-              <Modal.Body text>
+              <Modal.Body>
                 <Tabs defaultActiveKey="info" className="mb-3">
                   <Tab
                     eventKey="info"

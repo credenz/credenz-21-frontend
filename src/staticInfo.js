@@ -28,6 +28,79 @@ export const eventsFull = {
   11: "Webweaver",
 };
 
+export const allEventsForPass = [
+  {
+    name: "RC",
+    price: 50,
+    tagline:
+      "Hone your problem-solving skills by decrypting complex questions!",
+  },
+  {
+    name: "Clash",
+    price: 50,
+    tagline: "Clash is based on Competitive Programming!",
+  },
+  {
+    name: "NTH",
+    price: 0,
+    tagline:
+      "Decrypt the clues to solve complex puzzles and race your way to finish at top!",
+  },
+  {
+    name: "Wallstreet",
+    price: 50,
+    tagline:
+      "Get an insight on stock markets by Investing and trading virtual money!",
+  },
+  {
+    name: "BPlan",
+    price: 50,
+    tagline:
+      "Showcase your entrepreneurial skills by presenting innovative business plans to the world!",
+  },
+  {
+    name: "Enigma",
+    price: 50,
+    tagline:
+      "Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions!",
+  },
+  {
+    name: "Datawiz",
+    price: 50,
+    tagline:
+      "Test your Machine learning and data analytics skills before stepping into the world of Data Science!",
+  },
+  {
+    name: "Quiz",
+    price: 50,
+    tagline:
+      "Test your knowledge across wide range of topics and get a chance to win some exciting prizes!",
+  },
+  {
+    name: "Paper Presentation",
+    price: 50,
+    tagline:
+      "Present technical research papers with advanced perspectives while honing your skills of research!",
+  },
+  {
+    name: "Cretronix",
+    price: 50,
+    tagline: "Build and exhibit your own circuits by solving tech problems!",
+  },
+  {
+    name: "Pixelate",
+    price: 50,
+    tagline:
+      "Let your creativity fuse with thoughtful designs and artistic originality!",
+  },
+  {
+    name: "Webweaver",
+    price: 50,
+    tagline:
+      "Build an aesthetic website to showcase your web development skill!",
+  },
+];
+
 export const cartItems = {
   0: {
     name: "RC",
@@ -163,8 +236,8 @@ Timings
 14-04-2022`,
     rules: `1) A maximum of three candidates per plan pursuing undergraduate/graduate/postgraduate program at their institution will be allowed per team.
 \n2) Proposed business plan should not be in violation of any intellectual property rights.
-\n3) Proposed business plan should be submitted by 14th April 2022`,
-    structure: `1) At stage 1, the soft copy of the abstract (summary) should be submitted to pisb.bplan21@gmail.com by 10th February 2021.
+\n3) Proposed business plan should be submitted by 12th April 2022`,
+    structure: `1) At stage 1, the soft copy of the abstract (summary) should be submitted to pisb.bplan21@gmail.com by 12th April 2022.
 \n2) The Soft copy should be a .pdf file.
 \n3)The top 7 teams will compete in the next stage.
 \n4) Each team will be given 12 minutes in the final round to present their B-PLAN in front of a panel of judges and audience. A warning bell will be given at 10 minutes and a final 2 minutes thereafter.
@@ -195,7 +268,7 @@ Timings
     rules: `1) Candidates pursuing an undergraduate/graduate program at their institution will be allowed to participate. Participants can either participate individually or in a team of 2.
 \n2)All the participants should follow all the instructions as mentioned in the mail received after registration.`,
     structure: `1) There will be two rounds.
-5)ROUND 1:\n\ta.There will be 25 questions in this round.\n\tb.Time limit is 35 minutes.\n\tc.For every right answer, you will be awarded points and no negative points for a wrong answer.\n\td.The marking scheme will be told on the day of the event.
+5)ROUND 1:\n\ta.There will be 30 questions in this round.\n\tb.Time limit is 35 minutes.\n\tc.For every right answer, you will be awarded points and no negative points for a wrong answer.\n\td.The marking scheme will be told on the day of the event.
 6)ROUND 2:\n\ta.There will be 5 Puzzles in this round.\n\tb.Time Limit is 2 hours\n\tc.You must claim whenever you are done. Earliest claim with max. score wins.`,
     judging: `1)There will be two rounds.
 \n2)You need to qualify the threshold score to get into the next round. The threshold will be decided based upon the performance of all the teams.
@@ -270,7 +343,7 @@ Timings:
 15-04-2022 `,
     rules: `1.A team of maximum three candidates pursuing undergraduate/postgraduate program is allowed.
 \n2.Marking Scheme will be declared on the spot.
-\n3.Research Papers sent after 14th April, 2022 11:59 PM won’t be accepted.
+\n3.Research Papers sent after 8th April, 2022 11:59 PM won’t be accepted.
 `,
     structure: `1) Only soft copy i.e. a .pdf file, of the paper and abstract should be submitted. The paper should not exceed more than 6 pages.
 \n2) Soft copy of the technical paper and the abstract should be mailed to credenzpaperpresentation@gmail.com (Include name of participants, college name and year of study in mail) 

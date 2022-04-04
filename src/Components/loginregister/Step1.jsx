@@ -4,6 +4,7 @@ import "../../CSS/Login.css";
 
 const FormContainer = (props) => {
   const [passwordError, setPasswordError] = useState(false);
+
   const validatePassword = (password) => {
     const reg =
       "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
@@ -57,6 +58,9 @@ const FormContainer = (props) => {
         value={props.email}
         onChange={(e) => props.setEmail(e.target.value)}
       />
+      <span hidden={!props.emailError} className="error-text">
+        Please enter a valid email
+      </span>
 
       <select
         className="mb-2"
@@ -721,10 +725,7 @@ const FormContainer = (props) => {
         value={props.phone}
         onChange={(e) => props.setPhone(e.target.value)}
       />
-      <span
-        hidden={props.phone.length === 10 || props.phone.length < 1}
-        className="error-text"
-      >
+      <span hidden={!props.phoneError} className="error-text">
         The Phone number must be 10 digits
       </span>
 
@@ -747,7 +748,7 @@ const FormContainer = (props) => {
         </div>
         <span hidden={!passwordError} className="error-text">
           The password must contain atleast 1 capital aplhabet, 1 number and 1
-          special character
+          special character and must be atleast 8 characters long
         </span>
       </div>
     </>

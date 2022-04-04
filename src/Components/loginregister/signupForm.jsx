@@ -26,6 +26,8 @@ export function SignupForm(props) {
   const [isPictian, setIsPictian] = useState(false);
   const [college, setCollege] = useState("");
   const [isSenior, setIsSenior] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
 
   const handleSignUp = () => {
     props.setLoading(true);
@@ -44,15 +46,66 @@ export function SignupForm(props) {
       },
     })
       .then((res) => {
-        swal("You have been registered successfully!", "", "success");
         localStorage.setItem("credenz_username", res.data.username);
+        swal("You have been registered successfully!", "", "success")
+          .then((val) => {
+            window.location.reload();
+          })
+          .catch((err) => {
+            console.error(err);
+          });
         props.setLoading(false);
       })
       .catch((e) => {
         props.setLoading(false);
         // alert(JSON.stringify(e.response.data));
-        swal("Error", JSON.stringify(e.response.data), "error");
+        const errMsg = customErrorMessages(e.response.data);
+        swal("Error", errMsg, "error");
       });
+  };
+
+  const customErrorMessages = (err) => {
+    const errArr = Object.values(err);
+    let errMsg = "";
+    errArr.forEach((err) => {
+      errMsg += err + "\n";
+    });
+    return errMsg;
+  };
+
+  function ValidateEmail(mail) {
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (mailformat.test(mail)) {
+      setEmailError(false);
+      return true;
+    } else {
+      setEmailError(true);
+      return false;
+    }
+  }
+
+  const ValidatePhone = (phone) => {
+    if (phone.length === 10) {
+      setPhoneError(false);
+      return true;
+    } else {
+      setPhoneError(true);
+      return false;
+    }
+  };
+
+  const allFieldsFilled = () => {
+    const emailValid = ValidateEmail(email);
+    const phoneValid = ValidatePhone(phone);
+    return (
+      fname !== "" &&
+      lname !== "" &&
+      username !== "" &&
+      emailValid &&
+      phoneValid &&
+      passwd1 !== "" &&
+      passwd2 !== ""
+    );
   };
 
   return (
@@ -70,6 +123,8 @@ export function SignupForm(props) {
             passwd2={passwd2}
             setFname={setFname}
             setLname={setLname}
+            emailError={emailError}
+            phoneError={phoneError}
             setUsername={setUsername}
             setEmail={setEmail}
             setCcode={setCcode}
@@ -107,25 +162,25 @@ export function SignupForm(props) {
             <span className="btn__content">Sign Up</span>
             <span className="btn__glitch"></span>
           </button>
-          {/* <button
-            className="btn btn--secondary"
-            type="submit"
-            onClick={displayRazorpay}
-            disabled={!enablePayment}>
-            <span className="btn__content">Pay Now</span>
-            <span className="btn__glitch"></span>
-          </button> */}
         </>
       )}
 
       {step === 0 && (
-        <button className="btn btn--secondary" type="submit">
+        <button
+          className="btn btn--secondary"
+          type="submit"
+          disabled={() => {
+            return !allFieldsFilled();
+          }}
+        >
           <span
             className="btn__content"
             onClick={(e) => {
-              passwd1 === passwd2
-                ? setStep(1)
-                : swal("Error", "Passwords don't match!", "error");
+              allFieldsFilled()
+                ? passwd1 === passwd2
+                  ? setStep(1)
+                  : swal("Error", "Passwords don't match!", "error")
+                : swal("Error", "Please fill out all the details", "error");
             }}
           >
             Next
