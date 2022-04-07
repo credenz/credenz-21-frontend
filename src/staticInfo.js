@@ -343,7 +343,8 @@ Timings:
 15-04-2022 `,
     rules: `1.A team of maximum three candidates pursuing undergraduate/postgraduate program is allowed.
 \n2.Marking Scheme will be declared on the spot.
-\n3.Research Papers sent after 8th April, 2022 11:59 PM won’t be accepted.
+\n3.Research Papers sent after 12th April, 2022 11:59 PM won’t be accepted.
+\n4.Every member must register individually.
 `,
     structure: `1) Only soft copy i.e. a .pdf file, of the paper and abstract should be submitted. The paper should not exceed more than 6 pages.
 \n2) Soft copy of the technical paper and the abstract should be mailed to credenzpaperpresentation@gmail.com (Include name of participants, college name and year of study in mail) 
