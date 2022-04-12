@@ -379,7 +379,7 @@ Round 2: 15-04-2022`,
 \n2) 2nd round: The participants will be given a problem statement. They are supposed to implement a solution (circuit) to it with the help of hardware components.
 \n`,
     judging: `Round 1:
-Each question carries a single mark. No negative marking. Teams/Individuals having score above a certain threshold will be selected for Round 2.
+Each question carries a single mark. Teams/Individuals having score above a certain threshold will be selected for Round 2.
 \nRound 2:
 Top two teams/individuals earning maximum points based on the understanding of the problem statement, component selection, practical performance and explanation of the implemented circuit will be declared as winner and runner-up respectively. 
 `,
