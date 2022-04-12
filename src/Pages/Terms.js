@@ -493,9 +493,9 @@ export const Terms = () => {
         </p>
         <h2 className="terms-subheader">SECTION 4 - PAYMENT</h2>
         <p className="lead">
-          We use Razorpay for processing payments. We/Razorpay do not store your
-          card data on their servers. The data is encrypted through the Payment
-          Card Industry Data Security Standard (PCI-DSS) when processing
+          We use Razorpay/UPI for processing payments. We/Razorpay do not store
+          your card data on their servers. The data is encrypted through the
+          Payment Card Industry Data Security Standard (PCI-DSS) when processing
           payment. Your purchase transaction data is only used as long as is
           necessary to complete your purchase transaction. After that is
           complete, your purchase transaction information is not saved.

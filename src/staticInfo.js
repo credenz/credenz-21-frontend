@@ -184,16 +184,16 @@ export const tabs = {
 
 export const eventDetails = {
   0: {
-    info: `A coding competition to test your conceptual understanding of algorithms and programming languages. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.\n\nTimings\n13-04-2022, Wednesday\n14-04-2022, Thursday \n15-04-2022, Friday\n
+    info: `A coding competition to test your conceptual understanding of algorithms and programming languages. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.\n\nTimings\nRound-1: 13-04-2022 to 14-04-2022 \nRound-2: 15-04-2022\n
       `,
-    rules: `1. A maximum of 2 participants (in a team) pursuing an undergraduate program at their institution are allowed to participate\n2. The participants must keep their college verification handy as they may be asked to disclose it at any point of time. Before the final round, all participants will be asked to verify their identity as an undergraduate student. Failure to do so will lead to immediate disqualification\n3. Marking scheme along with further rules and regulation while playing RC will be released during the time of the event itself.\n`,
+    rules: `1. A maximum of 2 participants (in a team) pursuing an undergraduate program at their institution are allowed to participate\n2. Each participant, if in a team, must pay the given amount individually to play the event as a team. \n3. The participants must keep their college verification handy as they may be asked to disclose it at any point of time. Before the final round, all participants will be asked to verify their identity as an undergraduate student. Failure to do so will lead to immediate disqualification\n4. Marking scheme along with further rules and regulation while playing RC will be released during the time of the event itself.\n`,
     structure: `1)There are two rounds in RC:\n\ta) Logic Round (elimination)\n\tb) Decipher and code Round (final)\n\n2)Participants can register via the Credenz website.\n\n3)The event will be divided into two levels, Junior and Senior where the difficulty will vary accordingly. All the levels will test out your knowledge of C/C++ and Python.\n\n4)The FE and SE participants will be taking on the Junior Category while the TE and BE participants will take on the Senior Category.\n\n5)The participants clearing the cut off score in round 1 will be notified for round 2 and will be able to participate for the prize.\n`,
     judging: `1) Judging in round 1 will be based on the correctness of the decoded mathematical pattern with or without coding.\n\n2) Judging for round 2 will be based on the time and space efficiency of your code to solve the given challenges in restricted time.\n\nPrizes\nJunior Section\nComing Soon\n\nSenior Section\nComing Soon\n`,
     contact: `\nNeil Deshpande\n+91 88056 00298\n\nPranav Mohril\n+91 75883 43127`,
   },
   1: {
-    info: `Put your logical acumen and coding expertise to the test as you clash with a round of perplexing MCQs followed by a set of time-bound coding challenges, carefully designed to assess your command over programming in the language of your choice- Python, C or C++. Showcase your technical proficiency as you have a go at competitive coding with plenty to learn and nothing to lose.\n\nTimings\n13-04-2022, Wednesday\n14-04-2022, Thursday \n15-04-2022, Friday\n`,
-    rules: `1. A maximum of 2 participants (in a team) pursuing an undergraduate program at their institution are allowed to participate\n\n2. The participants must keep their college verification handy as they may be asked to disclose it at any point of time. Before the final round, all participants will be asked to verify their identity as an undergraduate student. Failure to do so will lead to immediate disqualification.\n\n3. Marking scheme along with further rules and regulation while playing Clash will be released during the time of the event itself.\n`,
+    info: `Put your logical acumen and coding expertise to the test as you clash with a round of perplexing MCQs followed by a set of time-bound coding challenges, carefully designed to assess your command over programming in the language of your choice- Python, C or C++. Showcase your technical proficiency as you have a go at competitive coding with plenty to learn and nothing to lose.\n\nTimings\nRound-1: 13-04-2022 to 14-04-2022 \nRound-2: 15-04-2022\n`,
+    rules: `1. A maximum of 2 participants (in a team) pursuing an undergraduate program at their institution are allowed to participate\n\n2. Each participant, if in a team, must pay the given amount individually to play the event as a team.\n3. The participants must keep their college verification handy as they may be asked to disclose it at any point of time. Before the final round, all participants will be asked to verify their identity as an undergraduate student. Failure to do so will lead to immediate disqualification.\n\n4. Marking scheme along with further rules and regulation while playing Clash will be released during the time of the event itself.\n`,
     structure: `1)There are two rounds in clash:\n\ta) MCQ Round (elimination)\n\tb) Coding Round (final)\n\n2)Participants can register via the Credenz website.\n\n3)The event will be divided into two levels, Junior and Senior where the difficulty will vary accordingly. All the levels will test out your knowledge of C/C++ and Python.\n\n4)The FE and SE participants will be taking on the Junior Category while the TE and BE participants will take on the Senior Category.\n\n5)The participants clearing the cut off score in round 1 will be notified for round 2 and will be able to participate for the prize.`,
     judging: `1)Judging in round 1 will be based on programming skills, ability to understand code, algorithms and knowledge of the fundamentals of C/C++ and Python.\n\n2)Judging for round 2 will be based on the time and space efficiency of your code to solve the given challenges in restricted time.\n\nPrizes\nJunior Section\nComing Soon\n\nSenior Section\nComing Soon`,
     contact: `\nSiddharth Bora\n+91 94033 04652\n\nMegha Dandapat\n+91 88304 01437`,
@@ -235,8 +235,9 @@ Shrikrushna Zirape
 Timings
 14-04-2022`,
     rules: `1) A maximum of three candidates per plan pursuing undergraduate/graduate/postgraduate program at their institution will be allowed per team.
-\n2) Proposed business plan should not be in violation of any intellectual property rights.
-\n3) Proposed business plan should be submitted by 12th April 2022`,
+    2).Each participant, if in a team, must pay the given amount individually to play the event as a team.\n
+\n3) Proposed business plan should not be in violation of any intellectual property rights.
+\n4) Proposed business plan should be submitted by 12th April 2022`,
     structure: `1) At stage 1, the soft copy of the abstract (summary) should be submitted to pisb.credenz.bplan@gmail.com by 12th April 2022.
 \n2) The Soft copy should be a .pdf file.
 \n3)The top 7 teams will compete in the next stage.
@@ -263,13 +264,14 @@ Rathish Kumar
 Enigma is a logical reasoning based questionnaire, which will test your aptitude, thinking capability, response time and mental ability. Get ready to put your Grey Cells to work!
 
 Timings
-13-04-2022, 
-15-04-2022 `,
+Round-1: 13-04-2022, 14-04-2022 
+Round-2: 15-04-2022 `,
     rules: `1) Candidates pursuing an undergraduate/graduate program at their institution will be allowed to participate. Participants can either participate individually or in a team of 2.
-\n2)All the participants should follow all the instructions as mentioned in the mail received after registration.`,
+    \n2).Each participant, if in a team, must pay the given amount individually to play the event as a team.
+\n3)All the participants should follow all the instructions as mentioned in the mail received after registration.`,
     structure: `1) There will be two rounds.
-5)ROUND 1:\n\ta.There will be 30 questions in this round.\n\tb.Time limit is 35 minutes.\n\tc.For every right answer, you will be awarded points and no negative points for a wrong answer.\n\td.The marking scheme will be told on the day of the event.
-6)ROUND 2:\n\ta.There will be 5 Puzzles in this round.\n\tb.Time Limit is 2 hours\n\tc.You must claim whenever you are done. Earliest claim with max. score wins.`,
+2)ROUND 1:\n\ta.There will be 30 questions in this round.\n\tb.Time limit is 35 minutes.\n\tc.For every right answer, you will be awarded points and no negative points for a wrong answer.\n\td.The marking scheme will be told on the day of the event.
+3)ROUND 2:\n\ta.There will be 5 Puzzles in this round.\n\tb.Time Limit is 2 hours\n\tc.You must claim whenever you are done. Earliest claim with max. score wins.`,
     judging: `1)There will be two rounds.
 \n2)You need to qualify the threshold score to get into the next round. The threshold will be decided based upon the performance of all the teams.
 \n3)The decision of the organizer will be final.
@@ -286,12 +288,13 @@ Datawiz is a week-long machine learning competition hosted on Kaggle. The partic
 Timings:
 Round 1: 10th April 9pm to 12th April 12pm
 Round 2: 13th April 12pm to 15th April 12pm`,
-    rules: `1)Each team of students may consist of a maximum of 3 participants.
-\n2)One account per participant
-\n3)Signing In on Kaggle through Multiple accounts is prohibited.
-\n4)No private sharing outside teams.
-\n5)Privately sharing code or data outside of teams is not permitted.
-\n6)Results should be reproducible to be eligible for prizes.`,
+    rules: `1)Each team of students may consist of a maximum of 3 participants.\n
+    2)Each participant, if in a team, must pay the given amount individually to play the event as a team.
+\n3)One account per participant
+\n4)Signing In on Kaggle through Multiple accounts is prohibited.
+\n5)No private sharing outside teams.
+\n6)Privately sharing code or data outside of teams is not permitted.
+\n7)Results should be reproducible to be eligible for prizes.`,
     structure: `Team Mergers:
 Team mergers are allowed in this competition.
 
@@ -326,8 +329,9 @@ General Quiz
     structure: `1)Candidate pursuing an undergraduate program at any institute is allowed to participate. Participants are encouraged to maintain a copy of their ID card.
 \n2)Participants may register online on the official Credenz website.
 \n3)Each team may have a maximum of 2 participants.
-\n4)For Round 1, there will be 25 questions with a time constraint of 50 seconds per question
-\n5)For Round 2 the marking scheme and other rules will be announced on the day of the event itself.`,
+    \n4).Each participant, if in a team, must pay the given amount individually to play the event as a team.
+\n5)For Round 1, there will be 25 questions with a time constraint of 50 seconds per question
+\n6)For Round 2 the marking scheme and other rules will be announced on the day of the event itself.`,
     judging: `The winner will be selected on the basis of the maximum points scored in final round and/or on the exclusive discretion of the quiz master.
 `,
     contact: `\nShashwat Tandon\n+91 93700 57494
@@ -342,9 +346,10 @@ Compete against the most intellectual minds and their progressive ideas!Paper pr
 Timings:
 15-04-2022 `,
     rules: `1.A team of maximum three candidates pursuing undergraduate/postgraduate program is allowed.
-\n2.Marking Scheme will be declared on the spot.
-\n3.Research Papers sent after 12th April, 2022 11:59 PM won’t be accepted.
-\n4.Every member must register individually.
+    \n2.Each participant, if in a team, must pay the given amount individually to play the event as a team.
+\n3.Marking Scheme will be declared on the spot.
+\n4.Research Papers sent after 12th April, 2022 11:59 PM won’t be accepted.
+\n5.Every member must register individually.
 `,
     structure: `1) Only soft copy i.e. a .pdf file, of the paper and abstract should be submitted. The paper should not exceed more than 6 pages.
 \n2) Soft copy of the technical paper and the abstract should be mailed to credenzpaperpresentation@gmail.com (Include name of participants, college name and year of study in mail) 
@@ -364,9 +369,10 @@ Timings:
 Dates:
 Round 1: 13-04-2022 
 Round 2: 15-04-2022`,
-    rules: `1) ) Participants may participate individually or in group of maximum 3.
+    rules: `1) Participants may participate individually or in group of maximum 3.
+    2) Each participant, if in a team, must pay the given amount individually to play the event as a team.
 
-\n2) Participants can use datasheets for the components provided to them.
+\n3) Participants can use datasheets for the components provided to them.
 `,
     structure: `
 1) 1st round: It will consist of Multiple Choice Questions (MCQs). There will be 30 questions for a time limit of 45 minutes.
@@ -419,9 +425,10 @@ Timings
 \nTimings
 Round 1: 13-04-2022 ,\nRound 2: 15-04-2022`,
     rules: `1) A team of maximum 2 is permissible for the event.
-\n2) Use of any front end framework is permitted.
-\n3) You are allowed to use any language but readymade template must not be used.
-\n4) Wordpress is not allowed.
+    2)Each participant, if in a team, must pay the given amount individually to play the event as a team.
+\n3) Use of any front end framework is permitted.
+\n4) You are allowed to use any language but readymade template must not be used.
+\n5) Wordpress is not allowed.
 
 
 `,
