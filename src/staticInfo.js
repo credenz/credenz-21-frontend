@@ -184,7 +184,7 @@ export const tabs = {
 
 export const eventDetails = {
   0: {
-    info: `A coding competition to test your conceptual understanding of algorithms and programming languages. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.\n\nTimings\nRound-1: 13-04-2022 to 14-04-2022 \nRound-2: 15-04-2022\n
+    info: `A coding competition to test your conceptual understanding of algorithms and programming languages. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.\n\n Event Link - http://rc.credenz.in\n\nTimings\nRound-1: 13-04-2022 to 14-04-2022 \nRound-2: 15-04-2022\n
       `,
     rules: `1. A maximum of 2 participants (in a team) pursuing an undergraduate program at their institution are allowed to participate\n2. Each participant, if in a team, must pay the given amount individually to play the event as a team. \n3. The participants must keep their college verification handy as they may be asked to disclose it at any point of time. Before the final round, all participants will be asked to verify their identity as an undergraduate student. Failure to do so will lead to immediate disqualification\n4. Marking scheme along with further rules and regulation while playing RC will be released during the time of the event itself.\n`,
     structure: `1)There are two rounds in RC:\n\ta) Logic Round (elimination)\n\tb) Decipher and code Round (final)\n\n2)Participants can register via the Credenz website.\n\n3)The event will be divided into two levels, Junior and Senior where the difficulty will vary accordingly. All the levels will test out your knowledge of C/C++ and Python.\n\n4)The FE and SE participants will be taking on the Junior Category while the TE and BE participants will take on the Senior Category.\n\n5)The participants clearing the cut off score in round 1 will be notified for round 2 and will be able to participate for the prize.\n`,
@@ -192,7 +192,7 @@ export const eventDetails = {
     contact: `\nNeil Deshpande\n+91 88056 00298\n\nPranav Mohril\n+91 75883 43127`,
   },
   1: {
-    info: `Put your logical acumen and coding expertise to the test as you clash with a round of perplexing MCQs followed by a set of time-bound coding challenges, carefully designed to assess your command over programming in the language of your choice- Python, C or C++. Showcase your technical proficiency as you have a go at competitive coding with plenty to learn and nothing to lose.\n\nTimings\nRound-1: 13-04-2022 to 14-04-2022 \nRound-2: 15-04-2022\n`,
+    info: `Put your logical acumen and coding expertise to the test as you clash with a round of perplexing MCQs followed by a set of time-bound coding challenges, carefully designed to assess your command over programming in the language of your choice- Python, C or C++. Showcase your technical proficiency as you have a go at competitive coding with plenty to learn and nothing to lose.\n\n Event Link - http://clash.credenz.in\n\nTimings\nRound-1: 13-04-2022 to 14-04-2022 \nRound-2: 15-04-2022\n`,
     rules: `1. A maximum of 2 participants (in a team) pursuing an undergraduate program at their institution are allowed to participate\n\n2. Each participant, if in a team, must pay the given amount individually to play the event as a team.\n3. The participants must keep their college verification handy as they may be asked to disclose it at any point of time. Before the final round, all participants will be asked to verify their identity as an undergraduate student. Failure to do so will lead to immediate disqualification.\n\n4. Marking scheme along with further rules and regulation while playing Clash will be released during the time of the event itself.\n`,
     structure: `1)There are two rounds in clash:\n\ta) MCQ Round (elimination)\n\tb) Coding Round (final)\n\n2)Participants can register via the Credenz website.\n\n3)The event will be divided into two levels, Junior and Senior where the difficulty will vary accordingly. All the levels will test out your knowledge of C/C++ and Python.\n\n4)The FE and SE participants will be taking on the Junior Category while the TE and BE participants will take on the Senior Category.\n\n5)The participants clearing the cut off score in round 1 will be notified for round 2 and will be able to participate for the prize.`,
     judging: `1)Judging in round 1 will be based on programming skills, ability to understand code, algorithms and knowledge of the fundamentals of C/C++ and Python.\n\n2)Judging for round 2 will be based on the time and space efficiency of your code to solve the given challenges in restricted time.\n\nPrizes\nJunior Section\nComing Soon\n\nSenior Section\nComing Soon`,
@@ -422,7 +422,8 @@ Timings
   },
   11: {
     info: `An aesthetically pleasing and user-friendly website is necessary to keep visitors engaged online. If you think you have the flair to create such a site, WebWeaver is the competition for you! A perfect integration of technology and creativity will lead you to win this competition.
-\nTimings
+    \n Event Link - http://webweaver.credenz.in
+    \nTimings
 Round 1: 13-04-2022 ,\nRound 2: 15-04-2022`,
     rules: `1) A team of maximum 2 is permissible for the event.
     2)Each participant, if in a team, must pay the given amount individually to play the event as a team.
