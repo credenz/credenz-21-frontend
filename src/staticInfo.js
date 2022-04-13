@@ -226,7 +226,7 @@ Shrikrushna Zirape
 \n2) The event will be conducted on our Android App/Website.
 \n3) Mock NEWS will be flashed regarding listed companies and their sectors based on which participants will buy/sell stocks to ultimately become the biggest gainer.`,
     judging: `Top 2 participants with Highest Capital at the end of Day 3 will be declared as winners.
-\n`,
+\n4) Head over to https://wallstreet.credenz.in/ to start playing.`,
     contact: `\nShrikrushna Zirape\n+91 98349 21293`,
   },
   4: {
