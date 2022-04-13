@@ -149,6 +149,28 @@
   width: 80%;
 } */
 
+.upi-qrcode {
+  width: 35%;
+}
+
+.upi-text {
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.upi-text-sub {
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.upi-text-contact {
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
 .header-header {
   font-size: 30px !important;
   font-weight: 700;
@@ -243,5 +265,8 @@ a:hover {
     right: 81%;
     /* top: -%;
     right: auto; */
+  }
+  .upi-qrcode {
+    width: 70%;
   }
 }

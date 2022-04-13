@@ -47,7 +47,7 @@ function AboutUs() {
           Sponsors
         </h1>
         <div className="row" style={{ width: "100%" }}>
-          <div className="col-md-6">
+          <div className="col-md-4">
             <div
               className="spons9 spons"
               data-aos="zoom-in"
@@ -62,7 +62,7 @@ function AboutUs() {
               ></AboutSponsors>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-4">
             <div
               className="spons7 spons"
               data-aos="zoom-in"
@@ -77,8 +77,6 @@ function AboutUs() {
               ></AboutSponsors>
             </div>
           </div>
-        </div>
-        <div className="row" style={{ width: "100%" }}>
           <div className="col-md-4">
             <div
               className="spons9 spons"
@@ -94,6 +92,8 @@ function AboutUs() {
               ></AboutSponsors>
             </div>
           </div>
+        </div>
+        <div className="row" style={{ width: "100%" }}>
           <div className="col-md-4">
             <div
               className="spons9 spons"
@@ -124,9 +124,7 @@ function AboutUs() {
               ></AboutSponsors>
             </div>
           </div>
-        </div>
-        <div className="row" style={{ width: "100%" }}>
-          <div className="col-md-6">
+          <div className="col-md-4">
             <div
               className="spons9 spons"
               data-aos="zoom-in"
@@ -138,21 +136,6 @@ function AboutUs() {
                 slink={BudhaniBros}
                 sname="Food Partner"
                 href="https://www.budhanibros.com/"
-              ></AboutSponsors>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div
-              className="spons9 spons"
-              data-aos="zoom-in"
-              data-aos-duration="800"
-              data-aos-easing="ease-in-sine"
-              data-aos-offset="50"
-            >
-              <AboutSponsors
-                slink={KatrajDairy}
-                sname="Food Partner"
-                href="https://katrajdairy.com"
               ></AboutSponsors>
             </div>
           </div>

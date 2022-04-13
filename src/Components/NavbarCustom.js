@@ -31,6 +31,7 @@ import ProfileIcon from "../images/user.png";
 import Wallstreet from "../images/wallstreet.png";
 import Webweaver from "../images/web.png";
 import CartContext from "./CartContext";
+import QRCode from "../images/qrcode.jpg";
 
 const NavbarCustom = (props) => {
   const location = useLocation();
@@ -268,6 +269,9 @@ const NavbarCustom = (props) => {
   const handleShowModal = () => cartContextValue.setCartModal(true);
   const handleCloseModal = () => cartContextValue.setCartModal(false);
 
+  const handleCloseUPIModal = () => cartContextValue.setUPIModal(false);
+  const handleOpenUPIModal = () => cartContextValue.setUPIModal(true);
+
   const handleShowMenu = () => setShowMenu(!showMenu);
 
   const deleteEventHandler = (name) => {
@@ -410,6 +414,8 @@ const NavbarCustom = (props) => {
       nav.classList.toggle("show");
     }, 300);
   };
+
+  const displayUPICode = () => {};
 
   return (
     <>
@@ -669,10 +675,13 @@ const NavbarCustom = (props) => {
               onClick={() => {
                 // cartContextValue.setCartModal(false);
                 let cart = JSON.parse(localStorage.getItem("cart"));
+                handleOpenUPIModal();
                 if (cart[0]?.isPass) {
-                  displayRazorpayPass();
+                  // displayRazorpayPass();
+                  // displayUPICode();
                 } else {
-                  displayRazorpay();
+                  // displayRazorpay();
+                  // displayUPICode();
                 }
               }}
               disabled={cartContextValue.cart.length > 0 ? false : true}
@@ -682,6 +691,62 @@ const NavbarCustom = (props) => {
               <span className="play-btn__inner play-btn__inner-green">
                 <span className="play-btn__slide play-btn__slide-green"></span>
                 <span className="play-btn__content">Pay Now</span>
+              </span>
+            </button>
+          </div>
+        </Modal.Footer>
+      </Modal>
+
+      {/* UPI MODAL */}
+
+      <Modal
+        show={cartContextValue.UPIModal}
+        onHide={handleCloseUPIModal}
+        className="cartModal"
+        scrollable
+        size="lg"
+      >
+        <Modal.Header className="cartHeader">
+          <Modal.Title className="cartTitle">UPI Payment</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="cartBody">
+          <div className="row d-flex justify-content-center align-items-center">
+            <img src={QRCode} alt="QRCode" className="upi-qrcode" />
+          </div>
+          <div className="row d-flex justify-content-center align-items-center mt-3">
+            <div className="upi-text">9307948342@ybl</div>
+          </div>
+          <div className="row d-flex justify-content-center align-items-center mt-3">
+            <div className="upi-text-sub">
+              After payment please send the transaction details on Whatsapp to:
+            </div>
+          </div>
+          <div className="row d-flex justify-content-between align-items-center mt-3">
+            <div className="col-md-6 d-flex justify-content-center align-items-center">
+              <div className="upi-text-contact">Nandini Patil</div>
+            </div>
+            <div className="col-md-6 d-flex justify-content-center align-items-center">
+              <div className="upi-text-contact">+91 9307948342</div>
+            </div>
+            {/* <div className="col-md-6 d-flex justify-content-center align-items-center">
+              <div className="upi-text-sub">Nandini Patil</div>
+            </div>
+            <div className="col-md-6 d-flex justify-content-center align-items-center">
+              <div className="upi-text-sub">9307948342</div>
+            </div> */}
+          </div>
+        </Modal.Body>
+        <Modal.Footer className="cartFooter">
+          <div className="row d-flex justify-content-center w-100">
+            <button
+              onClick={() => {
+                cartContextValue.setUPIModal(false);
+              }}
+              className="play-btn play-btn--light"
+            >
+              <span className="play-btn__inner">
+                <span className="play-btn__slide"></span>
+                <span className="play-btn__content">Close</span>
               </span>
             </button>
           </div>

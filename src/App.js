@@ -23,6 +23,7 @@ let App = () => {
   const [userDetails, setUserDetails] = React.useState({});
   const [userProfile, setUserProfile] = React.useState({});
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const [UPIModal, setUPIModal] = React.useState(false);
   const value = {
     cart,
     setCart,
@@ -34,6 +35,8 @@ let App = () => {
     setUserProfile,
     isLoggedIn,
     setIsLoggedIn,
+    UPIModal,
+    setUPIModal,
   };
   //create routing for pages home, events, about, contact, profile
   return (
