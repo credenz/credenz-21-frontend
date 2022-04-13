@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Tab, Tabs } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import swal from "sweetalert";
 import { API } from "../axios/API";
 import EventCard3 from "../Components/EventCard3";
@@ -24,6 +25,7 @@ import Webweaver from "../images/web.png";
 import { eventDetails, events, eventsFull } from "../staticInfo";
 
 const Profile = (props) => {
+  let history = useHistory();
   const height = "65px";
   const width = "65px";
   const [loading, setLoading] = useState(true);
@@ -90,6 +92,12 @@ const Profile = (props) => {
     } else if (e === "Paper") {
       return "Paper Presentation";
     } else return e;
+  };
+
+  const routeChange = () => {
+    // let path = "https://wallstreet.credenz.in";
+    // history.push(path);
+    window.location.href = "https://wallstreet.credenz.in";
   };
 
   const eventHelper = (eventName) => {
@@ -266,8 +274,7 @@ const Profile = (props) => {
                                   setActive(eventHelper(col));
                                   setEventSelected(eventHelper(col));
                                   setShow(true);
-                                }}
-                              >
+                                }}>
                                 <EventCard3
                                   icon={iconHelpr(col)}
                                   width={width}
@@ -291,8 +298,7 @@ const Profile = (props) => {
                                   setActive(eventHelper(col?.name));
                                   setEventSelected(eventHelper(col?.name));
                                   setShow(true);
-                                }}
-                              >
+                                }}>
                                 <EventCard3
                                   icon={iconHelpr(col?.name)}
                                   width={width}
@@ -308,8 +314,7 @@ const Profile = (props) => {
                   ) : (
                     <div
                       className="m-5 d-flex justify-content-center align-items-center"
-                      style={{ color: "#fff" }}
-                    >
+                      style={{ color: "#fff" }}>
                       Not registered for any event
                     </div>
                   )}
@@ -326,16 +331,14 @@ const Profile = (props) => {
             onHide={() => {
               setShow(false);
             }}
-            size="lg"
-          >
+            size="lg">
             <Modal.Header style={{ width: "90%" }}>
               <Modal.Title
                 style={{
                   width: "100%",
                   display: "flex",
                   justifyContent: "space-between",
-                }}
-              >
+                }}>
                 <img
                   className="modal-logo-img1"
                   src={iconHelpr(eventsFull[active])}
@@ -350,8 +353,7 @@ const Profile = (props) => {
                 </div>
                 <div
                   className="modal-close-wrapper1"
-                  onClick={() => setShow(false)}
-                >
+                  onClick={() => setShow(false)}>
                   <img
                     src={Cross}
                     alt="close button"
@@ -366,11 +368,21 @@ const Profile = (props) => {
                   eventKey="info"
                   title="Info"
                   className="modal-tab-link1"
-                  color="#efefef"
-                >
+                  color="#efefef">
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 && eventDetails[eventSelected].info}
+                      {titleHelpr(events[active]) === "Wallstreet" && (
+                        <button
+                          onClick={routeChange}
+                          style={{ marginTop: 20 }}
+                          className="play-btn play-btn--light">
+                          <span className="play-btn__inner play-btn__inner-green">
+                            <span className="play-btn__slide play-btn__slide-green"></span>
+                            <span className="play-btn__content">Play</span>
+                          </span>
+                        </button>
+                      )}
                     </p>
                   </div>
                 </Tab>
@@ -385,8 +397,7 @@ const Profile = (props) => {
                 <Tab
                   eventKey="structure"
                   title="Structure"
-                  className="modal-tab-link1"
-                >
+                  className="modal-tab-link1">
                   <div className="info-wrapper1" style={{ maxHeight: "30vh" }}>
                     <p className="new-line1">
                       {eventSelected !== -1 &&
@@ -397,8 +408,7 @@ const Profile = (props) => {
                 <Tab
                   eventKey="judge"
                   title="Judging"
-                  className="modal-tab-link1"
-                >
+                  className="modal-tab-link1">
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 &&
@@ -409,8 +419,7 @@ const Profile = (props) => {
                 <Tab
                   eventKey="contact"
                   title="Contact"
-                  className="modal-tab-link1"
-                >
+                  className="modal-tab-link1">
                   <div className="info-wrapper1">
                     <p className="new-line1">
                       {eventSelected !== -1 &&
